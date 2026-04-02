@@ -1,0 +1,7 @@
+{
+  "database": "dolt",
+  "backend": "dolt",
+  "dolt_mode": "server",
+  "dolt_database": "Reporting_Analytics",
+  "project_id": "1c4e365a-9c07-4691-9b10-bef6b7335e0e"
+}
