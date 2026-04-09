@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "sa360": {
+      "type": "http",
+      "url": "https://sa360-mcp.principal-e85.workers.dev/mcp"
+    }
+  }
+}
