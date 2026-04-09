@@ -11,17 +11,19 @@ Primary channels:
 - Meta
 - Google Ads
 - Bing Ads
+- SA360 (cross-engine search)
 - Programmatic / Display
 
 ## Data Source Rule
 Primary source data comes from MCP tools, not manual exports.
 
 Current MCP sources include:
-- Quantcast
+- SA360 (configured in `.mcp.json`)
 - Google Ads
 - Meta
 - Google Analytics
 - Google Search Console
+- Quantcast (field mapping in `mappings/quantcast-field-mapping.md`)
 
 Use MCP tools first for data retrieval whenever available.
 Use Google Sheets as the reporting, modeling, dashboard, and monthly-report output layer.
@@ -85,6 +87,7 @@ Use specialist agents for:
 - Meta analysis
 - Google Ads analysis
 - Bing Ads analysis
+- SA360 analysis
 - Programmatic analysis
 - narrative reporting
 
