@@ -69,6 +69,50 @@ Follow the workflow in `CLAUDE.md`:
 
 Output layer is Google Sheets-first — see the Output Format Rule in `CLAUDE.md`.
 
+## Recommended Skills
+
+Skills are slash-command add-ons for Claude Code. Install them via the [Superpowers](https://github.com/inference-sh/superpowers) or [inference.sh](https://inference.sh) skill registries and invoke with `/skill-name`.
+
+### Core reporting & PPC
+| Skill | Purpose |
+|---|---|
+| `sa360-ppc-agency-manager` | SA360 multi-engine PPC: campaign structures, bulksheets, cross-platform reporting |
+| `google-ads-strategy` | Google Ads campaign structure, keyword research, budget allocation |
+| `rsa-ad-writer` | Write and optimize Responsive Search Ads for Excellent Ad Strength |
+| `keyword-growth-analyzer` | Keyword research with PPC bid optimization via DataForSEO |
+| `paid-ads` | Cross-platform paid advertising guidance (Google, Meta, LinkedIn, Bing) |
+
+### Google Workspace (output layer)
+| Skill | Purpose |
+|---|---|
+| `gws-sheets` | Read and write Google Sheets (primary output format) |
+| `gws-sheets-read` | Read values from a spreadsheet |
+| `gws-sheets-append` | Append rows to a spreadsheet |
+| `gws-docs` / `gws-docs-write` | Read/write Google Docs for narrative reports |
+| `gws-slides` | Build client-facing presentation decks |
+| `gws-drive` / `gws-drive-upload` | File management and deliverable uploads |
+| `gws-gmail-send` | Send finished reports to clients |
+
+### Visualization & executive output
+| Skill | Purpose |
+|---|---|
+| `data-visualization` | Chart selection, color theory, annotation best practices |
+| `executive-communications` | Professional docs/decks optimized for leadership review |
+
+### Analytics & SEO (if in scope)
+| Skill | Purpose |
+|---|---|
+| `analytics-tracking` | Tracking and measurement setup audits |
+| `seo-audit` | Technical SEO diagnostics |
+| `geo` | GEO + SEO analysis for AI search visibility |
+
+### Workflow & skill discovery
+| Skill | Purpose |
+|---|---|
+| `superpowers:using-superpowers` | Skill discovery and usage protocol (start here) |
+| `superpowers:brainstorming` | Structured brainstorming before creative work |
+| `find-skills` | Search for additional skills on demand |
+
 ## Notes
 
 - Do not commit client credentials or raw data exports
