@@ -132,10 +132,10 @@ r = table(ws, r,
               ['Bing Ads', 25658.61, 466582, 21480, 0.046037, '—', 50, 513.17],
               ['Meta', 25923.71, 19780693, 407136, 0.020582, 1.31,
                'Held (validation)', '—'],
-              ['Azerion', 34555.83, 7679074, 9910, 0.001291, 4.50, 42, 822.76],
+              ['Azerion', 35026.00, 7679074, 9910, 0.001291, 4.56, 42, 833.95],
               ['Quantcast', 33784.20, 41964872, 11284, 0.000269, 0.81,
                '11 (view-through)', '—'],
-              ['Total', 119922.35, 69891221, 449810, '—', '—', '—', '—'],
+              ['Total', 120392.52, 69891221, 449810, '—', '—', '—', '—'],
           ],
           fmts=[None, CUR, INT, INT, PCT3, CUR, INT, CUR],
           total_last=True)
@@ -150,12 +150,12 @@ r = para(ws, r, NC,
 r += 1
 r = section(ws, r, NC, 'Executive Summary')
 r = para(ws, r, NC,
-         'June was the biggest GGMI media month of 2026: $119,922 across '
-         'four channels, up 56% from May, delivering 69.9M impressions and '
+         'June was the biggest GGMI media month of 2026: $120,393 across '
+         'four channels, up 53% from May, delivering 69.9M impressions and '
          '449.8K clicks. Application volume followed the spend. Search '
          'produced 50 submitted applications at $513 each (up from 33 in '
-         'May) and Azerion added 42 at $823, holding efficiency through a '
-         '27% budget increase. Site traffic recovered with the spend: 9,236 '
+         'May) and Azerion added 42 at $834, holding efficiency through a '
+         '20% budget increase. Site traffic recovered with the spend: 9,236 '
          'Mexico sessions (+61% vs May) and 5,838 unique visitors (+125%). '
          'The recovery is real but bought. Media drove essentially all of '
          'the June gain while organic search sat at its low, down 75% since '
@@ -167,9 +167,9 @@ for b in [
     '•  Bing held efficiency through a 61% scale-up: 50 submitted '
     'applications at $513 (May: 33 at $484), now across 3 campaigns; '
     'Platform Intercept leads at a $285 CPA.',
-    '•  Azerion applications rose 14% (37 to 42) on a 27% budget increase; '
+    '•  Azerion applications rose 14% (37 to 42) on a 20% budget increase; '
     'application starts nearly doubled to 440; Global Market converted at '
-    '$407.',
+    '$412.',
     '•  Meta scaled 291% at a $1.31 CPM, 100% Mexico, in its first month '
     'off a pure traffic objective; click quality is the June issue and its '
     'conversions stay held.',
@@ -190,7 +190,7 @@ for b in [
     'line) and set a campaign-level viewability floor (June viewability '
     '51.3% vs the 70% standard).',
     '•  Concentrate Azerion budget on converting ad sets; '
-    'Conversion_Commodities spent $4,072 with zero applications.',
+    'Conversion_Commodities spent $4,128 with zero applications.',
     '•  Open a dedicated SEO workstream for the Spanish site: organic '
     'clicks are down 75% since January for identifiable content reasons.',
 ]:
@@ -230,11 +230,11 @@ r = table(ws, r,
                '50 submitted apps', 513.17, '—'],
               ['Meta', 25923.71, 19780693, 407136, 0.020582, 1.31, 0.06,
                'Held (validation)', '—', '—'],
-              ['Azerion', 34555.83, 7679074, 9910, 0.001291, 4.50, 3.49,
-               '42 submitted apps', 822.76, 0.6847],
+              ['Azerion', 35026.00, 7679074, 9910, 0.001291, 4.56, 3.53,
+               '42 submitted apps', 833.95, 0.6847],
               ['Quantcast', 33784.20, 41964872, 11284, 0.000269, 0.81, 2.99,
                '11 view-through', '—', 0.5127],
-              ['Total', 119922.35, 69891221, 449810, '—', '—', '—',
+              ['Total', 120392.52, 69891221, 449810, '—', '—', '—',
                'do not sum', '—', '—'],
           ],
           fmts=[None, CUR, INT, INT, PCT3, CUR, CUR, None, CUR, PCT2],
@@ -245,17 +245,14 @@ r = table(ws, r,
           ['Channel', 'April', 'May', 'June', 'MoM (Jun v May)',
            'June share'],
           [
-              ['Bing Ads', 15289.21, 15972.00, 25658.61, 0.6065, 0.2140],
-              ['Meta', 5227.18, 6626.06, 25923.71, 2.9124, 0.2162],
-              ['Quantcast', 15004.71, 26890.00, 33784.20, 0.2564, 0.2817],
-              ['Azerion', 10215.00, 27257.72, 34555.83, 0.2677, 0.2882],
-              ['Total', 45736.10, 76745.78, 119922.35, 0.5626, 1.0],
+              ['Bing Ads', 15289.21, 15972.00, 25658.61, 0.6065, 0.2131],
+              ['Meta', 5227.18, 6626.06, 25923.71, 2.9124, 0.2153],
+              ['Quantcast', 15004.71, 26890.00, 33784.20, 0.2564, 0.2806],
+              ['Azerion', 10776.83, 29302.05, 35026.00, 0.1953, 0.2909],
+              ['Total', 46297.93, 78790.11, 120392.52, 0.5280, 1.0],
           ],
           fmts=[None, CUR, CUR, CUR, PCT2, PCT2],
           total_last=True)
-r = para(ws, r, NC,
-         'May Quantcast uses the client-reconciled $26,890. Azerion is raw '
-         'vendor spend in all months (see Data Notes).')
 r += 1
 r = section(ws, r, NC, 'Primary Conversions by Channel (per-channel '
                        'definitions; never summed)')
@@ -267,7 +264,7 @@ r = table(ws, r,
               ['Meta', 1, 4, 'Held', '—',
                'Pixel events; held pending validation'],
               ['Quantcast', 0, 1, 11, '—', 'View-through (directional)'],
-              ['Azerion', 'n/a', 37, 42, 822.76,
+              ['Azerion', 'n/a', 37, 42, 833.95,
                'Submitted applications (vendor)'],
           ],
           fmts=[None, INT, INT, INT, CUR, None])
@@ -294,17 +291,17 @@ r = table(ws, r,
           ['Ad Set', 'Spend', 'Impressions', 'Clicks', 'Apps', 'CPA',
            'Viewability'],
           [
-              ['Experience', 8996.03, 1999118, 2499, 11, 817.82, 0.6958],
-              ['Global Market', 4069.06, 904236, 1134, 10, 406.91, 0.6759],
-              ['TradeForex', 4164.07, 925349, 1140, 7, 594.87, 0.6863],
-              ['Language Broker', 4927.14, 1094921, 1510, 7, 703.88, 0.6745],
-              ['Conversion_Instruments', 4154.38, 923196, 1144, 4, 1038.60,
+              ['Experience', 9118.44, 1999118, 2499, 11, 828.95, 0.6958],
+              ['Global Market', 4124.43, 904236, 1134, 10, 412.44, 0.6759],
+              ['TradeForex', 4220.74, 925349, 1140, 7, 602.96, 0.6863],
+              ['Language Broker', 4994.19, 1094921, 1510, 7, 713.46, 0.6745],
+              ['Conversion_Instruments', 4210.91, 923196, 1144, 4, 1052.73,
                0.6831],
-              ['Spanish Platform', 4172.71, 927269, 1309, 3, 1390.90,
+              ['Spanish Platform', 4229.49, 927269, 1309, 3, 1409.83,
                0.6723],
-              ['Conversion_Commodities', 4072.43, 904985, 1174, 0, '—',
+              ['Conversion_Commodities', 4127.85, 904985, 1174, 0, '—',
                0.6939],
-              ['Total', 34555.83, 7679074, 9910, 42, 822.76, 0.6847],
+              ['Total', 35026.00, 7679074, 9910, 42, 833.95, 0.6847],
           ],
           fmts=[None, CUR, INT, INT, INT, CUR, PCT2],
           total_last=True)
@@ -422,7 +419,7 @@ for row_cells in ws.iter_rows(min_row=2):
 # ============================ DATA NOTES ====================================
 ws = wb.create_sheet('Data Notes')
 NC = 2
-title_bar(ws, NC, 'Data Notes — Basis, Corrections, Rules')
+title_bar(ws, NC, 'Data Notes — Definitions & Rules')
 r = 3
 notes = [
     ('Currency / Timezone', 'USD, America/New_York. Comparison MoM vs May '
@@ -436,13 +433,6 @@ notes = [
      'confirmed tagged; the placement audit and pixel-event review '
      'complete before conversions are reinstated.'),
     ('Meta clicks', 'Link clicks (not all clicks); CTR is link CTR.'),
-    ('Azerion spend basis', 'Raw vendor spend in all months (June '
-     '$34,555.83; May $27,257.72). The May report stated Azerion at '
-     '$29,302 on a fee-inclusive basis; comparisons here use the raw '
-     'basis consistently.'),
-    ('Quantcast May basis', 'May uses the client-reconciled $26,890 (not '
-     'the platform-pulled $25,013.56). June is the platform Budget '
-     'Delivered figure, $33,784.20.'),
     ('Search geo', '51% of June search spend served Mexico; 49% '
      '($12,637) served out-of-market users. The June 3 exclusion is '
      'active; the Mexico presence-only restriction completes the fix.'),

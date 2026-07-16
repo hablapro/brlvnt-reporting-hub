@@ -166,19 +166,19 @@ table(s, 0.5, 1.9, 7.4, 2.0, [
     ['Channel', 'Spend', 'Impr', 'Clicks', 'Conv', 'CPA'],
     ['Bing Ads', '$25,659', '466,582', '21,480', '50', '$513'],
     ['Meta', '$25,924', '19.78M', '407,136', 'Held*', '—'],
-    ['Azerion', '$34,556', '7.68M', '9,910', '42', '$823'],
+    ['Azerion', '$35,026', '7.68M', '9,910', '42', '$834'],
     ['Quantcast', '$33,784', '41.96M', '11,284', '11 VT*', '—'],
-    ['Total', '$119,922', '69.9M', '449,810', '—', '—'],
+    ['Total', '$120,393', '69.9M', '449,810', '—', '—'],
 ], col_widths=[2.33, 1.06, 1.06, 1.06, 0.85, 1.06], bold_last=True)
 text(s, 0.5, 4.02, 7.4, 0.45,
      '* Paid-social conversions are held pending a placement audit. '
      'Programmatic view-through is directional only. Conversions use '
      'different events per channel and are never summed.', 7.5, False, SUB)
 card(s, 8.1, 1.9, 4.7, 2.4, 'HEADLINES', [
-    'June was the biggest GGMI media month of 2026: $119,922 across four '
-    'channels, up 56% from May. Search produced 50 submitted applications '
+    'June was the biggest GGMI media month of 2026: $120,393 across four '
+    'channels, up 53% from May. Search produced 50 submitted applications '
     'at a $513 CPA, up from 33 in May, and Azerion held efficiency with '
-    '42 applications through a 27% budget increase.',
+    '42 applications through a 20% budget increase.',
 ], GREEN)
 card(s, 0.5, 4.6, 7.4, 2.4, 'WHAT THE DATA SAYS', [
     'Site traffic recovered with the spend: 9,236 Mexico sessions, up 61% '
@@ -334,30 +334,30 @@ s = prs.slides.add_slide(BLANK)
 header(s, 'AZERION  ·  PERFORMANCE',
        '42 submitted applications. Efficiency roughly held at higher '
        'volume.', 8)
-tile(s, 0.5, 1.9, 'SPEND', '$34,556', '+27% MoM')
+tile(s, 0.5, 1.9, 'SPEND', '$35,026', '+20% MoM')
 tile(s, 2.5, 1.9, 'IMPRESSIONS', '7.68M', '2.18M devices')
 tile(s, 4.5, 1.9, 'CLICKS', '9,910', '+57% MoM')
 tile(s, 6.5, 1.9, 'STEP 1', '440', 'May: 225')
-tile(s, 8.5, 1.9, 'APPLICATIONS', '42', '$823 CPA')
+tile(s, 8.5, 1.9, 'APPLICATIONS', '42', '$834 CPA')
 tile(s, 10.5, 1.9, 'VIEWABILITY', '68.5%', '70% standard')
 text(s, 0.5, 3.35, 6.0, 0.3, 'Ad Sets (Applications)', 11, True, NAVY)
 table(s, 0.5, 3.65, 6.0, 2.6, [
     ['Ad Set', 'Spend', 'Apps', 'CPA'],
-    ['Experience', '$8,996', '11', '$818'],
-    ['Global Market', '$4,069', '10', '$407'],
-    ['TradeForex', '$4,164', '7', '$595'],
-    ['Language Broker', '$4,927', '7', '$704'],
-    ['Conversion_Instruments', '$4,154', '4', '$1,039'],
-    ['Spanish Platform', '$4,173', '3', '$1,391'],
-    ['Conversion_Commodities', '$4,072', '0', '—'],
+    ['Experience', '$9,118', '11', '$829'],
+    ['Global Market', '$4,124', '10', '$412'],
+    ['TradeForex', '$4,221', '7', '$603'],
+    ['Language Broker', '$4,994', '7', '$713'],
+    ['Conversion_Instruments', '$4,211', '4', '$1,053'],
+    ['Spanish Platform', '$4,229', '3', '$1,410'],
+    ['Conversion_Commodities', '$4,128', '0', '—'],
 ], col_widths=[2.8, 1.1, 0.9, 1.2])
 card(s, 6.8, 3.35, 6.0, 3.55, 'HIGHLIGHTS', [
-    'Applications rose 14% (37 to 42) on a 27% budget increase. The CPA '
-    'moved $737 to $823, so efficiency roughly held at higher volume.',
+    'Applications rose 14% (37 to 42) on a 20% budget increase. The CPA '
+    'moved $792 to $834, so efficiency roughly held at higher volume.',
     'Application starts nearly doubled (225 to 440), keeping the upper '
     'funnel active.',
-    'Global Market converted at $407 and Experience carried the most '
-    'volume. Conversion_Commodities spent $4,072 with no applications '
+    'Global Market converted at $412 and Experience carried the most '
+    'volume. Conversion_Commodities spent $4,128 with no applications '
     'and is the first reallocation candidate.',
 ], GREEN)
 
@@ -367,7 +367,7 @@ header(s, 'AZERION  ·  READ & RECOMMENDATIONS',
        'Hold the pace. Confirm the delivery detail.', 9)
 card(s, 0.5, 1.9, 6.1, 5.1, 'WHAT THE DATA SHOWS', [
     'Second consecutive month of scaled application volume, with '
-    'efficiency holding within 12% while budget grew 27%.',
+    'efficiency holding within 6% while budget grew 20%.',
     'Viewability is 68.5%, just under the 70% standard.',
     'We have asked the vendor for country-level delivery confirmation '
     'plus funnel, site, format, and creative breakdowns (requested early '
@@ -377,8 +377,8 @@ card(s, 0.5, 1.9, 6.1, 5.1, 'WHAT THE DATA SHOWS', [
 card(s, 6.9, 1.9, 5.9, 5.1, 'WHAT WE RECOMMEND', [
     'Hold the budget pace until the delivery breakdowns arrive.',
     'Concentrate budget on the converting ad sets, led by Global Market '
-    '($407) and Experience, and reallocate away from '
-    'Conversion_Commodities ($4,072, zero applications).',
+    '($412) and Experience, and reallocate away from '
+    'Conversion_Commodities ($4,128, zero applications).',
     'Push viewability over the 70% standard.',
 ], GREEN)
 

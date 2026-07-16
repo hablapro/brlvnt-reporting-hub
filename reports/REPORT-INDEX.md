@@ -69,7 +69,7 @@ Corrected April decks folder: https://drive.google.com/drive/folders/1B3KlLKxval
 
 ## Status flags (read before sharing externally)
 - **GGMI June deck:** Google Slides above is the Berelvant working draft (built 2026-07-16 from the approved narrative v2, mirroring the final May deck structure + a new Site Traffic slide). Renzo edits and sends; the client-sent version supersedes it.
-- **GGMI June Azerion basis:** reported at RAW vendor cost ($34,556) from June; May client deck showed fee-inclusive $29,302. MoM in June materials uses the raw basis consistently (noted in the report's Data Notes and the Spend Tracker note). Fee stays internal on the Billable tab.
+- **GGMI June spend = client-tracker figures (Renzo ruling 2026-07-16):** client materials must match the client's own tracker with no adjustment commentary. June: Azerion **$35,026** (vendor raw $34,555.83 + $470.17 adjustment), Quantcast $33,784 (matches), total **$120,393** (+53% vs May $78,790). Azerion CPA $834; ad-set spends scaled pro-rata to reconcile. Adjustment detail lives ONLY here, in the Spend Tracker note, and the Billable tab — never in the deck or report.
 - **Meta June conversions:** held from all June client materials (placement audit + pixel-event review pending); delivery metrics reported normally.
 - **GCG June:** not started — data pull, QA, model, narrative, deliverables all pending.
 - **GGMI Bing geo:** May data is pre-fix (campaign delivered ~68% Venezuela; targeting set to presence-only + VE/BR excluded on 2026-06-03). June is the clean read. Reminder set for 2026-06-10.
