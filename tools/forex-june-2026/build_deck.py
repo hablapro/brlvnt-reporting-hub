@@ -34,7 +34,7 @@ OUT = os.path.join(HERE, '..', '..', 'report-client-decks',
                    '06. GGMI_LATAM_June_2026_Performance_Review.pptx')
 BREADCRUMB = 'FOREX.com  |  GGMI (LATAM)  ·  June 2026'
 FOOTER_LEFT = 'Monthly Performance Review'
-N_SLIDES = 12
+N_SLIDES = 16
 
 prs = Presentation()
 prs.slide_width = Inches(13.333)
@@ -150,7 +150,8 @@ if os.path.exists(LOGO):
     s.shapes.add_picture(LOGO, Inches(0.5), Inches(0.5), Inches(2.5), Inches(0.71))
 text(s, 0.9, 2.2, 11.0, 0.4, 'MONTHLY PERFORMANCE REVIEW', 14, True, BLUE)
 text(s, 0.9, 2.7, 12.0, 1.0, 'GGMI (LATAM) — Paid Media', 36, True, NAVY)
-text(s, 0.9, 3.8, 12.0, 0.6, 'June 2026 Performance Review', 22, False, NAVY)
+text(s, 0.9, 3.8, 12.0, 0.6,
+     'June 2026 Performance Review  ·  Q3 FY2026 in Review', 22, False, NAVY)
 text(s, 0.9, 4.5, 12.0, 0.4, 'Bing Ads · Meta · Azerion · Quantcast',
      12, False, SUB)
 text(s, 0.9, 6.65, 12.0, 0.4,
@@ -413,10 +414,94 @@ card(s, 7.0, 3.35, 5.8, 3.55, 'READ', [
     'support, not proven response.',
 ], BLUE)
 
-# ---- Slide 11: Site Traffic (GA4) ------------------------------------------
+# ---- Slide 11: Q3 in Review — Spend ----------------------------------------
 s = prs.slides.add_slide(BLANK)
-header(s, 'SITE TRAFFIC  ·  GA4 (MEXICO)',
-       'Traffic recovered in June. Media bought the recovery.', 11)
+header(s, 'Q3 FY2026 IN REVIEW  ·  SPEND',
+       'The program scaled every month of the quarter.', 11)
+table(s, 0.5, 1.9, 6.6, 2.4, [
+    ['Channel', 'Apr', 'May', 'Jun', 'Q3'],
+    ['Bing Ads', '$15,289', '$15,972', '$25,659', '$56,920'],
+    ['Meta', '$5,224', '$6,626', '$25,924', '$37,774'],
+    ['Quantcast', '$15,005', '$26,890', '$33,784', '$75,678'],
+    ['Azerion', '$10,777', '$29,302', '$35,026', '$75,105'],
+    ['Total', '$46,294', '$78,790', '$120,393', '$245,477'],
+], col_widths=[1.9, 1.15, 1.15, 1.2, 1.2], bold_last=True)
+text(s, 0.5, 4.5, 6.6, 0.9, [
+    'Month-over-month growth: +70% into May, +53% into June. June ran at '
+    '2.6x the April level.',
+], 9.5, False, BODY)
+card(s, 7.5, 1.9, 5.3, 5.0, 'READ', [
+    'Q3 closed at $245,477 in working media, approximately 24% of the '
+    'FY2026 budget.',
+    'The mix rebalanced as the program scaled. April leaned on search and '
+    'display; June is a balanced four-channel program with no channel '
+    'above 29% of spend.',
+    'Every channel grew while holding or improving its efficiency where '
+    'we can measure it, which is what earns the next stage of scale.',
+], BLUE)
+
+# ---- Slide 12: Q3 in Review — Applications ----------------------------------
+s = prs.slides.add_slide(BLANK)
+header(s, 'Q3 FY2026 IN REVIEW  ·  APPLICATIONS',
+       'Application volume scaled with spend. Blended cost per '
+       'application halved.', 12)
+table(s, 0.5, 1.9, 6.6, 2.7, [
+    ['Channel', 'Apr', 'May', 'Jun', 'Q3'],
+    ['Bing Ads', '—', '33', '50', '83'],
+    ['Azerion', '19', '37', '42', '98'],
+    ['Quantcast', '0', '1', '11', '12'],
+    ['Meta', '1', '0', 'Held', '1'],
+    ['Blended applications', '20', '71', '103', '194'],
+    ['Blended cost / application', '$2,315', '$1,110', '$1,169', '$1,265'],
+], col_widths=[2.6, 0.95, 0.95, 1.0, 1.1], bold_last=True)
+text(s, 0.5, 4.85, 6.6, 0.7, [
+    'Search tracking went live in May; display lines count submitted '
+    'applications, the reach line counts view-through, and paid-social '
+    'conversions are under validation.',
+], 7.5, False, SUB)
+card(s, 7.5, 1.9, 5.3, 5.0, 'READ', [
+    'June delivered 5x the application volume of April on 2.6x the '
+    'spend.',
+    'Blended cost per application fell from $2,315 in April to $1,169 in '
+    'June and held near that level through a 53% spend increase, so the '
+    'growth was bought at improving efficiency, not rising cost.',
+    'Search and programmatic carried the measured volume (181 submitted '
+    'applications). Paid social contributed reach and site traffic while '
+    'its conversion validation completes.',
+], GREEN)
+
+# ---- Slide 13: Q3 Blended Outcomes vs Plan ----------------------------------
+s = prs.slides.add_slide(BLANK)
+header(s, 'Q3 FY2026 IN REVIEW  ·  BLENDED OUTCOMES VS PLAN',
+       'The gap to plan sits in the organic base, not paid delivery.', 13)
+table(s, 0.5, 1.9, 6.6, 2.7, [
+    ['Metric (organic + paid)', 'Q3 Actual', 'Q3 Budget', 'vs Plan'],
+    ['Live Apps Submitted', '2,167', '3,984', '-46%'],
+    ['New Approved', '606', '957', '-37%'],
+    ['New Funded', '106', '240', '-56%'],
+    ['New Traded', '100', '180', '-44%'],
+    ['Actives (monthly avg)', '399', '485', '-18%'],
+    ['Trading Volume', '$4.3B', '$6.7B', '-36%'],
+], col_widths=[2.8, 1.3, 1.3, 1.2])
+text(s, 0.5, 4.85, 6.6, 0.5, [
+    'Source: Budget vs Actual dashboard (non-cohort reforecast), GGMI, '
+    'organic and paid blended. July excluded (full-month forecast).',
+], 7.5, False, SUB)
+card(s, 7.5, 1.9, 5.3, 5.0, 'READ', [
+    'Blended submissions ran about 45% under plan and declined through '
+    'the half-year (1,029 in January to 684 in June) while paid-driven '
+    'applications grew every month of Q3. The shortfall sits in the '
+    'non-paid base, which the next two slides trace to organic search.',
+    'The funded stage shows the second constraint: -56% to plan, the '
+    'application-to-funded step the onboarding roadmap is built to fix.',
+    'Trading volume tracked the softer funnel at $4.3B against a $6.7B '
+    'plan.',
+], BLUE)
+
+# ---- Slide 14: Site Traffic (GA4) ------------------------------------------
+s = prs.slides.add_slide(BLANK)
+header(s, 'SITE TRAFFIC  ·  SIX-MONTH VIEW (GA4, MEXICO)',
+       'Traffic recovered in June. Media bought the recovery.', 14)
 table(s, 0.5, 1.9, 7.4, 1.3, [
     ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
     ['Sessions', '9,380', '22,229', '12,614', '7,577', '5,751', '9,236'],
@@ -444,11 +529,41 @@ card(s, 8.1, 1.9, 4.7, 5.0, 'WHAT IT MEANS', [
     'top of it.',
 ], GREEN)
 
-# ---- Slide 12: Cross-Channel Priorities + Next Steps ------------------------
+# ---- Slide 15: Organic Search — the SEO issue --------------------------------
+s = prs.slides.add_slide(BLANK)
+header(s, 'ORGANIC SEARCH  ·  THE STRUCTURAL ISSUE',
+       'Organic search fell 75% in six months. Media cannot buy it back.', 15)
+table(s, 0.5, 1.9, 6.6, 1.9, [
+    ['Search Console (Mexico)', 'January', 'June', 'Change'],
+    ['Organic clicks', '4,811', '1,210', '-75%'],
+    ['Demo account page (position)', '12', '23', 'slid'],
+    ['Trading academy page (position)', '14', '24', 'slid'],
+    ['Homepage, brand (position)', '—', '2.5', 'improved'],
+], col_widths=[3.0, 1.2, 1.2, 1.2])
+card(s, 0.5, 4.1, 6.6, 2.8, 'WHAT IS DRIVING IT', [
+    'Dated news and analysis content lost 87-99% of its clicks as it '
+    'aged out, with nothing published to replace it.',
+    'Mid-funnel commercial pages slid in rank while brand rankings '
+    'improved, and the decline spans every country the Spanish site '
+    'serves. This is a site-level content issue, not a tracking '
+    'artifact: site analytics confirm the same decline independently.',
+], RED)
+card(s, 7.5, 1.9, 5.3, 5.0, 'WHAT WE RECOMMEND', [
+    'Open a dedicated SEO workstream for the Spanish site.',
+    'Restore the news and analysis publishing cadence and refresh the '
+    'decayed assets that carried the traffic.',
+    'Run a mid-funnel rank-recovery plan for the demo, academy, and '
+    'platform pages, measured on organic clicks and positions.',
+    'This is the structural fix for blended submissions running under '
+    'plan: every month the organic base erodes, paid media has to work '
+    'harder just to hold total traffic flat.',
+], GREEN)
+
+# ---- Slide 16: Cross-Channel Priorities + Next Steps ------------------------
 s = prs.slides.add_slide(BLANK)
 header(s, 'CROSS-CHANNEL PRIORITIES + NEXT STEPS',
        'Concentrate in-market. Finish the measurement. Start the SEO '
-       'workstream.', 12)
+       'workstream.', 16)
 card(s, 0.5, 1.9, 4.0, 4.4, 'PRIORITY', [
     'Complete the Mexico-only search restriction, with roughly $12.6K '
     'per month at stake.',

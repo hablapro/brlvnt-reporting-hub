@@ -12,7 +12,7 @@ Repo: `hablapro/brlvnt-reporting-hub`. Drive parent: **FX Report** (`1cPVbjlPnwu
 | Report | Sub-client | Month | Type | Link |
 |---|---|---|---|---|
 | GGMI (LATAM) — Performance Report | GGMI | June 2026 | Google Sheet | https://docs.google.com/spreadsheets/d/1P3SIZEXgGsG289lz-33MOefgLRepgdkslaQN4sE09xE/edit |
-| GGMI (LATAM) — Performance Review (working draft, pending Renzo edit/send) | GGMI | June 2026 | Google Slides | https://docs.google.com/presentation/d/1iNeaobJVJLF_Dr3NU2W6Wutsvh55xqJhRFGOL-P_mug/edit |
+| GGMI (LATAM) — Performance Review + Q3 FY2026 QBR (working draft, pending Renzo edit/send) | GGMI | June 2026 + Q3 | Google Slides | https://docs.google.com/presentation/d/1iNeaobJVJLF_Dr3NU2W6Wutsvh55xqJhRFGOL-P_mug/edit |
 | GGMI (LATAM) — Performance Review (PPTX source of the above) | GGMI | June 2026 | Deck (PPTX) | https://drive.google.com/file/d/1yxhTuN7OxLffoAWQz9mZcT67puzJPxWu/view |
 | GGMI (LATAM) — Performance Report | GGMI | May 2026 | Google Sheet | https://docs.google.com/spreadsheets/d/1XsQTZ-9qxyRaLPk44GHUrgQh_WXZAu85AslcguL1vME/edit |
 | GGMI (LATAM) — Performance Review **(FINAL, client-sent)** | GGMI | May 2026 | Google Slides | https://docs.google.com/presentation/d/1npxoxCCbytXSRAjgliG7Ybv8UUS_OQwsUd4uzAaJd4o/edit |
