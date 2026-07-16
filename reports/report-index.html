@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Forex Reporting — Master Index</title>
+<style>
+  :root{
+    --navy:#152334; --navy2:#22364a; --blue:#3b5998; --blue-d:#2c4474; --blue-soft:#eaf0fb;
+    --ink:#1f2933; --muted:#6b7785; --line:#e4e9ef; --bg:#eef1f5; --card:#fff;
+    --green:#1d7a54; --green-soft:#e6f4ee; --amber:#9a6700; --amber-soft:#fff6e0;
+    --red:#a3303a; --purple:#5b3fa0; --purple-soft:#f0eafb; --gray:#5b6673; --gray-soft:#eef1f4;
+    --shadow:0 6px 22px rgba(21,35,52,.10);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  a{color:var(--blue);text-decoration:none}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+
+  /* Header */
+  header{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;padding:26px 0 22px}
+  h1{margin:0 0 5px;font-size:24px;letter-spacing:.2px}
+  .sub{opacity:.85;font-size:13.5px;margin:0}
+  .meta{margin-top:12px;font-size:12px;opacity:.82;display:flex;gap:16px;flex-wrap:wrap}
+  .meta code{background:rgba(255,255,255,.15);padding:1px 6px;border-radius:4px;color:#fff;font-size:11.5px}
+
+  /* Sticky toolbar */
+  .toolbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);box-shadow:0 2px 10px rgba(21,35,52,.05)}
+  .toolbar .wrap{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}
+  .search{position:relative;flex:1;min-width:220px}
+  .search svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:var(--muted)}
+  .search input{width:100%;padding:10px 36px 10px 36px;border:1px solid var(--line);border-radius:9px;
+    font-size:14px;background:#fff;outline:none;transition:border-color .15s,box-shadow .15s}
+  .search input:focus{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-soft)}
+  .search .clear{position:absolute;right:8px;top:50%;transform:translateY(-50%);border:none;background:none;
+    color:var(--muted);cursor:pointer;font-size:18px;line-height:1;padding:4px;display:none}
+  .chips{display:flex;gap:6px;flex-wrap:wrap}
+  .chip{border:1px solid var(--line);background:#fff;color:var(--gray);font-size:12.5px;font-weight:600;
+    padding:7px 13px;border-radius:20px;cursor:pointer;transition:all .12s}
+  .chip:hover{border-color:var(--blue);color:var(--blue)}
+  .chip.on{background:var(--navy);border-color:var(--navy);color:#fff}
+  .nav{display:flex;gap:4px;flex-wrap:wrap;border-top:1px solid var(--line);padding:8px 0 9px}
+  .nav a{font-size:12.5px;font-weight:600;color:var(--gray);padding:6px 11px;border-radius:7px;transition:all .12s}
+  .nav a:hover{background:var(--gray-soft);color:var(--navy)}
+  .nav a.active{background:var(--blue-soft);color:var(--blue-d)}
+
+  main{padding:14px 0 70px}
+  section{scroll-margin-top:118px}
+  h2{font-size:13.5px;text-transform:uppercase;letter-spacing:.9px;color:var(--gray);
+    margin:30px 0 6px;display:flex;align-items:center;gap:9px}
+  h2 .ct{font-size:11px;background:var(--gray-soft);color:var(--gray);padding:1px 8px;border-radius:20px;font-weight:600}
+  .note{font-size:12.5px;color:var(--muted);margin:0 0 14px}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:14px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:15px 16px 13px;
+    display:flex;flex-direction:column;transition:box-shadow .15s,transform .15s,border-color .15s}
+  .card:hover{box-shadow:var(--shadow);transform:translateY(-1px);border-color:#d4dbe4}
+  .card .top{display:flex;align-items:flex-start;gap:10px;margin-bottom:9px}
+  .ico{flex:none;width:34px;height:34px;border-radius:8px;display:grid;place-items:center}
+  .ico svg{width:18px;height:18px}
+  .ico.sheet{background:var(--green-soft);color:var(--green)}
+  .ico.deck{background:#fdeee6;color:#b5531e}
+  .ico.doc{background:var(--blue-soft);color:var(--blue-d)}
+  .ico.tracker{background:var(--purple-soft);color:var(--purple)}
+  .ico.folder{background:var(--gray-soft);color:var(--gray)}
+  .card h3{margin:0;font-size:15px;line-height:1.3}
+  .card .type{font-size:12px;color:var(--muted);margin:2px 0 0}
+  .badges{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:11px}
+  .badge{font-size:10.5px;font-weight:700;padding:2px 9px;border-radius:20px;letter-spacing:.3px}
+  .b-ggmi{background:var(--blue-soft);color:var(--blue-d)}
+  .b-gcg{background:var(--green-soft);color:var(--green)}
+  .b-both{background:var(--gray-soft);color:var(--gray)}
+  .b-month{background:var(--purple-soft);color:var(--purple)}
+  .actions{margin-top:auto;display:flex;gap:8px;align-items:center}
+  .btn{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;
+    padding:7px 13px;border-radius:8px;cursor:pointer;border:1px solid transparent;transition:all .12s}
+  .btn svg{width:14px;height:14px}
+  .btn-open{background:var(--blue);color:#fff}
+  .btn-open:hover{background:var(--blue-d)}
+  .btn-copy{background:#fff;color:var(--gray);border-color:var(--line)}
+  .btn-copy:hover{border-color:var(--blue);color:var(--blue)}
+  .btn-copy.copied{background:var(--green-soft);border-color:var(--green);color:var(--green)}
+
+  table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);
+    border-radius:11px;overflow:hidden;font-size:13.5px}
+  th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:#fafbfc;color:var(--gray);font-size:11px;text-transform:uppercase;letter-spacing:.6px}
+  tr:last-child td{border-bottom:none}
+  .path{font-family:"SF Mono",ui-monospace,Menlo,Consolas,monospace;font-size:12.5px;color:var(--navy2);
+    background:#f6f8fa;padding:1px 6px;border-radius:5px}
+
+  .flags{display:grid;gap:10px}
+  .flag{border:1px solid var(--line);border-left:4px solid var(--gray);background:var(--card);
+    border-radius:9px;padding:11px 15px;font-size:13.5px}
+  .flag.warn{border-left-color:var(--amber);background:var(--amber-soft)}
+  .flag.info{border-left-color:var(--blue)}
+  .flag.ok{border-left-color:var(--green);background:var(--green-soft)}
+  .flag b{display:block;margin-bottom:2px}
+
+  .empty{display:none;font-size:13.5px;color:var(--muted);background:var(--card);border:1px dashed var(--line);
+    border-radius:10px;padding:18px;text-align:center}
+  .hidden{display:none!important}
+  footer{margin-top:36px;font-size:12px;color:var(--muted);text-align:center}
+  .toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--navy);
+    color:#fff;font-size:13px;padding:10px 18px;border-radius:9px;box-shadow:var(--shadow);opacity:0;
+    transition:opacity .2s,transform .2s;pointer-events:none;z-index:100}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>Forex Reporting — Master Index</h1>
+    <p class="sub">FOREX.com (StoneX) · sub-clients GCG (US Hispanic) and GGMI (LATAM / Mexico)</p>
+    <div class="meta">
+      <span>Last updated: <strong>July 16, 2026</strong></span>
+      <span>Repo: <code>hablapro/brlvnt-reporting-hub</code></span>
+      <span>Drive parent: FX Report <code>1cPVbjlPnw…</code></span>
+    </div>
+  </div>
+</header>
+
+<div class="toolbar">
+  <div class="wrap">
+    <div class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <input id="q" type="search" placeholder="Search reports, channels, IDs, paths…  (try “GGMI deck” or “April”)" autocomplete="off">
+      <button class="clear" id="clear" title="Clear">&times;</button>
+    </div>
+    <div class="chips" id="chips">
+      <span class="chip on" data-region="all">All</span>
+      <span class="chip" data-region="ggmi">GGMI</span>
+      <span class="chip" data-region="gcg">GCG</span>
+      <span class="chip" data-region="both">Cross / Both</span>
+    </div>
+  </div>
+  <div class="wrap">
+    <nav class="nav" id="nav">
+      <a href="#deliverables">Deliverables</a>
+      <a href="#internal">Cross-Month &amp; Internal</a>
+      <a href="#repo">Repo Files</a>
+      <a href="#refs">References</a>
+      <a href="#status">Status</a>
+    </nav>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <section id="deliverables">
+    <h2>Client-Facing Deliverables <span class="ct" id="ct-deliverables"></span></h2>
+    <div class="grid" id="grid-deliverables"></div>
+    <div class="empty" id="empty-deliverables">No deliverables match your search.</div>
+  </section>
+
+  <section id="internal">
+    <h2>Cross-Month &amp; Internal <span class="ct" id="ct-internal"></span></h2>
+    <div class="grid" id="grid-internal"></div>
+    <div class="empty" id="empty-internal">No internal items match your search.</div>
+  </section>
+
+  <section id="repo">
+    <h2>Supporting Data, QA &amp; Modeled Tables (Repo)</h2>
+    <p class="note">Local files in the repo. Paths are relative to the project root.</p>
+    <table>
+      <thead><tr><th style="width:46%">Path</th><th>Contents</th></tr></thead>
+      <tbody id="tb-repo">
+        <tr data-row><td><span class="path">reports/forex/2026-05-BUILD-STATUS.md</span></td><td>May build status, correction log, handoff</td></tr>
+        <tr data-row><td><span class="path">reports/forex/ggmi/2026-05/data/</span></td><td>GGMI channel data (bing, meta, azerion, quantcast) + vendor XLSXs</td></tr>
+        <tr data-row><td><span class="path">reports/forex/ggmi/2026-05/qa/qa-and-model.md</span></td><td>GGMI QA + modeled KPI tables</td></tr>
+        <tr data-row><td><span class="path">reports/forex/ggmi/2026-05/qa/bing-conversion-tracking-investigation.md</span></td><td>Bing / Meta conversion-tracking resolution note</td></tr>
+        <tr data-row><td><span class="path">reports/forex/gcg/2026-05/data/</span></td><td>GCG channel data + vendor XLSXs</td></tr>
+        <tr data-row><td><span class="path">reports/forex/gcg/2026-05/qa/qa-and-model.md</span></td><td>GCG QA + modeled KPI tables</td></tr>
+        <tr data-row><td><span class="path">report-client-decks/</span></td><td>Local copies of all decks (03 March, 04 April, 05 May) + .bak backups</td></tr>
+        <tr data-row><td><span class="path">data-dump/</span></td><td>Raw April Azerion vendor XLSXs</td></tr>
+        <tr data-row><td><span class="path">Forecast/</span></td><td>FOREX.com native advertising forecast</td></tr>
+        <tr data-row><td><span class="path">reports/REPORT-INDEX.md</span></td><td>Markdown source of this index</td></tr>
+      </tbody>
+    </table>
+    <p class="note" style="margin-top:12px">Generator scripts (build.py, content.py, deck.py, spend_tracker.py, billable.py) lived in <span class="path">/tmp</span> and did not survive reboot. Sheets and decks are now maintained directly.</p>
+  </section>
+
+  <section id="refs">
+    <h2>Source-of-Truth References</h2>
+    <table>
+      <thead><tr><th style="width:30%">System</th><th>Identifier</th></tr></thead>
+      <tbody id="tb-refs">
+        <tr data-row><td>SA360 — GGMI (LATAM)</td><td><span class="path">customerId 5372690580 · loginCustomerId 9697709980</span> (Bing campaign 627590412)</td></tr>
+        <tr data-row><td>SA360 — GCG (US ES)</td><td><span class="path">customerId 4781995752 · loginCustomerId 5700106280</span></td></tr>
+        <tr data-row><td>Quantcast</td><td><span class="path">account 9969644</span></td></tr>
+        <tr data-row><td>Bing Ads (GGMI)</td><td><span class="path">account 31003116</span></td></tr>
+        <tr data-row><td>Meta Ads</td><td><span class="path">act_1699453997689551</span></td></tr>
+        <tr data-row><td>GA4 — GGMI / LATAM</td><td><span class="path">property 508849216</span> (Forex LAT)</td></tr>
+        <tr data-row><td>GA4 — GCG / US</td><td><span class="path">property 325353267</span> (Forex US)</td></tr>
+        <tr data-row><td>GA4 — Rest of World</td><td><span class="path">property 326422211</span> (QA: paid traffic not counted here)</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="status">
+    <h2>Status Flags</h2>
+    <div class="flags">
+      <div class="flag warn"><b>GGMI Bing geo — pre-fix data</b>May data reflects the old setup (campaign delivered ~68% Venezuela). Targeting set to presence-only + Venezuela/Brazil excluded on June 3. June is the clean read; re-pull reminder set for June 10.</div>
+      <div class="flag info"><b>Meta KPI — held pending verification</b>StartApplication vs SubmittedApplication. Reported figures left unchanged (GCG 109, GGMI 4, pixel rollup, mostly application starts).</div>
+      <div class="flag info"><b>Azerion — tiered tech fee</b>Mar/Apr 5.5%, May 7.5%. Client deliverables show fee-inclusive Azerion. Internal raw to fee to billable breakdown lives on the Spend Tracker's Billable Spend tab.</div>
+      <div class="flag ok"><b>Quantcast — May spend reconciled (June 8)</b>GGMI $26,890 and GCG $22,359 (client-confirmed campaign totals). CPM/CPC/CPA recomputed; new May totals GGMI $78,790, GCG $76,275. All Sheets, decks, tracker, and billable tab updated.</div>
+      <div class="flag warn"><b>Repo state — uncommitted</b>All of the above repo files, including this index, are currently uncommitted to git.</div>
+    </div>
+  </section>
+
+  <footer>Berelvant · Internal reporting registry · Generated from REPORT-INDEX.md</footer>
+</main>
+
+<div class="toast" id="toast">Link copied</div>
+
+<script>
+const ICONS = {
+  sheet:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>',
+  deck:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="13" rx="1.5"/><path d="M12 17v3M8 20h8"/></svg>',
+  doc:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>',
+  tracker:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l3-4 3 3 4-6"/></svg>',
+  folder:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>'
+};
+const OPEN_ICO = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3h7v7M21 3l-9 9M19 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h6"/></svg>';
+const COPY_ICO = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>';
+const REGION_LABEL = {ggmi:'GGMI · LATAM', gcg:'GCG · US ES', both:'Cross / Both'};
+
+const DELIVERABLES = [
+  {t:'GGMI Performance Report', kind:'sheet', region:'ggmi', month:'June 2026', desc:'Google Sheet · 4 tabs (Summary, Performance, Diagnostics, Data Notes) · Azerion raw basis, Meta conversions held', url:'https://docs.google.com/spreadsheets/d/1P3SIZEXgGsG289lz-33MOefgLRepgdkslaQN4sE09xE/edit', cta:'Open Sheet'},
+  {t:'GGMI Performance Review (working draft, pending Renzo edit/send)', kind:'deck', region:'ggmi', month:'June 2026', desc:'Google Slides · 12 slides mirroring the final May structure + Site Traffic (GA4) slide', url:'https://docs.google.com/presentation/d/1iNeaobJVJLF_Dr3NU2W6Wutsvh55xqJhRFGOL-P_mug/edit', cta:'Open Deck'},
+  {t:'June deliverables folder (06. June-data)', kind:'folder', region:'both', month:'June 2026', desc:'Drive folder · June reports & decks (GGMI done; GCG pending)', url:'https://drive.google.com/drive/folders/1x1jeGRsh0AgYsB8hVLaW1O1FGPf6OF2Y', cta:'Open Folder'},
+  {t:'GGMI Performance Report', kind:'sheet', region:'ggmi', month:'May 2026', desc:'Google Sheet · 4 tabs (Summary, Performance, Diagnostics, Data Notes)', url:'https://docs.google.com/spreadsheets/d/1XsQTZ-9qxyRaLPk44GHUrgQh_WXZAu85AslcguL1vME/edit', cta:'Open Sheet'},
+  {t:'GGMI Performance Review (FINAL, client-sent)', kind:'deck', region:'ggmi', month:'May 2026', desc:'Google Slides · final client version (PPTX working draft superseded)', url:'https://docs.google.com/presentation/d/1npxoxCCbytXSRAjgliG7Ybv8UUS_OQwsUd4uzAaJd4o/edit', cta:'Open Deck'},
+  {t:'GCG Performance Report', kind:'sheet', region:'gcg', month:'May 2026', desc:'Google Sheet · 4 tabs (Summary, Performance, Diagnostics, Data Notes)', url:'https://docs.google.com/spreadsheets/d/1CTY9mk2Y9qtfR4cOT5uI8It5GOhfgIEgZmuhsUvLmJM/edit', cta:'Open Sheet'},
+  {t:'GCG Performance Review (FINAL, client-sent)', kind:'deck', region:'gcg', month:'May 2026', desc:'Google Slides · final client version (PPTX working draft superseded)', url:'https://docs.google.com/presentation/d/1Dj7Gh8KJxnYH_8jPskpfSS9iEsDUjw7F1KW0iRjmXys/edit', cta:'Open Deck'},
+  {t:'GGMI Performance Review', kind:'deck', region:'ggmi', month:'April 2026', desc:'Deck (PPTX) · corrected, fee-inclusive', url:'https://drive.google.com/file/d/1lpbBhQEJOP2jCdlXcInLVm9JvspqEpdh/view', cta:'Open Deck'},
+  {t:'GCG Performance Review', kind:'deck', region:'gcg', month:'April 2026', desc:'Deck (PPTX) · corrected, fee-inclusive', url:'https://drive.google.com/file/d/1cRQ-uQn2AQiM4lAUxQYr3SxYthFFk7-S/view', cta:'Open Deck'},
+  {t:'May deliverables folder', kind:'folder', region:'both', month:'May 2026', desc:'Drive folder · all May reports & decks', url:'https://drive.google.com/drive/folders/1hWwGEgyU6HiybjSlylJIQrmJD02DK4gR', cta:'Open Folder'},
+  {t:'Corrected April decks', kind:'folder', region:'both', month:'April 2026', desc:'Drive folder · restated fee-inclusive decks', url:'https://drive.google.com/drive/folders/1B3KlLKxvaltvDw87wNP_KH8499hP9S1c', cta:'Open Folder'}
+];
+const INTERNAL = [
+  {t:'Reported Spend Tracker', kind:'tracker', region:'both', month:'Mar–May', desc:'Google Sheet · includes Billable Spend (internal) tab · Grand total $155,065', url:'https://docs.google.com/spreadsheets/d/1DmsIFkCketcWd3VXiXa7Nvz58DowS_SdWMyktezCzQg/edit', cta:'Open Tracker'},
+  {t:'Conversion Tracking Review', kind:'doc', region:'both', month:'Internal', desc:'Google Doc · Bing + Meta tracking resolution note', url:'https://docs.google.com/document/d/1Q0d76W37L2bL9pA7NJURT_4PK0QOnOh18OnQ5pNLQ6M/edit', cta:'Open Doc'}
+];
+
+function cardHTML(it){
+  const search = (it.t+' '+it.desc+' '+it.month+' '+REGION_LABEL[it.region]+' '+it.kind).toLowerCase();
+  return `<div class="card" data-card data-region="${it.region}" data-search="${search.replace(/"/g,'')}">
+    <div class="top">
+      <div class="ico ${it.kind}">${ICONS[it.kind]}</div>
+      <div><h3>${it.t}</h3><p class="type">${it.desc}</p></div>
+    </div>
+    <div class="badges">
+      <span class="badge b-${it.region}">${REGION_LABEL[it.region]}</span>
+      <span class="badge b-month">${it.month}</span>
+    </div>
+    <div class="actions">
+      <a class="btn btn-open" href="${it.url}" target="_blank" rel="noopener">${OPEN_ICO}${it.cta}</a>
+      <button class="btn btn-copy" data-url="${it.url}">${COPY_ICO}<span class="lbl">Copy link</span></button>
+    </div>
+  </div>`;
+}
+
+document.getElementById('grid-deliverables').innerHTML = DELIVERABLES.map(cardHTML).join('');
+document.getElementById('grid-internal').innerHTML = INTERNAL.map(cardHTML).join('');
+
+/* Copy to clipboard with file:// fallback */
+function copyText(text, btn){
+  const lbl = btn.querySelector('.lbl'); const orig = lbl ? lbl.textContent : '';
+  const done = ()=>{ if(lbl) lbl.textContent='Copied'; btn.classList.add('copied'); showToast();
+    setTimeout(()=>{ if(lbl) lbl.textContent=orig; btn.classList.remove('copied'); }, 1600); };
+  const fb = ()=>{ const ta=document.createElement('textarea'); ta.value=text; ta.style.position='fixed';
+    ta.style.top='-1000px'; document.body.appendChild(ta); ta.focus(); ta.select();
+    try{ document.execCommand('copy'); }catch(e){} document.body.removeChild(ta); done(); };
+  if(navigator.clipboard && window.isSecureContext){ navigator.clipboard.writeText(text).then(done).catch(fb); }
+  else { fb(); }
+}
+let toastTimer;
+function showToast(){ const t=document.getElementById('toast'); t.classList.add('show');
+  clearTimeout(toastTimer); toastTimer=setTimeout(()=>t.classList.remove('show'),1600); }
+document.addEventListener('click', e=>{
+  const b = e.target.closest('.btn-copy'); if(b) copyText(b.dataset.url, b);
+});
+
+/* Search + region filter */
+const state = {q:'', region:'all'};
+const q = document.getElementById('q'), clearBtn = document.getElementById('clear');
+function apply(){
+  clearBtn.style.display = state.q ? 'block' : 'none';
+  // cards
+  ['deliverables','internal'].forEach(sec=>{
+    const cards = document.querySelectorAll('#grid-'+sec+' [data-card]');
+    let vis=0;
+    cards.forEach(c=>{
+      const okQ = !state.q || c.dataset.search.includes(state.q);
+      const okR = state.region==='all' || c.dataset.region===state.region
+                  || (state.region!=='both' && c.dataset.region==='both');
+      const show = okQ && okR; c.classList.toggle('hidden', !show); if(show) vis++;
+    });
+    document.getElementById('ct-'+sec).textContent = vis;
+    document.getElementById('empty-'+sec).style.display = vis ? 'none' : 'block';
+  });
+  // table rows (search only)
+  document.querySelectorAll('tr[data-row]').forEach(r=>{
+    r.classList.toggle('hidden', state.q && !r.textContent.toLowerCase().includes(state.q));
+  });
+}
+q.addEventListener('input', ()=>{ state.q=q.value.trim().toLowerCase(); apply(); });
+clearBtn.addEventListener('click', ()=>{ q.value=''; state.q=''; q.focus(); apply(); });
+document.getElementById('chips').addEventListener('click', e=>{
+  const c=e.target.closest('.chip'); if(!c) return;
+  document.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));
+  c.classList.add('on'); state.region=c.dataset.region; apply();
+});
+apply();
+
+/* Scroll-spy nav highlight */
+const navLinks = [...document.querySelectorAll('#nav a')];
+const spy = new IntersectionObserver(entries=>{
+  entries.forEach(en=>{ if(en.isIntersecting){
+    navLinks.forEach(a=>a.classList.toggle('active', a.getAttribute('href')==='#'+en.target.id));
+  }});
+}, {rootMargin:'-120px 0px -70% 0px'});
+document.querySelectorAll('main section').forEach(s=>spy.observe(s));
+</script>
+</body>
+</html>
