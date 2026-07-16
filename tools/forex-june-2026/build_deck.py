@@ -17,6 +17,9 @@ from pptx import Presentation
 from pptx.util import Inches, Pt, Emu
 from pptx.dml.color import RGBColor
 from pptx.enum.text import PP_ALIGN, MSO_ANCHOR
+from pptx.chart.data import CategoryChartData
+from pptx.enum.chart import (XL_CHART_TYPE, XL_LEGEND_POSITION,
+                             XL_MARKER_STYLE, XL_LABEL_POSITION)
 
 NAVY = RGBColor(0x1A, 0x2A, 0x3A)
 BLUE = RGBColor(0x3B, 0x59, 0x98)
@@ -33,8 +36,12 @@ LOGO = os.path.join(HERE, 'assets', 'logo_1_fd6b9b.png')
 OUT = os.path.join(HERE, '..', '..', 'report-client-decks',
                    '06. GGMI_LATAM_June_2026_Performance_Review.pptx')
 BREADCRUMB = 'FOREX.com  |  GGMI (LATAM)  ·  June 2026'
-FOOTER_LEFT = 'Monthly Performance Review'
-N_SLIDES = 16
+FOOTER_LEFT = 'Performance Review'
+N_SLIDES = 17
+CHART_BLUE = RGBColor(0x3B, 0x59, 0x98)
+CHART_GREEN = RGBColor(0x27, 0xAE, 0x60)
+GRID = RGBColor(0xD9, 0xD9, 0xD9)
+MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']
 
 prs = Presentation()
 prs.slide_width = Inches(13.333)
@@ -107,6 +114,53 @@ def card(slide, x, y, w, h, title, body_paras, accent=BLUE):
          False, BODY)
 
 
+def line_chart(slide, x, y, w, h, series, colors, label_series=None):
+    """series: list of (name, values); label_series: index to direct-label."""
+    cd = CategoryChartData()
+    cd.categories = MONTHS
+    for name, vals in series:
+        cd.add_series(name, vals)
+    gfx = slide.shapes.add_chart(XL_CHART_TYPE.LINE_MARKERS, Inches(x),
+                                 Inches(y), Inches(w), Inches(h), cd)
+    ch = gfx.chart
+    ch.has_title = False
+    ch.font.size = Pt(8)
+    ch.font.name = 'Arial'
+    ch.font.color.rgb = BODY
+    ch.has_legend = len(series) > 1
+    if ch.has_legend:
+        ch.legend.position = XL_LEGEND_POSITION.BOTTOM
+        ch.legend.include_in_layout = False
+        ch.legend.font.size = Pt(8)
+    val_ax = ch.value_axis
+    val_ax.has_major_gridlines = True
+    val_ax.major_gridlines.format.line.color.rgb = GRID
+    val_ax.major_gridlines.format.line.width = Pt(0.5)
+    val_ax.tick_labels.number_format = '#,##0'
+    val_ax.tick_labels.number_format_is_linked = False
+    val_ax.format.line.fill.background()
+    cat_ax = ch.category_axis
+    cat_ax.has_major_gridlines = False
+    cat_ax.format.line.color.rgb = GRID
+    for i, s in enumerate(ch.series):
+        s.smooth = False
+        s.format.line.color.rgb = colors[i]
+        s.format.line.width = Pt(2.25)
+        s.marker.style = XL_MARKER_STYLE.CIRCLE
+        s.marker.size = 6
+        s.marker.format.fill.solid()
+        s.marker.format.fill.fore_color.rgb = colors[i]
+        s.marker.format.line.color.rgb = WHITE
+        if label_series is not None and i == label_series:
+            s.data_labels.show_value = True
+            s.data_labels.number_format = '#,##0'
+            s.data_labels.number_format_is_linked = False
+            s.data_labels.font.size = Pt(7.5)
+            s.data_labels.font.color.rgb = BODY
+            s.data_labels.position = XL_LABEL_POSITION.ABOVE
+    return gfx
+
+
 def table(slide, x, y, w, h, rows, col_widths=None, bold_last=False):
     n_r, n_c = len(rows), len(rows[0])
     gfx = slide.shapes.add_table(n_r, n_c, Inches(x), Inches(y),
@@ -148,10 +202,10 @@ rect(s, 0, 6.4, 13.333, 1.1, NAVY)
 rect(s, 0.5, 2.2, 0.1, 2.5, BLUE)
 if os.path.exists(LOGO):
     s.shapes.add_picture(LOGO, Inches(0.5), Inches(0.5), Inches(2.5), Inches(0.71))
-text(s, 0.9, 2.2, 11.0, 0.4, 'MONTHLY PERFORMANCE REVIEW', 14, True, BLUE)
+text(s, 0.9, 2.2, 11.0, 0.4, 'QUARTERLY BUSINESS REVIEW', 14, True, BLUE)
 text(s, 0.9, 2.7, 12.0, 1.0, 'GGMI (LATAM) — Paid Media', 36, True, NAVY)
 text(s, 0.9, 3.8, 12.0, 0.6,
-     'June 2026 Performance Review  ·  Q3 FY2026 in Review', 22, False, NAVY)
+     'Q3 FY2026 Business Review  ·  June 2026 Performance', 22, False, NAVY)
 text(s, 0.9, 4.5, 12.0, 0.4, 'Bing Ads · Meta · Azerion · Quantcast',
      12, False, SUB)
 text(s, 0.9, 6.65, 12.0, 0.4,
@@ -162,7 +216,7 @@ text(s, 0.9, 6.65, 12.0, 0.4,
 s = prs.slides.add_slide(BLANK)
 header(s, 'EXECUTIVE SUMMARY',
        'The biggest media month of 2026. Efficiency held where we can '
-       'measure it.', 2)
+       'measure it.', 8)
 table(s, 0.5, 1.9, 7.4, 2.0, [
     ['Channel', 'Spend', 'Impr', 'Clicks', 'Conv', 'CPA'],
     ['Bing Ads', '$25,659', '466,582', '21,480', '50', '$513'],
@@ -199,7 +253,7 @@ card(s, 8.1, 4.6, 4.7, 2.4, 'JUNE PRIORITY', [
 # ---- Slide 3: Cont' Executive Summary --------------------------------------
 s = prs.slides.add_slide(BLANK)
 header(s, "CONT' EXECUTIVE SUMMARY",
-       'Three findings shape the July plan.', 3)
+       'Three findings shape the July plan.', 9)
 card(s, 0.5, 1.9, 6.1, 5.1, 'WHAT IS STILL FORMING', [
     'The June traffic recovery was bought by media. Organic search has '
     'fallen 75% since January, confirmed independently in Search Console, '
@@ -229,7 +283,7 @@ card(s, 6.9, 1.9, 5.9, 5.1, 'WHAT WE RECOMMEND', [
 s = prs.slides.add_slide(BLANK)
 header(s, 'BING ADS  ·  PERFORMANCE',
        '50 submitted applications at $513. Efficiency held through a '
-       '61% scale-up.', 4)
+       '61% scale-up.', 10)
 tile(s, 0.5, 1.9, 'SPEND', '$25,659', '+61% MoM')
 tile(s, 2.5, 1.9, 'IMPRESSIONS', '466,582', '3 campaigns')
 tile(s, 4.5, 1.9, 'CLICKS', '21,480', 'CTR 4.60%')
@@ -259,7 +313,7 @@ text(s, 0.5, 5.25, 7.6, 1.6, [
 # ---- Slide 5: Bing Read & Recommendations ----------------------------------
 s = prs.slides.add_slide(BLANK)
 header(s, 'BING ADS  ·  READ & RECOMMENDATIONS',
-       'Concentrate every search dollar in Mexico.', 5)
+       'Concentrate every search dollar in Mexico.', 11)
 card(s, 0.5, 1.9, 6.1, 5.1, 'WHAT THE DATA SHOWS', [
     'Search remains the most efficient measured converter in the account, '
     'and it held that efficiency while scaling 61%.',
@@ -283,7 +337,7 @@ card(s, 6.9, 1.9, 5.9, 5.1, 'WHAT WE RECOMMEND', [
 # ---- Slide 6: Meta Performance ---------------------------------------------
 s = prs.slides.add_slide(BLANK)
 header(s, 'META  ·  PERFORMANCE',
-       'Reach scaled 4x at low cost. Click quality is the June question.', 6)
+       'Reach scaled 4x at low cost. Click quality is the June question.', 12)
 tile(s, 0.5, 1.9, 'SPEND', '$25,924', '+291% MoM')
 tile(s, 2.5, 1.9, 'IMPRESSIONS', '19.78M', '100% Mexico')
 tile(s, 4.5, 1.9, 'LINK CLICKS', '407,136', 'CTR 2.06%')
@@ -310,7 +364,7 @@ card(s, 6.9, 3.35, 5.9, 3.55, 'WHY CONVERSIONS ARE HELD', [
 # ---- Slide 7: Meta Read & Recommendations ----------------------------------
 s = prs.slides.add_slide(BLANK)
 header(s, 'META  ·  READ & RECOMMENDATIONS',
-       'Audit the placements before judging the channel.', 7)
+       'Audit the placements before judging the channel.', 13)
 card(s, 0.5, 1.9, 6.1, 5.1, 'WHAT THE DATA SHOWS', [
     'June buying skewed to low-cost in-app inventory, and 63% of spend '
     'served users 55 and older in a market where the target skews '
@@ -334,7 +388,7 @@ card(s, 6.9, 1.9, 5.9, 5.1, 'WHAT WE RECOMMEND', [
 s = prs.slides.add_slide(BLANK)
 header(s, 'AZERION  ·  PERFORMANCE',
        '42 submitted applications. Efficiency roughly held at higher '
-       'volume.', 8)
+       'volume.', 14)
 tile(s, 0.5, 1.9, 'SPEND', '$35,026', '+20% MoM')
 tile(s, 2.5, 1.9, 'IMPRESSIONS', '7.68M', '2.18M devices')
 tile(s, 4.5, 1.9, 'CLICKS', '9,910', '+57% MoM')
@@ -365,7 +419,7 @@ card(s, 6.8, 3.35, 6.0, 3.55, 'HIGHLIGHTS', [
 # ---- Slide 9: Azerion Read & Recommendations -------------------------------
 s = prs.slides.add_slide(BLANK)
 header(s, 'AZERION  ·  READ & RECOMMENDATIONS',
-       'Hold the pace. Confirm the delivery detail.', 9)
+       'Hold the pace. Confirm the delivery detail.', 15)
 card(s, 0.5, 1.9, 6.1, 5.1, 'WHAT THE DATA SHOWS', [
     'Second consecutive month of scaled application volume, with '
     'efficiency holding within 6% while budget grew 20%.',
@@ -387,7 +441,7 @@ card(s, 6.9, 1.9, 5.9, 5.1, 'WHAT WE RECOMMEND', [
 s = prs.slides.add_slide(BLANK)
 header(s, 'QUANTCAST  ·  PERFORMANCE & READ',
        'A deliberate reach month. Cheap delivery, with a quality bill to '
-       'manage.', 10)
+       'manage.', 16)
 tile(s, 0.5, 1.9, 'SPEND', '$33,784', '+26% MoM')
 tile(s, 2.5, 1.9, 'IMPRESSIONS', '41.96M', '+155% MoM')
 tile(s, 4.5, 1.9, 'CPM', '$0.81', 'May: $1.63')
@@ -417,7 +471,7 @@ card(s, 7.0, 3.35, 5.8, 3.55, 'READ', [
 # ---- Slide 11: Q3 in Review — Spend ----------------------------------------
 s = prs.slides.add_slide(BLANK)
 header(s, 'Q3 FY2026 IN REVIEW  ·  SPEND',
-       'The program scaled every month of the quarter.', 11)
+       'The program scaled every month of the quarter.', 3)
 table(s, 0.5, 1.9, 6.6, 2.4, [
     ['Channel', 'Apr', 'May', 'Jun', 'Q3'],
     ['Bing Ads', '$15,289', '$15,972', '$25,659', '$56,920'],
@@ -444,7 +498,7 @@ card(s, 7.5, 1.9, 5.3, 5.0, 'READ', [
 s = prs.slides.add_slide(BLANK)
 header(s, 'Q3 FY2026 IN REVIEW  ·  APPLICATIONS',
        'Application volume scaled with spend. Blended cost per '
-       'application halved.', 12)
+       'application halved.', 4)
 table(s, 0.5, 1.9, 6.6, 2.7, [
     ['Channel', 'Apr', 'May', 'Jun', 'Q3'],
     ['Bing Ads', '—', '33', '50', '83'],
@@ -473,7 +527,7 @@ card(s, 7.5, 1.9, 5.3, 5.0, 'READ', [
 # ---- Slide 13: Q3 Blended Outcomes vs Plan ----------------------------------
 s = prs.slides.add_slide(BLANK)
 header(s, 'Q3 FY2026 IN REVIEW  ·  BLENDED OUTCOMES VS PLAN',
-       'The gap to plan sits in the organic base, not paid delivery.', 13)
+       'The gap to plan sits in the organic base, not paid delivery.', 5)
 table(s, 0.5, 1.9, 6.6, 2.7, [
     ['Metric (organic + paid)', 'Q3 Actual', 'Q3 Budget', 'vs Plan'],
     ['Live Apps Submitted', '2,167', '3,984', '-46%'],
@@ -501,26 +555,19 @@ card(s, 7.5, 1.9, 5.3, 5.0, 'READ', [
 # ---- Slide 14: Site Traffic (GA4) ------------------------------------------
 s = prs.slides.add_slide(BLANK)
 header(s, 'SITE TRAFFIC  ·  SIX-MONTH VIEW (GA4, MEXICO)',
-       'Traffic recovered in June. Media bought the recovery.', 14)
-table(s, 0.5, 1.9, 7.4, 1.3, [
-    ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-    ['Sessions', '9,380', '22,229', '12,614', '7,577', '5,751', '9,236'],
-    ['Unique visitors', '4,651', '14,172', '6,554', '3,366', '2,592',
-     '5,838'],
-], col_widths=[1.9, 0.92, 0.92, 0.92, 0.92, 0.92, 0.92])
-card(s, 0.5, 3.5, 7.4, 3.4, 'THE HONEST READ: THREE SEPARATE EVENTS', [
-    "February's peak was a single paid flight, not organic growth. One "
-    'campaign delivered 13,323 sessions that month and ended in early '
-    'March. February is not a valid baseline.',
-    'The March-May slide is an organic search decline, confirmed in '
-    'Search Console: Mexico organic clicks fell 75% January to June. '
-    'Brand rankings improved while dated content and mid-funnel pages '
-    'lost ground, so this is a content issue, not a tracking artifact.',
-    "June's rebound was bought. Of the +3,485 sessions vs May, paid "
-    'search added +2,601, paid social +537, display +274. Organic added '
-    '+94.',
+       'Traffic recovered in June. Media bought the recovery.', 6)
+line_chart(s, 0.5, 1.95, 7.0, 2.85,
+           [('Sessions', [9380, 22229, 12614, 7577, 5751, 9236]),
+            ('Unique visitors', [4651, 14172, 6554, 3366, 2592, 5838])],
+           [CHART_BLUE, CHART_GREEN], label_series=1)
+card(s, 0.5, 5.0, 7.0, 1.9, 'THE HONEST READ', [
+    'February was one paid flight, not organic growth; it ended in early '
+    'March and is not a baseline. The March-May slide is organic search '
+    "decline, confirmed in Search Console. June's rebound was bought: of "
+    'the +3,485 sessions vs May, paid search added +2,601, paid social '
+    '+537, display +274. Organic added +94.',
 ], BLUE)
-card(s, 8.1, 1.9, 4.7, 5.0, 'WHAT IT MEANS', [
+card(s, 7.9, 1.95, 4.9, 4.95, 'WHAT IT MEANS', [
     'Media is doing its job. June proves it can move traffic on demand.',
     'Unique visitors are up 26% January to June, the legitimate bright '
     'spot in the half-year.',
@@ -532,38 +579,40 @@ card(s, 8.1, 1.9, 4.7, 5.0, 'WHAT IT MEANS', [
 # ---- Slide 15: Organic Search — the SEO issue --------------------------------
 s = prs.slides.add_slide(BLANK)
 header(s, 'ORGANIC SEARCH  ·  THE STRUCTURAL ISSUE',
-       'Organic search fell 75% in six months. Media cannot buy it back.', 15)
-table(s, 0.5, 1.9, 6.6, 1.9, [
+       'Organic search fell 75% in six months. Media cannot buy it back.', 7)
+text(s, 0.5, 1.9, 6.6, 0.25, 'Organic Search sessions — GA4, Mexico', 9,
+     True, NAVY)
+line_chart(s, 0.5, 2.2, 6.6, 2.3,
+           [('Organic Search sessions', [4958, 3193, 3385, 2055, 1260,
+                                         1313])],
+           [CHART_BLUE], label_series=0)
+table(s, 0.5, 4.75, 6.6, 1.7, [
     ['Search Console (Mexico)', 'January', 'June', 'Change'],
     ['Organic clicks', '4,811', '1,210', '-75%'],
     ['Demo account page (position)', '12', '23', 'slid'],
     ['Trading academy page (position)', '14', '24', 'slid'],
     ['Homepage, brand (position)', '—', '2.5', 'improved'],
 ], col_widths=[3.0, 1.2, 1.2, 1.2])
-card(s, 0.5, 4.1, 6.6, 2.8, 'WHAT IS DRIVING IT', [
+card(s, 7.5, 1.9, 5.3, 2.45, 'WHAT IS DRIVING IT', [
     'Dated news and analysis content lost 87-99% of its clicks as it '
-    'aged out, with nothing published to replace it.',
-    'Mid-funnel commercial pages slid in rank while brand rankings '
-    'improved, and the decline spans every country the Spanish site '
-    'serves. This is a site-level content issue, not a tracking '
-    'artifact: site analytics confirm the same decline independently.',
+    'aged out with nothing replacing it, and mid-funnel commercial pages '
+    'slid in rank while brand improved. The decline spans every country '
+    'the Spanish site serves: a site-level content issue, confirmed '
+    'independently in site analytics.',
 ], RED)
-card(s, 7.5, 1.9, 5.3, 5.0, 'WHAT WE RECOMMEND', [
-    'Open a dedicated SEO workstream for the Spanish site.',
-    'Restore the news and analysis publishing cadence and refresh the '
-    'decayed assets that carried the traffic.',
-    'Run a mid-funnel rank-recovery plan for the demo, academy, and '
-    'platform pages, measured on organic clicks and positions.',
-    'This is the structural fix for blended submissions running under '
-    'plan: every month the organic base erodes, paid media has to work '
-    'harder just to hold total traffic flat.',
+card(s, 7.5, 4.55, 5.3, 2.45, 'WHAT WE RECOMMEND', [
+    'Open a dedicated SEO workstream: restore the news and analysis '
+    'publishing cadence, refresh the decayed assets, and run a '
+    'mid-funnel rank-recovery plan (demo, academy, platform pages), '
+    'measured on organic clicks and positions. Until it lands, paid '
+    'media works harder each month just to hold total traffic flat.',
 ], GREEN)
 
 # ---- Slide 16: Cross-Channel Priorities + Next Steps ------------------------
 s = prs.slides.add_slide(BLANK)
 header(s, 'CROSS-CHANNEL PRIORITIES + NEXT STEPS',
        'Concentrate in-market. Finish the measurement. Start the SEO '
-       'workstream.', 16)
+       'workstream.', 17)
 card(s, 0.5, 1.9, 4.0, 4.4, 'PRIORITY', [
     'Complete the Mexico-only search restriction, with roughly $12.6K '
     'per month at stake.',
@@ -590,6 +639,55 @@ rect(s, 0.5, 6.5, 12.3, 0.08, BLUE)
 text(s, 0.7, 6.63, 11.9, 0.35,
      'Concentrate spend on measurable, in-market delivery while the '
      'quality fixes land.', 10, True, NAVY)
+
+# ---- Slide (created last, positioned 2): Summary — blended view -------------
+s = prs.slides.add_slide(BLANK)
+header(s, 'SUMMARY  ·  BLENDED VIEW (ORGANIC + PAID)',
+       'Paid momentum built through Q3 while the blended base softened.', 2)
+text(s, 0.5, 2.0, 3.1, 4.8, [
+    '•  June submitted applications came in at 684, down 7% MoM; the H1 '
+    'peak was February (1,036).',
+    '•  New approved rose 7% to 209 and the approval rate recovered to '
+    '31%, the best since February.',
+    '•  New funded dipped 11% to 32 and the fund rate to 15%. The '
+    'application-to-funding step is the funnel constraint.',
+    '•  New traded closed at 29; trading volume held at $1.1B.',
+    '•  Working media reached $120,393 in June (+53% MoM), the biggest '
+    'month of 2026, while paid-driven applications grew every month of '
+    'Q3.',
+], 9.5, False, BODY)
+table(s, 3.9, 2.0, 8.9, 3.3, [
+    ['GGMI — blended', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'MoM'],
+    ['Working Media Spend', '—', '—', '$42,424', '$46,294', '$78,790',
+     '$120,393', '+53%'],
+    ['Submitted Applications', '1,029', '1,036', '900', '751', '732',
+     '684', '-7%'],
+    ['Approved Clients', '288', '337', '261', '202', '195', '209', '+7%'],
+    ['Approval Rate', '28%', '33%', '29%', '27%', '27%', '31%', '+4pp'],
+    ['New Funded Clients', '66', '59', '63', '38', '36', '32', '-11%'],
+    ['Fund Rate', '23%', '18%', '24%', '19%', '18%', '15%', '-3pp'],
+    ['Cost per Funded Client', '—', '—', '$673', '$1,218', '$2,189',
+     '$3,762', '+72%'],
+    ['New Traded Clients', '56', '52', '57', '35', '36', '29', '-19%'],
+    ['Cost per Traded Client', '—', '—', '$744', '$1,323', '$2,189',
+     '$4,151', '+90%'],
+    ['Trading Volume', '$5.1B', '$2.5B', '$2.3B', '$2.1B', '$1.1B',
+     '$1.1B', 'flat'],
+], col_widths=[2.15, 0.97, 0.97, 0.97, 0.97, 0.97, 0.97, 0.92])
+text(s, 3.9, 5.5, 8.9, 0.5, [
+    'Funnel metrics are blended organic + paid. Working media per the '
+    'monthly performance reporting, under our reporting from March 2026. '
+    'MoM = June vs May.',
+], 7.5, False, SUB)
+
+# Reorder: title, Summary, Q3 section, traffic/SEO, June detail, close.
+NEW_ORDER = [0, 16, 10, 11, 12, 13, 14, 1, 2, 3, 4, 5, 6, 7, 8, 9, 15]
+sld_lst = prs.slides._sldIdLst
+ids = list(sld_lst)
+for el in ids:
+    sld_lst.remove(el)
+for i in NEW_ORDER:
+    sld_lst.append(ids[i])
 
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
 prs.save(OUT)
