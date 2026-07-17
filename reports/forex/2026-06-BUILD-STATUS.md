@@ -73,3 +73,8 @@ Currency USD. Comparison basis MoM vs May (some Apr→Jun trend). ROAS N/A acros
 - Bing acct 31003116. SA360 GGMI customerId 5372690580 / loginCustomerId 9697709980 (query client not manager). Meta act_1699453997689551 (GGMI campaigns only). Quantcast acct 9969644 (endDate EXCLUSIVE → use 1st of next month). GA4 GGMI property 508849216. Azerion = vendor XLSX.
 - Data stored as .xlsx workbooks (not .md). Every programmatic report includes a Domain/App site list + disallow list. Reporting only — recs to `/recommendations/`. Never name competitors in vendor/client comms.
 - Conventions in `reports/README.md`; standing rules in project memory.
+
+## GCG JUNE — DATA + QA + MODEL + NARRATIVE DRAFT DONE 2026-07-17 (deliverables pending Renzo)
+
+Pulled Google Ads (67 submitted apps @ $336, rank-limited: 64-76% IS lost to rank), Meta (still CTR objective; LPV 70.6%; GA4 capture ~57% = healthy; 136 pixel starts-rollup), Quantcast (37.2M impr @ $0.82 CPM; viewability 46.9%; 18-site disallow $9,752/32% delivered), GA4 ES-language trend (stable ~70K, June 80,231 +15% — NO organic collapse on GCG). Files: `reports/forex/gcg/2026-06/` (data/GCG-June-2026-data.xlsx, qa/qa-and-model.md, output/GCG-Jun-2026-narrative-draft.md) + `recommendations/forex/gcg/GCG-Quantcast-disallow-*`.
+**Blockers for Renzo: (1) Meta platform $34,711 vs tracker $30,711 (-11.5%, possible digit swap) — confirm which stands; (2) Azerion June vendor file needed (apps/starts); (3) Native pilot detail ($3,645 — vendor?).** June total per tracker $117,024 (+53.4% vs May $76,274). Next: framing approval → Sheet + QBR-first deck (GGMI pattern, adapted: GCG has no SEO-collapse story; its axis is funnel conversion + rank-limited search).
