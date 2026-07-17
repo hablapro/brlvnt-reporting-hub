@@ -513,7 +513,8 @@ table(s, 0.5, 3.65, 6.4, 1.4, [
 card(s, 7.2, 3.35, 5.6, 3.55, 'HIGHLIGHTS', [
     'Delivery held through a 2.5x scale-up: landing-page views ran at '
     '70.6% of link clicks (May: 65.9%) and site analytics capture '
-    'roughly 57% of clicks as sessions. The measurement chain works.',
+    'roughly 57% of clicks as sessions. Site analytics independently '
+    'records 89 application starts from paid social in June.',
     'The campaign still runs the Q2 traffic objective, so its 136 pixel '
     'events are mostly application starts. The conversion-objective '
     'shift is the unlock for judging this channel on submitted '
@@ -531,8 +532,11 @@ header(s, 'META  ·  READ & RECOMMENDATIONS',
        'Make the objective match the goal.', 12)
 card(s, 0.5, 1.9, 6.1, 5.1, 'WHAT THE DATA SHOWS', [
     'The channel does what a traffic objective asks: cheap, verified '
-    'site visitors at scale. What it does not do yet is optimize toward '
-    'applications, because the objective never asked it to.',
+    'site visitors at scale, with 89 site-measured application starts '
+    'in June. What it does not do yet is optimize toward applications, '
+    'because the objective never asked it to. As an upper-funnel '
+    'channel, its submitted applications largely credit to the search '
+    'and direct visits that close them.',
     'Every delivery signal supports the shift: stable CPM through the '
     'scale-up, improving click-to-LPV rate, healthy analytics capture, '
     'and a growing retargeting pool from four months of traffic.',

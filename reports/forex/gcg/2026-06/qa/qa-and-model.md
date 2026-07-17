@@ -51,3 +51,6 @@ Pulled 2026-07-17. Currency USD, TZ America/New_York. Comparison MoM vs May 2026
 - ✅ Meta figure: Renzo ruled tracker $30,711 stands (platform $34,710.97 internal only).
 - ⏳ Native pilot detail (vendor, delivery, objective) for the $3,645 line.
 - Optional: GCG Budget-vs-Actual dashboard (GGMI parity) for a vs-plan QBR slide.
+
+## GA4 Meta attribution check (2026-07-17, INTERNAL)
+GA4 US property, June, `meta / paid-social` (our GCG campaign): **89 live application starts, 4 live confirmations (last-click), 5 demo confirmations**. Ruling applied: the 89 site-measured starts go in client materials as independent corroboration; the 4 last-click submitted apps stay internal ($7,678 implied CPA would misrepresent an upper-funnel channel on a traffic objective — last-click credits its closes to google/cpc and direct). Meta timing (May deck said conversion campaigns launch June; still on traffic objective) is with Renzo's performance manager internally; client materials frame the July shift forward-looking with no explanation of the slip.

@@ -387,6 +387,8 @@ r = table(ws, r,
                'Conversion-objective shift = top July action'],
               ['Pixel events (June)', 136,
                'Starts rollup; not submitted applications'],
+              ['GA4-measured application starts (June)', 89,
+               'Independent site-side corroboration'],
           ],
           fmts=[None, PCT2, None])
 r += 1
@@ -460,8 +462,11 @@ notes = [
      'definitions differ per channel (see Diagnostics).'),
     ('Meta conversions', 'Pixel application events on a traffic '
      'objective, mostly application starts; reported for context, not as '
-     'submitted applications. The shift to a conversion objective is the '
-     'top July action.'),
+     'submitted applications. Site analytics independently records 89 '
+     'application starts from paid social in June; as an upper-funnel '
+     'channel its submitted applications largely credit to the search '
+     'and direct visits that close them. The shift to a conversion '
+     'objective is the top July action.'),
     ('Meta clicks', 'Link clicks (not all clicks); CTR is link CTR.'),
     ('Azerion', 'Vendor June file received: 58 applications, 447 starts, '
      '4.52M impressions, viewability 58.8%; US-only delivery confirmed '
