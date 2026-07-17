@@ -1,5 +1,15 @@
 # June 2026 Report — Build Status & Resume Handoff (GGMI)
 
+## 🎨 HOUSE-STYLE RESTYLE 2026-07-17 (both June decks; RENZO DECIDES THE SWAP)
+
+Renzo asked for both June decks formatted per `forex-reporting-deck.skill` (the locked house style: Georgia headers / Calibri body, indigo `1E2761` bands + coral `F96167` rule, deep-navy cover with both logos, coral-bordered read boxes, green/gold read-recommend cards, navy table headers with ice-blue totals, house footers). The June decks had been built in the older Arial / `3B5998`-blue system.
+
+- **Restyled copies (NEW files; canonical Slides and prior local PPTX exports untouched):** `report-client-decks/06. GGMI_LATAM_June_2026_Performance_Review-housestyle.pptx` + `.pdf`, and the GCG equivalents. Built by restyling the current local exports in place (all content, slide order, and Renzo's 2 volatility slides preserved; his correlation-tile colors and chart art untouched except headlines → house navy). Script: `tools/forex-june-2026-housestyle/restyle_deck.py` (idempotent, reruns from the canonical exports).
+- **Content-rule fixes applied in the restyled copies only** (skill `content-rules.md`): 5× banned word "cheap" → "low-cost" (GGMI S11×2/S14/S18-headline, GCG S12); GGMI S16 Azerion ad set "TradeForex" → "Trade (platform)" (GGMI FX-masking rule). **The canonical Google Slides still contain all six violations** — if Renzo keeps the Slides as canonical, fix them there via `gws slides batchUpdate` replaceAllText.
+- Known limitation: chart palettes stay `3B5998`/`27AE60` (GGMI charts are flattened images from the Slides export; GCG native chart left matching).
+- ~~Decision for Renzo: swap or not~~ **RESOLVED 2026-07-17: Renzo approved the swap. All 4 Drive files replaced IN PLACE (same IDs/links) via `gws drive files update --upload`:** GGMI Slides `1iNea…` + raw PPTX `1yxhT…`, GCG Slides `1_QFFW…` + raw PPTX `1VMO8exT…`. Conversions verified: 19/15 slides, sober headlines + "Trade (platform)" masking confirmed present in the live Slides. **The house-style + sober-tone version is now canonical in Drive.** The local `-housestyle.pptx` files are its source; the older local non-housestyle PPTX files are stale pre-restyle exports kept for history. QA: all 34 slides rendered via PowerPoint and visually inspected, no overflow.
+- **Sober-tone pass 2026-07-17 (Renzo ruling: decks read "almost salesy"):** 17 headline / closing-strip rewrites applied to the housestyle drafts only (10 GGMI, 7 GCG). Achievement framing of spend ("biggest media month", "the program scaled every month") → statement tone with the numbers ("$120K deployed in June…"); "efficiency held" drumbeat replaced with the MoM figures ("50 at $513, up from 33 at $484"); GCG closing promise ("July converts them") → July priority list. Agency-protection framing kept intact (no confessions, no scope-down). Canonical Slides still carry the salesy lines; same batchUpdate route if Renzo wants them fixed there.
+
 Last updated: 2026-07-16 (3rd session). Scope: **GGMI (LATAM/Mexico) only.** GCG June not started.
 Reporting only — no account mutations from this repo. Recommendations go to `recommendations/`.
 
