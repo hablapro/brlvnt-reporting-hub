@@ -130,8 +130,8 @@ r = table(ws, r,
                '136 (pixel events)', '—'],
               ['Quantcast', 30559.00, 37233620, 2942, 0.000079, 0.82,
                '15 (view-through)', '—'],
-              ['Azerion', 29586.00, 'pending', '—', '—', '—', 'pending',
-               '—'],
+              ['Azerion', 29586.00, 4515400, 19653, 0.004352, 6.55, 58,
+               510.10],
               ['Native', 3645.00, 'pilot', '—', '—', '—', '—', '—'],
               ['Total', 117024.00, '—', '—', '—', '—', '—', '—'],
           ],
@@ -143,8 +143,9 @@ r = para(ws, r, NC,
          'CPA (application Step 5 goal, definition unchanged from May). '
          'Meta counts pixel application events, mostly application starts, '
          'on a traffic objective. Quantcast results are view-through and '
-         'directional. Azerion applications arrive with the vendor file '
-         '(May: 43 at $616). Native is in its first month.')
+         'directional. Azerion counts vendor-defined submitted '
+         'applications: 58 in June at a $510 CPA, up 35% from May at a '
+         '17% lower CPA. Native is in its first month.')
 r += 1
 r = section(ws, r, NC, 'Executive Summary')
 r = para(ws, r, NC,
@@ -159,7 +160,8 @@ r = para(ws, r, NC,
          'a $0.82 CPM while viewability fell to 46.9%; the blocklist and a '
          'viewability floor address it. The client funnel shows June '
          'submissions up 7% with approval steady at 45%; the '
-         'start-to-submit step is where volume dilutes.')
+         'start-to-submit step is where volume dilutes. Azerion was the June '
+         'conversion leader: 58 applications (+35%) at $510 (-17%).')
 r += 1
 r = section(ws, r, NC, 'Campaign Highlights')
 for b in [
@@ -170,8 +172,10 @@ for b in [
     'clicks as sessions.',
     '•  Quantcast: 37.2M impressions to 23.2M devices at $0.82 CPM; '
     'results rose 8 to 15 (13 view-through).',
-    '•  Azerion grew 12% to $29,586; June application detail pending the '
-    'vendor file (April-May: 119 applications, the channel lead).',
+    '•  Azerion: 58 applications (+35%) at $510 (-17% CPA); application '
+    'starts fell 68% while start-to-application completion improved 3.1% '
+    'to 13.0% (the start-quality fix May called for). US-only delivery '
+    'confirmed by the state-level geo report.',
     '•  Native pilot entered the market at $3,645.',
 ]:
     r = para(ws, r, NC, b)
@@ -188,6 +192,9 @@ for b in [
     'viewability 46.9% vs the 70% standard).',
     '•  Put the start-to-submit funnel step on the joint roadmap; traffic '
     'quadrupled quarter over quarter while submissions fell 14%.',
+    '•  Concentrate Azerion budget on Trusted Broker ($352) and Broker 1 '
+    '($382); shift weight from 728x90 (worst format) toward 300x600 '
+    '(best); push viewability from 58.8% over the 70% standard.',
 ]:
     r = para(ws, r, NC, b)
 r += 1
@@ -195,8 +202,7 @@ r = section(ws, r, NC, 'Next Steps')
 for b in [
     '•  Complete the Meta conversion-objective shift (top paid-social '
     'action).',
-    '•  Deliver the Azerion June detail and the first Native pilot read '
-    'with the vendor files.',
+    '•  Deliver the first Native pilot read with vendor reporting.',
     '•  Hold June budget levels on search while ad rank recovers, then '
     'scale into the recovered impression share.',
 ]:
@@ -235,8 +241,8 @@ r = table(ws, r,
           [
               ['Google Ads', 12, 76, 67, 336.18,
                'Submitted applications (Step 5)'],
-              ['Azerion', 76, 43, 'pending', '—',
-               'Submitted applications (vendor); June file pending'],
+              ['Azerion', 76, 43, 58, 510.10,
+               'Submitted applications (vendor-defined)'],
               ['Quantcast', 2, 8, 15, '—', 'View-through, directional'],
               ['Meta', 73, 109, 136, '—',
                'Pixel events (starts rollup, traffic objective)'],
@@ -274,6 +280,38 @@ r = table(ws, r,
               ['trackB_pros_us_es', 17787.05, 1289760, 38862, 27561, 52],
           ],
           fmts=[None, CUR, INT, INT, INT, INT])
+r += 1
+r = section(ws, r, NC, 'Azerion Ad Sets (June; budget-tracker spend basis)')
+r = table(ws, r,
+          ['Ad set', 'Spend', 'Apps', 'CPA', 'Viewability'],
+          [
+              ['Trusted Broker', 4932.94, 14, 352.35, 0.5889],
+              ['Broker 1', 4964.06, 13, 381.85, 0.5873],
+              ['Language Broker', 4900.30, 10, 490.03, 0.5877],
+              ['Professional Tools', 4940.10, 9, 548.90, 0.5866],
+              ['Spanish Platform', 4933.06, 7, 704.72, 0.5877],
+              ['Trust HTML', 4915.71, 5, 983.14, 0.5880],
+              ['Total', 29586.00, 58, 510.10, 0.5877],
+          ],
+          fmts=[None, CUR, INT, CUR, PCT2],
+          total_last=True)
+r += 1
+r = section(ws, r, NC, 'Azerion Funnel — March to June (vendor DSP '
+                       'reporting)')
+r = table(ws, r,
+          ['Month', 'Site visits', 'App starts', 'Applications',
+           'Start-to-app rate'],
+          [
+              ['March', 2088, 68, 7, 0.103],
+              ['April', 10042, 492, 76, 0.154],
+              ['May', 51955, 1398, 43, 0.031],
+              ['June', 29988, 447, 58, 0.130],
+          ],
+          fmts=[None, INT, INT, INT, PCT2])
+r = para(ws, r, NC,
+         'June reversed the May pattern: starts fell 68% while '
+         'start-to-application completion improved from 3.1% to 13.0%. '
+         'Fewer, better-qualified starts.')
 r += 1
 r = section(ws, r, NC, 'Blended Funnel — Q1 vs Q2 (client dashboard, '
                        'organic + paid)')
@@ -350,6 +388,9 @@ r = table(ws, r,
               ['Quantcast', 0.4692, 0.70,
                '18-site blocklist delivered ($9,752, 32% of June spend); '
                'set viewability floor'],
+              ['Azerion', 0.5877, 0.70,
+               'Push over the standard; 300x600 best format, 728x90 '
+               'worst'],
           ],
           fmts=[None, PCT2, PCT2, None])
 r += 1
@@ -382,8 +423,8 @@ r = table(ws, r,
                'mostly application starts. Not submitted applications.'],
               ['Quantcast', '15 results; 13 view-through, 2 click-through. '
                'Directional only.'],
-              ['Azerion', 'Submitted applications (vendor-defined); June '
-               'file pending.'],
+              ['Azerion', 'Submitted applications (vendor-defined): 58 in '
+               'June with 447 application starts.'],
               ['Native', 'Pilot; measurement lands with vendor '
                'reporting.'],
           ])
@@ -411,8 +452,12 @@ notes = [
      'submitted applications. The shift to a conversion objective is the '
      'top July action.'),
     ('Meta clicks', 'Link clicks (not all clicks); CTR is link CTR.'),
-    ('Azerion / Native', 'Carried at budget-tracker spend; delivery and '
-     'application detail arrive with vendor reporting.'),
+    ('Azerion', 'Vendor June file received: 58 applications, 447 starts, '
+     '4.52M impressions, viewability 58.8%; US-only delivery confirmed '
+     'by the state-level geo report. Ad-set figures shown on the '
+     'budget-tracker spend basis.'),
+    ('Native', 'Carried at budget-tracker spend ($3,645, pilot month 1); '
+     'delivery detail arrives with vendor reporting.'),
     ('Search impression share', 'Google Ads auction data, June: lost to '
      'rank 64-76% per campaign, lost to budget 9-13%.'),
     ('Client funnel', 'Blended organic + paid from the client dashboard; '

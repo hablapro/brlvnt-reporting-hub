@@ -278,29 +278,29 @@ card(s, 7.5, 1.9, 5.3, 5.0, 'READ', [
 s = prs.slides.add_slide(BLANK)
 header(s, 'Q3 FY2026 IN REVIEW  ·  APPLICATIONS',
        'Search and display carried the measured volume.', 4)
-table(s, 0.5, 1.9, 6.6, 2.4, [
+table(s, 0.5, 1.9, 6.6, 2.7, [
     ['Channel', 'Apr', 'May', 'Jun', 'Q3'],
     ['Google Ads', '12', '76', '67', '155'],
-    ['Azerion', '76', '43', 'pending', '119 +Jun'],
+    ['Azerion', '76', '43', '58', '177'],
     ['Quantcast', '2', '8', '15', '25'],
     ['Meta (pixel events)*', '73', '109', '136', '318'],
-], col_widths=[2.6, 0.95, 0.95, 1.0, 1.1])
-text(s, 0.5, 4.55, 6.6, 0.9, [
+    ['Measured submitted apps', '88', '119', '125', '332'],
+], col_widths=[2.6, 0.95, 0.95, 1.0, 1.1], bold_last=True)
+text(s, 0.5, 4.85, 6.6, 0.9, [
     '* Meta counts pixel application events, mostly application starts, '
     'on a traffic objective; not comparable to submitted applications. '
-    'Quantcast is view-through, directional only. Azerion June arrives '
-    'with the vendor file (May: 43 submitted at $616).',
+    'Quantcast is view-through, directional only. Measured submitted '
+    'apps = Google + Azerion.',
 ], 7.5, False, SUB)
 card(s, 7.5, 1.9, 5.3, 5.0, 'READ', [
-    'Google delivered 155 submitted applications across the quarter and '
-    'its tracking was clean all three months.',
+    'The quarter delivered 332 measured submitted applications, with '
+    'June its best month (125).',
+    'Azerion returned to form in June: 58 applications, up 35% on a 12% '
+    'budget increase, at a $510 CPA (down 17%).',
     'June exposed the search ceiling: spend rose 48% and applications '
     'fell 12%, because the account is rank-limited (64-76% of available '
     'impressions lost to ad rank, only 9-13% to budget). July search '
     'work is bids, quality, and ad strength before budget.',
-    'Azerion has been the largest converter (119 applications Apr-May); '
-    'its June figure lands with the vendor file and completes the '
-    'quarter.',
 ], GREEN)
 
 # ---- S5: Q1 vs Q2 blended funnel ---------------------------------------------
@@ -367,7 +367,7 @@ table(s, 0.5, 1.9, 7.4, 2.3, [
     ['Google Ads', '$22,524', '181,470', '12,888', '67', '$336'],
     ['Meta', '$30,711', '3.06M', '74,572', '136*', '—'],
     ['Quantcast', '$30,559', '37.2M', '2,942', '15 VT*', '—'],
-    ['Azerion', '$29,586', 'pending', '—', 'pending', '—'],
+    ['Azerion', '$29,586', '4.52M', '19,653', '58', '$510'],
     ['Native', '$3,645', 'pilot', '—', '—', '—'],
     ['Total', '$117,024', '—', '—', '—', '—'],
 ], col_widths=[2.33, 1.06, 1.06, 1.06, 0.85, 1.06], bold_last=True)
@@ -378,8 +378,9 @@ text(s, 0.5, 4.35, 7.4, 0.45,
      7.5, False, SUB)
 card(s, 8.1, 1.9, 4.7, 2.4, 'HEADLINES', [
     'June was the biggest GCG media month of 2026: $117,024 across five '
-    'lines, up 53% from May. Search produced 67 submitted applications '
-    'at $336, and the Native pilot entered the market.',
+    'lines, up 53% from May. Azerion led conversion with 58 applications '
+    'at $510 (+35%), search added 67 at $336, and the Native pilot '
+    'entered the market.',
 ], GREEN)
 card(s, 0.5, 4.95, 7.4, 2.0, 'WHAT THE DATA SAYS', [
     'Search hit its rank ceiling: +48% spend bought -12% applications. '
@@ -406,8 +407,9 @@ card(s, 0.5, 1.9, 6.1, 5.1, 'WHAT IS STILL FORMING', [
     'healthy, but the campaign still runs a traffic objective, so its '
     '136 pixel events are mostly application starts rather than '
     'submitted applications.',
-    'Vendor detail for the two newest stories: the Azerion June file '
-    '(its largest-converter status) and the first Native pilot read.',
+    'The Native pilot. $3,645 entered the market in June; the first '
+    'delivery and cost-per-application read lands with vendor '
+    'reporting.',
 ], BLUE)
 card(s, 6.9, 1.9, 5.9, 5.1, 'WHAT WE RECOMMEND', [
     'Complete the paid-social shift to a conversion objective and judge '
@@ -562,29 +564,42 @@ card(s, 6.9, 3.35, 5.9, 3.55, 'TOP BLOCKLIST ENTRIES', [
     'reach efficiency.',
 ], RED)
 
-# ---- S14: Azerion + Native ------------------------------------------------------
+# ---- S14: Azerion (+ Native line) --------------------------------------------
 s = prs.slides.add_slide(BLANK)
-header(s, 'AZERION & NATIVE',
-       'The largest converter and the newest pilot report with the '
-       'vendor files.', 14)
-tile(s, 0.5, 1.9, 'AZERION SPEND', '$29,586', '+12% MoM', w=2.4)
-tile(s, 3.0, 1.9, 'MAY BASELINE', '43 apps', '$616 CPA', w=2.4)
-tile(s, 5.5, 1.9, 'NATIVE SPEND', '$3,645', 'pilot month 1', w=2.4)
-card(s, 0.5, 3.35, 6.1, 3.55, 'WHAT WE KNOW', [
-    'Azerion grew 12% to $29,586 per the budget tracker. It has been '
-    "GCG's largest converter (76 applications in April, 43 in May with "
-    '1,398 starts), and its June application detail arrives with the '
-    'vendor file.',
-    'Native entered the market with $3,645 in June, the first new '
-    'channel since the program launched.',
-], BLUE)
-card(s, 6.9, 3.35, 5.9, 3.55, 'WHAT COMES WITH THE VENDOR DETAIL', [
-    'Azerion: June applications and starts, ad-set performance, and the '
-    'step-one-to-application trend that drives its optimization.',
-    'Native: delivery, audience, and the first cost-per-application '
-    'read, judged against the search and display range from July '
-    'onward.',
+header(s, 'AZERION  ·  PERFORMANCE & READ',
+       '58 applications, up 35% on a 12% budget increase. Fewer starts, '
+       'better starts.', 14)
+tile(s, 0.5, 1.9, 'SPEND', '$29,586', '+12% MoM')
+tile(s, 2.5, 1.9, 'IMPRESSIONS', '4.52M', 'CPM $6.55')
+tile(s, 4.5, 1.9, 'CLICKS', '19,653', 'CTR 0.44%')
+tile(s, 6.5, 1.9, 'APP STARTS', '447', 'May: 1,398')
+tile(s, 8.5, 1.9, 'APPLICATIONS', '58', '$510 CPA')
+tile(s, 10.5, 1.9, 'VIEWABILITY', '58.8%', '70% standard')
+text(s, 0.5, 3.35, 6.0, 0.3, 'Ad Sets (Applications)', 11, True, NAVY)
+table(s, 0.5, 3.65, 6.0, 2.3, [
+    ['Ad Set', 'Spend', 'Apps', 'CPA'],
+    ['Trusted Broker', '$4,933', '14', '$352'],
+    ['Broker 1', '$4,964', '13', '$382'],
+    ['Language Broker', '$4,900', '10', '$490'],
+    ['Professional Tools', '$4,940', '9', '$549'],
+    ['Spanish Platform', '$4,933', '7', '$705'],
+    ['Trust HTML', '$4,916', '5', '$983'],
+], col_widths=[2.6, 1.1, 0.9, 1.2])
+card(s, 6.8, 3.35, 6.0, 3.0, 'READ', [
+    'Applications rose 35% (43 to 58) at a $510 CPA, down 17%: the '
+    'strongest converter of the June program.',
+    'Application starts fell 1,398 to 447 while completion improved '
+    'from 3.1% to 13.0%, which is the start-to-submit fix May called '
+    'for: fewer, better-qualified starts.',
+    'Delivery is confirmed US-only (state-level geo report). '
+    'Viewability at 58.8% sits under the 70% standard; the 300x600 '
+    'format converts best ($124 vendor-basis) and 728x90 worst.',
 ], GREEN)
+rect(s, 6.8, 6.5, 6.0, 0.55, GRAY_BG)
+rect(s, 6.8, 6.5, 6.0, 0.08, BLUE)
+text(s, 7.0, 6.62, 5.6, 0.35,
+     'Native pilot: $3,645 in month one; first delivery read lands with '
+     'vendor reporting.', 9, False, BODY)
 
 # ---- S15: Close -----------------------------------------------------------------
 s = prs.slides.add_slide(BLANK)
@@ -604,8 +619,9 @@ card(s, 4.8, 1.9, 4.0, 4.4, 'SCALING & OPPORTUNITY', [
     'floor land.',
 ], GREEN)
 card(s, 9.0, 1.9, 3.8, 4.4, 'TO CLOSE THE QUARTER', [
-    'Azerion June vendor file completes the application picture (its '
-    'Apr-May total leads all channels).',
+    'Carry the Azerion start-quality fix forward: completion tripled to '
+    '13% in June; concentrate budget on Trusted Broker and Broker 1 and '
+    'push viewability over the standard.',
     'First Native pilot read lands with vendor reporting; judged on '
     'cost per submitted application.',
 ], BLUE)

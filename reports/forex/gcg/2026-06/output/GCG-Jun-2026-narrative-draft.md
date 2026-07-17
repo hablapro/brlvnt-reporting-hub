@@ -31,8 +31,11 @@ The client's own funnel shows June submitted applications up 7% month over month
 - Viewability fell to 46.9% (70% standard). We delivered an 18-site blocklist covering $9,752 (32%) of June spend and recommend a campaign-level viewability floor.
 - Results rose 8 to 15; 13 of 15 are view-through. Directional support, not proven response.
 
-### Programmatic — Azerion line — $29,586 [DETAIL PENDING VENDOR FILE]
-- Spend +12% MoM per the budget tracker. Application and start volumes arrive with the vendor file (May: 43 submitted applications at $616, 1,398 starts — GCG's largest converter).
+### Programmatic — Azerion line — $29,586, 58 submitted applications, $510 CPA [UPDATED 2026-07-17, vendor files received]
+- The June conversion leader: applications rose 35% (43 to 58) on a 12% budget increase, and CPA fell 17% ($616 to $510).
+- The start-quality fix landed: application starts fell 1,398 to 447 while start-to-application completion improved from 3.1% to 13.0%. Fewer, better starts.
+- Trusted Broker ($352) and Broker 1 ($382) lead the ad sets; Trust HTML lags ($983). The 300x600 format converts best; 728x90 worst.
+- US-only delivery confirmed by the state-level geo report. Viewability 58.8%, below the 70% standard; push it up alongside the format shift.
 
 ### Native — $3,645 pilot [DETAIL PENDING]
 - First month in market. Delivery detail to follow with vendor reporting; judged from July on cost per submitted application against the search/display range.
@@ -53,5 +56,5 @@ The client funnel tells the sharper story. June submitted applications rose 7% t
 1. Shift paid social to the conversion objective and judge it on submitted applications.
 2. Run the search ad-rank program (bids, quality score, RSA refresh) on TrackB terms before adding budget; the account is rank-limited, not budget-limited.
 3. Apply the programmatic blocklist and set a viewability floor on the low-viewability line.
-4. Chase the vendor detail for Azerion and the Native pilot so July reports all five lines fully.
+4. Concentrate Azerion budget on Trusted Broker and Broker 1, shift format weight from 728x90 to 300x600, and push viewability over the standard. Chase the Native pilot detail so July reports all five lines fully.
 5. Put the start-to-submit funnel step on the joint roadmap with the client; media is filling the top of it.

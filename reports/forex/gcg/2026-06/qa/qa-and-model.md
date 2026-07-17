@@ -9,7 +9,7 @@ Pulled 2026-07-17. Currency USD, TZ America/New_York. Comparison MoM vs May 2026
 | Google Ads | $22,523.79 | $22,524 | $0 | ✅ exact |
 | Quantcast | $30,158.51 | $30,559 | +$400 (+1.3%) | ✅ normal adjustment |
 | Meta | $34,710.97 | $30,711 | **-$4,000 (-11.5%)** | 🔴 FLAGGED — possible tracker digit swap (34,711 → 30,711); Renzo to confirm |
-| Azerion | no vendor file | $29,586 | — | ⏳ vendor file requested |
+| Azerion | $27,092.40 (vendor raw) | $29,586 | raw + 7.5% fee + $461.67 adj | ✅ vendor files received 2026-07-17 |
 | Native | no source | $3,645 | — | ⏳ pilot detail requested |
 | **Total** | — | **$117,024** | — | +53.4% vs May $76,274 |
 
@@ -46,7 +46,8 @@ Pulled 2026-07-17. Currency USD, TZ America/New_York. Comparison MoM vs May 2026
 5. **Client blended funnel (their dashboard):** June submitted 322 (+7% MoM; 300 May), live 306, approved 145 (45% stable), funded 41 (28%), traded 30. Q2 apps 1,033 vs Q1 1,203 (-14%) while media scaled: the start→submit step diluted (App Starts Rate 55% Jan → 4% Jun as traffic scaled).
 6. **ES-audience traffic (GA4 language=es, US property):** stable ~70K sessions Jan-May, June 80,231 (+15%), users +40% MoM to 41,795. No organic-collapse story on GCG (contrast GGMI). The client-dashboard "Unique Sessions" (67,542 June) is a different scope; not reconcilable to GA4 cuts we ran — noted, not blocking.
 
-## Open items
-- Azerion June vendor file (apps + starts; May: 43 apps @ $615.63, 1,398 starts) — REQUIRED for the Azerion section.
-- Native pilot detail (vendor, delivery, objective) for the $3,645 line.
-- Meta tracker figure ($30,711 vs platform $34,711) — Renzo confirm.
+## Open items (updated 2026-07-17)
+- ✅ Azerion vendor files received: 58 apps (+35%) @ $510 tracker-basis CPA; starts 1,398→447 with completion 3.1%→13.0%; viewability 58.8%; US-only geo confirmed. See data workbook Azerion tab.
+- ✅ Meta figure: Renzo ruled tracker $30,711 stands (platform $34,710.97 internal only).
+- ⏳ Native pilot detail (vendor, delivery, objective) for the $3,645 line.
+- Optional: GCG Budget-vs-Actual dashboard (GGMI parity) for a vs-plan QBR slide.
