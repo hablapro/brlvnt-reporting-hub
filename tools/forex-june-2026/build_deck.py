@@ -658,26 +658,25 @@ text(s, 0.5, 2.0, 3.1, 4.8, [
 ], 9.5, False, BODY)
 table(s, 3.9, 2.0, 8.9, 3.3, [
     ['GGMI — blended', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'MoM'],
-    ['Working Media Spend', '—', '—', '$42,424', '$46,294', '$78,790',
-     '$120,393', '+53%'],
+    ['Working Media Spend', '$1,717', '$20,578', '$42,424', '$46,294',
+     '$78,790', '$120,393', '+53%'],
     ['Submitted Applications', '1,029', '1,036', '900', '751', '732',
      '684', '-7%'],
     ['Approved Clients', '288', '337', '261', '202', '195', '209', '+7%'],
     ['Approval Rate', '28%', '33%', '29%', '27%', '27%', '31%', '+4pp'],
     ['New Funded Clients', '66', '59', '63', '38', '36', '32', '-11%'],
     ['Fund Rate', '23%', '18%', '24%', '19%', '18%', '15%', '-3pp'],
-    ['Cost per Funded Client', '—', '—', '$673', '$1,218', '$2,189',
+    ['Cost per Funded Client', '$26', '$349', '$673', '$1,218', '$2,189',
      '$3,762', '+72%'],
     ['New Traded Clients', '56', '52', '57', '35', '36', '29', '-19%'],
-    ['Cost per Traded Client', '—', '—', '$744', '$1,323', '$2,189',
+    ['Cost per Traded Client', '$31', '$396', '$744', '$1,323', '$2,189',
      '$4,151', '+90%'],
     ['Trading Volume', '$5.1B', '$2.5B', '$2.3B', '$2.1B', '$1.1B',
      '$1.1B', 'flat'],
 ], col_widths=[2.15, 0.97, 0.97, 0.97, 0.97, 0.97, 0.97, 0.92])
 text(s, 3.9, 5.5, 8.9, 0.5, [
     'Funnel metrics are blended organic + paid. Working media per the '
-    'monthly performance reporting, under our reporting from March 2026. '
-    'MoM = June vs May.',
+    'budget tracker. MoM = June vs May.',
 ], 7.5, False, SUB)
 
 # Reorder: title, Summary, Q3 section, traffic/SEO, June detail, close.
