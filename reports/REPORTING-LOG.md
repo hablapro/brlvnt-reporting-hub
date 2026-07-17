@@ -95,3 +95,13 @@ Chronological log of reporting sessions. Newest first. One block per session.
 - Key rulings this session: (1) client-facing spend MUST match the client budget tracker, adjustments recalculated silently (June Azerion $35,026, total $120,393, +53%); (2) Slides file is canonical once Renzo edits it — never re-upload a built PPTX over it; edit via `gws slides presentations batchUpdate` replaceAllText (gws supports ALL Google APIs, not just the 5 in --help).
 
 **Resume next session:** GCG June 2026 report, bead `Reporting-Analytics-7v6` (full pull → QA → model → narrative → deliverables; get the GCG client-tracker figures from Renzo first). Then: Azerion vendor reply pending, SA360→GA4 link (July restatement ~4x, flag it), July client questions A–D.
+
+***
+
+## Session 2026-07-17 (cont.) — GCG June built end-to-end; both decks protection-hardened; SESSION CLOSE
+
+**GCG June (bead Reporting-Analytics-7v6, CLOSED):** full cycle in one session — platform pulls (Google exact-to-tracker; Meta $34,711 platform vs $30,711 tracker, Renzo ruled tracker stands; Quantcast 46.9% viewability + 18-site disallow; GA4 ES-audience healthy), Azerion vendor files integrated same-day (58 apps +35% @ $510; starts-quality fix 3.1%→13.0%; US-only geo), narrative approved, 15-slide QBR-first deck + 4-tab Sheet delivered to `06. June-data`, tracker GCG June column + Native row + billable section done. Native framed as intentional small pilot, **full read promised for July (mandatory)**.
+
+**Protection passes (both decks):** agency KPI doctrine established (submitted apps at low cost/submitted = our scorecard; downstream = client journey, neutral framing); cost-per-submitted-app added to both decks (GCG $350-420 band; GGMI ~$650); self-indicting language reframed (scale-ups = diagnostics that produced the map); GGMI geo aligned to the client-communicated $8,612 (Bing Ads review deck) — SA360 $12,637 internal only; Meta GA4 check: 89 starts client-facing, 4 last-click conv internal-only.
+
+**State at close:** GGMI 19-slide Slides = canonical, send-ready. GCG 15-slide Slides + Sheet awaiting Renzo review (safe to rebuild until he edits; then batchUpdate only). Retrospective written: `PROJECT_RETROSPECTIVE_AND_LESSONS_LEARNED.md` (repo root) — read it at next cycle start; Section 9 is the July kickoff checklist.
