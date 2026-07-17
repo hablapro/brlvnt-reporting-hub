@@ -145,7 +145,8 @@ r = para(ws, r, NC,
          'on a traffic objective. Quantcast results are view-through and '
          'directional. Azerion counts vendor-defined submitted '
          'applications: 58 in June at a $510 CPA, up 35% from May at a '
-         '17% lower CPA. Native is in its first month.')
+         '17% lower CPA. The Native June flight is intentionally small; the '
+         'full pilot read comes with the July report.')
 r += 1
 r = section(ws, r, NC, 'Executive Summary')
 r = para(ws, r, NC,
@@ -176,7 +177,9 @@ for b in [
     'starts fell 68% while start-to-application completion improved 3.1% '
     'to 13.0% (the start-quality fix May called for). US-only delivery '
     'confirmed by the state-level geo report.',
-    '•  Native pilot entered the market at $3,645.',
+    '•  Native pilot entered the market with an intentionally small '
+    'first flight ($3,645), below the volume for a meaningful read; the '
+    'full pilot reports with July.',
 ]:
     r = para(ws, r, NC, b)
 r += 1
@@ -202,7 +205,8 @@ r = section(ws, r, NC, 'Next Steps')
 for b in [
     '•  Complete the Meta conversion-objective shift (top paid-social '
     'action).',
-    '•  Deliver the first Native pilot read with vendor reporting.',
+    '•  Report the full Native pilot with July (June was the small '
+    'first flight).',
     '•  Hold June budget levels on search while ad rank recovers, then '
     'scale into the recovered impression share.',
 ]:
@@ -425,8 +429,9 @@ r = table(ws, r,
                'Directional only.'],
               ['Azerion', 'Submitted applications (vendor-defined): 58 in '
                'June with 447 application starts.'],
-              ['Native', 'Pilot; measurement lands with vendor '
-               'reporting.'],
+              ['Native', 'Pilot; June flight intentionally small. Full '
+               'pilot read in the July report, judged on cost per '
+               'submitted application.'],
           ])
 ws.column_dimensions['A'].width = 30
 ws.column_dimensions['B'].width = 40
@@ -456,8 +461,10 @@ notes = [
      '4.52M impressions, viewability 58.8%; US-only delivery confirmed '
      'by the state-level geo report. Ad-set figures shown on the '
      'budget-tracker spend basis.'),
-    ('Native', 'Carried at budget-tracker spend ($3,645, pilot month 1); '
-     'delivery detail arrives with vendor reporting.'),
+    ('Native', 'Carried at budget-tracker spend ($3,645). The June '
+     'flight was an intentionally small first burn, below the volume '
+     'for a meaningful cost-per-application read; the full pilot '
+     'reports with July.'),
     ('Search impression share', 'Google Ads auction data, June: lost to '
      'rank 64-76% per campaign, lost to budget 9-13%.'),
     ('Client funnel', 'Blended organic + paid from the client dashboard; '

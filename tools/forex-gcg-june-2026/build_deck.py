@@ -407,9 +407,9 @@ card(s, 0.5, 1.9, 6.1, 5.1, 'WHAT IS STILL FORMING', [
     'healthy, but the campaign still runs a traffic objective, so its '
     '136 pixel events are mostly application starts rather than '
     'submitted applications.',
-    'The Native pilot. $3,645 entered the market in June; the first '
-    'delivery and cost-per-application read lands with vendor '
-    'reporting.',
+    'The Native pilot. The June flight ($3,645) was an intentionally '
+    'small first burn, below the volume for a meaningful '
+    'cost-per-application read. The full pilot reports with July.',
 ], BLUE)
 card(s, 6.9, 1.9, 5.9, 5.1, 'WHAT WE RECOMMEND', [
     'Complete the paid-social shift to a conversion objective and judge '
@@ -598,8 +598,8 @@ card(s, 6.8, 3.35, 6.0, 3.0, 'READ', [
 rect(s, 6.8, 6.5, 6.0, 0.55, GRAY_BG)
 rect(s, 6.8, 6.5, 6.0, 0.08, BLUE)
 text(s, 7.0, 6.62, 5.6, 0.35,
-     'Native pilot: $3,645 in month one; first delivery read lands with '
-     'vendor reporting.', 9, False, BODY)
+     'Native pilot: $3,645 intentionally small first flight; full pilot '
+     'read reports with July.', 9, False, BODY)
 
 # ---- S15: Close -----------------------------------------------------------------
 s = prs.slides.add_slide(BLANK)
@@ -622,8 +622,9 @@ card(s, 9.0, 1.9, 3.8, 4.4, 'TO CLOSE THE QUARTER', [
     'Carry the Azerion start-quality fix forward: completion tripled to '
     '13% in June; concentrate budget on Trusted Broker and Broker 1 and '
     'push viewability over the standard.',
-    'First Native pilot read lands with vendor reporting; judged on '
-    'cost per submitted application.',
+    'The Native pilot reports in full with July: the June flight was '
+    'an intentionally small first burn, judged then on cost per '
+    'submitted application.',
 ], BLUE)
 rect(s, 0.5, 6.5, 12.3, 0.55, GRAY_BG)
 rect(s, 0.5, 6.5, 12.3, 0.08, BLUE)
