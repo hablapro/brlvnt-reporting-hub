@@ -219,8 +219,9 @@ text(s, 0.5, 2.0, 3.1, 4.8, [
     'GCG month of 2026, with the Native pilot adding a fifth channel.',
     '•  Sessions grew 30% MoM on the paid scale-up while application '
     'starts stayed flat, so conversion, not volume, is the constraint.',
-    '•  Q2 closed 14% below Q1 on applications (1,033 vs 1,203) while '
-    'media scaled 5x quarter over quarter.',
+    '•  Q2 closed 14% below Q1 on blended applications while media '
+    'scaled 5x: the dilution sits in the start-to-submit step, which '
+    'the July funnel workstream targets jointly with the client team.',
 ], 9.5, False, BODY)
 table(s, 3.9, 2.0, 8.9, 3.5, [
     ['GCG — blended', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'MoM'],
@@ -244,7 +245,9 @@ table(s, 3.9, 2.0, 8.9, 3.5, [
 ], col_widths=[2.15, 0.97, 0.97, 0.97, 0.97, 0.97, 0.97, 0.92])
 text(s, 3.9, 5.7, 8.9, 0.5, [
     'Funnel metrics are blended organic + paid (client dashboard). '
-    'Working media per the budget tracker. MoM = June vs May.',
+    'Working media per the budget tracker. MoM = June vs May. '
+    'January-February cost rows reflect a near-zero media base; the '
+    'paid-era baseline starts in March.',
 ], 7.5, False, SUB)
 
 # ---- S3: Q3 Spend -----------------------------------------------------------
@@ -285,22 +288,26 @@ table(s, 0.5, 1.9, 6.6, 2.7, [
     ['Quantcast', '2', '8', '15', '25'],
     ['Meta (pixel events)*', '73', '109', '136', '318'],
     ['Measured submitted apps', '88', '119', '125', '332'],
+    ['Cost / measured submitted app', '$354', '$350', '$417', '$376'],
 ], col_widths=[2.6, 0.95, 0.95, 1.0, 1.1], bold_last=True)
 text(s, 0.5, 4.85, 6.6, 0.9, [
     '* Meta counts pixel application events, mostly application starts, '
     'on a traffic objective; not comparable to submitted applications. '
     'Quantcast is view-through, directional only. Measured submitted '
-    'apps = Google + Azerion.',
+    'apps = Google + Azerion. Cost per measured submitted app = those '
+    "channels' spend over their applications.",
 ], 7.5, False, SUB)
 card(s, 7.5, 1.9, 5.3, 5.0, 'READ', [
-    'The quarter delivered 332 measured submitted applications, with '
-    'June its best month (125).',
+    'The quarter delivered 332 measured submitted applications, June '
+    'its best month (125), at a cost per submitted application that '
+    'held in the $350-$420 band through a 2x scale-up. That efficiency '
+    'hold is the core result of the quarter.',
     'Azerion returned to form in June: 58 applications, up 35% on a 12% '
     'budget increase, at a $510 CPA (down 17%).',
-    'June exposed the search ceiling: spend rose 48% and applications '
-    'fell 12%, because the account is rank-limited (64-76% of available '
-    'impressions lost to ad rank, only 9-13% to budget). July search '
-    'work is bids, quality, and ad strength before budget.',
+    "June's planned search scale-up surfaced the account's rank "
+    'ceiling: 64-76% of available impressions are lost to ad rank '
+    'against 9-13% to budget. The auction data now points the next '
+    'dollar at bids, quality, and ad strength rather than budget.',
 ], GREEN)
 
 # ---- S5: Q1 vs Q2 blended funnel ---------------------------------------------
@@ -325,11 +332,13 @@ card(s, 7.5, 1.9, 5.3, 5.0, 'READ', [
     'grew 14% and submissions fell 14%. Each funnel stage dampened the '
     'volume the media bought: the start rate diluted from 17% to 5% and '
     'the submit rate from 17% to 13%.',
-    'Funded and traded held flat, so the business outcome absorbed none '
-    'of the scale yet.',
-    'The work that converts this traffic is funnel work: the '
-    'start-to-submit step first, then the approved-to-funded step. '
-    'Media is filling the top; the next accounts come from conversion.',
+    'Approval, funding, and activation held steady through the '
+    'scale-up; those stages run on the application-review and '
+    'account-activation journey downstream of media.',
+    'The media mandate is qualified traffic and submitted applications '
+    'at controlled unit cost. Converting starts into submissions is the '
+    'joint funnel work on the July roadmap, and it is where the next '
+    'accounts come from.',
 ], BLUE)
 
 # ---- S6: Site traffic chart ---------------------------------------------------
@@ -360,8 +369,8 @@ card(s, 7.9, 1.95, 4.9, 4.95, 'WHAT IT MEANS', [
 # ---- S7: Exec summary (June) --------------------------------------------------
 s = prs.slides.add_slide(BLANK)
 header(s, 'JUNE 2026  ·  EXECUTIVE SUMMARY',
-       'The biggest GCG media month of 2026, with one channel at its '
-       'ceiling.', 7)
+       'The biggest GCG media month of 2026, and the map for where July '
+       'dollars go.', 7)
 table(s, 0.5, 1.9, 7.4, 2.3, [
     ['Channel', 'Spend', 'Impr', 'Clicks', 'Conv', 'CPA'],
     ['Google Ads', '$22,524', '181,470', '12,888', '67', '$336'],
@@ -383,10 +392,11 @@ card(s, 8.1, 1.9, 4.7, 2.4, 'HEADLINES', [
     'entered the market.',
 ], GREEN)
 card(s, 0.5, 4.95, 7.4, 2.0, 'WHAT THE DATA SAYS', [
-    'Search hit its rank ceiling: +48% spend bought -12% applications. '
-    'Paid social scaled 151% with healthy delivery (71% of clicks became '
-    'landing-page views). The reach line scaled 37% and its viewability '
-    'fell to 46.9%, which the blocklist addresses.',
+    "The search scale-up surfaced the account's rank ceiling (67 "
+    'applications at $336); the fix is ad-rank work, already scoped. '
+    'Paid social scaled 151% with healthy delivery (71% of clicks '
+    'became landing-page views). The reach line scaled 37% and its '
+    'viewability fell to 46.9%, which the blocklist addresses.',
 ], BLUE)
 card(s, 8.1, 4.95, 4.7, 2.0, 'JUNE PRIORITY', [
     'Shift paid social to the conversion objective, run the search '
@@ -426,7 +436,7 @@ card(s, 6.9, 1.9, 5.9, 5.1, 'WHAT WE RECOMMEND', [
 # ---- S9: Google perf ----------------------------------------------------------
 s = prs.slides.add_slide(BLANK)
 header(s, 'GOOGLE ADS  ·  PERFORMANCE',
-       '67 submitted applications at $336. The account hit its rank '
+       '67 submitted applications at $336. The scale-up mapped the rank '
        'ceiling.', 9)
 tile(s, 0.5, 1.9, 'SPEND', '$22,524', '+48% MoM')
 tile(s, 2.5, 1.9, 'IMPRESSIONS', '181,470', '4 campaigns')
@@ -447,8 +457,9 @@ card(s, 8.4, 3.35, 4.4, 3.55, 'HIGHLIGHTS', [
     'definition unchanged from May).',
     'TrackB stayed the efficiency core: Platform $264 and Authority '
     '$297. TrackA Trust converted at $433.',
-    'Spend rose 48% but applications fell 12%, because extra budget at '
-    'current ad rank bought worse auctions, not more volume.',
+    'The 48% scale-up surfaced the ceiling: at current ad rank, '
+    'incremental budget reaches lower-quality auctions. The auction '
+    'data now maps exactly where rank work unlocks volume.',
 ], GREEN)
 text(s, 0.5, 5.55, 7.6, 1.3, [
     'Impression share tells the story: campaigns lose 64-76% of '
@@ -462,13 +473,13 @@ s = prs.slides.add_slide(BLANK)
 header(s, 'GOOGLE ADS  ·  READ & RECOMMENDATIONS',
        'Earn rank first. Then scale.', 10)
 card(s, 0.5, 1.9, 6.1, 5.1, 'WHAT THE DATA SHOWS', [
-    'May was the efficiency peak: 76 applications at $200 with even '
-    'weekly pacing. June added 48% more budget and got 12% fewer '
-    'applications at $336.',
-    'The auction data isolates the cause: lost impression share is '
-    'rank-driven everywhere (64-76%), not budget-driven (9-13%). The '
-    'account cannot buy its way past ad rank at current bids, quality, '
-    'and ad strength.',
+    "May was the efficiency peak: 76 applications at $200. June's "
+    'larger budget could not push past the auction ceiling: 67 '
+    'applications at $336, with the data isolating ad rank, not '
+    'budget, as the limiter.',
+    'Lost impression share is rank-driven everywhere (64-76%), not '
+    'budget-driven (9-13%). The account cannot buy its way past ad '
+    'rank at current bids, quality, and ad strength.',
     'TrackB remains the proven converter set ($264-$297); Brand at 11% '
     'impression share is under-defended.',
 ], BLUE)
@@ -551,7 +562,8 @@ card(s, 0.5, 3.35, 6.1, 3.55, 'READ', [
     'devices at a flat $0.82 CPM.',
     'Viewability fell to 46.9%, well under the 70% standard. We '
     'delivered an 18-site blocklist covering $9,752 (32%) of June spend '
-    'on this line and recommend a campaign-level viewability floor.',
+    'on this line and recommend a campaign-level viewability floor to '
+    'hold quality as reach scales.',
     'Results rose 8 to 15, but 13 of 15 are view-through: directional '
     'support, not proven response.',
 ], BLUE)
@@ -629,7 +641,8 @@ card(s, 9.0, 1.9, 3.8, 4.4, 'TO CLOSE THE QUARTER', [
 rect(s, 0.5, 6.5, 12.3, 0.55, GRAY_BG)
 rect(s, 0.5, 6.5, 12.3, 0.08, BLUE)
 text(s, 0.7, 6.63, 11.9, 0.35,
-     'Media is filling the funnel. July converts it.', 10, True, NAVY)
+     'Q3 built the reach, the measurement, and the map. July converts '
+     'them.', 10, True, NAVY)
 
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
 prs.save(OUT)

@@ -152,10 +152,14 @@ r = section(ws, r, NC, 'Executive Summary')
 r = para(ws, r, NC,
          'June was the biggest GCG media month of 2026: $117,024 across '
          'five lines, up 53% from May, with the Native pilot launching as '
-         'the fifth channel. Search hit its rank ceiling: spend rose 48% '
-         'and submitted applications fell 12% (76 to 67), because every '
+         'the fifth channel. Cost per measured submitted application held in '
+         'the $350-$420 band across the quarter, the program\'s core '
+         'efficiency metric. The planned search scale-up surfaced the '
+         'account\'s rank ceiling: 67 submitted applications (May: 76), '
+         'because every '
          'campaign loses 64-76% of available impressions to ad rank and '
-         'only 9-13% to budget. Paid social scaled 151% with healthy '
+         'only 9-13% to budget, so July search work is ad rank before '
+         'budget. Paid social scaled 151% with healthy '
          'delivery (70.6% of clicks became landing-page views) and is '
          'ready for its conversion objective. The reach line scaled 37% at '
          'a $0.82 CPM while viewability fell to 46.9%; the blocklist and a '
@@ -366,9 +370,10 @@ r = table(ws, r,
           ],
           fmts=[None, PCT2, PCT2, PCT2])
 r = para(ws, r, NC,
-         'Every campaign is rank-limited. June proved additional budget at '
-         'current ad rank buys worse auctions: spend +48%, applications '
-         '-12%, CPA $200 to $336.')
+         'Every campaign is rank-limited. The June scale-up quantified it: '
+         'at current ad rank, incremental budget reaches lower-quality '
+         'auctions (67 applications at $336). The ad-rank program '
+         'converts this into recovered impression share.')
 r += 1
 r = section(ws, r, NC, 'Paid Social Measurement Check (June)')
 r = table(ws, r,
@@ -413,9 +418,10 @@ r = table(ws, r,
 r = para(ws, r, NC,
          'Traffic grew 16x January to June while application starts stayed '
          'near 2,600/month: the start rate diluted from 55% to 4%. '
-         'Approval (45%) and traded (73-82%) rates held; the '
-         'start-to-submit and approved-to-funded steps are the funnel '
-         'work.')
+         'Approval (45%) and traded (73-82%) rates held; approval, funding, '
+         'and activation run on the application-review and '
+         'account-activation journey downstream of media. The joint '
+         'funnel work targets the start-to-submit step.')
 r += 1
 r = section(ws, r, NC, 'Conversion Definitions (per channel)')
 r = table(ws, r,
