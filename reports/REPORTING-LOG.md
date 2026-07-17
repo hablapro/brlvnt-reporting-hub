@@ -83,3 +83,15 @@ Chronological log of reporting sessions. Newest first. One block per session.
 - Quantcast (both sub-clients): MCP not connected this session. User is connecting the `quantcast` MCP and reloading. Placeholders + pull instructions in each `data/quantcast-data.md`.
 
 **Resume next session:** read `forex/2026-05-BUILD-STATUS.md`, pull Quantcast, then QA → model → build 2 Sheets + 2 decks → upload to both Drive folders → close beads.
+
+***
+
+## Session 2026-07-16/17 — GGMI June finalized + Q3 FY2026 QBR built, deck APPROVED TO SEND
+
+**Delivered (all in Drive `06. June-data`, 1x1jeGRsh0AgYsB8hVLaW1O1FGPf6OF2Y, shared drive):**
+- Google Sheet `Forex GGMI (LATAM) — June 2026 Performance Report` (`1P3SIZ…`, 4 tabs, formatted, numbers verified vs model).
+- Deck: Google Slides `1iNea…` = **CANONICAL, 19 slides, approved to send 2026-07-17**. QBR-first order: title → blended Summary (Jan–Jun KPI table w/ MoM) → Q3 spend/apps/vs-plan → Renzo's 2 market-volatility slides (his calc, reviewed + fixed in place) → site traffic + SEO slides with line charts → June channel detail → close. Raw PPTX in Drive (`1yxhT…`) + local `report-client-decks/06.*` are exports of the Slides.
+- Spend Tracker + Billable extended to June (GGMI); GCG June column pending.
+- Key rulings this session: (1) client-facing spend MUST match the client budget tracker, adjustments recalculated silently (June Azerion $35,026, total $120,393, +53%); (2) Slides file is canonical once Renzo edits it — never re-upload a built PPTX over it; edit via `gws slides presentations batchUpdate` replaceAllText (gws supports ALL Google APIs, not just the 5 in --help).
+
+**Resume next session:** GCG June 2026 report, bead `Reporting-Analytics-7v6` (full pull → QA → model → narrative → deliverables; get the GCG client-tracker figures from Renzo first). Then: Azerion vendor reply pending, SA360→GA4 link (July restatement ~4x, flag it), July client questions A–D.

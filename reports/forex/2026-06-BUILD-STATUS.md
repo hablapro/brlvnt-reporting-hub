@@ -17,8 +17,7 @@ Renzo approved narrative v2 framing as-is (2026-07-16) and scoped this session t
 
 ## ▶ RESUME HERE (what's left)
 
-**1. Renzo: review/edit the June Slides working draft, then send to client** (visual check of the PPTX→Slides conversion included).
-**2. GCG June report** — not started (pull → QA → model → narrative → deliverables; then fill the tracker's GCG June column + Billable June combined totals).
+**1. GCG June report** — bead `Reporting-Analytics-7v6`, not started (pull → QA → model → narrative → deliverables; get the GCG client budget-tracker figures from Renzo FIRST — client-facing spend must match them, adjustments silent; then fill the tracker's GCG June column + Billable June combined totals). GGMI deck+QBR is DONE and approved to send (2026-07-17); the Google Slides (`1iNea…`, 19 slides) is canonical — never re-upload a built PPTX over it, edit via `gws slides presentations batchUpdate`.
 **3. Azerion vendor reply** still pending (geo certification, funnel/site/format/creative breakdowns) — email sent 2026-07-07. GA4 tracking fixes still with execution (`recommendations/forex/ggmi/GGMI-GA4-tracking-recommendations-June-2026.md`): SA360→GA4 link (expect July paid-search restatement ~4x, flag it), Meta placement audit before reinstating conversions.
 **4. July report carry-overs:** client questions A–D in `recommendations/forex/ggmi/GGMI-July-2026-action-checklist.md`; Quantcast disallow refresh each report.
 
