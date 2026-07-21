@@ -1,5 +1,31 @@
 # June 2026 Report — Build Status & Resume Handoff (GGMI)
 
+## 💬 CLIENT-COMMENT REVIEW → GGMI rev1 DECK (2026-07-20/21)
+
+Client left **10 comments** on the live GGMI Google Slides (`1iNea…`): **Laura Acosta ×9, Mateus Rocha ×1**. Worked them one-by-one with Renzo. All edits staged into a NEW working master, NOT the live deck (editing the live deck would wipe the client comments):
+
+**`report-client-decks/06. GGMI_LATAM_June_2026_Performance_Review-rev1.pptx` — 22 slides (main 1–19, appendix 20–22).** Renzo writes the client replies himself; Berelvant work = the deck edits + factual ammo. rev1 is LOCAL ONLY; live Slides untouched.
+
+**Per-comment disposition:**
+1. Meta reach/freq → added REACH 6.3M / freq 3.0 card on Meta slide (CPM moved to Impressions sub). Data pulled live: account `act_1699453997689551` is SHARED GGMI+GCG; GGMI-only reach via campaign-level pull (CTR 6.25M dominates).
+2. Funnel framework → two appendix slides: **S20 funnel data lens** (Reach→Visits→Submitted + attribution break + client funnel) and **S21 funnel framework** (awareness/consideration/conversion tiers + goals + June metrics + channel map + "prospecting/retargeting = targeting mode, not a stage"). Both in appendix, client picks.
+3. SEO-on-hold-until-nextgen → **IGNORED per Renzo; SEO workstream recommendation STAYS** (organic −75% is real).
+4. Quantcast frequency → added REACH 18.2M / freq 2.3 card (replaced AVG CPC). Freq = 42.0M impr / 18.2M device reach.
+5. Azerion vs Quantcast quality → reply reasoning only (no slide change). **Renzo corrected me: same pixel/App-Start/Submitted-App setup on both; difference is (a) data each SHARES, (b) Azerion curated/higher-viewability inventory, (c) Quantcast dynamic CPA vs Azerion FIXED CPA.**
+6. Mateus geo/paid-unpaid → **S22 appendix session table** (Mexico 9,236: ~4,770 paid/51% vs ~4,510 unpaid/49%; Rest-of-LATAM ~13,800 ~85%+ organic; Venezuela 14,552 QUARANTINED as anomaly, 13,571 unassigned). Caveats stamped: sessions-not-apps, Bing-in-Unassigned until SA360 linked, Direct imperfect. App-level split needs client funnel dashboard by geo.
+7. Meta audience 25+ → already reflected (S15 recs = "refine audience to 25+"); her internal note to her team.
+8. Meta campaign split → added 2-row "Meta programs" table (Prospecting/traffic $25,345 vs Engagement/Followers $579). **Option 1 per Renzo: group, no campaign names, no objective column** — folds the tiny CONV campaign into prospecting so the objective miss (below) never surfaces.
+9. "spend +53% but apps down, where's the gap" → **OPEN: Renzo's decision** whether to add a summary bridge line (paid apps grew every month; blended dip = non-paid base) or handle in his reply.
+10. "$20K Meta no conversions" → Renzo's reply; the campaign split makes it self-evident.
+
+**ACCURACY / TIGHTNESS PASS (Renzo: make the slides tight):** removed every challengeable framing across the deck — **"in-app inventory", "inventory quality as the cause", "cheap", "placement audit", "click quality", CPM-as-a-lever**, all gone (final scan clean). Corrected S15 which had FALSELY said tracking was NOT the cause. Meta reframed: Facebook-native/feed-led delivery (97% FB, ~2.8% Audience Network — NOT an in-app buy; low Mexico CPM is normal market cost, not bad inventory), conversions held on MEASUREMENT (not inventory), audience→25+ in July. Slides touched: 10, 11, 14, 15, 18, 19. HIGHLIGHTS objective phrase neutralized ("weighted to upper-funnel delivery").
+
+**🔴 INTERNAL, KEEP OUT OF DECK (Renzo ruling):** Meta ran a TRAFFIC objective in June because the performance manager didn't switch it to conversion as planned. That's a Berelvant execution miss between Renzo and his PM — NOT in the deck or comment replies. Deck stays forward-looking; never claim June was "traffic by design."
+
+**GA4 CONVERSION-TRACKING GAP (documented):** `reports/forex/GA4-conversion-tracking-gap-2026-06.md` — internal evidence note. **GA4 key events = ~0 for ALL paid channels on the LAT property (508849216); ~14 total all month.** The US property (325353267, GCG) records key events on every channel. Same brand, two subproperties of Forex Brand (313295947) → it's a property-config problem on LAT, client-owned (StoneX central/WebOps), multi-month open item. **June deck integrity holds: it uses NO GA4 conversion number** (Bing=SA360 offline, Azerion=vendor, Meta=held, Quantcast=view-through); GA4 was only the traffic/session source, which works. Fix path: mark/configure application key events on LAT + link SA360→GA4.
+
+**Tooling note (KNOWN-BUG candidate):** PowerPoint AppleScript PDF export serves a STALE cached copy if a prior doc is open — twice returned N−1 pages. Workaround: `osascript quit` PowerPoint + fresh-named temp copy + `delay 4-5` before export. Temp render copies go in `~/tmp-deck-render/` and are deleted after.
+
 ## 🎨 HOUSE-STYLE RESTYLE 2026-07-17 (both June decks; RENZO DECIDES THE SWAP)
 
 Renzo asked for both June decks formatted per `forex-reporting-deck.skill` (the locked house style: Georgia headers / Calibri body, indigo `1E2761` bands + coral `F96167` rule, deep-navy cover with both logos, coral-bordered read boxes, green/gold read-recommend cards, navy table headers with ice-blue totals, house footers). The June decks had been built in the older Arial / `3B5998`-blue system.
