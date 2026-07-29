@@ -7,7 +7,7 @@ Audit UTM parameters across all live Forex channels (GGMI LATAM + GCG US Hispani
 ## What is already VERIFIED (do not re-derive; evidence + repro steps in the gap file)
 1. **Ingestion pipeline works end to end.** Live test 2026-07-28: seeded click `utm_source=azerion&utm_medium=display&utm_campaign=brlvnt_qa_test_20260728` on forex.com/es/ passed the Cloudflare challenge, GA4 received the full URL, and the session appeared in the LAT property (508849216) ~4h later with all three parameters intact. The site does NOT strip UTMs. This also proves the seeded-campaign receipt test as a reusable QA method.
 2. **Quantcast + Azerion display clicks (CM360-served) carry ONLY `utm_source` + `utm_medium`.** No `utm_campaign`, `utm_content`, `utm_term` on any of the 248 CM360 ads checked. Root cause of campaign showing `(referral)`/`(not set)` in GA4 for both vendors.
-3. **Casing is fragmented and both variants are live.** CM360 display ads: lowercase (`azerion`, `quantcast`). CM360 native ads (launched Jun 25, campaign 36170375, type AD_SERVING_TRACKING): capitalized (`Azerion`, `Quantcast`) with `utm_medium=native`. GA4 splits each vendor into 2+ rows; on Jul 28 capitalized `Quantcast / display` outweighed lowercase 15:1 in daily sessions.
+3. **Casing is fragmented and both variants are live.** CM360 display ads: lowercase (`azerion`, `quantcast`). CM360 native ads (launched Jun 25, campaign 36170375, type AD_SERVING_TRACKING): capitalized (`Azerion`, `Quantcast`) with `utm_medium=native`. GA4 splits each vendor into 2+ rows. (The "15:1 on Jul 28" figure previously here was a single-day Quantcast-only reading; over 14 days to 2026-07-28 the ratio across both vendors is 1,116 capitalized to 630 lowercase. See `UTM-AUDIT-2026-07-28-PLATFORM-FINDINGS.md` finding 2, which also shows the two casings come from different tagging paths.)
 4. **CM360 landing-page library is a landmine.** Advertiser 16624558 has: "Default" = `https://www.forex.com/es/?utm_source=quantcast&utm_medium=display` (hardcoded quantcast, any ad falling back to it credits Quantcast) and "GGMI_es_default" = `https://www.forex.com/es/` (no UTMs at all).
 5. **Untagged leakage exists:** `s0.2mdn.net / referral` (Google's CM360 creative CDN as referrer) took 34 sessions on Jul 28 alone = ad clicks arriving with no UTMs. Also one malformed source `quantcast,mp-dtom` (comma-joined macro).
 6. **Cloudflare challenges ad-click URLs** (curl gets 403 `cf-mitigated: challenge`; a real Chrome session passed via interstitial, `__cf_chl_tk` redirect visible in GA4 referrer). Did not block a passing browser's UTMs. Open question below on attrition.
@@ -28,12 +28,18 @@ Audit UTM parameters across all live Forex channels (GGMI LATAM + GCG US Hispani
 | TradingView widget | `tradingview / display` | `openaccountbutton` etc. | Partnership tag, not paid media; leave but document |
 
 ## Not yet audited (the actual to-do)
-- Meta ad-level URL parameters (both GGMI and GCG accounts) — meta-ads MCP: `get_ad_creatives` exposes URL tags.
-- Bing/SA360 final-URL suffixes (bing-ads / sa360 MCPs) — campaigns resolve, but confirm the template and `utm_content` depth.
-- GCG-side CM360 advertiser 16576650 (only GGMI 16624558 was checked).
-- Native pilot (GCG) tagging.
+**Google Ads, Bing and CM360 were audited 2026-07-28. Results, including three new findings and a proposed cross-channel taxonomy, are in `UTM-AUDIT-2026-07-28-PLATFORM-FINDINGS.md`. Read that before touching the items below.**
+
+- ~~Bing/SA360 final-URL suffixes~~ DONE. Zero UTMs at every level; SA360 API access to the Bing engine account is blocked.
+- ~~GCG-side CM360 advertiser 16576650~~ DONE. Mirrors GGMI, plus a GCG campaign defaulting onto the LAT page tagged as Quantcast.
+- ~~Native pilot (GCG) tagging~~ DONE. Capitalized source, `utm_medium=native`.
+- ~~A written UTM taxonomy/standard~~ DRAFTED, pending StoneX approval.
+- Meta ad-level URL parameters (both GGMI and GCG accounts) — meta-ads MCP: `get_ad_creatives` exposes URL tags. Largest remaining unaudited channel by spend.
 - Email/push templates (client-owned, SFMC).
-- A written UTM taxonomy/standard to hand every vendor (utm-governance skill has the framework).
+- **Blocker for casing fixes:** capitalized `Source / display` traffic lands on the `/es/lp/` set and comes from a tagging path that is not the audited CM360 display ads. It outweighs the lowercase path 1,116 to 630 sessions over 14 days. Locate it before scoping any normalization.
+
+## Carried over, do not lose (from the gap file)
+GA4 last-non-direct-click will show far fewer paid live applications than SA360 offline import and vendor view-through. Pre-frame that gap before the client sees any GA4 conversion number, or it reads as a discrepancy in our reporting.
 
 ## Fix backlog (by owner)
 1. **Berelvant, CM360 (mutation-gated — show mutation table, wait for explicit yes):** add `utm_campaign={campaign}` + `utm_content={adset/creative}` to all vendor click-through URLs; normalize all sources/mediums to lowercase; fix or retire the hardcoded-quantcast "Default" landing page; investigate the s0.2mdn.net untagged path (likely backup-image/rich-media exits without suffix).
@@ -47,7 +53,7 @@ Audit UTM parameters across all live Forex channels (GGMI LATAM + GCG US Hispani
 
 ## Key IDs and access
 - GA4: LAT/GGMI `508849216`, US/GCG `325353267`, brand umbrella `313295947`. Web stream measurement ID (LAT): `G-XPZTRCXSST`.
-- CM360: profile `10604084`, account `5877`; advertisers GGMI `16624558`, GCG `16576650`. Display/native campaign seen: `35506122` (display), `36170375` (native tracking ads).
+- CM360: profile `10604084`, account `5877`. **Scope lock: only advertisers `16576650` (GCG US Spanish - Active) and `16624558` (GGMI - FOREX.com LATAM Active).** Account 5877 is shared and holds lookalikes, including `16576647` "GGMI Spanish" which is three digits from the in-scope GCG ID, plus legacy `16085389` "GCG - US Hispanic" and `11137225` "FOREX.com LATAM". Pass `advertiser_id` on every call and verify it on every returned record. Display/native campaign seen: `35506122` (display), `36170375` (native tracking ads).
 - SA360 / Bing / Meta / Quantcast: MCPs configured in `.mcp.json`; SA360 customer IDs in memory `reference_sa360_query_ids`.
 
 ## Tooling gotchas (cost hours today; do not rediscover)

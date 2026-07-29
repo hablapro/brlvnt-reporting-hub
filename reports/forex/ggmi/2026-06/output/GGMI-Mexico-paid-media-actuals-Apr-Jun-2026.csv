@@ -1,0 +1,16 @@
+"GGMI (Mexico-only) — Paid Media Actuals — Apr-Jun 2026 — USD, America/New_York"
+"Source: validated June 2026 cross-channel model. Spend MoM Δ% = vs prior month, same channel (April blank: no March baseline). Conversions use per-channel definitions and must NOT be summed. No revenue tracking (ROAS N/A)."
+
+Month,Channel,Spend (USD),Spend MoM Δ%,Submitted Apps / Primary Conversions,Conversion Definition,CPA (USD),MX Geo Compliance,Notes
+April 2026,Bing,15289.21,,,Submitted applications (SA360 Primary),,Not measured for Apr,
+April 2026,Meta,5227.18,,1,Pixel custom events (UNVALIDATED),5227.18,Compliant — 100% MX,CPA not client-facing; conv unvalidated
+April 2026,Quantcast,15004.71,,0,View-through (soft signal),,Compliant — 100% MX,
+April 2026,Azerion,10215.0,,,Submitted applications (vendor-defined),,Unverified — geo pending,Raw vendor spend
+May 2026,Bing,15972.0,+4.5%,33,Submitted applications (SA360 Primary),484.0,Not measured for May,
+May 2026,Meta,6626.06,+26.8%,4,Pixel custom events (UNVALIDATED),1656.52,Compliant — 100% MX,CPA not client-facing; conv unvalidated
+May 2026,Quantcast,26890.0,+79.2%,1,View-through (soft signal),26890.0,Compliant — 100% MX,"Client-reconciled spend (MCP showed $25,013.56)"
+May 2026,Azerion,27257.72,+166.8%,37,Submitted applications (vendor-defined),736.7,Unverified — geo pending,Raw vendor spend
+June 2026,Bing,25658.61,+60.6%,50,Submitted applications (SA360 Primary),513.17,"VIOLATION — 51% MX; 49% ($12,637) non-MX","MX-qualified spend ~$13,021; Bing-native UI shows 0 conv (SA360 is source of truth)"
+June 2026,Meta,25923.71,+291.2%,86,Pixel custom events (UNVALIDATED),301.44,Compliant — 100% MX,86 conv HELD from client-facing CPA: starts-vs-submit + new-LP GA4 anomaly
+June 2026,Quantcast,33784.2,+25.6%,11,View-through (soft signal),3071.29,Compliant — 100% MX,Viewability 51.3% (below IAB 70%); disallow list of 49 sites delivered
+June 2026,Azerion,34555.83,+26.8%,42,Submitted applications (vendor-defined),822.76,Unverified — geo breakdown requested,Raw vendor spend; funnel starts=440

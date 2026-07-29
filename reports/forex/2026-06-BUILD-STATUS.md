@@ -160,3 +160,17 @@ All working files are local `report-client-decks/`; live Google Slides untouched
 - Quantcast (roast #8): already tied to 18-site blocklist + viewability floor, no change. GCG comment-response docx scanned, no overlap, untouched.
 
 **OPEN (Renzo's plate, not deck work):** (1) email to Roshni + team re the GGMI GA4 problem (ties to dead key-events on the LAT property); (2) Laura checking central team on standing up dedicated awareness campaigns (next-cycle strategy); (3) NextGen date — unblocks the SEO timing call; (4) GCG client comments not yet received (holding). **Current working files: GGMI rev3, GCG rev2 — both local, both awaiting Renzo's go to become the client send.**
+
+---
+
+## SESSION 2026-07-28/29 — GA4 gap closed, Roshni email drafted, decks cleaned, June cycle CLOSED
+
+**GA4 investigation (systematic pass, all verified):** LAT property (508849216) has exactly ONE key event configured: `first_open` (app install). The live application events fire and ingest correctly (June: live_start 4,990; live_confirmation 660 = g2 540 + mt5 117 + mt4 4). Fix = GA4 Admin designation + SA360 link, both StoneX WebOps. End-to-end ingestion PROVEN by seeded live click test (`brlvnt_qa_test_20260728` appeared in the property with source/medium/campaign intact; the 503 on collect was transient). Full evidence + verification matrix: `GA4-conversion-tracking-gap-2026-06.md`.
+
+**Roshni email:** Gmail DRAFT created (r-6144670839956544927) to Roshni.Shah@stonex.com, cc Laura + Mateus. Renzo to attach `GA4 Conversion Tracking - Forex LAT Property Gap - June 2026.docx` (connector can't attach), delete the bracketed reminder line, and send. Doc approved by Renzo 2026-07-29. This closes OPEN item (1) above.
+
+**UTM audit spun off as new project:** entry `UTM-AUDIT-HANDOVER.md` (+ platform findings + draft standard). Key: QC/AZ CM360 clicks lack utm_campaign; casing split; hardcoded-quantcast default landing page; CM360 fixes are ours, mutation-gated.
+
+**Deck cleanup (Renzo ruling 2026-07-29):** `report-client-decks/` = finals only. GGMI rev3 → `06. GGMI_LATAM_June_2026_Performance_Review-final.pptx`, GCG rev2 → `06. GCG_US_June_2026_Performance_Review-final.pptx`; all prior versions in `_archive/` (verified supersets before archiving, no content lost; lineage in folder README). **Drive Slides stay AS PRESENTED (Jul-17 housestyle) — June cycle CLOSED.** Rev-cycle framings are INPUT for July reports (week of Aug 3): Meta by-objective, Quantcast=awareness, submitted-apps basis, "will show" not "confirms", SEO = tracked organic-risk pending NextGen.
+
+**Still open going into July:** Laura on awareness-campaign strategy; NextGen date; GCG client comments; July deck promises (Native full read, geo verification, SA360 link flag, Meta conversion-objective read on submitted apps); Azerion page_view gap diagnostic (in UTM handover).
