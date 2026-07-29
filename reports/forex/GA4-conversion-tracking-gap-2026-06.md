@@ -43,3 +43,34 @@ The GA4 property configuration and the on-site application key events are client
 
 ## How to reproduce
 GA4 API `runReport`, property 508849216 (LAT) and 325353267 (US), 2026-06-01 to 2026-06-30, dimension `sessionSourceMedium`, metrics `sessions` and `keyEvents`. Both properties are subproperties of Forex Brand (313295947).
+
+## UPDATE 2026-07-28 — the events DO fire; the gap is key-event designation
+Event-level pull (dimension `eventName`, June 2026) shows the live-application events firing on the LAT property. The earlier claim "application events are not firing into GA4" is wrong at the event layer; they fire but none are marked as key events, so the `keyEvents` metric reads ~0. This makes the fix a config toggle in GA4 Admin, not a tagging/dev ticket.
+
+The live application event family on LAT, June 2026:
+
+| Event | LAT count | US count | Meaning |
+|---|---|---|---|
+| `live_start` | 4,990 | 47,212 | live application started |
+| `live_confirmation` | 660 | 9,558 | live application confirmed (parent event) |
+| `live_confirmation_g2` | 540 | 250 | confirmed on G2 platform |
+| `live_confirmation_mt5` | 117 | 119 | confirmed on MT5 |
+| `live_confirmation_mt4` | 4 | 36 | confirmed on MT4 |
+
+- On LAT the platform-suffixed events sum to the parent (540+117+4=661 ≈ 660): mark ONLY `live_confirmation` (+ `live_start`) as key events, use the suffixed ones for platform splits, else you double count.
+- On US the parent (9,558) far exceeds the suffix sum (405); US has app streams (`screen_view` present) likely firing the parent without suffix. LAT is web-only.
+- `live_start` by source on LAT: **2,448 of 4,990 (~49%) attributed to "(unlinked SA360 account)"** — the SA360 link fix recovers this directly. Direct 1,042, google/organic 603, tradingview/display 265, bing/cpc 169, Meta/social 70.
+- `live_confirmation` by source on LAT: direct 205, google/organic 155, inappuser 108, tradingview 57, unlinked SA360 40, bing/cpc 7, Meta/social 8, quantcast/azerion 0. HOLD INTERNALLY: GA4 last-non-direct-click will show far fewer paid live apps than SA360 offline / vendor view-through. Pre-frame that difference before the client sees GA4 conversion numbers, or it reads as a discrepancy in our reporting.
+- Demo equivalents exist (`demo_confirmation`, `_g2`, `_mt5`, `_mt4`) if demo accounts are ever wanted as key events.
+
+## VERIFICATION MATRIX 2026-07-28 (systematic pass, pre-client certainty)
+**VERIFIED (reproducible evidence):**
+1. LAT key-event config = `first_open` ONLY (app event). Jan–Jun keyEvents: 0/1/0/5/23/14, all first_open. Web application events were NEVER designated. (Data API: eventName × keyEvents.)
+2. US key-event list exact: session_start (the inflator), live_start, live_confirmation(+g2/mt5/mt4), demo_confirmation(+g2/mt5/mt4), first_open, lead_generation, view_search_results. LAT target = this list minus session_start, parent events only.
+3. Vendor clicks DO carry UTMs: CM360 creative assignments — QC display `/es/about-us/overview/?utm_source=quantcast&utm_medium=display`, AZ display `/es/?utm_source=azerion&utm_medium=display`, AZ native `utm_source=Azerion&utm_medium=native` (capitalized → the GA4 case-split rows). NO utm_campaign on any = root cause of campaign-level blindness ("(referral)"/"(not set)").
+4. Site does NOT strip UTMs: live browser test 2026-07-28 ~16:12 ET, GA4 collect hit `dl=` carried full UTMs incl. seeded `utm_campaign=brlvnt_qa_test_20260728` (tid G-XPZTRCXSST).
+5. Cloudflare challenge intercepts ad-click URLs: normal Chrome session got interstitial (GA4 `dr=` shows `__cf_chl_tk` redirect); curl gets 403 `cf-mitigated: challenge`; June vendor landing pages show `__cf_chl_*` tokens.
+**OPEN (do NOT assert to client until closed):**
+A. **CLOSED-CONFIRMED 2026-07-28 8:03pm ET.** Receipt query on LAT returned the row `brlvnt_qa_test_20260728 | azerion / display | 1 session`. End-to-end ingestion PROVEN: click URL → Cloudflare challenge → landing page → GA4 collect → property, with source/medium/campaign all intact. The 503 on the collect POST was transient (hit retried/ingested). The core client story stands with zero open contradictions; Roshni docx cleared to send.
+B. Azerion page_view gap: 1,366 session_start vs ~130 page_view (quantcast 903 vs 573). Candidate causes: challenge attrition, consent-mode blocking page_view, instant bounce. Test: fresh profile/incognito click, do NOT touch consent banner, watch which GA4 events fire.
+C. GA4 rendering campaign as "(referral)" vs "(not set)": cosmetic labeling question only; missing utm_campaign is proven either way.
