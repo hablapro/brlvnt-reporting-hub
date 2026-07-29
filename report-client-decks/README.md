@@ -9,4 +9,4 @@ Lineage of the June finals (verified by slide-level diff 2026-07-29):
 
 The `-presentation-script.md` files narrate the Jul-17 house-style versions and predate the rev edits; treat their slide numbering as approximate.
 
-**Delivery note:** the canonical client-facing decks are the Google Slides in Drive. As of 2026-07-29 the Drive Slides still hold the Jul-17 house-style content; the rev edits above are local-only until Renzo approves pushing them (standing rule: nothing goes to Drive unless asked).
+**Delivery note (Renzo ruling 2026-07-29):** the canonical client-facing decks are the Google Slides in Drive, which hold the Jul-17 house-style content as presented to the client. They stay that way; the June cycle is closed. The rev edits captured in the local `-final` files are input for the July reports.
