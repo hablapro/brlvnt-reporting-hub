@@ -25,3 +25,10 @@ Temp render copies live in `~/tmp-deck-render/` and are deleted after QA.
 1. Save with `file name ((path to documents folder as text) & "name.pdf")`.
 2. Fetch the result from `~/Library/Containers/com.microsoft.Word/Data/Documents/name.pdf` and copy it where needed.
 3. Same fresh-uniquely-named-copy rule as the PowerPoint bug applies before opening.
+
+## bing-ads MCP `bing_ads_list_ads` returns 400 NullRequest (tool broken)
+**Seen:** 2026-08-04, auditing GGMI Bing July RSA creative depth (ad group 1306221121842778).
+**Symptom:** every call fails with `400 {"OperationErrors":[{"Code":100,"ErrorCode":"NullRequest","Details":"Invalid JSON at line 0 position N. Path: $.ReturnAdditionalFields","Message":"The request message is null."}]}`. Fails identically with and without the `ad_types` parameter (position shifts 105 → 90, so the malformed field is server-side in the MCP's request serialization, not caused by our input).
+**Impact:** RSA headline/description asset counts cannot be pulled via MCP. The June finding "brand RSAs at 4 headlines / 2 descriptions, below the Bing 8+/3+ standard" therefore remains UNVERIFIED on the current campaigns.
+**Workaround:** none via MCP. Either read creative depth in the Bing UI, or use `bing_ads_bulk_download` (untested for this purpose). Do not re-attempt `list_ads` expecting it to work.
+**Related:** `bing_ads_search_term_report` silently ignores the `campaign_ids` filter and, when given a start date on which only some campaigns delivered, can return only that single day. Verify covered spend against campaign totals before trusting its output; re-run without the campaign filter if coverage looks thin.
