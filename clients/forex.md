@@ -77,7 +77,20 @@ Forex is a programmatic advertising client managed through Quantcast. All report
 
 ### Google Ads
 
-- Status: TBD
+- Status: Active, MCP-connected
+- Account: FOREX.com US ES (4781995752)
+- Sub-client: GCG only (US / Spanish-speaking)
+- Currency: USD
+- Timezone: America/New_York
+- Active campaigns (as of March 2026):
+  - `GCG_US_Esp_NonBrand_TrackA_Trust_Google` (TARGET_SPEND, $175/day)
+  - `GCG_US_Esp_NonBrand_TrackB_Authority_Google` (TARGET_SPEND, $150/day)
+  - `GCG_US_Esp_NonBrand_TrackB_Platform_Google` (TARGET_SPEND, $100/day)
+  - `GCG_US_Esp_Brand_Search_Google` (TARGET_SPEND, $75/day)
+  - `GCG_US_Esp_Competitor_Search_Google` (MAXIMIZE_CONVERSIONS, paused)
+- Conversion tracking: NOT CONFIGURED — zero conversions recorded in March 2026
+- Landing page: https://www.forex.com/es-us (all campaigns)
+- Note: All active campaigns budget-limited; non-brand impression share 10-17%
 
 ## Known Data Notes
 
