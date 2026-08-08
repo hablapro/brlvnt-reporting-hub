@@ -8,6 +8,8 @@ Group LLC, US Hispanic).
 system from this repo.** Actions go to `recommendations/<client>/<sub-client>/`
 for whoever owns execution.
 
+**Resuming a session?** Read `RESUME.md` first for current state and open decisions.
+
 ## Read before working
 
 | Task | Read first |

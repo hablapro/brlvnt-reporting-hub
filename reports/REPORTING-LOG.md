@@ -4,6 +4,36 @@ Chronological log of reporting sessions. Newest first. One block per session.
 
 ---
 
+## 2026-08-04 → 08-08 — Repo restructured for Performance Lead handover — COMPLETE, 4 decisions pending
+
+**Goal:** Make the repo cloneable and runnable by an incoming Performance Lead with minimal guidance. Not a reporting cycle; a handover build.
+
+**Diagnosis:** the process was already mature but undiscoverable. Doctrine lived in `PROJECT_RETROSPECTIVE_AND_LESSONS_LEARNED.md` and scattered build statuses, the README still described a generic "marketing intelligence hub", and the two checks the doctrine calls mandatory were run by eye.
+
+**Delivered (commit `2b1e90e`):**
+- **`docs/`** — RUNBOOK (7 phases per entity, each closing on a named check), DOCTRINE (what may go in a client artifact + why each rule exists), SETUP (all 8 MCP servers, every skill by phase, a 10-minute verification pass), HANDOVER (risks, access, manual steps, carry-overs), DESIGN-SYSTEM (promoted from the unused `.skill`).
+- **`lib/housestyle.py`** — one design system replacing ~1,400 lines of forked builder + the separate restyle pass. `Deck.verify()` refuses to save on slide-count drift (the wrong-footer bug that shipped twice). Verified against a real PowerPoint render; 3 contrast/overlap bugs fixed from what the render showed.
+- **`scripts/protection_scan.py`** — the doctrine's "verify programmatically" requirement. Reproduces known history independently: Mar–May decks BLOCK, both June finals pass.
+- **`scripts/verify_numbers.py`** + per-month `figures.json` — deliverables vs approved figures, both directions, so a stale number surviving a month-fork is caught. Negative-tested. Worked example: `reports/forex/ggmi/2026-06/figures.json` (PASSES against the June GGMI final).
+- **`scripts/new_month.sh`** + `templates/month/` — idempotent scaffold.
+- **Config** — `.mcp.json` 3 → the 8 servers actually used, secrets as `${VAR}`; `.env.example`; `requirements.txt`; rewritten `.gitignore`.
+
+**Retired to `_archive/`** (reasons in `_archive/README.md`): 10 project-local agents in a wrong-cased `.claude/AGENTS/` that Claude Code never discovered, an identical `.codex` copy, the unregistered JS deck generator, 2 generic templates. Deleted: empty `download.html`, a text dump of the May GCG deck.
+
+**New finding:** `"$124 vendor-basis"` on slide 14 of the GCG June final is forbidden vocabulary that survived two manual protection passes. June is closed and the canonical Slides stay as presented, so it is logged as a July carry-over, not retro-fixed. It is the evidence for running gate 2 before every delivery.
+
+**🔴 Four decisions pending from Renzo before the Lead can start:**
+1. **Push.** 39 commits are local-only. `hablapro/brlvnt-reporting-hub` is a personal-namespace remote holding StoneX vendor data and delivered decks. Is that still the right home, and push or not? (Suggestion: move to a private `Berelvant/` repo first.)
+2. **The 3 MCP secrets** handed over out of band: `QUANTCAST_MCP_API_KEY`, `GA_MCP_AUTHORIZATION`, `CM360_MCP_API_KEY`.
+3. **Access grants** — `docs/HANDOVER.md` §2. Lead time on: FX Report shared drive, Reported Spend Tracker (confirm the internal Billable tab may be shared), canonical Slides, Azerion vendor email distribution.
+4. **Confirm 2 doctrine points inferred from the retrospective, not ruled on directly:** (a) agency scorecard = submitted applications + cost per submitted app, downstream neutral; (b) client-facing spend = client budget tracker, recalculated silently, reconciliation internal-only. Both are written into `docs/DOCTRINE.md` as standing rules.
+
+**Also open, lower priority:** repo lives in `/Users/rpro/AI-BRLVNT/`, which is neither the vault nor `dev/<category>/<project>/` per the deliverables rule; the June builders still carry the pre-library palette (new months should import `lib/housestyle.py`).
+
+**Not touched:** `tools/forex-july-2026-*`. A parallel session was building there and committed `e02d4f1` (GGMI July Bing/Meta/Quantcast/GA4 pulls) on 08-08. **The July cycle is further along than `reports/forex/2026-07-BUILD-STATUS.md` showed on 08-04 — read it fresh, do not trust the summary in `docs/HANDOVER.md` §6.**
+
+---
+
 ## 2026-07-07 (2nd session) — June 2026 GGMI: GA4 + QA/model + narrative draft — DATA COMPLETE, pending review
 
 **Goal:** Resume the June GGMI build after connecting the GA4 MCP: pull GA4, run cross-channel QA + model, draft the narrative.

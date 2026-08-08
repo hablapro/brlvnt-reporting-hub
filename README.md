@@ -12,6 +12,13 @@ Driven from [Claude Code](https://claude.com/claude-code), which loads
 
 ---
 
+## Picking this up mid-flight?
+
+Read [`RESUME.md`](RESUME.md). It carries session-to-session state: what is done,
+what is blocked, and the decisions outstanding.
+
+---
+
 ## Start here
 
 | You want to | Read |

@@ -1,4 +1,10 @@
 # UTM Parameters Audit — Project Handover
+
+> **This file is the ORIGINAL handover from 2026-07-28 and is no longer the current state.**
+> Live state, the production changes made, decisions on record and open items are in
+> `PROGRESS.md` at
+> `/Users/rpro/Downloads/_Clients/FOREX 2026/Data-Analisys/UTM Channel Audit/PROGRESS.md`,
+> alongside the project `CLAUDE.md` with operating rules and IDs. Start there.
 **Written 2026-07-28. Source session: GA4 conversion-gap investigation (GGMI). Read this first, then `GA4-conversion-tracking-gap-2026-06.md` (verification matrix at bottom).**
 
 ## Project goal

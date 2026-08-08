@@ -1,4 +1,20 @@
 # Amendment Request: add `utm_campaign` to the StoneX UTM standard
+
+> **DO NOT SEND. Superseded in two places as of 2026-08-08.**
+>
+> 1. **The naming convention below was never approved.** Renzo stopped it on 2026-07-31. The
+>    `{business_unit}_{market}_{channel}_{period}` pattern puts format into `utm_campaign`,
+>    which is wrong: `utm_medium` already carries format, and CM360 campaigns are mixed-format
+>    so no single campaign value can be correct. Standing recommendation is to use the CM360
+>    campaign name, lowercased. Undecided.
+> 2. **The native section is wrong.** It recommends `utm_medium=display` with the format held
+>    in `utm_campaign`. That cannot work, for the reason above. Native handling is an open
+>    decision: GA4 custom channel group, or merge into display. Undecided.
+>
+> The business case, the evidence, the paid-search carve-out and the implementation mechanism
+> are all still valid and were proven in production. Rewrite the two sections above before
+> this goes to StoneX. See `PROGRESS.md` in the UTM Channel Audit project folder.
+
 **Drafted 2026-07-29 by Berelvant. For StoneX MKTTECHOPS review.**
 Target document: `GA4 - UTM Tracking requirements`, `wiki.gaincapital.com/display/MKTTECHOPS/GA4+-+UTM+Tracking+requirements`, last modified 2025-10-21.
 
