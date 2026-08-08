@@ -1,0 +1,41 @@
+{
+  "entity": "GGMI (LATAM)",
+  "month": "2026-06",
+  "spend_basis": "Client budget tracker (Renzo ruling 2026-07-16). Azerion tracker $35,026 vs vendor $34,555.83; ad-set spends scaled pro-rata to reconcile. Quantcast matches platform. Reconciliation detail lives in the Spend Tracker note only.",
+  "figures": {
+    "bing.spend": 25659,
+    "bing.impressions": 466582,
+    "bing.clicks": 21480,
+    "bing.submitted_apps": 50,
+    "bing.cost_per_app": 513,
+    "bing.non_mexico_spend": 8612,
+    "meta.spend": 25924,
+    "meta.impressions": 19780693,
+    "meta.clicks": 407136,
+    "azerion.spend": 35026,
+    "azerion.impressions": 7679074,
+    "azerion.clicks": 9910,
+    "azerion.submitted_apps": 42,
+    "azerion.cost_per_app": 834,
+    "quantcast.spend": 33784,
+    "quantcast.impressions": 41964872,
+    "quantcast.clicks": 11284,
+    "total.spend": 120393,
+    "total.impressions": 69891221,
+    "total.clicks": 449810,
+    "ga4.mexico_sessions": 9236,
+    "ga4.unique_visitors": 5838
+  },
+  "allow": [
+    2026, 2025, 1, 2, 3, 4, 5, 6, 7, 11, 12, 15, 17, 19, 20, 22, 30, 31, 33,
+    1036, 1090, 1234
+  ],
+  "history": [
+    6700000000, 5100000000, 4300000000, 2500000000, 2300000000, 2100000000,
+    1100000000,
+    245477, 120000, 78790, 75678, 75105, 56920, 46294, 46000, 42424, 37774,
+    29302, 26890, 25345, 25300, 20578, 15972, 15289, 15005, 13508, 10777
+  ],
+  "history_source": "Prior-period and quarter figures reproduced in the QBR section: Jan-Jun monthly spend from the Reported Spend Tracker (1DmsIFkC...), client trading volumes from the client's own funnel dashboard, May total $78,790 on the reconciled Quantcast basis. Rounded restatements ($120K, $46K, $25.3K) are the same figures as the exact rows above them.",
+  "notes": "This file is the worked example the runbook points at, and it PASSES against report-client-decks/06. GGMI_LATAM_June_2026_Performance_Review-final.pptx. total.spend is the tracker figure (+53% vs May $78,790), not the platform sum ($119,922). bing.non_mexico_spend is the client-communicated $8,612 from the Bing Ads review deck; the SA360 figure of $12,637 is internal-only and must never appear in a client artifact."
+}

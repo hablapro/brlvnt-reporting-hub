@@ -1,0 +1,5 @@
+# Deck and workbook generation. Install with:
+#   python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt
+python-pptx==1.0.2
+openpyxl>=3.1
+lxml>=5.0

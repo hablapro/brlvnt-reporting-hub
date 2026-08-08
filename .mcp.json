@@ -3,6 +3,43 @@
     "sa360": {
       "type": "http",
       "url": "https://sa360-mcp.principal-e85.workers.dev/mcp"
+    },
+    "bing-ads": {
+      "type": "http",
+      "url": "https://bing-ads-mcp-cloud.principal-e85.workers.dev/mcp"
+    },
+    "google-ads": {
+      "type": "http",
+      "url": "https://gads-mcp-cloud.principal-e85.workers.dev/mcp"
+    },
+    "meta-ads": {
+      "type": "http",
+      "url": "https://meta-ads-mcp.principal-e85.workers.dev/mcp"
+    },
+    "quantcast": {
+      "type": "http",
+      "url": "https://quantcast-mcp.principal-e85.workers.dev/mcp",
+      "headers": {
+        "X-API-Key": "${QUANTCAST_MCP_API_KEY}"
+      }
+    },
+    "google-analytics": {
+      "type": "http",
+      "url": "https://mcp-ga-cloud.principal-e85.workers.dev/mcp",
+      "headers": {
+        "Authorization": "${GA_MCP_AUTHORIZATION}"
+      }
+    },
+    "gsc": {
+      "type": "http",
+      "url": "https://gsc-mcp-cloud.principal-e85.workers.dev/mcp"
+    },
+    "cm360": {
+      "type": "http",
+      "url": "https://cm360-mcp-server.principal-e85.workers.dev/mcp",
+      "headers": {
+        "X-API-Key": "${CM360_MCP_API_KEY}"
+      }
     }
   }
 }

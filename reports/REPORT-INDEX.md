@@ -1,6 +1,6 @@
 # Forex Reporting — Master Index
 
-Single source of truth for where every Forex report and supporting file lives (Google Drive + this repo). Last updated: 2026-07-16.
+Single source of truth for where every Forex report and supporting file lives (Google Drive + this repo). Last updated: 2026-08-04.
 
 Client: FOREX.com (StoneX). Sub-clients: **GCG** (US Hispanic, Spanish) and **GGMI** (LATAM / Mexico).
 Repo: `hablapro/brlvnt-reporting-hub`. Drive parent: **FX Report** (`1cPVbjlPnwuPbVUChgmBVp4c_HQ01Mr55`).
@@ -47,14 +47,20 @@ Corrected April decks folder: https://drive.google.com/drive/folders/1B3KlLKxval
 | `reports/forex/ggmi/2026-05/qa/bing-conversion-tracking-investigation.md` | Bing/Meta conversion-tracking resolution note |
 | `reports/forex/gcg/2026-05/data/` | GCG channel data + `sources/` vendor XLSXs |
 | `reports/forex/gcg/2026-05/qa/qa-and-model.md` | GCG QA + modeled KPI tables |
-| `report-client-decks/` | Berelvant working-draft decks (03.* March, 04.* April, 05.* May PPTX) + .bak backups. **May final = the client-sent Google Slides above, not these.** |
-| `data-dump/` | Raw April Azerion vendor XLSXs |
-| `Forecast/` | FOREX.com native advertising forecast |
+| `report-client-decks/` | Delivered decks, finals only. Superseded revs and backups in `_archive/`. The canonical client-facing versions are the Google Slides above. |
+| `reports/forex/<entity>/2026-04/data/sources/` | Raw April Azerion vendor XLSXs (moved out of the old `data-dump/` 2026-08-04) |
+| `docs/reference/forecast/` | FOREX.com native advertising forecast |
 | `reports/README.md`, `reports/REPORTING-LOG.md` | Folder convention + session log |
+| `docs/RUNBOOK.md` | The end-to-end monthly process |
+| `docs/DOCTRINE.md` | What may go in a client artifact |
+| `docs/HANDOVER.md` | Risks, gaps, access, open carry-overs |
+| `reports/forex/<entity>/<YYYY-MM>/figures.json` | Approved client-facing figures for that month |
 
 ## Generator scripts
-- June 2026 (GGMI): `tools/forex-june-2026/` (`build_deck.py`, `build_sheet.py`, `assets/`) — in the repo. Builds the PPTX deck and the formatted report .xlsx; upload to Drive with conversion (see 2026-06-BUILD-STATUS for the gws commands).
-- May 2026 scripts lived in `/tmp/forex-may-sheets/` and were **lost on reboot** (never committed). The June scripts are the replacement pattern.
+- **Design system:** `lib/housestyle.py` owns the palette, fonts and every deck component. Build scripts import it; none redefines a colour. Run it directly to render a component smoke-test deck.
+- **Per month:** `tools/forex-<entity>-<month>/`. Copy the prior month's directory for the same entity and edit the numbers and copy.
+- June 2026: `tools/forex-june-2026/` (GGMI), `tools/forex-gcg-june-2026/` (GCG). These predate `lib/housestyle.py` and carry the old palette plus a separate restyle pass; new months should import the library instead.
+- May 2026 scripts lived in `/tmp/` and were lost on reboot. Build scripts live in the repo now.
 
 ## Source-of-truth references (accounts / properties)
 
@@ -77,4 +83,4 @@ Corrected April decks folder: https://drive.google.com/drive/folders/1B3KlLKxval
 - **GGMI Bing geo:** May data is pre-fix (campaign delivered ~68% Venezuela; targeting set to presence-only + VE/BR excluded on 2026-06-03). June is the clean read. Reminder set for 2026-06-10.
 - **Meta KPI:** held pending verification (StartApplication vs SubmittedApplication). Reported figures left unchanged in the reports (GCG 109, GGMI 4 — these are the pixel rollup, mostly application starts).
 - **Azerion fee:** tiered tech fee — Mar/Apr 5.5%, May 7.5%; client deliverables show fee-inclusive Azerion. Internal raw→fee→billable on the Spend Tracker "Billable Spend" tab.
-- **Repo state:** all of the above repo files are currently **uncommitted** to git.
+- **Repo state (2026-08-04):** 36 commits are local-only and have never been pushed to `hablapro/brlvnt-reporting-hub`. See `docs/HANDOVER.md` section 5.

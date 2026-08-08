@@ -1,0 +1,11 @@
+{
+  "entity": "{{ENTITY_LABEL}}",
+  "month": "{{MONTH}}",
+  "spend_basis": "",
+  "currency_floor": 10000,
+  "figures": {},
+  "allow": [],
+  "history": [],
+  "history_source": "",
+  "notes": ""
+}

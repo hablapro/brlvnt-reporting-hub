@@ -1,5 +1,26 @@
+# Secrets — never commit
+.env
+.env.local
 
-# Dolt database files (added by bd init)
+# OS / editor noise
+.DS_Store
+._*
+~$*
+
+# Beads runtime (the tracked .beads/ config and jsonl stay; the DB does not)
 .dolt/
 *.db
-.DS_Store
+.beads/dolt/
+.beads/dolt-server.*
+.beads/backup/
+
+# Local render scratch (see KNOWN-BUGS.md — PowerPoint PDF export needs
+# fresh uniquely-named temp copies; they are disposable)
+tmp-deck-render/
+_scratch/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
