@@ -28,9 +28,9 @@ spend/delivery only, Azerion geo unverifiable, Quantcast viewability.
 | Quantcast (Display) | $39,240 | 50,483,289 | 19,188 | — | — |
 | Azerion (Display) | $37,509 | 7,577,455 | 12,915 | 41* | $914.85* |
 | Native (QC + Azerion) | $27,630 | 18,179,528 | 9,953 | — | — |
-| Meta (Social) | $8,027 | 4,250,494 | 91,153 | — | — |
+| Meta (Social) | $8,027 | 4,250,494 | 74,489 | — | — |
 | DOOH (Perion) | $26,865 | — | — | — | — |
-| **Total** | **$149,896** | 80,581,160 | 137,299 | — | — |
+| **Total** | **$149,896** | 80,581,160 | 120,635 | — | — |
 
 \* Azerion apps are vendor-reported, not CRM-validated. Total row carries no
 conversion or CPA figure: each channel reports a different event from a
@@ -50,5 +50,20 @@ at $237.12.
    delivery claims.
 2. **Native reported as its own line** matching the tracker, composition
    (Quantcast NativeOnly + Azerion native) stated once, neutrally.
-3. **Meta clicks** = all clicks (91,153), consistent with June's definition;
-   link clicks (74,489) live in the channel workbook if the deck wants them.
+3. ~~Meta clicks~~ CORRECTED 2026-08-15 against the canonical June deck: June
+   published LINK clicks (407,136), so July reports link clicks 74,489 (CTR
+   1.75%); all clicks 91,153 stay internal in the channel workbook.
+
+## Renzo rulings 2026-08-15 (June-deck continuity review)
+
+1. Geo: frame as the June-promised correction delivered plus configuration
+   hardening before scale. **The residual out-of-Mexico spend figure is
+   forbidden in client artifacts** (removed from figures.json; detail stays in
+   this note and the recommendations file). Internal record: $285.01 of
+   $10,624.94 (2.7%) delivered non-MX, almost all Venezuela via legacy
+   PlatformIntercept before its Jul 22 pause; setting still
+   PRESENCE_OR_INTEREST on all 9 enabled campaigns.
+2. Blended client-funnel view stays in the deck shape; July funnel rows arrive
+   separately from Renzo. Deck build holds that slide until they land.
+3. The June combined metric "Submitted (Bing + Azerion)" continues: 61 at
+   $789.08 (June: 92 at $660), same footnote as June.

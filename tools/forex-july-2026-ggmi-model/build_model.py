@@ -18,7 +18,7 @@ CH = [
     ("Quantcast (Display)",  39240,  50483289,  19188, DASH, DASH,  "n=15 vendor results too low; awareness framing per standing note"),
     ("Azerion (Display)",    37509,  7577455,   12915, 41,  914.85, "Vendor-reported, not CRM-validated"),
     ("Native (QC+Azerion)",  27630,  18179528,  9953,  DASH, DASH,  "Upper-funnel, no conversion tracking"),
-    ("Meta (Social)",        8027,   4250494,   91153, DASH, DASH,  "Ruling 2026-08-04: spend/delivery only; 117 pixel fires unvalidated"),
+    ("Meta (Social)",        8027,   4250494,   74489, DASH, DASH,  "Ruling 2026-08-04: spend/delivery only; 117 pixel fires unvalidated"),
     ("DOOH (Perion)",        26865,  DASH,      DASH,  DASH, DASH,  "Tracker line only; no delivery data in scope"),
 ]
 TOTAL_SPEND = 149896
@@ -36,7 +36,7 @@ ws.append(["TOTAL", TOTAL_SPEND, tot_impr, tot_clicks, DASH, DASH,
            "Conversions and CPA are not summed: each channel reports a different event from a different system."])
 for cell in ws[ws.max_row]: cell.font = Font(bold=True)
 ws.append([]); ws.append(["Spend basis", "Client budget tracker (last update 08/06/2026), transcribed in data/sources/. Platform deltas recalculated silently, internal only."])
-ws.append(["Impressions/clicks basis", "Platform/vendor delivery figures. Native = Azerion native + Quantcast NativeOnly combined (tracker structure). Meta clicks = all clicks (June-consistent); link clicks 74,489 in channel workbook."])
+ws.append(["Impressions/clicks basis", "Platform/vendor delivery figures. Native = Azerion native + Quantcast NativeOnly combined (tracker structure). Meta clicks = LINK clicks per the June deck definition (June 407,136); all clicks 91,153 stay in the channel workbook."])
 ws.append(["Entities", "GGMI only. GCG is a separate cycle."])
 for i, w in enumerate([22, 15, 13, 10, 14, 13, 80]):
     ws.column_dimensions[chr(65 + i)].width = w
@@ -55,15 +55,16 @@ figures = {
         "bing.cost_per_app": 531,
         "bing.phase_b_spend": 4742,
         "bing.phase_b_cost_per_app": 237,
-        "bing.non_mexico_spend": 285,
         "meta.spend": 8027,
         "meta.impressions": 4250494,
-        "meta.clicks": 91153,
+        "meta.clicks": 74489,
         "azerion.spend": 37509,
         "azerion.impressions": 7577455,
         "azerion.clicks": 12915,
         "azerion.submitted_apps": 41,
         "azerion.cost_per_app": 915,
+        "combined.submitted_apps": 61,
+        "combined.cost_per_app": 789,
         "quantcast.spend": 39240,
         "quantcast.impressions": 50483289,
         "quantcast.clicks": 19188,
