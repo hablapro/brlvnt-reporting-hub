@@ -54,6 +54,11 @@ it in early rather than adding it last.
 
 ## 3. Voice
 
+**Tone (Renzo ruling 2026-08-17): calm, direct, evidence-based, accountable,
+collaborative.** The guiding formula for every finding, card and headline:
+state the fact → explain the impact → state what needs to happen next. No
+drama, no victory laps, no slogans; the evidence carries the weight.
+
 - Active voice. A person or a channel acts; objects do not act on their own.
 - No em dashes. Commas, periods, or a line break.
 - Cut adverbs and throat-clearing.

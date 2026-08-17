@@ -73,7 +73,7 @@ d.card(s, 8.1, 1.9, 4.7, 2.35, 'The scorecard',
         'The rise traces to Bing, dark for a third of the month and '
         'non-converting for another third, not to Azerion, which held '
         'steady.'], GREEN)
-d.card(s, 8.1, 4.45, 4.7, 2.35, 'The story of the month',
+d.card(s, 8.1, 4.45, 4.7, 2.35, 'The rebuilt structure',
        ['Bing’s rebuilt Mexico-only structure closed July at $237.12 per '
         'submitted application, less than half June’s $513.17.',
         'August’s first days confirm the run rate at $243, now converting '
@@ -104,7 +104,7 @@ d.blocker(s, MARGIN + 8.5, 2.0, 3.85, 3.4, 'New this month',
            'conversion claim; DOOH reports spend only this cycle.',
            'Both report in full once a second month allows comparison.'], GREEN)
 d.strip(s, MARGIN, 5.75, W - 2 * MARGIN, 0.8,
-        'The rebuild is the story: $237.12 per submitted application on the new structure, with the configuration hardening next.')
+        'The rebuilt structure delivered $237.12 per submitted application. Next: harden the configuration so that holds at scale.')
 
 # ------------------------------------------------- 5 bing performance ----
 s = d.content('BING ADS  ·  PERFORMANCE',
@@ -137,7 +137,7 @@ d.note(s, 8.6, 5.8, 4.2, 1.1,
 
 # -------------------------------------------------- 6 bing read & recs ----
 s = d.content('BING ADS  ·  READ & RECOMMENDATIONS',
-              'The rebuild superseded June’s campaign picks. Lock in what it fixed.')
+              'The rebuild superseded June’s campaign picks. Three actions carry it into August.')
 d.card(s, MARGIN, 1.9, 6.1, 4.9, 'What the data shows',
        ['June’s deck named Platform Intercept the efficiency leader at $285 '
         'and recommended rebalancing toward it. Both named June campaigns '
@@ -304,7 +304,7 @@ d.card(s, 8.1, 2.0, 4.7, 3.2, 'How to read the new lines',
 
 # ------------------------------------------------------------- 13 GA4 ----
 s = d.content('SITE TRAFFIC  ·  GA4 (MEXICO)',
-              'Context, not conversion, and the measurement fix that unlocks August.')
+              'Context this month. The measurement fix makes August the first fully measured month.')
 for i, (lbl, val, sub) in enumerate([
         ('Mexico sessions', '7,310', 'June: 9,236'),
         ('Unique visitors', '3,981', 'Mexico'),
@@ -330,7 +330,7 @@ d.card(s, 6.9, 3.3, 5.9, 3.4, 'Measurement to close',
 
 # ------------------------------------------------- 14 priorities & next ----
 s = d.content('CROSS-CHANNEL PRIORITIES + NEXT STEPS',
-              'Lock in the rebuild. Finish the measurement. Hold programmatic quality.')
+              'August priorities: targeting configuration, measurement completion, inventory quality.')
 d.blocker(s, MARGIN, 1.95, 4.05, 2.3, 'Priority',
           ['Harden the Mexico configuration: presence-only targeting and an '
            'expanded exclusion list on every enabled campaign.',
@@ -351,6 +351,6 @@ d.blocker(s, MARGIN, 4.45, 4.05, 2.0, 'Opportunity',
            'Read Bing on the rebuilt structure’s $237.12, with August '
            'tracking at $243 across three products.'], GREEN)
 d.strip(s, MARGIN + 4.25, 4.45, 8.1, 2.0,
-        'July proved the rebuilt structure. August locks it in: configuration hardening, one landing destination, bidding signal on.')
+        'The rebuilt structure converted at $237.12 in July. In August: harden the targeting configuration, standardize the landing destination, enable the bidding signal.')
 d.save(OUT)
 print(f'OK  {d.verify()} slides  ->  {OUT}')
