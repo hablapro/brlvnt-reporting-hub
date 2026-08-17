@@ -11,6 +11,10 @@ import sys, os
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'lib'))
 from housestyle import (Deck, CORAL, GREEN, GOLD, DEEP, NAVY, MUTED, INK,
                         MARGIN, W)
+from pptx.enum.text import PP_ALIGN
+
+def L(t):
+    return {'t': t, 'a': PP_ALIGN.LEFT}
 
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..',
                    'reports', 'forex', 'ggmi', '2026-07', 'output',
@@ -40,8 +44,7 @@ d.text(s, MARGIN, 1.75, 12.3, 1.5, [
     '•  Working media reached $149,896 in July, up 24% MoM. The growth sits '
     'in the new Native and DOOH lines; the '
     'four continuing channels spent $95,401 against June\u2019s total of '
-    '$120,393, and paid submitted applications with a measured source '
-    '(Bing plus Azerion) came in at 61.',
+    '$120,393.',
     '•  Mexico, the only market with paid media behind it, is the strongest '
     'converter in the client\u2019s country data: a 40% approval rate against '
     'the 28% blended average, and roughly one in four of all funded '
@@ -73,30 +76,28 @@ d.note(s, MARGIN, 6.72, 12.3, 0.3,
 
 # ------------------------------------------------------ 3 exec summary ----
 s = d.content('EXECUTIVE SUMMARY',
-              '$149,896 deployed in July. Bing and Azerion produced 61 submitted applications at $789.08.')
+              '$149,896 deployed in July across seven lines.')
 d.table(s, MARGIN, 1.9, 7.4, 3.05, [
     ['Channel', 'Spend', 'Impr', 'Clicks', 'Apps', 'Cost/app'],
     ['Bing (Search)', '$10,625', '90,394', '4,090', '20', '$531.25'],
     ['Quantcast (Display)', '$39,240', '50.48M', '19,188', '—', '—'],
-    ['Azerion (Display)', '$37,509', '7.58M', '12,915', '41*', '$914.85*'],
+    ['Azerion (Display)', '$37,509', '7.58M', '12,915', '41', '$914.85'],
     ['Native (QC + Azerion)', '$27,630', '18.18M', '9,953', '—', '—'],
     ['Meta (Social)', '$8,027', '4.25M', '74,489', '—', '—'],
     ['DOOH (Perion)', '$26,865', '—', '—', '—', '—'],
     ['Total', '$149,896', '80.58M', '120,635', '—', '—'],
 ], col_widths=[2.15, 1.15, 1.05, 1.05, 0.85, 1.15], total_last=True)
 d.note(s, MARGIN, 5.0, 7.4, 0.75,
-       '* Azerion applications are vendor-reported; Bing applications are '
-       'SA360-reported, the account\u2019s conversion source of record. Conversions come from different systems per channel '
-       'and are never summed; the combined Bing + Azerion view is the one '
-       'sanctioned pairing. Meta clicks are link clicks. Spend per the '
-       'client budget tracker.')
-d.card(s, 8.1, 1.9, 4.7, 2.35, 'The scorecard',
-       ['Bing and Azerion, the two channels with a submitted-application '
-        'figure behind them, produced 61 applications combined at $789.08 '
-        '(June: 92 at $660.00).',
-        'The rise traces to Bing, which spent the first third of July '
-        'rebuilding its campaign structure and the next third '
-        'transitioning to it, not to Azerion, which held steady.'], GREEN)
+       'Channel results reflect each platform or partner\u2019s reporting '
+       'methodology and should be interpreted independently. Cross-channel '
+       'totals and blended acquisition costs are not used because '
+       'attribution systems are not directly comparable. Meta clicks are '
+       'link clicks. Spend per the client budget tracker.')
+d.card(s, 8.1, 1.9, 4.7, 2.35, 'The scorecard, by channel',
+       ['Bing: 20 submitted applications at $531.25, on SA360 reporting.',
+        'Azerion: 41 partner-attributed applications at $914.85, steady on '
+        'June.',
+        'Quantcast: 15 partner-attributed results, from 11 in June.'], GREEN)
 d.card(s, 8.1, 4.45, 4.7, 2.35, 'The rebuilt structure',
        ['Bing’s rebuilt Mexico-only structure closed July at $237.12 per '
         'submitted application, less than half June’s $513.17.',
@@ -122,8 +123,8 @@ d.blocker(s, MARGIN + 4.25, 2.0, 4.05, 3.4, 'High',
 d.blocker(s, MARGIN + 8.5, 2.0, 3.85, 3.4, 'New this month',
           ['Native ($27,630: Quantcast’s native placement plus Azerion’s '
            'native inventory) and DOOH ($26,865, Perion).',
-           'Both upper-funnel. Native reports spend and delivery with no '
-           'conversion claim; DOOH reports delivery on its own slides.',
+           'Native is read on engagement and traffic quality; DOOH reports '
+           'delivery on its own slides.',
            'Both gain a month-over-month read with a second month of data.'], GREEN)
 d.strip(s, MARGIN, 5.75, W - 2 * MARGIN, 0.8,
         'The rebuilt structure delivered $237.12 per submitted application. August scales it.')
@@ -177,9 +178,9 @@ d.card(s, MARGIN, 1.9, 6.1, 4.9, 'What the data shows',
         'June’s Mexico commitment held: delivery concentrated in-market '
         'across the month, including on all six new campaigns.'], GREEN)
 d.card(s, 6.9, 1.9, 5.9, 4.9, 'What we recommend',
-       ['Scale the rebuilt structure behind the TradingView theme, holding '
-        'the July close of $237.12 as volume grows. August’s first days track '
-        'at $243, with three products converting.',
+       ['Increase Bing within CPA and delivery guardrails, scaling the '
+        'rebuilt structure behind the TradingView theme from the July close '
+        'of $237.12. August’s first days track at $243.',
         'Read the account on the rebuilt structure’s results rather than '
         'the full-month average; the second half of July is the account’s '
         'current state.'], GOLD)
@@ -192,13 +193,13 @@ for i, (lbl, val, sub) in enumerate([
         ('Clicks', '19,188', 'Advanced IVT'),
         ('Geo', '100.00% MX', 'spend + impressions'),
         ('Viewability', '54.45%', 'June: 51.3%'),
-        ('Results', '15', 'directional only')]):
+        ('Results', '15', 'partner-attributed')]):
     d.tile(s, MARGIN + i * 2.08, 1.85, lbl, val, sub=sub, w=1.95)
 d.card(s, MARGIN, 3.3, 6.1, 3.4, 'What the data shows',
        ['Every impression and dollar delivered in Mexico; the geo cut '
         'confirms 100.00% in-market.',
-        'Result volume (15) is too low to support a cost-per-result figure; '
-        'the channel reads as an awareness and reach story this month.',
+        'Partner-attributed results came in at 15, from 11 in June, '
+        'including the first click-through results of the year.',
         'Viewability came in at 54.45%, from 51.3% in June.'], GREEN)
 d.card(s, 6.9, 3.3, 5.9, 3.4, 'The site list',
        ['June’s 49-site list is refreshed to 66 domains this month.',
@@ -218,24 +219,23 @@ d.card(s, MARGIN, 1.9, 6.1, 4.4, 'What the data shows',
 d.card(s, 6.9, 1.9, 5.9, 4.4, 'What we recommend',
        ['Apply the refreshed 66-site disallow list, leading with '
         'tvazteca.com.',
-        'Keep the channel judged on reach and cost of reach until result '
-        'volume supports more.'], GOLD)
+        'Maintain a bounded role with explicit inventory and '
+        'qualified-traffic expectations.'], GOLD)
 
 # ----------------------------------------------- 9 azerion performance ----
 s = d.content('AZERION  ·  PERFORMANCE',
-              '41 vendor-reported applications at $914.85, from 42 at $834 in June.')
+              '41 partner-attributed applications at $914.85, from 42 at $834 in June.')
 for i, (lbl, val, sub) in enumerate([
         ('Spend', '$37,509', 'display'),
         ('Impressions', '7.58M', 'display'),
         ('Clicks', '12,915', 'display'),
-        ('Applications', '41', 'vendor-reported'),
-        ('Cost / app', '$914.85', 'vendor-reported'),
+        ('Applications', '41', 'partner-attributed'),
+        ('Cost / app', '$914.85', 'partner-attributed'),
         ('Viewability', '82.47%', 'native 77.34%')]):
     d.tile(s, MARGIN + i * 2.08, 1.85, lbl, val, sub=sub, w=1.95)
 d.card(s, MARGIN, 3.3, 6.1, 3.4, 'What the data shows',
-       ['Applications are reported by the vendor’s own tracking rather '
-        'than by SA360, the source of record behind Bing’s count; the '
-        'distinction travels with the number.',
+       ['Applications are partner-attributed, per Azerion\u2019s reporting '
+        'framework.',
         'Display viewability came in at 82.47% and native at 77.34%.',
         'Country-level delivery detail was requested from the vendor in '
         'early July; the follow-up runs with the August cycle. A '
@@ -251,23 +251,26 @@ d.card(s, 6.9, 3.3, 5.9, 3.4, 'Ad-set economics rotated',
 
 # ----------------------------------------------- 10 azerion read & recs ----
 s = d.content('AZERION  ·  READ & RECOMMENDATIONS',
-              'Hold the pace. Confirm the delivery detail.')
+              'Continue at the current level. Optimize toward a lower partner-reported CPA.')
 d.card(s, MARGIN, 1.9, 6.1, 4.4, 'What the data shows',
-       ['The channel figure is the stable read: $914.85 per vendor-reported '
-        'application, against $834 in June.',
+       ['Azerion produced 41 partner-attributed applications and remains '
+        'an active acquisition channel: $914.85 per application, against '
+        '$834 in June.',
         'Ad-set level winners rotated against June’s picks, which closes '
         'out June’s reallocation call; the flagged ad set converted well '
         'on its own.'], GREEN)
 d.card(s, 6.9, 1.9, 5.9, 4.4, 'What we recommend',
-       ['Hold the channel’s pace and judge it on the monthly figure '
-        'rather than reallocating off one month’s ad-set data.',
+       ['Continue at the current level; August focuses on improving '
+        'efficiency toward a lower partner-reported CPA and maintaining '
+        'Mexico delivery.',
+        'Judge the channel on the monthly figure rather than reallocating '
+        'off one month’s ad-set data.',
         'Follow up with the vendor on the country-level delivery detail '
-        'requested in early July, in the August cycle, and hold '
-        'certification of that detail until it lands.'], GOLD)
+        'requested in early July, in the August cycle.'], GOLD)
 
 # -------------------------------------------------- 11 meta performance ----
 s = d.content('META  ·  SPEND & DELIVERY',
-              'Meta reported on spend and delivery: $8,027 and 74,489 link clicks. Conversion measurement remains the open item.')
+              'Meta paid reported on July spend and delivery: $8,027 and 74,489 link clicks.')
 for i, (lbl, val, sub) in enumerate([
         ('Spend', '$8,027', 'Mexico only'),
         ('Impressions', '4.25M', 'CPM ~$1.89'),
@@ -281,14 +284,12 @@ d.card(s, MARGIN, 3.3, 6.1, 3.4, 'What the data shows',
         'Placement mix shifted toward Instagram: 10.2% of July delivery, '
         'up from 0.3%, answering the specific ask from the June review. '
         'Facebook carried 89.2%.'], GREEN)
-d.card(s, 6.9, 3.3, 5.9, 3.4, 'Measurement note',
-       ['July’s Meta reporting covers spend and delivery: impressions, '
-        'reach, frequency, link clicks, CTR, CPC, CPM, landing-page views, '
-        'placements and geo.',
-        'The platform reports 117 submitted-application pixel fires; that '
-        'figure is Meta-reported and unvalidated, is not compared to '
-        'Bing’s SA360-reported count, and carries no cost-per-application '
-        'figure.'], DEEP)
+d.card(s, 6.9, 3.3, 5.9, 3.4, 'Reporting method',
+       ['Meta paid has no current reliable paid reporting; the account is '
+        'paused and resolution is owned by StoneX. July is reported on '
+        'platform delivery.',
+        'Meta organic continues, reported on native organic analytics: '
+        'reach, engagement and audience activity.'], DEEP)
 
 # ---------------------------------------------------- 12 native & dooh ----
 s = d.content('NATIVE & DOOH  ·  NEW LINES',
@@ -303,10 +304,11 @@ d.note(s, MARGIN, 3.9, 7.4, 0.6,
        'Azerion’s native inventory. DOOH delivery follows on the next '
        'slides.')
 d.card(s, 8.1, 2.0, 4.7, 3.2, 'How to read the new lines',
-       ['Both are upper-funnel. Native carries a spend and delivery line '
-        'with no conversion claim; DOOH delivery is reported on the two '
+       ['Native is read on engagement, traffic quality and '
+        'partner-attributed actions; DOOH delivery is reported on the two '
         'slides that follow.',
-        'Both gain a month-over-month read with a second month of data.'], DEEP)
+        'Native completes its planned test in August; its FY2027 role is '
+        'decided from partner-level results.'], DEEP)
 
 # ------------------------------------------------- 13 DOOH overview ----
 # Format follows the June DOOH report (Forex_DOOH_Mexico_June2026).
@@ -332,8 +334,8 @@ d.card(s, 6.9, 3.35, 5.9, 3.3, 'Campaign takeaway',
         'June, on the commodities creative theme in Spanish.',
         'Mexico City carried 59% of delivery, with Guadalajara and '
         'Monterrey splitting the balance.',
-        'A second full month of delivery gives the line its first '
-        'month-over-month read in the August report.'], DEEP)
+        'The line completes its remaining $6K in August and concludes, '
+        'closing out the contracted activity.'], DEEP)
 
 # ------------------------------------------------- 14 DOOH by city ----
 s = d.content('DIGITAL OUT-OF-HOME  ·  DELIVERY BY CITY',
@@ -373,8 +375,7 @@ s = d.content('SITE TRAFFIC  ·  GA4 (MEXICO)',
 for i, (lbl, val, sub) in enumerate([
         ('Mexico sessions', '7,310', 'June: 9,236'),
         ('Unique visitors', '3,981', 'Mexico'),
-        ('Key-event capture', 'Fixed', 'live since Jul 31'),
-        ('GA4 corroboration', 'August', 'first full month')]):
+        ('Key-event capture', 'Fixed', 'live since Jul 31')]):
     d.tile(s, MARGIN + i * 2.08, 1.85, lbl, val, sub=sub, w=1.95)
 d.card(s, MARGIN, 3.3, 6.1, 3.4, 'What the data shows',
        ['A large share of July’s session dip tracks Bing’s own month: ten '
@@ -384,33 +385,27 @@ d.card(s, MARGIN, 3.3, 6.1, 3.4, 'What the data shows',
         'Venezuela’s session volume declined as the prior campaigns '
         'retired, the same campaign-mix effect behind Bing’s in-market '
         'concentration this month.'], GREEN)
-d.card(s, 6.9, 3.3, 5.9, 3.4, 'Measurement to close',
-       ['The submitted-application key event began counting correctly on '
-        'July 31 and has held at full capture since. July is reported on '
-        'the SA360 count; August is the first month GA4 can corroborate it '
-        'independently.',
-        'Completion of the Bing-to-GA4 account link has not yet been '
-        'verified; the paid-search restatement June’s deck flagged lands '
-        'once it is, expected alongside August’s corroboration.'], DEEP)
+d.card(s, 6.9, 3.3, 5.9, 3.4, 'Reporting method',
+       ['GA4 is read as sitewide directional context: traffic and behavior '
+        'trends, not channel attribution. Channel results come from each '
+        'partner’s own reporting.',
+        'The submitted-application key event records correctly as of '
+        'July 31.'], DEEP)
 
 # ------------------------------------------------- 14 priorities & next ----
-s = d.content('CROSS-CHANNEL PRIORITIES + NEXT STEPS',
-              'Scale the rebuilt structure. Finish the measurement. Hold inventory quality.')
-d.blocker(s, MARGIN, 1.95, 4.05, 2.3, 'Priority',
-          ['Scale the rebuilt Bing structure on the July close of $237.12; '
-           'August is tracking at $243 across three products.'], CORAL)
-d.blocker(s, MARGIN + 4.25, 1.95, 4.05, 2.3, 'High',
-          ['Apply the refreshed 66-site Quantcast site list, led by '
-           'tvazteca.com.'], GOLD)
-d.blocker(s, MARGIN + 8.5, 1.95, 3.85, 2.3, 'Measurement to close',
-          ['August is the first month GA4 can corroborate the '
-           'submitted-application count.',
-           'Close out Azerion’s country-level delivery confirmation with '
-           'the vendor.'], DEEP)
-d.blocker(s, MARGIN, 4.45, 4.05, 2.0, 'Opportunity',
-          ['Hold Azerion’s pace; judge the channel monthly.',
-           'Native and DOOH report in full with a second month of data.'], GREEN)
-d.strip(s, MARGIN + 4.25, 4.45, 8.1, 2.0,
-        'The rebuilt structure converted at $237.12 in July. August scales it, holds programmatic quality, and brings GA4 corroboration online.')
+s = d.content('PORTFOLIO DECISIONS', 'Each channel is read on its own partner reporting. The decisions follow from it.')
+d.table(s, MARGIN, 2.0, 12.33, 4.2, [
+    ['Channel', L('August decision')],
+    ['Bing', L('Increase within CPA and delivery guardrails.')],
+    ['Azerion', L('Continue at the current level; optimize toward a lower partner-reported CPA.')],
+    ['Quantcast', L('Maintain a bounded role with explicit inventory and qualified-traffic expectations; apply the refreshed site list.')],
+    ['Native', L('Complete the planned test; decide its FY2027 role from partner-level results.')],
+    ['Meta paid', L('Paused; resolution owned by StoneX.')],
+    ['Meta organic', L('Continue.')],
+    ['DOOH', L('Complete the remaining $6K and conclude.')],
+], col_widths=[2.3, 10.03])
+d.note(s, MARGIN, 6.35, 12.3, 0.4,
+       'Decisions are made per channel from each partner’s own reporting, '
+       'per the methodology note on the executive summary.')
 d.save(OUT)
 print(f'OK  {d.verify()} slides  ->  {OUT}')

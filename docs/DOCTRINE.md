@@ -22,10 +22,34 @@ disguises during one cycle: the tracker for GGMI spend, the tracker again for
 GCG, and a prior review deck for geo figures. It costs one message to ask and
 two rounds of edits to skip.
 
-**Conversions never sum across channels.** Four channels report four different
-events from four different systems. The Total row gets a dash in the
-conversion and CPA cells, plus the footnote: conversions come from different
-systems and funnel stages, so no blended total is shown.
+**The permanent reporting rule (Renzo ruling 2026-08-17).** Each channel is
+evaluated on the strongest reliable signal available within that partner or
+platform. Results are never blended across incompatible attribution systems:
+no cross-channel conversion totals, no blended acquisition costs, no combined
+per-app figures across channels. The Total row gets a dash in the conversion
+and CPA cells.
+
+| Channel | Reporting source | Decision basis |
+|---|---|---|
+| Bing | SA360/Bing application reporting | Submitted applications, CPA, search quality, Mexico delivery |
+| Azerion | Azerion reporting | Partner-attributed applications, CPA, delivery and placement quality |
+| Quantcast | Quantcast reporting | Qualified traffic, inventory quality, partner-attributed outcomes |
+| Native | Native partner reporting | Engagement, traffic quality, partner-attributed actions |
+| Meta paid | No current paid reporting | Account paused; StoneX owns resolution |
+| Meta organic | Native organic analytics | Reach, engagement, audience activity |
+| DOOH | Vendor delivery reporting | Delivered impressions/reach, completion of contracted activity |
+| GA4 | Sitewide directional context | Traffic and behavior trends, not channel reconciliation |
+
+The methodology is stated ONCE per deliverable, with this note: "Channel
+results reflect each platform or partner's reporting methodology and should
+be interpreted independently. Cross-channel totals and blended acquisition
+costs are not used because attribution systems are not directly comparable."
+Then stop apologizing for it: no per-slide attribution caveats, no
+"unvalidated" hedges, no waiting on cross-system corroboration to state a
+partner's result. Terminology: "partner-attributed", not "vendor-reported".
+Tracking limitations are a methodology boundary stated once, never the
+recurring plot of a monthly deck. This supersedes the June "combined
+Bing + Azerion" pairing, which is retired.
 
 **Reconcile every sub-table to its channel total.** If a row was dropped for
 space, add it back or label the table "top N of M."

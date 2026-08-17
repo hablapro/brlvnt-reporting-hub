@@ -60,16 +60,15 @@ def num(k): return f"{FIG[k]:,}"
 body(ws, 5, [
     ['Bing (Search)', money('bing.spend'), num('bing.impressions'), num('bing.clicks'), str(FIG['bing.submitted_apps']), '$531.25'],
     ['Quantcast (Display)', money('quantcast.spend'), num('quantcast.impressions'), num('quantcast.clicks'), '—', '—'],
-    ['Azerion (Display)', money('azerion.spend'), num('azerion.impressions'), num('azerion.clicks'), '41 *', '$914.85 *'],
+    ['Azerion (Display)', money('azerion.spend'), num('azerion.impressions'), num('azerion.clicks'), '41', '$914.85'],
     ['Native (Quantcast + Azerion)', money('native.spend'), num('native.impressions'), num('native.clicks'), '—', '—'],
     ['Meta (Social)', money('meta.spend'), num('meta.impressions'), num('meta.clicks'), '—', '—'],
     ['DOOH (Perion)', money('dooh.spend'), '—', '—', '—', '—'],
     ['Total', money('total.spend'), num('total.impressions'), num('total.clicks'), '—', '—'],
 ], len(hdr), total_last=True)
 notes = [
-    '* Azerion applications are vendor-reported; Bing applications are SA360-reported (offline-imported into Bing; SA360 is the conversion source of record).',
-    'Conversions come from different systems per channel and are never summed across channels.',
-    'Combined Bing + Azerion view (the one sanctioned pairing): 61 submitted applications at $789.08 (June: 92 at $660.00).',
+    'Channel results reflect each platform or partner\u2019s reporting methodology and should be interpreted independently.',
+    'Cross-channel totals and blended acquisition costs are not used because attribution systems are not directly comparable.',
     'Meta clicks are link clicks, the June deck definition. Meta reports on spend and delivery this month.',
     'Spend per the client budget tracker. Native combines Quantcast’s native placement and Azerion’s native inventory.',
 ]
@@ -106,10 +105,9 @@ body(ws2, 4, [
     ['Bing submitted apps', '50', str(FIG['bing.submitted_apps']), '-30'],
     ['Bing cost per app', '$513.17', '$531.25', '+3.5%'],
     ['Bing cost per app, rebuilt structure', '—', '$237.12', 'Jul 22–31'],
-    ['Azerion apps (vendor-reported)', '42', '41', '-1'],
+    ['Azerion apps (partner-attributed)', '42', '41', '-1'],
     ['Azerion cost per app', '$834', '$915', '+9.7%'],
-    ['Combined Bing + Azerion apps', '92', '61', '-31'],
-    ['Combined cost per app', '$660.00', '$789.08', '+19.6%'],
+    ['Quantcast partner-attributed results', '11', '15', '+4'],
     ['Quantcast viewability', '51.3%', '54.45%', '+3.15pp'],
     ['Azerion viewability (display)', '68.5%', '82.47%', '+13.97pp'],
     ['Meta link clicks', '407,136', num('meta.clicks'), '-81.7%'],
