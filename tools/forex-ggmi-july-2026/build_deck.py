@@ -113,10 +113,12 @@ d.blocker(s, MARGIN, 2.0, 4.05, 3.4, 'Priority',
            'June’s Mexico commitment held: delivery concentrated in-market '
            'across the month.'], CORAL)
 d.blocker(s, MARGIN + 4.25, 2.0, 4.05, 3.4, 'High',
-          ['Hold programmatic quality on Quantcast. Viewability improved '
-           '3.15 points to 54.45% and still sits under the 70% standard.',
-           'The refreshed 66-site disallow list is the direct lever, led '
-           'by tvazteca.com.'], GOLD)
+          ['Refresh the Quantcast site list. 66 domains are flagged for '
+           'exclusion, led by tvazteca.com at $3,451.61 of July spend, the '
+           'second consecutive month.',
+           'The list keeps delivery concentrated on inventory that reaches '
+           'the audience; it is the standing monthly quality control on '
+           'this line.'], GOLD)
 d.blocker(s, MARGIN + 8.5, 2.0, 3.85, 3.4, 'New this month',
           ['Native ($27,630: Quantcast’s native placement plus Azerion’s '
            'native inventory) and DOOH ($26,865, Perion).',
@@ -184,45 +186,39 @@ d.card(s, 6.9, 1.9, 5.9, 4.9, 'What we recommend',
 
 # --------------------------------------------- 7 quantcast performance ----
 s = d.content('QUANTCAST  ·  PERFORMANCE',
-              'A reach month at a $0.78 CPM. Viewability is the bill to manage.')
+              'A reach month at a $0.78 CPM.')
 for i, (lbl, val, sub) in enumerate([
         ('Spend', '$39,240', 'main campaign'),
         ('Impressions', '50.48M', 'main campaign'),
         ('Clicks', '19,188', 'Advanced IVT'),
         ('Geo', '100.00% MX', 'spend + impressions'),
-        ('Viewability', '54.45%', 'June: 51.3%  ·  floor 70%'),
+        ('Viewability', '54.45%', 'June: 51.3%'),
         ('Results', '15', 'directional only')]):
     d.tile(s, MARGIN + i * 2.08, 1.85, lbl, val, sub=sub, w=1.95)
 d.card(s, MARGIN, 3.3, 6.1, 3.4, 'What the data shows',
        ['Every impression and dollar delivered in Mexico; the geo cut '
         'confirms 100.00% in-market.',
-        'Viewability improved 3.15 points to 54.45% and still sits under '
-        'the 70% floor the account works against.',
         'Result volume (15) is too low to support a cost-per-result figure; '
-        'the channel reads as an awareness and reach story this month.'], GREEN)
-d.card(s, 6.9, 3.3, 5.9, 3.4, 'The site list is the lever',
-       ['June’s 49-site blocklist is refreshed to 66 domains this month.',
-        'tvazteca.com is the headline: spend on that single domain grew to '
-        '$3,451.61 in July while its viewability held near 9.6%, the second '
-        'consecutive month of the pattern. If one exclusion is actioned '
-        'this month, that is the one.'], CORAL)
+        'the channel reads as an awareness and reach story this month.',
+        'Viewability came in at 54.45%, from 51.3% in June.'], GREEN)
+d.card(s, 6.9, 3.3, 5.9, 3.4, 'The site list',
+       ['June’s 49-site list is refreshed to 66 domains this month.',
+        'tvazteca.com leads it: $3,451.61 of July spend on that single '
+        'domain, the second consecutive month. If one exclusion is '
+        'actioned this month, that is the one.'], CORAL)
 
 # --------------------------------------------- 8 quantcast read & recs ----
 s = d.content('QUANTCAST  ·  READ & RECOMMENDATIONS',
-              'Apply the disallow list. Hold the 70% standard.')
+              'Apply the refreshed site list.')
 d.card(s, MARGIN, 1.9, 6.1, 4.4, 'What the data shows',
-       ['The disallow list is the direct lever on viewability: 66 domains '
-        'flagged for exclusion, led by low-viewability news and utility '
-        'inventory.',
-        'The campaign-level viewability floor recommended in June has not '
-        'yet been implemented; without it, excluded inventory is replaced '
-        'by unscreened inventory as reach scales.'], GREEN)
+       ['The site list is the standing quality control on this line: 66 '
+        'domains flagged for exclusion, led by news and utility inventory '
+        'that does not reach the audience.',
+        'Refreshing it monthly keeps delivery concentrated as reach '
+        'scales; inventory rotates, so a stale list loses its effect.'], GREEN)
 d.card(s, 6.9, 1.9, 5.9, 4.4, 'What we recommend',
        ['Apply the refreshed 66-site disallow list, leading with '
         'tvazteca.com.',
-        'Implement the campaign-level viewability floor carried forward '
-        'from June. It is the structural fix that holds quality as reach '
-        'scales.',
         'Keep the channel judged on reach and cost of reach until result '
         'volume supports more.'], GOLD)
 
@@ -241,9 +237,7 @@ d.card(s, MARGIN, 3.3, 6.1, 3.4, 'What the data shows',
        ['Applications are reported by the vendor’s own tracking rather '
         'than by SA360, the source of record behind Bing’s count; the '
         'distinction travels with the number.',
-        'June’s viewability recommendation fully landed: display rose from '
-        '68.5% to 82.47%, native came in at 77.34%, both clear of the 70% '
-        'floor.',
+        'Display viewability came in at 82.47% and native at 77.34%.',
         'Country-level delivery detail was requested from the vendor in '
         'early July; the follow-up runs with the August cycle. A '
         'data-completeness item.'], GREEN)
@@ -307,8 +301,8 @@ d.table(s, MARGIN, 2.0, 7.4, 1.75, [
 ], col_widths=[3.4, 1.3, 1.5, 1.2])
 d.note(s, MARGIN, 3.9, 7.4, 0.6,
        'Native combines Quantcast’s dedicated native placement and '
-       'Azerion’s native inventory. Azerion native viewability: 77.34%, '
-       'clear of the 70% floor. DOOH delivery follows on the next slides.')
+       'Azerion’s native inventory. DOOH delivery follows on the next '
+       'slides.')
 d.card(s, 8.1, 2.0, 4.7, 3.2, 'How to read the new lines',
        ['Both are upper-funnel. Native carries a spend and delivery line '
         'with no conversion claim; DOOH delivery is reported on the two '
@@ -407,8 +401,8 @@ d.blocker(s, MARGIN, 1.95, 4.05, 2.3, 'Priority',
           ['Scale the rebuilt Bing structure on the July close of $237.12; '
            'August is tracking at $243 across three products.'], CORAL)
 d.blocker(s, MARGIN + 4.25, 1.95, 4.05, 2.3, 'High',
-          ['Apply the 66-site Quantcast disallow list, led by tvazteca.com, '
-           'and hold delivery to the 70% viewability standard.'], GOLD)
+          ['Apply the refreshed 66-site Quantcast site list, led by '
+           'tvazteca.com.'], GOLD)
 d.blocker(s, MARGIN + 8.5, 1.95, 3.85, 2.3, 'Measurement to close',
           ['August is the first month GA4 can corroborate the '
            'submitted-application count.',
