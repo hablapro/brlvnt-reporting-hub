@@ -101,10 +101,14 @@ body(ws2, 4, [
     ['Meta link clicks', '407,136', num('meta.clicks'), '-81.7%'],
     ['Mexico sessions (GA4)', '9,236', num('ga4.mexico_sessions'), '-20.9%'],
     ['Unique visitors, Mexico (GA4)', '5,838', num('ga4.unique_visitors'), '-31.8%'],
+    ['Blended submitted applications (client dashboard)', '684', num('funnel.submitted'), '-5%'],
+    ['Blended approved (client dashboard)', '209', num('funnel.approved'), '-14%'],
+    ['Blended funded (client dashboard)', '32', num('funnel.funded'), '-34%'],
+    ['Blended traded (client dashboard)', '29', num('funnel.traded'), '-34%'],
 ], len(hdr2))
 for col, w in zip('ABCD', [38, 12, 12, 12]):
     ws2.column_dimensions[col].width = w
-c = ws2.cell(row=18, column=1,
+c = ws2.cell(row=22, column=1,
              value='June figures per the June 2026 review. '
                    'Bing’s July month splits dark (Jul 1–10), legacy (Jul 11–22, $5,883, 0 apps), rebuilt (Jul 22–31, $4,742, 20 apps).')
 c.font = Font(name='Calibri', size=8.5, color=MUTED, italic=True)

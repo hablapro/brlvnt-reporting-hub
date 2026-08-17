@@ -81,3 +81,15 @@ link "in progress with the site team" (only non-completion is verified),
 Azerion CPA "in line with recent months" (now stated as $915 vs $834), and
 "conclusion already reached on the account" (source was the GCG Q2 review;
 replaced with our own step data).
+
+## Slide 2 funnel finalized 2026-08-17
+
+Client file received: `data/sources/latam sumary and country july.xlsx`.
+Renzo rulings: June-deck slide 2 format kept, July column added; "Submitted"
+column basis (653 / 180 / 21 / 19). Jan-Jun columns stay verbatim as the June
+deck presented them, although the client dashboard's current June reads
+656/195/26/23 (it restates as data matures) — deliberate, ruled. July trading
+volume not in the file; row ships with a dash pending the figure. The
+by-country tab has no date dimension (window unconfirmed; Mexico Live 839
+equals the March monthly figure, so it is NOT July-only) — filed as
+supporting data only, not used in any client artifact.

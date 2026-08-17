@@ -26,26 +26,44 @@ d.cover(kicker='MONTHLY PERFORMANCE REVIEW',
         footer='Reporting period: July 1–31, 2026   |   Currency: USD   |   Prepared by Berelvant')
 
 # ------------------------------------------------- 2 blended funnel view ----
+# June deck's slide 2 carried forward: same table, July column added.
+# Jan-Jun columns verbatim from the June deck; July from the client file
+# ("Submitted" basis, Renzo ruling 2026-08-17). MoM = July vs June.
 s = d.content('SUMMARY  ·  BLENDED VIEW (ORGANIC + PAID)',
-              'The client funnel, June actual beside July.')
-d.table(s, MARGIN, 2.0, 7.4, 2.6, [
-    ['Stage (organic + paid)', 'June', 'July'],
-    ['Submitted applications', '684', '—'],
-    ['Approved', '209', '—'],
-    ['Funded', '32', '—'],
-    ['Traded', '29', '—'],
-], col_widths=[3.9, 1.75, 1.75])
-d.note(s, MARGIN, 4.75, 7.4, 0.6,
+              'Submitted applications held near June on a 24% larger media month.')
+d.text(s, MARGIN, 1.75, 12.3, 1.5, [
+    '•  July submitted applications came in at 653, down 5% MoM; the submit '
+    'rate on application starts rose to 27%, the highest since January.',
+    '•  New approved came in at 180 with the approval rate at 28%. New funded '
+    'came in at 21 and the fund rate at 12%; the application-to-funding step '
+    'remains the funnel constraint. New traded closed at 19.',
+    '•  Working media reached $149,896 in July, up 24% MoM and the biggest '
+    'month of 2026. Measured paid submitted applications (Bing plus Azerion) '
+    'came in at 61.'], 10, False, INK, space=4)
+d.table(s, MARGIN, 3.35, 12.33, 3.3, [
+    ['GGMI — blended', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'MoM'],
+    ['Working Media Spend', '$1,717', '$20,578', '$42,424', '$46,294',
+     '$78,790', '$120,393', '$149,896', '+24%'],
+    ['Submitted Applications', '1,029', '1,036', '900', '751', '732', '684',
+     '653', '-5%'],
+    ['Approved Clients', '288', '337', '261', '202', '195', '209', '180',
+     '-14%'],
+    ['Approval Rate', '28%', '33%', '29%', '27%', '27%', '31%', '28%', '-3pp'],
+    ['New Funded Clients', '66', '59', '63', '38', '36', '32', '21', '-34%'],
+    ['Fund Rate', '23%', '18%', '24%', '19%', '18%', '15%', '12%', '-3pp'],
+    ['Cost per Funded Client', '$26', '$349', '$673', '$1,218', '$2,189',
+     '$3,762', '$7,138', '+90%'],
+    ['New Traded Clients', '56', '52', '57', '35', '36', '29', '19', '-34%'],
+    ['Cost per Traded Client', '$31', '$396', '$744', '$1,323', '$2,189',
+     '$4,151', '$7,889', '+90%'],
+    ['Trading Volume', '$5.1B', '$2.5B', '$2.3B', '$2.1B', '$1.1B', '$1.1B',
+     '—', '—'],
+], col_widths=[2.61, 1.08, 1.08, 1.08, 1.08, 1.08, 1.14, 1.14, 1.04])
+d.note(s, MARGIN, 6.72, 12.3, 0.3,
        'Funnel metrics are blended organic + paid, from the client dashboard. '
-       'July rows land with the client dashboard refresh, before this deck is presented. Approval, funding and '
-       'trading are the application-review and account-activation journey, '
-       'reported as provided.')
-d.card(s, 8.1, 2.0, 4.7, 3.2, 'How to read this',
-       ['The stages below submitted applications are the account review and '
-        'activation journey, shown for the full blended base.',
-        'Paid-media performance per channel starts on the next slide; its '
-        'submitted-application figures are channel-sourced and are not this '
-        'blended count.'], DEEP)
+       'Working media per the budget tracker. MoM = July vs June. January '
+       'cost figures reflect a near-zero media base ($1,717). July trading '
+       'volume follows with the next dashboard refresh.')
 
 # ------------------------------------------------------ 3 exec summary ----
 s = d.content('EXECUTIVE SUMMARY',

@@ -77,8 +77,17 @@ figures = {
         "total.clicks": tot_clicks,
         "ga4.mexico_sessions": 7310,
         "ga4.unique_visitors": 3981,
+        "funnel.submitted": 653,
+        "funnel.approved": 180,
+        "funnel.funded": 21,
+        "funnel.traded": 19,
     },
-    "allow": {},
+    "allow": [1717, 20578, 42424, 46294, 78790],
+    "history": [120393, 1029, 1036, 900, 751, 732, 684, 288, 337, 261, 202,
+                195, 209, 66, 59, 63, 38, 36, 32, 56, 52, 57, 35, 36, 29,
+                26, 349, 673, 1218, 2189, 3762, 31, 396, 744, 1323, 4151,
+                5100000000, 2500000000, 2300000000, 2100000000, 1100000000],
+    "history_source": "Slide 2 blended table reproduces the June deck's Jan-Jun columns verbatim (client funnel dashboard as presented in June, working media per the tracker). July funnel column from the client file data/sources/'latam sumary and country july.xlsx' ('Submitted' basis per Renzo ruling 2026-08-17: submitted 653, approved 180, funded 21, traded 19). July trading volume not in the file; row carries a dash until supplied. The client dashboard restates prior months (its current June reads 656/195/26/23); June column deliberately kept at the June-deck values per the same ruling.",
     "notes": (
         "July is two Bing accounts in one month: dark Jul 1-10, legacy Phase A Jul 11-22 ($5,883, 0 apps), "
         "rebuilt MX_ Phase B Jul 22-31 ($4,742, 20 apps at $237). Conversions re-verified live 2026-08-14, "
