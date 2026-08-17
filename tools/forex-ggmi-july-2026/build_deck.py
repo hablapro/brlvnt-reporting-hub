@@ -39,7 +39,11 @@ d.text(s, MARGIN, 1.75, 12.3, 1.5, [
     'remains the funnel constraint. New traded closed at 19.',
     '•  Working media reached $149,896 in July, up 24% MoM and the biggest '
     'month of 2026. Measured paid submitted applications (Bing plus Azerion) '
-    'came in at 61.'], 10, False, INK, space=4)
+    'came in at 61.',
+    '•  Mexico, the only market with paid media behind it, is the strongest '
+    'converter in the client\u2019s country data: a 40% approval rate against '
+    'the 28% blended average, and roughly one in four of all funded '
+    'accounts.'], 10, False, INK, space=4)
 d.table(s, MARGIN, 3.35, 12.33, 3.3, [
     ['GGMI — blended', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'MoM'],
     ['Working Media Spend', '$1,717', '$20,578', '$42,424', '$46,294',

@@ -94,6 +94,9 @@ by-country tab: the client states it is July-only, but its own totals
 (5,724 submitted / 5,400 live / 1,614 approved / 252 funded / 228 traded)
 are ~9x the file's July summary row (653 / 619 / 180 / 21 / 19) and within
 ~3% of the file's 2026 year-to-date totals (5,902 / 5,568 / 1,647 / 258),
-so the export window is inconsistent with July regardless of intent. Renzo
-is raising it with the client alongside the July trading-volume ask.
+so the export window is inconsistent with July regardless of intent. The client sends datasets (no system access on our side), so the ask is:
+which period does the country breakdown cover, plus the July trading volume.
+Slide 2 carries a Mexico mention on the tab's internal ratios only (40%
+approval vs ~28% blended, ~1 in 4 funded accounts), which hold under either
+window; absolute Mexico counts go in once the period is confirmed.
 Filed as supporting data only; used in no client artifact.
