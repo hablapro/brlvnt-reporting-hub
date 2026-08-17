@@ -106,21 +106,17 @@ d.card(s, 8.1, 4.45, 4.7, 2.35, 'The rebuilt structure',
 # ------------------------------------------- 4 three findings for August ----
 s = d.content('CONT’ EXECUTIVE SUMMARY', 'Three findings shape the August plan.')
 d.blocker(s, MARGIN, 2.0, 4.05, 3.4, 'Priority',
-          ['Harden the Mexico targeting configuration as the rebuilt '
-           'campaigns scale.',
-           'June’s correction held through July: delivery concentrated '
-           'in-market on every one of the six new campaigns.',
-           'Next: presence-only targeting and an expanded location-exclusion '
-           'list, so the concentration holds on its own rather than '
-           'depending on the current campaign mix.'], CORAL)
+          ['Scale the rebuilt Bing structure. It closed July at $237.12 '
+           'per submitted application, less than half June’s $513.17.',
+           'August’s first days track at $243, with three products '
+           'converting.',
+           'June’s Mexico commitment held: delivery concentrated in-market '
+           'across the month.'], CORAL)
 d.blocker(s, MARGIN + 4.25, 2.0, 4.05, 3.4, 'High',
-          ['Standardize every Bing campaign on the converting landing '
-           'destination.',
-           '84% of the prior structure\u2019s clicks landed on pages outside '
-           'the application flow; none of the 207 application starts '
-           'behind them became a submission.',
-           'The rebuilt campaigns landing on the Spanish-language site '
-           'carried 13.4% of starts through to submission.'], GOLD)
+          ['Hold programmatic quality on Quantcast. Viewability improved '
+           '3.15 points to 54.45% and still sits under the 70% standard.',
+           'The refreshed 66-site disallow list is the direct lever, led '
+           'by tvazteca.com.'], GOLD)
 d.blocker(s, MARGIN + 8.5, 2.0, 3.85, 3.4, 'New this month',
           ['Native ($27,630: Quantcast’s native placement plus Azerion’s '
            'native inventory) and DOOH ($26,865, Perion).',
@@ -128,7 +124,7 @@ d.blocker(s, MARGIN + 8.5, 2.0, 3.85, 3.4, 'New this month',
            'conversion claim; DOOH reports spend only this cycle.',
            'Both report in full once a second month allows comparison.'], GREEN)
 d.strip(s, MARGIN, 5.75, W - 2 * MARGIN, 0.8,
-        'The rebuilt structure delivered $237.12 per submitted application. Next: harden the configuration so that holds at scale.')
+        'The rebuilt structure delivered $237.12 per submitted application. August scales it.')
 
 # ------------------------------------------------- 5 bing performance ----
 s = d.content('BING ADS  ·  PERFORMANCE',
@@ -162,7 +158,7 @@ d.note(s, 8.6, 5.8, 4.2, 1.1,
 
 # -------------------------------------------------- 6 bing read & recs ----
 s = d.content('BING ADS  ·  READ & RECOMMENDATIONS',
-              'The rebuild superseded June’s campaign picks. Three actions carry it into August.')
+              'The rebuild superseded June’s campaign picks. August scales what works.')
 d.card(s, MARGIN, 1.9, 6.1, 4.9, 'What the data shows',
        ['June’s deck named Platform Intercept the efficiency leader at $285 '
         'and recommended rebalancing toward it. Both named June campaigns '
@@ -179,17 +175,12 @@ d.card(s, MARGIN, 1.9, 6.1, 4.9, 'What the data shows',
         'June’s Mexico commitment held: delivery concentrated in-market '
         'across the month, including on all six new campaigns.'], GREEN)
 d.card(s, 6.9, 1.9, 5.9, 4.9, 'What we recommend',
-       ['Harden the Mexico configuration as volume scales: presence-only '
-        'targeting and an expanded location-exclusion list on every enabled '
-        'campaign.',
-        'Standardize every campaign on the converting landing destination, '
-        'and review the handoff from the older landing pages into the '
-        'application flow.',
-        'Move bidding onto SA360’s conversion-based strategies. Bing is '
-        'optimized through SA360, where every conversion point is '
-        'captured, and the enabled campaigns currently run manual CPC '
-        'there. July’s $237.12 was earned on manual bids; a '
-        'conversion-based strategy lets that data drive bidding.'], GOLD)
+       ['Scale the rebuilt structure behind the TradingView theme, holding '
+        'the July close of $237.12 as volume grows. August’s first days track '
+        'at $243, with three products converting.',
+        'Read the account on the rebuilt structure’s results rather than '
+        'the full-month average; the second half of July is the account’s '
+        'current state.'], GOLD)
 
 # --------------------------------------------- 7 quantcast performance ----
 s = d.content('QUANTCAST  ·  PERFORMANCE',
@@ -296,11 +287,7 @@ d.card(s, MARGIN, 3.3, 6.1, 3.4, 'What the data shows',
        ['Delivery held to Mexico across every campaign.',
         'Placement mix shifted toward Instagram: 10.2% of July delivery, '
         'up from 0.3%, answering the specific ask from the June review. '
-        'Facebook carried 89.2%.',
-        'On the June ask to narrow targeting to 25 and over: Meta restricts '
-        'demographic targeting for financial-services advertisers, so that '
-        'refinement is not available in this vertical; delivery runs on '
-        'the platform\u2019s full 18\u201365 range.'], GREEN)
+        'Facebook carried 89.2%.'], GREEN)
 d.card(s, 6.9, 3.3, 5.9, 3.4, 'Measurement note',
        ['July’s Meta reporting covers spend and delivery: impressions, '
         'reach, frequency, link clicks, CTR, CPC, CPM, landing-page views, '
@@ -357,27 +344,22 @@ d.card(s, 6.9, 3.3, 5.9, 3.4, 'Measurement to close',
 
 # ------------------------------------------------- 14 priorities & next ----
 s = d.content('CROSS-CHANNEL PRIORITIES + NEXT STEPS',
-              'August priorities: targeting configuration, measurement completion, inventory quality.')
+              'August priorities: scale the rebuilt structure, complete measurement, hold inventory quality.')
 d.blocker(s, MARGIN, 1.95, 4.05, 2.3, 'Priority',
-          ['Harden the Mexico configuration: presence-only targeting and an '
-           'expanded exclusion list on every enabled campaign.',
-           'Standardize every Bing campaign on the converting landing '
-           'destination.'], CORAL)
+          ['Scale the rebuilt Bing structure on the July close of $237.12; '
+           'August is tracking at $243 across three products.'], CORAL)
 d.blocker(s, MARGIN + 4.25, 1.95, 4.05, 2.3, 'High',
-          ['Move Bing bidding onto SA360’s conversion-based strategies; '
-           'July’s $237.12 was earned on manual CPC.',
-           'Apply the 66-site Quantcast disallow list, led by tvazteca.com, '
-           'and implement the viewability floor.'], GOLD)
+          ['Apply the 66-site Quantcast disallow list, led by tvazteca.com, '
+           'and hold delivery to the 70% viewability standard.'], GOLD)
 d.blocker(s, MARGIN + 8.5, 1.95, 3.85, 2.3, 'Measurement to close',
-          ['Complete the Bing-to-GA4 link; the flagged restatement lands '
-           'with August’s key-event corroboration.',
+          ['August is the first month GA4 can corroborate the '
+           'submitted-application count.',
            'Close out Azerion’s country-level delivery confirmation with '
            'the vendor.'], DEEP)
 d.blocker(s, MARGIN, 4.45, 4.05, 2.0, 'Opportunity',
           ['Hold Azerion’s pace; judge the channel monthly.',
-           'Read Bing on the rebuilt structure’s $237.12, with August '
-           'tracking at $243 across three products.'], GREEN)
+           'Native and DOOH report in full with a second month of data.'], GREEN)
 d.strip(s, MARGIN + 4.25, 4.45, 8.1, 2.0,
-        'The rebuilt structure converted at $237.12 in July. In August: harden the targeting configuration, standardize the landing destination, activate conversion-based bidding in SA360.')
+        'The rebuilt structure converted at $237.12 in July. August scales it, holds programmatic quality, and brings GA4 corroboration online.')
 d.save(OUT)
 print(f'OK  {d.verify()} slides  ->  {OUT}')
