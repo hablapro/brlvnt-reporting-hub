@@ -38,8 +38,10 @@ d.text(s, MARGIN, 1.75, 12.3, 1.5, [
     'came in at 21 and the fund rate at 12%; the application-to-funding step '
     'remains the funnel constraint. New traded closed at 19.',
     '•  Working media reached $149,896 in July, up 24% MoM and the biggest '
-    'month of 2026. Measured paid submitted applications (Bing plus Azerion) '
-    'came in at 61.',
+    'month of 2026. The growth sits in the new Native and DOOH lines; the '
+    'four continuing channels spent $95,401 against June\u2019s total of '
+    '$120,393, and paid submitted applications with a measured source '
+    '(Bing plus Azerion) came in at 61.',
     '•  Mexico, the only market with paid media behind it, is the strongest '
     'converter in the client\u2019s country data: a 40% approval rate against '
     'the 28% blended average, and roughly one in four of all funded '
@@ -92,9 +94,9 @@ d.card(s, 8.1, 1.9, 4.7, 2.35, 'The scorecard',
        ['Bing and Azerion, the two channels with a submitted-application '
         'figure behind them, produced 61 applications combined at $789.08 '
         '(June: 92 at $660.00).',
-        'The rise traces to Bing, dark for a third of the month and '
-        'non-converting for another third, not to Azerion, which held '
-        'steady.'], GREEN)
+        'The rise traces to Bing, which spent the first third of July '
+        'rebuilding its campaign structure and the next third '
+        'transitioning to it, not to Azerion, which held steady.'], GREEN)
 d.card(s, 8.1, 4.45, 4.7, 2.35, 'The rebuilt structure',
        ['Bing’s rebuilt Mexico-only structure closed July at $237.12 per '
         'submitted application, less than half June’s $513.17.',
@@ -114,9 +116,9 @@ d.blocker(s, MARGIN, 2.0, 4.05, 3.4, 'Priority',
 d.blocker(s, MARGIN + 4.25, 2.0, 4.05, 3.4, 'High',
           ['Standardize every Bing campaign on the converting landing '
            'destination.',
-           '84% of legacy-campaign clicks landed on pages outside the '
-           'application flow; none of the 207 application starts behind '
-           'them became a submission.',
+           '84% of the prior structure\u2019s clicks landed on pages outside '
+           'the application flow; none of the 207 application starts '
+           'behind them became a submission.',
            'The rebuilt campaigns landing on the Spanish-language site '
            'carried 13.4% of starts through to submission.'], GOLD)
 d.blocker(s, MARGIN + 8.5, 2.0, 3.85, 3.4, 'New this month',
@@ -131,7 +133,7 @@ d.strip(s, MARGIN, 5.75, W - 2 * MARGIN, 0.8,
 # ------------------------------------------------- 5 bing performance ----
 s = d.content('BING ADS  ·  PERFORMANCE',
               'Three windows in one month. The rebuilt structure is the account’s current state.')
-tiles = [('Spend', '$10,625', 'per the shared budget view'), ('Impressions', '90,394', 'CTR 4.52%'),
+tiles = [('Spend', '$10,625', 'Jul 1–31'), ('Impressions', '90,394', 'CTR 4.52%'),
          ('Clicks', '4,090', 'avg CPC $2.60'), ('Submitted apps', '20', 'SA360 source of record'),
          ('CPA (full month)', '$531.25', 'June: $513.17'), ('CPA (rebuilt)', '$237.12', 'Jul 22–31')]
 for i, (lbl, val, sub) in enumerate(tiles):
@@ -142,20 +144,21 @@ spend = [0,0,0,0,0,0,0,0,0,0,436.55,364.63,441.88,562.23,559.9,699.13,614.23,
          559.63,723.75,607.16,442.33]
 d.line_chart(s, MARGIN, 3.55, 7.9, 3.0, [str(x) for x in days],
              [('Daily spend ($)', spend)])
-d.text(s, 0.8, 3.6, 2.2, 0.3, 'Jul 1–10 · dark', 9, True, MUTED)
-d.text(s, 3.4, 3.6, 2.6, 0.3, 'Jul 11–22 · legacy', 9, True, NAVY)
-d.text(s, 6.2, 3.6, 2.2, 0.3, 'Jul 22–31 · rebuilt', 9, True, CORAL)
+d.text(s, 0.8, 3.6, 2.4, 0.3, 'Jul 1–10 · rebuild', 9, True, MUTED)
+d.text(s, 3.4, 3.6, 2.9, 0.3, 'Jul 11–22 · prior structure', 9, True, NAVY)
+d.text(s, 6.5, 3.6, 2.4, 0.3, 'Jul 22–31 · new structure', 9, True, CORAL)
 d.table(s, 8.6, 3.55, 4.2, 2.2, [
     ['Window', 'Spend', 'Apps', 'CPA'],
-    ['Jul 1–10  dark', '$0', '0', '—'],
-    ['Jul 11–22  legacy', '$5,883', '0', '—'],
-    ['Jul 22–31  rebuilt', '$4,742', '20', '$237.12'],
+    ['Jul 1–10  rebuild', '$0', '0', '—'],
+    ['Jul 11–22  prior structure', '$5,883', '0', '—'],
+    ['Jul 22–31  new structure', '$4,742', '20', '$237.12'],
 ], col_widths=[1.7, 0.9, 0.6, 1.0])
 d.note(s, 8.6, 5.8, 4.2, 1.1,
-       'Two campaigns produced every July conversion: the TradingView theme '
-       '(18 of 20) and one further new campaign (2). The full-month CPA '
-       'blends nine dark days and eleven zero-conversion days into the ten '
-       'that delivered.')
+       'July was a planned rebuild: the first ten days went to constructing '
+       'the new Mexico-only structure, the prior campaigns ran through the '
+       'transition, and the new structure went live July 22. Two campaigns '
+       'produced every July conversion: the TradingView theme (18 of 20) '
+       'and one further new campaign (2).')
 
 # -------------------------------------------------- 6 bing read & recs ----
 s = d.content('BING ADS  ·  READ & RECOMMENDATIONS',
@@ -163,11 +166,11 @@ s = d.content('BING ADS  ·  READ & RECOMMENDATIONS',
 d.card(s, MARGIN, 1.9, 6.1, 4.9, 'What the data shows',
        ['June’s deck named Platform Intercept the efficiency leader at $285 '
         'and recommended rebalancing toward it. Both named June campaigns '
-        'produced zero July applications in the legacy window and retired '
-        'into the July 22 rebuild; the TradingView campaign is now the '
+        'produced zero July applications in the transition window and '
+        'retired when the new structure launched July 22; the TradingView campaign is now the '
         'leader with 18 of 20 applications and 13.4% start-to-submission.',
-        '84% of legacy-campaign clicks landed on pages outside the '
-        'application flow, and every one of the 207 application starts '
+        '84% of the prior structure\u2019s clicks landed on pages outside '
+        'the application flow, and every one of the 207 application starts '
         'stopped at the second step. The rebuilt campaigns land on the '
         'Spanish-language site and convert. Landing destination and keyword '
         'intent changed together, so this is a strong signal rather than a '
@@ -293,9 +296,10 @@ d.card(s, MARGIN, 3.3, 6.1, 3.4, 'What the data shows',
         'Placement mix shifted toward Instagram: 10.2% of July delivery, '
         'up from 0.3%, answering the specific ask from the June review. '
         'Facebook carried 89.2%.',
-        'The other June ask, narrowing targeting away from the 55-and-over '
-        'audience, was not implemented; targeting still runs 18–65 with '
-        'audience expansion on.'], GREEN)
+        'On the June ask to narrow targeting to 25 and over: Meta restricts '
+        'demographic targeting for financial-services advertisers, so that '
+        'refinement is not available in this vertical; delivery runs on '
+        'the platform\u2019s full 18\u201365 range.'], GREEN)
 d.card(s, 6.9, 3.3, 5.9, 3.4, 'Measurement note',
        ['July’s Meta reporting covers spend and delivery: impressions, '
         'reach, frequency, link clicks, CTR, CPC, CPM, landing-page views, '
@@ -334,13 +338,13 @@ for i, (lbl, val, sub) in enumerate([
         ('GA4 corroboration', 'August', 'first full month')]):
     d.tile(s, MARGIN + i * 2.08, 1.85, lbl, val, sub=sub, w=1.95)
 d.card(s, MARGIN, 3.3, 6.1, 3.4, 'What the data shows',
-       ['A large share of July’s session dip tracks Bing’s own month: '
-        'dark for ten days, then a non-converting legacy structure for '
-        'eleven. Property-wide, one unattributed bucket collapsed sharply; '
-        'sessions outside it grew.',
-        'Venezuela’s session volume fell sharply with the same '
-        'legacy-campaign pause behind Bing’s in-market concentration, a '
-        'campaign-mix effect this month.'], GREEN)
+       ['A large share of July’s session dip tracks Bing’s own month: ten '
+        'days of rebuild, then the transition window. Property-wide, '
+        'sessions without source attribution (largely untagged paid '
+        'search) fell sharply; attributed sessions grew.',
+        'Venezuela’s session volume fell sharply as the prior campaigns '
+        'retired, the same campaign-mix effect behind Bing’s in-market '
+        'concentration this month.'], GREEN)
 d.card(s, 6.9, 3.3, 5.9, 3.4, 'Measurement to close',
        ['The submitted-application key event began counting correctly on '
         'July 31 and has held at full capture since. July is reported on '

@@ -35,7 +35,8 @@
     "funnel.submitted": 653,
     "funnel.approved": 180,
     "funnel.funded": 21,
-    "funnel.traded": 19
+    "funnel.traded": 19,
+    "mix.continuing_channels_spend": 95401
   },
   "allow": [
     1717,
@@ -88,5 +89,5 @@
     1100000000
   ],
   "history_source": "Slide 2 blended table reproduces the June deck's Jan-Jun columns verbatim (client funnel dashboard as presented in June, working media per the tracker). July funnel column from the client file data/sources/'latam sumary and country july.xlsx' ('Submitted' basis per Renzo ruling 2026-08-17: submitted 653, approved 180, funded 21, traded 19). July trading volume not in the file; row carries a dash until supplied. The client dashboard restates prior months (its current June reads 656/195/26/23); June column deliberately kept at the June-deck values per the same ruling.",
-  "notes": "July is two Bing accounts in one month: dark Jul 1-10, legacy Phase A Jul 11-22 ($5,883, 0 apps), rebuilt MX_ Phase B Jul 22-31 ($4,742, 20 apps at $237). Conversions re-verified live 2026-08-14, unchanged. bing.cost_per_app 531 = tracker 10,625 / 20. azerion.cost_per_app 915 = tracker 37,509 / 41 vendor-reported results (June convention). Meta is spend/delivery only per Renzo ruling 2026-08-04: no Meta cost-per-app, no Meta-vs-Bing efficiency comparison; the 117 pixel fires stay out of client artifacts as validated conversions. Quantcast tracker line = main campaign only; NativeOnly sits in the native line. DOOH is a tracker spend line with no delivery detail in our scope. Geo: Bing delivery 2.7% non-MX but PRESENCE_OR_INTEREST setting unchanged - breach dormant, not fixed; never say resolved. Meta and Quantcast geo verified clean; Azerion geo unverifiable from vendor file (says LATAM). GA4 is diagnostic only this cycle; key-event fix landed Jul 31, August is the first month GA4 can corroborate submitted apps."
+  "notes": "July is two Bing accounts in one month: dark Jul 1-10, legacy Phase A Jul 11-22 ($5,883, 0 apps), rebuilt MX_ Phase B Jul 22-31 ($4,742, 20 apps at $237). Conversions re-verified live 2026-08-14, unchanged. bing.cost_per_app 531 = tracker 10,625 / 20. azerion.cost_per_app 915 = tracker 37,509 / 41 vendor-reported results (June convention). mix.continuing_channels_spend 95,401 = Bing 10,625 + Quantcast 39,240 + Azerion 37,509 + Meta 8,027, the four channels continuing from June, vs June total 120,393; the July growth is the new Native and DOOH lines. Meta is spend/delivery only per Renzo ruling 2026-08-04: no Meta cost-per-app, no Meta-vs-Bing efficiency comparison; the 117 pixel fires stay out of client artifacts as validated conversions. Quantcast tracker line = main campaign only; NativeOnly sits in the native line. DOOH is a tracker spend line with no delivery detail in our scope. Geo: Bing delivery 2.7% non-MX but PRESENCE_OR_INTEREST setting unchanged - breach dormant, not fixed; never say resolved. Meta and Quantcast geo verified clean; Azerion geo unverifiable from vendor file (says LATAM). GA4 is diagnostic only this cycle; key-event fix landed Jul 31, August is the first month GA4 can corroborate submitted apps."
 }

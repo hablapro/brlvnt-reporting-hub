@@ -1,5 +1,16 @@
 # GGMI (Mexico) - July 2026 Performance Narrative - draft for deck build
 
+> **2026-08-17, post-build note:** the built deck supersedes this draft on
+> four framings, per Renzo rulings after the adversarial review: (1) the Bing
+> Jul 1-10 window is a planned rebuild (Ruben's campaign rework), never
+> "dark/down"; Jul 11-22 is the prior structure running through the
+> transition; (2) Meta's 25+ refinement is unavailable because Meta restricts
+> demographic targeting for financial-services advertisers (not
+> unimplemented neglect); (3) slide 2 carries the continuing-channels spend
+> decomposition ($95,401 vs June's $120,393 total); (4) the June Quantcast
+> blocklist was executed (internal; not in the deck). The deck build script
+> is the source of truth for client-facing copy.
+
 Draft for Renzo's review before any client formatting or deck build. Facts drawn from `../figures.json` (the approved client-facing figure set), `../qa/qa-and-model.md`, and the channel workbooks in `../data/`. This revision walks every commitment the canonical June deck made to the client and carries each one forward: delivered, in progress, or superseded, with the reason stated. Client-facing rules applied throughout: spend matches the client's own tracker, Azerion and Meta figures never blend with Bing's SA360-reported count, and the Mexico-only story is framed as a commitment kept, with the next hardening step ahead of it.
 
 ## Executive summary
