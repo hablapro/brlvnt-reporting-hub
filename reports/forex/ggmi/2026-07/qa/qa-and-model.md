@@ -112,3 +112,18 @@ active" stands, but the deck recommendation now reads "move bidding onto
 SA360's conversion-based strategies" and drops the native-flag evidence.
 The "third consecutive month carried" framing in earlier internal docs
 overstated the finding; corrected in the recommendations file.
+
+## DOOH slides added 2026-08-17
+
+Source: `data/sources/DOOH GGMI Perion Berelvant_Forex_JunioJulio312026_Consolidado.xlsx`
+(July: 31/31 days, daily detail sums to the file's own region totals exactly).
+Format follows the June DOOH report (Forex_DOOH_Mexico_June2026.pptx). July:
+1,406,105 impressions / 126,121 plays / vendor USD 26,242.32 at the file's
+17.80 reference rate; client-facing spend = tracker $26,865, city spends
+recalculated silently (CDMX 15,724 / GDL 6,040 / MTY 5,101). Reach modeled at
+1.8 avg frequency (June convention). Deck is now 16 slides.
+Disclosed omissions: (a) no DOOH MoM published — the consolidado's June rows
+start Jun 23 (partial) and do not reconcile to the June report's full-month
+1,202,455 impressions, so the two sources are not comparable; (b) no venue
+category split (not in the consolidado; June's came from the vendor deck);
+(c) no POE photo slide (no July photos supplied).

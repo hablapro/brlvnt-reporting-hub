@@ -76,6 +76,20 @@ notes = [
 for i, n in enumerate(notes):
     c = ws.cell(row=13 + i, column=1, value=n)
     c.font = Font(name='Calibri', size=8.5, color=MUTED, italic=True)
+
+ws.cell(row=20, column=1, value='DOOH delivery (July, opportunities to see)').font = Font(name='Georgia', bold=True, size=11, color=NAVY)
+hdr3 = ['City', 'Spend ($)', 'Impressions', 'Est. reach (freq 1.8)', 'Ad plays']
+for ci, h in enumerate(hdr3, 1):
+    ws.cell(row=21, column=ci, value=h)
+style_header(ws, 21, len(hdr3))
+body(ws, 22, [
+    ['Mexico City', '$15,724', '825,383', '458,546', ''],
+    ['Guadalajara', '$6,040', '314,817', '174,898', ''],
+    ['Monterrey', '$5,101', '265,905', '147,725', ''],
+    ['Total', '$26,865', '1,406,105', '781,169', '126,121'],
+], len(hdr3), total_last=True)
+c = ws.cell(row=27, column=1, value='DOOH delivery from the vendor consolidado; spend per the client budget tracker. Reach modeled at 1.8 average frequency, the June report convention.')
+c.font = Font(name='Calibri', size=8.5, color=MUTED, italic=True)
 for col, w in zip('ABCDEF', [30, 13, 14, 12, 15, 16]):
     ws.column_dimensions[col].width = w
 ws.freeze_panes = 'A5'

@@ -16,7 +16,7 @@ OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..',
                    'reports', 'forex', 'ggmi', '2026-07', 'output',
                    'GGMI_LATAM_July_2026_Performance_Review.pptx')
 
-d = Deck(entity='GGMI (LATAM)', month='July 2026', n_slides=14)
+d = Deck(entity='GGMI (LATAM)', month='July 2026', n_slides=16)
 
 # ---------------------------------------------------------------- 1 cover ----
 d.cover(kicker='MONTHLY PERFORMANCE REVIEW',
@@ -121,8 +121,8 @@ d.blocker(s, MARGIN + 8.5, 2.0, 3.85, 3.4, 'New this month',
           ['Native ($27,630: Quantcast’s native placement plus Azerion’s '
            'native inventory) and DOOH ($26,865, Perion).',
            'Both upper-funnel. Native reports spend and delivery with no '
-           'conversion claim; DOOH reports spend only this cycle.',
-           'Both report in full once a second month allows comparison.'], GREEN)
+           'conversion claim; DOOH reports delivery on its own slides.',
+           'Both gain a month-over-month read with a second month of data.'], GREEN)
 d.strip(s, MARGIN, 5.75, W - 2 * MARGIN, 0.8,
         'The rebuilt structure delivered $237.12 per submitted application. August scales it.')
 
@@ -308,13 +308,66 @@ d.table(s, MARGIN, 2.0, 7.4, 1.75, [
 d.note(s, MARGIN, 3.9, 7.4, 0.6,
        'Native combines Quantcast’s dedicated native placement and '
        'Azerion’s native inventory. Azerion native viewability: 77.34%, '
-       'clear of the 70% floor. DOOH reports spend only this cycle.')
+       'clear of the 70% floor. DOOH delivery follows on the next slides.')
 d.card(s, 8.1, 2.0, 4.7, 3.2, 'How to read the new lines',
        ['Both are upper-funnel. Native carries a spend and delivery line '
-        'with no conversion claim; DOOH carries spend only, with delivery '
-        'detail out of scope this cycle.',
-        'Both report in full once a second month of data gives them '
-        'something to compare against.'], DEEP)
+        'with no conversion claim; DOOH delivery is reported on the two '
+        'slides that follow.',
+        'Both gain a month-over-month read with a second month of data.'], DEEP)
+
+# ------------------------------------------------- 13 DOOH overview ----
+# Format follows the June DOOH report (Forex_DOOH_Mexico_June2026).
+s = d.content('DIGITAL OUT-OF-HOME  ·  CAMPAIGN OVERVIEW',
+              'One DOOH campaign across Mexico City, Guadalajara and Monterrey.')
+for i, (lbl, val, sub) in enumerate([
+        ('Total impressions', '1,406,105', 'opportunities to see'),
+        ('Estimated reach', '781,169', 'unique audience, modeled'),
+        ('Investment', '$26,865', 'Jul 1–31'),
+        ('CPM', '$19', 'USD per thousand'),
+        ('Ad plays', '126,121', 'all 31 days')]):
+    d.tile(s, MARGIN + i * 2.08, 1.85, lbl, val, sub=sub, w=1.95)
+d.table(s, MARGIN, 3.35, 6.1, 2.5, [
+    ['Parameter', 'Detail'],
+    ['Markets', 'Mexico City, Guadalajara, Monterrey'],
+    ['Flight', 'July 1–31, 2026'],
+    ['Media', 'Digital screens and bulletins'],
+    ['Creative', 'Commodities theme, Spanish'],
+    ['Formats', '10s and 15s video, static image'],
+], col_widths=[1.7, 4.4])
+d.card(s, 6.9, 3.35, 5.9, 3.3, 'Campaign takeaway',
+       ['The campaign ran all 31 days across the same three markets as '
+        'June, on the commodities creative theme in Spanish.',
+        'Mexico City carried 59% of delivery, with Guadalajara and '
+        'Monterrey splitting the balance.',
+        'A second full month of delivery gives the line its first '
+        'month-over-month read in the August report.'], DEEP)
+
+# ------------------------------------------------- 14 DOOH by city ----
+s = d.content('DIGITAL OUT-OF-HOME  ·  DELIVERY BY CITY',
+              'Mexico City carried 59% of July delivery.')
+for i, (lbl, val, sub) in enumerate([
+        ('Mexico City', '825,383', '459K reach · 59%'),
+        ('Guadalajara', '314,817', '175K reach · 22%'),
+        ('Monterrey', '265,905', '148K reach · 19%'),
+        ('Total', '1,406,105', '781K reach · 100%')]):
+    d.tile(s, MARGIN + i * 2.08, 1.85, lbl, val, sub=sub, w=1.95)
+d.table(s, MARGIN, 3.35, 7.4, 2.2, [
+    ['City', 'Spend', 'Impressions', 'Est. reach', 'Share'],
+    ['Mexico City', '$15,724', '825,383', '458,546', '58.7%'],
+    ['Guadalajara', '$6,040', '314,817', '174,898', '22.4%'],
+    ['Monterrey', '$5,101', '265,905', '147,725', '18.9%'],
+    ['Total', '$26,865', '1,406,105', '781,169', '100%'],
+], col_widths=[1.8, 1.3, 1.6, 1.5, 1.2], total_last=True)
+d.note(s, MARGIN, 5.7, 7.4, 0.5,
+       'Impressions are opportunities to see. Estimated reach applies an '
+       'average frequency of 1.8 to impressions, the same model as the '
+       'June report. Spend per the client budget tracker; share is the '
+       'impression share.')
+d.card(s, 8.1, 3.35, 4.7, 2.85, 'What the data shows',
+       ['Delivery concentrated where the audience is largest: Mexico City '
+        'took 59% of impressions at the same CPM as the other markets.',
+        'All three markets delivered the full month with no gaps in the '
+        'daily record.'], GREEN)
 
 # ------------------------------------------------------------- 13 GA4 ----
 s = d.content('SITE TRAFFIC  ·  GA4 (MEXICO)',

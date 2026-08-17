@@ -82,6 +82,12 @@ figures = {
         "funnel.funded": 21,
         "funnel.traded": 19,
         "mix.continuing_channels_spend": 95401,
+        "dooh.impressions": 1406105,
+        "dooh.plays": 126121,
+        "dooh.reach_modeled": 781169,
+        "dooh.cdmx_spend": 15724,
+        "dooh.gdl_spend": 6040,
+        "dooh.mty_spend": 5101,
     },
     "allow": [1717, 20578, 42424, 46294, 78790],
     "history": [120393, 1029, 1036, 900, 751, 732, 684, 288, 337, 261, 202,
@@ -93,7 +99,7 @@ figures = {
         "July is two Bing accounts in one month: dark Jul 1-10, legacy Phase A Jul 11-22 ($5,883, 0 apps), "
         "rebuilt MX_ Phase B Jul 22-31 ($4,742, 20 apps at $237). Conversions re-verified live 2026-08-14, "
         "unchanged. bing.cost_per_app 531 = tracker 10,625 / 20. azerion.cost_per_app 915 = tracker 37,509 / 41 "
-        "vendor-reported results (June convention). mix.continuing_channels_spend 95,401 = Bing 10,625 + Quantcast 39,240 + Azerion 37,509 + Meta 8,027, the four channels continuing from June, vs June total 120,393; the July growth is the new Native and DOOH lines. Meta is spend/delivery only per Renzo ruling 2026-08-04: no "
+        "vendor-reported results (June convention). mix.continuing_channels_spend 95,401 = Bing 10,625 + Quantcast 39,240 + Azerion 37,509 + Meta 8,027, the four channels continuing from June, vs June total 120,393; the July growth is the new Native and DOOH lines. DOOH delivery from the Perion consolidado (data/sources/, America Jun23-Jul31 file): July 1,406,105 impressions (opportunities to see) / 126,121 plays / vendor USD 26,242.32; city spends recalculated silently to the tracker's 26,865 (CDMX 15,724 + GDL 6,040 + MTY 5,101, largest-remainder). Modeled reach = impressions / 1.8 average frequency, the June DOOH report convention. The consolidado's June rows start Jun 23 (partial) and are NOT comparable to the June DOOH report's full-month figures; no DOOH MoM is published. Meta is spend/delivery only per Renzo ruling 2026-08-04: no "
         "Meta cost-per-app, no Meta-vs-Bing efficiency comparison; the 117 pixel fires stay out of client "
         "artifacts as validated conversions. Quantcast tracker line = main campaign only; NativeOnly sits in the "
         "native line. DOOH is a tracker spend line with no delivery detail in our scope. Geo: Bing delivery 2.7% "
