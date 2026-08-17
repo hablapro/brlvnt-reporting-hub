@@ -185,10 +185,11 @@ d.card(s, 6.9, 1.9, 5.9, 4.9, 'What we recommend',
         'Standardize every campaign on the converting landing destination, '
         'and review the handoff from the older landing pages into the '
         'application flow.',
-        'Turn on bidding feedback: every conversion goal is still excluded '
-        'from bidding and every campaign runs manual bids, so July’s '
-        '$237.12 was earned with no automated signal. Enabling the goals '
-        'lets the platform improve on it without manual tuning.'], GOLD)
+        'Move bidding onto SA360’s conversion-based strategies. Bing is '
+        'optimized through SA360, where every conversion point is '
+        'captured, and the enabled campaigns currently run manual CPC '
+        'there. July’s $237.12 was earned on manual bids; a '
+        'conversion-based strategy lets that data drive bidding.'], GOLD)
 
 # --------------------------------------------- 7 quantcast performance ----
 s = d.content('QUANTCAST  ·  PERFORMANCE',
@@ -363,8 +364,8 @@ d.blocker(s, MARGIN, 1.95, 4.05, 2.3, 'Priority',
            'Standardize every Bing campaign on the converting landing '
            'destination.'], CORAL)
 d.blocker(s, MARGIN + 4.25, 1.95, 4.05, 2.3, 'High',
-          ['Turn on bidding feedback for the Bing conversion goals; July’s '
-           '$237.12 was earned with no automated signal.',
+          ['Move Bing bidding onto SA360’s conversion-based strategies; '
+           'July’s $237.12 was earned on manual CPC.',
            'Apply the 66-site Quantcast disallow list, led by tvazteca.com, '
            'and implement the viewability floor.'], GOLD)
 d.blocker(s, MARGIN + 8.5, 1.95, 3.85, 2.3, 'Measurement to close',
@@ -377,6 +378,6 @@ d.blocker(s, MARGIN, 4.45, 4.05, 2.0, 'Opportunity',
            'Read Bing on the rebuilt structure’s $237.12, with August '
            'tracking at $243 across three products.'], GREEN)
 d.strip(s, MARGIN + 4.25, 4.45, 8.1, 2.0,
-        'The rebuilt structure converted at $237.12 in July. In August: harden the targeting configuration, standardize the landing destination, enable the bidding signal.')
+        'The rebuilt structure converted at $237.12 in July. In August: harden the targeting configuration, standardize the landing destination, activate conversion-based bidding in SA360.')
 d.save(OUT)
 print(f'OK  {d.verify()} slides  ->  {OUT}')

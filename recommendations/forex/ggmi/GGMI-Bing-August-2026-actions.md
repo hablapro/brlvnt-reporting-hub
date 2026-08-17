@@ -17,7 +17,10 @@ Supersedes the open rows of `GGMI-Bing-SA360-remediation-June-2026.md` (Jul 6) a
 **Housekeeping in the same batch:** remove the redundant Mexico City (20703) positive target, which is nested inside Mexico (2484); and identify geo target `9450400` on MX_GEN_Competitor, which did not resolve in the `geo_target_constant` lookup.
 **Verification:** re-run `user_location_view` (targeting_location = false) 7 days after the change and confirm non-Mexico spend is ~0%.
 
-### 2. Set `ExcludeFromBidding = false` on the 7 GGMI conversion goals
+### 2. Activate a conversion-based SA360 bid strategy on the enabled campaigns
+**[CORRECTED 2026-08-17, Renzo ruling]:** Bing is optimized through SA360; that is where the conversion points are pulled and where bidding decisions live. The Bing-native `ExcludeFromBidding` flags below are expected under SA360 management and are NOT the lever. Verified live 2026-08-17: all 8 enabled campaigns run MANUAL_CPC at the SA360 layer with no portfolio bid strategy attached, so the account still bids without conversion feedback. The fix is an SA360 bid strategy (e.g. Target CPA on submitted applications), not the native goal flags. Original item kept below for the audit trail.
+
+#### (superseded) Set `ExcludeFromBidding = false` on the 7 GGMI conversion goals
 **Why:** third consecutive cycle carrying this. Goals `40059107 / 40059122 / 40059144 / 40059152 / 40059170 / 40059184 / 40059257` are all Active and now all `RecordingConversions`, so the data is flowing — but every one is excluded from bidding, so no bid strategy can use it. The account is measuring correctly and bidding blind. July's $140.71 cost per submitted application was achieved with zero conversion feedback.
 **Sequence:** do this *before* any move to automated bidding, and let it accumulate signal for 2–3 weeks first.
 **Note:** the primary-KPI import concern from Jul 13 is now resolved — both live-confirmation (submitted application) goals report `RecordingConversions`.

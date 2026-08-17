@@ -100,3 +100,15 @@ Slide 2 carries a Mexico mention on the tab's internal ratios only (40%
 approval vs ~28% blended, ~1 in 4 funded accounts), which hold under either
 window; absolute Mexico counts go in once the period is confirmed.
 Filed as supporting data only; used in no client artifact.
+
+## Correction 2026-08-17 (bidding layer, Renzo ruling)
+
+Bing is optimized through SA360 (where all conversion points are pulled);
+Bing-native `ExcludeFromBidding = TRUE` on the GGMI goals is expected under
+that architecture and is not evidence of a misconfiguration. Verified live
+2026-08-17 at the correct layer: all 8 enabled campaigns run MANUAL_CPC in
+SA360 with no portfolio bid strategy, so "no conversion-based bidding is
+active" stands, but the deck recommendation now reads "move bidding onto
+SA360's conversion-based strategies" and drops the native-flag evidence.
+The "third consecutive month carried" framing in earlier internal docs
+overstated the finding; corrected in the recommendations file.
