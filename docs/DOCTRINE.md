@@ -59,6 +59,12 @@ collaborative.** The guiding formula for every finding, card and headline:
 state the fact → explain the impact → state what needs to happen next. No
 drama, no victory laps, no slogans; the evidence carries the weight.
 
+Headlines follow the June 2026 deck's pattern: number first, honest tension
+stated plainly ("Organic search fell 75%. Media cannot buy it back."), short
+imperatives on recommendation slides ("Hold the pace. Confirm the delivery
+detail."). No milestone celebrations, and declines lead when declines are
+the fact.
+
 - Active voice. A person or a channel acts; objects do not act on their own.
 - No em dashes. Commas, periods, or a line break.
 - Cut adverbs and throat-clearing.
