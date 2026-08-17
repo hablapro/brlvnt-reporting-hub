@@ -2,6 +2,8 @@
 
 Cycle opened 2026-08-04. Approach this cycle: pull channel by channel, QA each channel's data before moving to the next, model and narrate after all channels are in. Reporting only; no account mutations from this repository.
 
+**PHASE 5 BUILD CLOSED 2026-08-17.** Narrative approved by Renzo 2026-08-17; deck (14 slides, housestyle) and formatted report built; all four gates pass (verify_numbers, protection_scan 0 BLOCK, render QA 14/14 all slides inspected, doctrine walk). **One item before Phase 6 delivery: July client-funnel rows (slide 2) — Renzo supplies; then re-run gates on the updated deck and upload to the FX Report Drive folder.** Deliverables: `reports/forex/ggmi/2026-07/output/GGMI_LATAM_July_2026_Performance_Review.pptx` + `GGMI-July-2026-Performance-Report.xlsx`.
+
 **PHASE 3 MODEL CLOSED 2026-08-14.** All 5 GGMI channels pulled + QA'd; tracker received and reconciled; `reports/forex/ggmi/2026-07/figures.json` and `model/GGMI-July-2026-cross-channel-model.xlsx` complete; QA note at `qa/qa-and-model.md`. Client-facing basis: tracker (Total Working Media $149,896 incl. DOOH $26,865 and Native $27,630 lines, both new vs June). Next: Phase 4 narrative → Renzo approval → deck build. Meta ruling confirmed 2026-08-14: spend/delivery only. Google Ads row below is GCG-cycle scope, not GGMI (ruling 2026-08-14: GGMI first, GCG after).
 
 Kickoff reading done per `PROJECT_RETROSPECTIVE_AND_LESSONS_LEARNED.md` §9: the two standing questions are (1) what does the client already hold, (2) how is the agency scored. Agency scorecard = low-cost primary conversions; downstream funnel framed as the client's journey, neutral. Protection scan required before any deliverable ships.
