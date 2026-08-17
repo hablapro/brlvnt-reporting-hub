@@ -90,6 +90,10 @@ column basis (653 / 180 / 21 / 19). Jan-Jun columns stay verbatim as the June
 deck presented them, although the client dashboard's current June reads
 656/195/26/23 (it restates as data matures) — deliberate, ruled. July trading
 volume not in the file; row ships with a dash pending the figure. The
-by-country tab has no date dimension (window unconfirmed; Mexico Live 839
-equals the March monthly figure, so it is NOT July-only) — filed as
-supporting data only, not used in any client artifact.
+by-country tab: the client states it is July-only, but its own totals
+(5,724 submitted / 5,400 live / 1,614 approved / 252 funded / 228 traded)
+are ~9x the file's July summary row (653 / 619 / 180 / 21 / 19) and within
+~3% of the file's 2026 year-to-date totals (5,902 / 5,568 / 1,647 / 258),
+so the export window is inconsistent with July regardless of intent. Renzo
+is raising it with the client alongside the July trading-volume ask.
+Filed as supporting data only; used in no client artifact.
