@@ -185,8 +185,7 @@ d.card(s, 6.9, 1.9, 5.9, 4.9, 'What we recommend',
         'current state.'], GOLD)
 
 # --------------------------------------------- 7 quantcast performance ----
-s = d.content('QUANTCAST  ·  PERFORMANCE',
-              'A reach month at a $0.78 CPM.')
+s = d.content('QUANTCAST  ·  PERFORMANCE', '')
 for i, (lbl, val, sub) in enumerate([
         ('Spend', '$39,240', 'main campaign'),
         ('Impressions', '50.48M', 'main campaign'),

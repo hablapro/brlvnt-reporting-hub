@@ -65,7 +65,9 @@ applications came in at 653, with working media at $149,896" — not a
 celebration ("the biggest month of 2026") and not an alarm ("fell 5%").
 Movement and comparisons live in the tables and bullets, where they read as
 data. Short imperatives are fine on recommendation slides ("Hold the pace.
-Confirm the delivery detail."). Avoid charged verbs in client copy: fell
+Confirm the delivery detail."). A headline must earn its place: if a slide
+has no meaningful single statement, run it without a headline rather than
+forcing one (Renzo ruling 2026-08-17). Avoid charged verbs in client copy: fell
 sharply, collapsed, surged, exploded; use came in at, declined, grew,
 closed at.
 
