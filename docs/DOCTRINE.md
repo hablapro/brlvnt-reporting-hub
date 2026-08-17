@@ -160,6 +160,15 @@ When in doubt, paraphrase the performance rather than reproduce the claim.
 
 ## 8. Framing
 
+**Account mechanics stay out of client decks (Renzo ruling 2026-08-17).**
+A monthly report covers performance: what delivered, what it cost, what it
+means, what happens next. Targeting settings, bid strategies, conversion-goal
+configuration and platform internals are operations — they go to the
+recommendations file for the account operator, and anything genuinely wrong
+gets surfaced to Renzo directly, never to the client. Client-facing next
+steps are limited to actions the client owns (vendor lists, their own
+measurement, their own funnel) and performance direction (scale, hold, read).
+
 Tracking gaps are measurement to close, not agency failures. Vendor and
 cross-functional ownership gets tracked internally and not named in the client
 deck.
