@@ -67,7 +67,7 @@ body(ws, 5, [
     ['Total', money('total.spend'), num('total.impressions'), num('total.clicks'), '—', '—'],
 ], len(hdr), total_last=True)
 notes = [
-    '* Azerion applications are vendor-reported; Bing applications are CRM-validated (SA360 offline import).',
+    '* Azerion applications are vendor-reported; Bing applications are SA360-reported (offline-imported into Bing; SA360 is the conversion source of record).',
     'Conversions come from different systems per channel and are never summed across channels.',
     'Combined Bing + Azerion view (the one sanctioned pairing): 61 submitted applications at $789.08 (June: 92 at $660.00).',
     'Meta clicks are link clicks, the June deck definition. Meta reports on spend and delivery this month.',

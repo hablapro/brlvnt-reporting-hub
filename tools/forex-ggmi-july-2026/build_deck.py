@@ -62,7 +62,7 @@ d.table(s, MARGIN, 1.9, 7.4, 3.05, [
 ], col_widths=[2.15, 1.15, 1.05, 1.05, 0.85, 1.15], total_last=True)
 d.note(s, MARGIN, 5.0, 7.4, 0.75,
        '* Azerion applications are vendor-reported; Bing applications are '
-       'CRM-validated. Conversions come from different systems per channel '
+       'SA360-reported, the account\u2019s conversion source of record. Conversions come from different systems per channel '
        'and are never summed; the combined Bing + Azerion view is the one '
        'sanctioned pairing. Meta clicks are link clicks. Spend per the '
        'client budget tracker.')
@@ -110,7 +110,7 @@ d.strip(s, MARGIN, 5.75, W - 2 * MARGIN, 0.8,
 s = d.content('BING ADS  ·  PERFORMANCE',
               'Three windows in one month. The rebuilt structure is the account’s current state.')
 tiles = [('Spend', '$10,625', 'per the shared budget view'), ('Impressions', '90,394', 'CTR 4.52%'),
-         ('Clicks', '4,090', 'avg CPC $2.60'), ('Submitted apps', '20', 'CRM-validated'),
+         ('Clicks', '4,090', 'avg CPC $2.60'), ('Submitted apps', '20', 'SA360 source of record'),
          ('CPA (full month)', '$531.25', 'June: $513.17'), ('CPA (rebuilt)', '$237.12', 'Jul 22–31')]
 for i, (lbl, val, sub) in enumerate(tiles):
     d.tile(s, MARGIN + i * 2.08, 1.85, lbl, val, sub=sub, w=1.95)
@@ -149,9 +149,8 @@ d.card(s, MARGIN, 1.9, 6.1, 4.9, 'What the data shows',
         'stopped at the second step. The rebuilt campaigns land on the '
         'Spanish-language site and convert. Landing destination and keyword '
         'intent changed together, so this is a strong signal rather than a '
-        'proven single cause, and it matches the conclusion already '
-        'reached on the account: the loss sits between a started and a '
-        'submitted application.',
+        'proven single cause. The step data itself is unambiguous: the '
+        'loss sits between a started and a submitted application.',
         'June’s Mexico commitment held: delivery concentrated in-market '
         'across the month, including on all six new campaigns.'], GREEN)
 d.card(s, 6.9, 1.9, 5.9, 4.9, 'What we recommend',
@@ -222,8 +221,9 @@ for i, (lbl, val, sub) in enumerate([
         ('Viewability', '82.47%', 'native 77.34%')]):
     d.tile(s, MARGIN + i * 2.08, 1.85, lbl, val, sub=sub, w=1.95)
 d.card(s, MARGIN, 3.3, 6.1, 3.4, 'What the data shows',
-       ['Applications are vendor-reported, not CRM-validated the way '
-        'Bing’s count is; the distinction travels with the number.',
+       ['Applications are reported by the vendor’s own tracking rather '
+        'than by SA360, the source of record behind Bing’s count; the '
+        'distinction travels with the number.',
         'June’s viewability recommendation fully landed: display rose from '
         '68.5% to 82.47%, native came in at 77.34%, both clear of the 70% '
         'floor.',
@@ -244,7 +244,7 @@ s = d.content('AZERION  ·  READ & RECOMMENDATIONS',
               'Judge the channel at the monthly level. Close out the vendor confirmation.')
 d.card(s, MARGIN, 1.9, 6.1, 4.4, 'What the data shows',
        ['The channel figure is the stable read: $914.85 per vendor-reported '
-        'application, in line with the account’s recent months.',
+        'application, against $834 in June.',
         'Ad-set level winners rotated against June’s picks, which closes '
         'out June’s reallocation call; the flagged ad set converted well '
         'on its own.'], GREEN)
@@ -280,7 +280,7 @@ d.card(s, 6.9, 3.3, 5.9, 3.4, 'Measurement note',
         'placements and geo.',
         'The platform reports 117 submitted-application pixel fires; that '
         'figure is Meta-reported and unvalidated, is not compared to '
-        'Bing’s CRM-validated count, and carries no cost-per-application '
+        'Bing’s SA360-reported count, and carries no cost-per-application '
         'figure.'], DEEP)
 
 # ---------------------------------------------------- 12 native & dooh ----
@@ -322,12 +322,11 @@ d.card(s, MARGIN, 3.3, 6.1, 3.4, 'What the data shows',
 d.card(s, 6.9, 3.3, 5.9, 3.4, 'Measurement to close',
        ['The submitted-application key event began counting correctly on '
         'July 31 and has held at full capture since. July is reported on '
-        'the CRM count; August is the first month GA4 can corroborate it '
+        'the SA360 count; August is the first month GA4 can corroborate it '
         'independently.',
-        'The Bing-to-GA4 account link is in progress with the site team; '
-        'the paid-search restatement June’s deck flagged lands once the '
-        'connection is verified, expected alongside August’s '
-        'corroboration.'], DEEP)
+        'Completion of the Bing-to-GA4 account link has not yet been '
+        'verified; the paid-search restatement June’s deck flagged lands '
+        'once it is, expected alongside August’s corroboration.'], DEEP)
 
 # ------------------------------------------------- 14 priorities & next ----
 s = d.content('CROSS-CHANNEL PRIORITIES + NEXT STEPS',

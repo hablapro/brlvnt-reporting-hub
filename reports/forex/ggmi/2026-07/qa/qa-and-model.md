@@ -32,7 +32,7 @@ spend/delivery only, Azerion geo unverifiable, Quantcast viewability.
 | DOOH (Perion) | $26,865 | — | — | — | — |
 | **Total** | **$149,896** | 80,581,160 | 120,635 | — | — |
 
-\* Azerion apps are vendor-reported, not CRM-validated. Total row carries no
+\* Azerion apps are vendor-reported; Bing apps are SA360-reported (source of record). Total row carries no
 conversion or CPA figure: each channel reports a different event from a
 different system.
 
@@ -67,3 +67,17 @@ at $237.12.
    separately from Renzo. Deck build holds that slide until they land.
 3. The June combined metric "Submitted (Bing + Azerion)" continues: 61 at
    $789.08 (June: 92 at $660), same footnote as June.
+
+## Correction 2026-08-17 (Renzo challenge)
+
+"CRM-validated" was an unverified upgrade of "offline-imported", introduced in
+the 2026-08-04 build status and propagated from there. Verified facts only:
+Bing's 20 are SA360-reported (offline-imported into Bing; SA360 ruled source
+of record); the submitted-application goals are URL-based, firing on the
+post-submission confirmation page. No CRM linkage is established for the
+submitted-application count. All artifacts corrected to "SA360-reported /
+source of record". Same pass removed three further unverified claims: GA4
+link "in progress with the site team" (only non-completion is verified),
+Azerion CPA "in line with recent months" (now stated as $915 vs $834), and
+"conclusion already reached on the account" (source was the GCG Q2 review;
+replaced with our own step data).
