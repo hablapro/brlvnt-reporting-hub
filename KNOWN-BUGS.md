@@ -32,3 +32,13 @@ Temp render copies live in `~/tmp-deck-render/` and are deleted after QA.
 **Impact:** RSA headline/description asset counts cannot be pulled via MCP. The June finding "brand RSAs at 4 headlines / 2 descriptions, below the Bing 8+/3+ standard" therefore remains UNVERIFIED on the current campaigns.
 **Workaround:** none via MCP. Either read creative depth in the Bing UI, or use `bing_ads_bulk_download` (untested for this purpose). Do not re-attempt `list_ads` expecting it to work.
 **Related:** `bing_ads_search_term_report` silently ignores the `campaign_ids` filter and, when given a start date on which only some campaigns delivered, can return only that single day. Verify covered spend against campaign totals before trusting its output; re-run without the campaign filter if coverage looks thin.
+
+## verify_numbers / protection_scan: numeric xlsx cells are invisible (found 2026-08-17)
+
+`scripts/protection_scan.py::text_from` only yields `isinstance(cell.value, str)`
+cells from .xlsx, so a workbook whose figures are numeric cells bypasses BOTH
+gates' number and vocabulary checks entirely (verify_numbers reported all 23
+approved figures MISSING against a numerically-populated report).
+Workaround: client-facing report workbooks write figures as formatted strings
+("$10,625"), which is also the right presentation form. Fixing the extractor to
+yield numeric cells needs a ruling before touching the gate script.
