@@ -59,11 +59,15 @@ collaborative.** The guiding formula for every finding, card and headline:
 state the fact → explain the impact → state what needs to happen next. No
 drama, no victory laps, no slogans; the evidence carries the weight.
 
-Headlines follow the June 2026 deck's pattern: number first, honest tension
-stated plainly ("Organic search fell 75%. Media cannot buy it back."), short
-imperatives on recommendation slides ("Hold the pace. Confirm the delivery
-detail."). No milestone celebrations, and declines lead when declines are
-the fact.
+Headlines are level, declarative statements of where the month landed:
+number first, no emotional charge in either direction. "Submitted
+applications came in at 653, with working media at $149,896" — not a
+celebration ("the biggest month of 2026") and not an alarm ("fell 5%").
+Movement and comparisons live in the tables and bullets, where they read as
+data. Short imperatives are fine on recommendation slides ("Hold the pace.
+Confirm the delivery detail."). Avoid charged verbs in client copy: fell
+sharply, collapsed, surged, exploded; use came in at, declined, grew,
+closed at.
 
 - Active voice. A person or a channel acts; objects do not act on their own.
 - No em dashes. Commas, periods, or a line break.

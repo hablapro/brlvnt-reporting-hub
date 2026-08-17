@@ -30,15 +30,15 @@ d.cover(kicker='MONTHLY PERFORMANCE REVIEW',
 # Jan-Jun columns verbatim from the June deck; July from the client file
 # ("Submitted" basis, Renzo ruling 2026-08-17). MoM = July vs June.
 s = d.content('SUMMARY  ·  BLENDED VIEW (ORGANIC + PAID)',
-              'Submitted applications fell 5% to 653 while media scaled to $149,896.')
+              'Submitted applications came in at 653, with working media at $149,896.')
 d.text(s, MARGIN, 1.75, 12.3, 1.5, [
     '•  July submitted applications came in at 653, down 5% MoM; the submit '
     'rate on application starts rose to 27%, the highest since January.',
     '•  New approved came in at 180 with the approval rate at 28%. New funded '
     'came in at 21 and the fund rate at 12%; the application-to-funding step '
     'remains the funnel constraint. New traded closed at 19.',
-    '•  Working media reached $149,896 in July, up 24% MoM and the biggest '
-    'month of 2026. The growth sits in the new Native and DOOH lines; the '
+    '•  Working media reached $149,896 in July, up 24% MoM. The growth sits '
+    'in the new Native and DOOH lines; the '
     'four continuing channels spent $95,401 against June\u2019s total of '
     '$120,393, and paid submitted applications with a measured source '
     '(Bing plus Azerion) came in at 61.',
@@ -376,7 +376,7 @@ d.note(s, MARGIN, 5.95, 12.3, 0.5,
 
 # ------------------------------------------------------------- 13 GA4 ----
 s = d.content('SITE TRAFFIC  ·  GA4 (MEXICO)',
-              'Mexico sessions fell 21% to 7,310, tracking Bing’s rebuild month. Key-event capture is fixed as of July 31.')
+              'Mexico sessions came in at 7,310, tracking Bing’s rebuild month. Key-event capture is in place as of July 31.')
 for i, (lbl, val, sub) in enumerate([
         ('Mexico sessions', '7,310', 'June: 9,236'),
         ('Unique visitors', '3,981', 'Mexico'),
@@ -387,8 +387,8 @@ d.card(s, MARGIN, 3.3, 6.1, 3.4, 'What the data shows',
        ['A large share of July’s session dip tracks Bing’s own month: ten '
         'days of rebuild, then the transition window. Property-wide, '
         'sessions without source attribution (largely untagged paid '
-        'search) fell sharply; attributed sessions grew.',
-        'Venezuela’s session volume fell sharply as the prior campaigns '
+        'search) declined; attributed sessions grew.',
+        'Venezuela’s session volume declined as the prior campaigns '
         'retired, the same campaign-mix effect behind Bing’s in-market '
         'concentration this month.'], GREEN)
 d.card(s, 6.9, 3.3, 5.9, 3.4, 'Measurement to close',
