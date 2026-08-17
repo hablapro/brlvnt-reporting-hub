@@ -42,3 +42,7 @@ approved figures MISSING against a numerically-populated report).
 Workaround: client-facing report workbooks write figures as formatted strings
 ("$10,625"), which is also the right presentation form. Fixing the extractor to
 yield numeric cells needs a ruling before touching the gate script.
+
+## PowerPoint clobbers rebuilt output files it has open (found 2026-08-17)
+**Symptom:** a deck rebuilt by `build_deck.py` reverts to older content with a fresh mtime. If the output `.pptx` is open in PowerPoint while the build script overwrites it, PowerPoint's auto-save/save writes its stale in-memory copy back over the new file.
+**Workaround:** never keep the output file open during a build cycle; review from a copy or a PDF render. After any handoff, verify the binary's actual text (python-pptx) rather than trusting mtime. The build script is the source of truth; a clobber is fixed by re-running it.
