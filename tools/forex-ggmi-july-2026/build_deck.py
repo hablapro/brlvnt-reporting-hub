@@ -351,23 +351,28 @@ for i, (lbl, val, sub) in enumerate([
         ('Monterrey', '265,905', '148K reach · 19%'),
         ('Total', '1,406,105', '781K reach · 100%')]):
     d.tile(s, MARGIN + i * 2.08, 1.85, lbl, val, sub=sub, w=1.95)
-d.table(s, MARGIN, 3.35, 7.4, 2.2, [
+d.table(s, MARGIN, 3.2, 6.2, 2.1, [
     ['City', 'Spend', 'Impressions', 'Est. reach', 'Share'],
     ['Mexico City', '$15,724', '825,383', '458,546', '58.7%'],
     ['Guadalajara', '$6,040', '314,817', '174,898', '22.4%'],
     ['Monterrey', '$5,101', '265,905', '147,725', '18.9%'],
     ['Total', '$26,865', '1,406,105', '781,169', '100%'],
-], col_widths=[1.8, 1.3, 1.6, 1.5, 1.2], total_last=True)
-d.note(s, MARGIN, 5.7, 7.4, 0.5,
+], col_widths=[1.5, 1.05, 1.35, 1.25, 1.05], total_last=True)
+d.table(s, 7.0, 3.2, 5.8, 2.45, [
+    ['Category', 'Mexico City', 'Guadalajara', 'Monterrey', 'Total'],
+    ['Airport', '—', '—', '—', '—'],
+    ['Main Avenue / Roadside', '—', '—', '—', '—'],
+    ['Shopping Mall / Retail', '—', '—', '—', '—'],
+    ['Leisure & Hospitality', '—', '—', '—', '—'],
+    ['Other', '—', '—', '—', '—'],
+    ['City impressions', '825,383', '314,817', '265,905', '1,406,105'],
+], col_widths=[2.0, 0.95, 0.95, 0.95, 0.95], total_last=True)
+d.note(s, MARGIN, 5.95, 12.3, 0.5,
        'Impressions are opportunities to see. Estimated reach applies an '
        'average frequency of 1.8 to impressions, the same model as the '
        'June report. Spend per the client budget tracker; share is the '
-       'impression share.')
-d.card(s, 8.1, 3.35, 4.7, 2.85, 'What the data shows',
-       ['Delivery concentrated where the audience is largest: Mexico City '
-        'took 59% of impressions at the same CPM as the other markets.',
-        'All three markets delivered the full month with no gaps in the '
-        'daily record.'], GREEN)
+       'impression share. Venue mix follows with the vendor placement '
+       'detail.')
 
 # ------------------------------------------------------------- 13 GA4 ----
 s = d.content('SITE TRAFFIC  ·  GA4 (MEXICO)',
