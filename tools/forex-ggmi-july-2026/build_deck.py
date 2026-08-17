@@ -30,7 +30,7 @@ d.cover(kicker='MONTHLY PERFORMANCE REVIEW',
 # Jan-Jun columns verbatim from the June deck; July from the client file
 # ("Submitted" basis, Renzo ruling 2026-08-17). MoM = July vs June.
 s = d.content('SUMMARY  ·  BLENDED VIEW (ORGANIC + PAID)',
-              'Submitted applications held near June on a 24% larger media month.')
+              'Submitted applications fell 5% to 653 while media scaled to $149,896.')
 d.text(s, MARGIN, 1.75, 12.3, 1.5, [
     '•  July submitted applications came in at 653, down 5% MoM; the submit '
     'rate on application starts rose to 27%, the highest since January.',
@@ -73,7 +73,7 @@ d.note(s, MARGIN, 6.72, 12.3, 0.3,
 
 # ------------------------------------------------------ 3 exec summary ----
 s = d.content('EXECUTIVE SUMMARY',
-              '$149,896 deployed in July, up 24%, the biggest GGMI media month of 2026.')
+              '$149,896 deployed in July. Bing and Azerion produced 61 submitted applications at $789.08.')
 d.table(s, MARGIN, 1.9, 7.4, 3.05, [
     ['Channel', 'Spend', 'Impr', 'Clicks', 'Apps', 'Cost/app'],
     ['Bing (Search)', '$10,625', '90,394', '4,090', '20', '$531.25'],
@@ -128,7 +128,7 @@ d.strip(s, MARGIN, 5.75, W - 2 * MARGIN, 0.8,
 
 # ------------------------------------------------- 5 bing performance ----
 s = d.content('BING ADS  ·  PERFORMANCE',
-              'Three windows in one month. The rebuilt structure is the account’s current state.')
+              '20 submitted applications at $531.25; the rebuilt structure closed the month at $237.12.')
 tiles = [('Spend', '$10,625', 'Jul 1–31'), ('Impressions', '90,394', 'CTR 4.52%'),
          ('Clicks', '4,090', 'avg CPC $2.60'), ('Submitted apps', '20', 'SA360 source of record'),
          ('CPA (full month)', '$531.25', 'June: $513.17'), ('CPA (rebuilt)', '$237.12', 'Jul 22–31')]
@@ -158,7 +158,7 @@ d.note(s, 8.6, 5.8, 4.2, 1.1,
 
 # -------------------------------------------------- 6 bing read & recs ----
 s = d.content('BING ADS  ·  READ & RECOMMENDATIONS',
-              'The rebuild superseded June’s campaign picks. August scales what works.')
+              'Scale the rebuilt structure.')
 d.card(s, MARGIN, 1.9, 6.1, 4.9, 'What the data shows',
        ['June’s deck named Platform Intercept the efficiency leader at $285 '
         'and recommended rebalancing toward it. Both named June campaigns '
@@ -184,7 +184,7 @@ d.card(s, 6.9, 1.9, 5.9, 4.9, 'What we recommend',
 
 # --------------------------------------------- 7 quantcast performance ----
 s = d.content('QUANTCAST  ·  PERFORMANCE',
-              'Reach delivered at scale, all in Mexico. Viewability is the bill to manage.')
+              'A reach month at a $0.78 CPM. Viewability is the bill to manage.')
 for i, (lbl, val, sub) in enumerate([
         ('Spend', '$39,240', 'main campaign'),
         ('Impressions', '50.48M', 'main campaign'),
@@ -209,7 +209,7 @@ d.card(s, 6.9, 3.3, 5.9, 3.4, 'The site list is the lever',
 
 # --------------------------------------------- 8 quantcast read & recs ----
 s = d.content('QUANTCAST  ·  READ & RECOMMENDATIONS',
-              'Apply the refreshed list, then hold quality with a floor.')
+              'Apply the disallow list. Hold the 70% standard.')
 d.card(s, MARGIN, 1.9, 6.1, 4.4, 'What the data shows',
        ['The disallow list is the direct lever on viewability: 66 domains '
         'flagged for exclusion, led by low-viewability news and utility '
@@ -228,7 +228,7 @@ d.card(s, 6.9, 1.9, 5.9, 4.4, 'What we recommend',
 
 # ----------------------------------------------- 9 azerion performance ----
 s = d.content('AZERION  ·  PERFORMANCE',
-              '41 vendor-reported applications; viewability now clear of the floor on both formats.')
+              '41 vendor-reported applications at $914.85, from 42 at $834 in June.')
 for i, (lbl, val, sub) in enumerate([
         ('Spend', '$37,509', 'display'),
         ('Impressions', '7.58M', 'display'),
@@ -258,7 +258,7 @@ d.card(s, 6.9, 3.3, 5.9, 3.4, 'Ad-set economics rotated',
 
 # ----------------------------------------------- 10 azerion read & recs ----
 s = d.content('AZERION  ·  READ & RECOMMENDATIONS',
-              'Judge the channel at the monthly level. Close out the vendor confirmation.')
+              'Hold the pace. Confirm the delivery detail.')
 d.card(s, MARGIN, 1.9, 6.1, 4.4, 'What the data shows',
        ['The channel figure is the stable read: $914.85 per vendor-reported '
         'application, against $834 in June.',
@@ -274,7 +274,7 @@ d.card(s, 6.9, 1.9, 5.9, 4.4, 'What we recommend',
 
 # -------------------------------------------------- 11 meta performance ----
 s = d.content('META  ·  SPEND & DELIVERY',
-              'Reported on spend and delivery this month. Instagram testing delivered.')
+              'Meta reported on spend and delivery: $8,027 and 74,489 link clicks. Conversion measurement remains the open item.')
 for i, (lbl, val, sub) in enumerate([
         ('Spend', '$8,027', 'Mexico only'),
         ('Impressions', '4.25M', 'CPM ~$1.89'),
@@ -376,7 +376,7 @@ d.note(s, MARGIN, 5.95, 12.3, 0.5,
 
 # ------------------------------------------------------------- 13 GA4 ----
 s = d.content('SITE TRAFFIC  ·  GA4 (MEXICO)',
-              'Context this month. The measurement fix makes August the first fully measured month.')
+              'Mexico sessions fell 21% to 7,310, tracking Bing’s rebuild month. Key-event capture is fixed as of July 31.')
 for i, (lbl, val, sub) in enumerate([
         ('Mexico sessions', '7,310', 'June: 9,236'),
         ('Unique visitors', '3,981', 'Mexico'),
@@ -402,7 +402,7 @@ d.card(s, 6.9, 3.3, 5.9, 3.4, 'Measurement to close',
 
 # ------------------------------------------------- 14 priorities & next ----
 s = d.content('CROSS-CHANNEL PRIORITIES + NEXT STEPS',
-              'August priorities: scale the rebuilt structure, complete measurement, hold inventory quality.')
+              'Scale the rebuilt structure. Finish the measurement. Hold inventory quality.')
 d.blocker(s, MARGIN, 1.95, 4.05, 2.3, 'Priority',
           ['Scale the rebuilt Bing structure on the July close of $237.12; '
            'August is tracking at $243 across three products.'], CORAL)
