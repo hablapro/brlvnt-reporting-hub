@@ -1,88 +1,78 @@
 # Resume Here
 
-Read this first when picking the repo back up. Last updated 2026-08-08.
-
-Delete or rewrite this file when the handover closes. It exists to carry state
-between sessions, not to be permanent documentation.
+Read this first when picking the repo back up. Last updated 2026-08-18
+(session close). Delete or rewrite when the state changes.
 
 ---
 
 ## Where things stand
 
-Two threads run in parallel. They do not block each other.
+### July 2026 GGMI cycle — DECK FINAL, AWAITING PHASE 6
 
-### Thread A: handover build (this thread) — CODE COMPLETE
+The deck (`reports/forex/ggmi/2026-07/output/GGMI_LATAM_July_2026_Performance_Review.pptx`,
+16 slides) and report workbook are built, gate-clean, and reflect every Renzo
+ruling through 2026-08-17. Built entirely by
+`tools/forex-ggmi-july-2026/build_deck.py` — **the script is the source of
+truth; never hand-edit the pptx, and never keep it open in PowerPoint during
+a rebuild** (it clobbers the output; see KNOWN-BUGS).
 
-The repo is cloneable and runnable. Docs, the design-system library and both
-automated gates are committed (`2b1e90e`). Gates verified green at commit.
+Open items, all waiting on external data (slot in, re-run gates, deliver):
 
-Blocked only on four decisions from Renzo. Nothing else is outstanding.
+1. **July trading volume** (slide 2 row shows a dash) — Renzo asking client.
+2. **Country-tab period** — client says July-only but the tab foots to 2026
+   YTD (5,724 submitted vs July's 653); Renzo asking. Mexico absolute counts
+   go in once answered (rates-only bullet meanwhile). Draft client note:
+   `output/client-note-country-data-july.md`.
+3. **DOOH venue mix** (airport/roadside/mall table has dash placeholders) —
+   Renzo fills when vendor data arrives.
 
-### Thread B: July 2026 GGMI cycle — IN PROGRESS, owned elsewhere
+Phase 6 on Renzo's word: upload deck + report to FX Report Drive folder
+(`1cPVbjlPnwuPbVUChgmBVp4c_HQ01Mr55`, shared drive), verify by reading back,
+then close the cycle (REPORT-INDEX, REPORTING-LOG, tracker note, archive
+BUILD-STATUS).
 
-A parallel session pulled and verified Bing, Meta, Quantcast and GA4, and
-committed `e02d4f1` on 08-08.
+### GCG July cycle — NOT STARTED (ruled: GGMI first)
 
-**Read `reports/forex/2026-07-BUILD-STATUS.md` fresh.** The July summary in
-`docs/HANDOVER.md` §6 was written 08-04 and is now behind. Trust the build
-status, not the handover doc, for July state.
+Inputs already on hand: GCG client tracker transcribed
+(`reports/forex/gcg/2026-07/data/sources/`), Azerion GCG July files
+downloaded there too. Remember: `0426_GCG_Q2_esp_us_CTR` delivered $2,104.37
+in July despite being paused now.
 
----
+## Rulings made this cycle (all in docs/DOCTRINE.md + auto-memory — READ THEM)
 
-## The four decisions
+- **Permanent reporting rule** (§1): each channel on its own partner signal;
+  channel/source/decision-basis table; methodology note stated ONCE; no
+  blending across attribution systems — the June combined Bing+Azerion
+  metric is RETIRED. Terminology: "partner-attributed".
+- **Deck scope** (§8): account mechanics (targeting/bidding/settings/conversion
+  config) never in client decks — recommendations file + Renzo only.
+- **Tone** (§3): calm/level headlines, "came in at" not "fell"/"biggest";
+  headline earns its place or the slide runs without one; no viewability as
+  headline/priority (vanity metric — data point only).
+- **No assumptions**: source labels never exceed verified facts (Bing =
+  SA360-reported source of record, NOT "CRM-validated"); Bing bidding lives
+  at the SA360 layer (native ExcludeFromBidding flags are expected).
+- Bing Jul 1–10 = planned rebuild (Ruben), never "dark/down". Meta 25+
+  restricted by Meta financial-vertical policy. Meta paid paused,
+  StoneX-owned. Quantcast June blocklist was executed (internal fact).
 
-Nothing in Thread A moves until these are answered.
+## Ops handoff to Ruben (via Renzo)
 
-| # | Decision | Why it blocks | Suggested default |
-|---|---|---|---|
-| 1 | Push, and to where | 39 commits are local-only. The remote is a personal namespace holding StoneX vendor data and delivered decks. | Move to a private `Berelvant/` repo, then push |
-| 2 | Hand over 3 MCP secrets | `QUANTCAST_MCP_API_KEY`, `GA_MCP_AUTHORIZATION`, `CM360_MCP_API_KEY`. Out of band; `.env` is gitignored. | — |
-| 3 | Access grants | `docs/HANDOVER.md` §2. Lead time on the shared drive, Spend Tracker, canonical Slides, Azerion vendor email. | Confirm whether the internal Billable tab may be shared |
-| 4 | Confirm 2 doctrine points | Inferred from the retrospective, not ruled on directly. Both are written into `docs/DOCTRINE.md` as standing rules. | Confirm as written |
+`recommendations/forex/ggmi/GGMI-Bing-August-2026-actions.md`: geo setting
+still PRESENCE_OR_INTEREST + no Venezuela exclusion (P0, dormant risk),
+SA360 conversion-based bid strategy (all 8 campaigns MANUAL_CPC, verified
+2026-08-17), landing destinations, query negatives.
 
-Decision 4 in full, since it shapes every future deck:
+## Supporting artifacts this session
 
-- **Agency scorecard** is submitted applications and cost per submitted
-  application. Approval, funding, activation and trading belong to the
-  client's journey and are described neutrally.
-- **Client-facing spend** equals the client budget tracker, not the platform
-  figure. Downstream numbers recalculate silently; reconciliation detail stays
-  internal.
+- Partner-level detail (internal, unmasked):
+  `reports/forex/ggmi/2026-07/output/GGMI-July-2026-partner-detail.md`
+- QA + rulings record: `reports/forex/ggmi/2026-07/qa/qa-and-model.md`
+- Figures: `reports/forex/ggmi/2026-07/figures.json` (regenerate via
+  `tools/forex-july-2026-ggmi-model/build_model.py`)
+- Build status: `reports/forex/2026-07-BUILD-STATUS.md`
 
----
+## Prior handover thread (2026-08-08)
 
-## Lower priority, no rush
-
-- **Repo location.** It sits in `/Users/rpro/AI-BRLVNT/`, which is neither the
-  vault nor `dev/<category>/<project>/` per the deliverables rule. Moving it is
-  a `mv` plus a registry pointer, but it breaks saved absolute paths.
-- **June builders carry the pre-library palette.** `tools/forex-june-2026/` and
-  `tools/forex-gcg-june-2026/` predate `lib/housestyle.py` and still use the
-  old colours plus a separate restyle pass. New months import the library.
-  Documented rather than retrofitted, because a parallel session was working
-  in `tools/`.
-- **Workbook builders are still forked per month per entity.** The deck path is
-  deduplicated; `build_sheet.py` is not. First item in `docs/HANDOVER.md` §8.
-
----
-
-## Carry-over into the next client-facing deliverable
-
-`"$124 vendor-basis"` on slide 14 of the GCG June final is forbidden
-vocabulary that survived two manual protection passes. June is closed and the
-canonical Slides stay as presented, so it was not retro-fixed. Do not reuse
-the phrasing, and run `scripts/protection_scan.py` before every delivery.
-
----
-
-## Verify the repo still works
-
-```bash
-python3 lib/housestyle.py                       # renders a component smoke deck
-python3 scripts/verify_numbers.py reports/forex/ggmi/2026-06/figures.json \
-  "report-client-decks/06. GGMI_LATAM_June_2026_Performance_Review-final.pptx"
-python3 scripts/protection_scan.py \
-  "report-client-decks/06. GGMI_LATAM_June_2026_Performance_Review-final.pptx"
-```
-
-All three pass as of `2b1e90e`. The full setup check is `docs/SETUP.md` §4.
+Still pending Renzo: push destination decision, MCP secret handover, access
+grants, doctrine confirmations. 60+ commits are local-only.
