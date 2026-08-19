@@ -1,35 +1,45 @@
 # Resume Here
 
-Read this first when picking the repo back up. Last updated 2026-08-18
-(session close). Delete or rewrite when the state changes.
+Read this first when picking the repo back up. Last updated 2026-08-19.
+Delete or rewrite when the state changes.
 
 ---
 
 ## Where things stand
 
-### July 2026 GGMI cycle — DECK FINAL, AWAITING PHASE 6
+### July 2026 GGMI cycle — DELIVERED. Canonical = the Google Slides file
 
-The deck (`reports/forex/ggmi/2026-07/output/GGMI_LATAM_July_2026_Performance_Review.pptx`,
-16 slides) and report workbook are built, gate-clean, and reflect every Renzo
-ruling through 2026-08-17. Built entirely by
-`tools/forex-ggmi-july-2026/build_deck.py` — **the script is the source of
-truth; never hand-edit the pptx, and never keep it open in PowerPoint during
-a rebuild** (it clobbers the output; see KNOWN-BUGS).
+Renzo restructured the built 16-slide deck into a 13-slide final and shared
+it with the client: Slides `1IbiLHpMdu_EFG4zaiTv4Xu13boJKTgxLbayntrxH_o8`
+("GGMI_LATAM_July_2026_Review-final"). That file is canonical; the local
+PPTX is the superseded draft. The three formerly-open external-data items
+(trading volume, country tab, DOOH venue mix) were resolved by removal —
+Renzo cut the blocks that carried them.
 
-Open items, all waiting on external data (slot in, re-run gates, deliver):
+Post-delivery review is DONE (2026-08-19), now a standing monthly phase
+(RUNBOOK Phase 7). Read
+`reports/forex/ggmi/2026-07/qa/final-deck-review-2026-08-19.md`:
+full built-vs-delivered diff plus Laura Acosta's five comments. Template
+and presentation rules codified in DOCTRINE §11.
 
-1. **July trading volume** (slide 2 row shows a dash) — Renzo asking client.
-2. **Country-tab period** — client says July-only but the tab foots to 2026
-   YTD (5,724 submitted vs July's 653); Renzo asking. Mexico absolute counts
-   go in once answered (rates-only bullet meanwhile). Draft client note:
-   `output/client-note-country-data-july.md`.
-3. **DOOH venue mix** (airport/roadside/mall table has dash placeholders) —
-   Renzo fills when vendor data arrives.
+Open follow-ups from Laura's comments (all on the Slides file, unresolved):
 
-Phase 6 on Renzo's word: upload deck + report to FX Report Drive folder
-(`1cPVbjlPnwuPbVUChgmBVp4c_HQ01Mr55`, shared drive), verify by reading back,
-then close the cycle (REPORT-INDEX, REPORTING-LOG, tracker note, archive
-BUILD-STATUS).
+1. **Meta slide rework is the big one**: per-campaign split by objective
+   (engagement: reach/impressions/CPM; conversion: CTR/sessions/
+   conversions), best creatives, June CPM comparator, 25+ targeting
+   before/after on reach and CPM. She said "once again" — standing rule.
+2. Azerion (and every channel) slide must state the target audience.
+3. Comments 4 and 5 (June CPM, 25+ effect) are answerable from data on
+   hand — draft replies for Renzo before or with the August deck.
+
+Cycle-close bookkeeping (REPORT-INDEX, REPORTING-LOG, tracker note,
+archive BUILD-STATUS) still pending.
+
+### August 2026 GGMI — build to the NEW template
+
+`build_deck.py` must be rebuilt to the delivered 13-slide structure
+(DOCTRINE §11) before the August cycle. Do not rebuild from the 16-slide
+July script shape.
 
 ### GCG July cycle — NOT STARTED (ruled: GGMI first)
 

@@ -274,6 +274,37 @@ and the repo is committed.
 
 ---
 
+## Phase 7: Post-delivery review (standing, every month — Renzo ruling 2026-08-19)
+
+After Renzo delivers and the client has had the deck, review what actually
+shipped. The delivered Slides file is the template baseline for the next
+month, not the built PPTX.
+
+1. **Diff the canonical Slides against the built deck.** Pull the Slides
+   JSON (`gws slides presentations get --params '{"presentationId":"..."}'`)
+   and compare slide-by-slide: what Renzo cut, merged, added, reworded.
+2. **Pull client comments.** Drive comments API
+   (`gws drive comments list --params '{"fileId":"...","fields":"comments(id,content,anchor,author(displayName),createdTime,resolved,quotedFileContent(value),replies(content,author(displayName)))"}'`).
+   The `anchor.page` field maps each comment to a slide objectId.
+3. **Write the review** to `reports/forex/<entity>/<month>/qa/final-deck-review-<date>.md`:
+   the structural diff, each comment with the standing rule it implies, and
+   the follow-ups.
+4. **Codify same day.** Template-structure changes go into DOCTRINE §11 and
+   the deck build script; client presentation asks become doctrine rules.
+   A client comment that recurs ("once again") means the rule was missed
+   the first time; find the original ask.
+5. **Answer or route the comments.** Answerable-from-data questions get
+   drafted replies for Renzo; build-affecting ones go into the next
+   cycle's kickoff carry-overs.
+
+**Closes when:** the review doc exists, doctrine and the build template
+reflect the deltas, and every client comment is either answered or carried
+into the next kickoff.
+
+First instance: `reports/forex/ggmi/2026-07/qa/final-deck-review-2026-08-19.md`.
+
+---
+
 ## Quick reference
 
 ```bash
@@ -292,3 +323,4 @@ python3 scripts/protection_scan.py <file>                # phase 5 gate 2
 | 4 Narrative | Renzo approves narrative and slide order |
 | 5 Build | Four gates pass |
 | 6 Deliver | Client has it, index and log current, committed |
+| 7 Post-delivery review | Deck diff + client comments codified, replies routed |

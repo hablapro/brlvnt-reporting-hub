@@ -239,3 +239,50 @@ call. Local and Drive PPTX files are exports of the Slides, not the source.
 Verify every upload by reading the content back.
 
 Never name a competitor in vendor or client communications.
+
+---
+
+## 11. Deck template — delivered-deck baseline (2026-08-19)
+
+The July 2026 GGMI deck Renzo delivered (13 slides, Slides file
+`1IbiLHpMdu_EFG4zaiTv4Xu13boJKTgxLbayntrxH_o8`) supersedes the 16-slide
+built structure. Build to the delivered shape from August on. Full diff:
+`reports/forex/ggmi/2026-07/qa/final-deck-review-2026-08-19.md`.
+
+**Structure rules from the delivered deck:**
+
+- One slide per channel carrying evidence and decision together. No
+  separate "read and recommendations" slides; each channel slide ends in
+  a DECISION or TAKEAWAY line.
+- Granular tables are client-facing: top keywords with per-row CPA,
+  audience rankings with next-month status labels (PRIORITIZE / MAINTAIN /
+  REDUCE-REMOVE), creative-level performance with verdicts (SCALE /
+  RETAIN-TEST / REMOVE). The internal partner-detail doc feeds the deck,
+  it does not replace it.
+- Creative previews earn slides: show the actual creatives with
+  per-creative spend, clicks, CTR and a verdict.
+- No blended organic+paid summary slide. Open on the channel table,
+  dashes in the total row, methodology footnote once.
+- A block waiting on external data is cut, not shipped with dash
+  placeholders.
+- Closer is a cross-channel priorities narrative, not a decisions table.
+
+**Client presentation rules (Laura Acosta comments, 2026-08-19):**
+
+- **State the target.** Every channel slide names the audience being
+  targeted. Audience descriptions are performance context; the §8
+  account-mechanics ban covers platform configuration (bids, settings,
+  conversion plumbing), not who the media is aimed at.
+- **No naked stat.** Every number on a slide carries an interpretation:
+  good or bad, versus what, or why it moved. "10.2%" alone is data, not
+  an insight.
+- **Every KPI gets its prior-month comparator**, including CPM and reach,
+  not just CPA and CTR.
+- **Meta reports per campaign, split by objective.** Engagement
+  campaigns: reach, impressions, CPM. Conversion campaigns: CTR,
+  sessions, conversions. Never compare an engagement campaign with a
+  conversion one. Include best-performing creatives. This was asked
+  before July ("once again"); treat it as standing, not feedback.
+- **Quantify targeting changes.** When targeting shifts mid-flight
+  (e.g. the Meta 25+ update), show the before/after effect on reach and
+  CPM, not just the fact of the change.
