@@ -51,12 +51,28 @@ archive BUILD-STATUS) still pending.
 (DOCTRINE §11) before the August cycle. Do not rebuild from the 16-slide
 July script shape.
 
-### GCG July cycle — NOT STARTED (ruled: GGMI first)
+### GCG July cycle — PHASES 0-2 DONE, RESUME AT QUANTCAST PULL
 
-Inputs already on hand: GCG client tracker transcribed
-(`reports/forex/gcg/2026-07/data/sources/`), Azerion GCG July files
-downloaded there too. Remember: `0426_GCG_Q2_esp_us_CTR` delivered $2,104.37
-in July despite being paused now.
+State of record: `reports/forex/gcg/2026-07/BUILD-STATUS.md` and
+`qa/qa-and-model.md` — read both before touching anything. Four channels
+pulled, workbook'd, tracker-reconciled (Google Search $29,478 + NEW PMax
+$18,175 with 73 + 49 submitted apps; Meta $6,940, conversion objective
+DELIVERED; Azerion display 80 apps at $393.46 tracker CPA, viewability
+64.95% below floor; Azerion Native first full month; GA4 ES sessions
+66,398).
+
+**Next action: pull Quantcast** (config 9969644, endDate EXCLUSIVE →
+2026-08-01): display line ($29,857 tracker), Native reconciliation
+(tracker $20,298 vs Azerion-only ~$10.1K), site list + disallow refresh,
+viewability vs 46.9% June. The session must launch with
+QUANTCAST_MCP_API_KEY set (KNOWN-BUGS 2026-08-19). Then: model +
+figures.json, narrative (Renzo gate), build to the 13-slide GGMI template
+(DOCTRINE §11), gates, deliver.
+
+Still needed from Renzo: July client funnel rows; comms since June report.
+Ops item for recommendations file: PMax goal config excludes Step 5 from
+primary conversions (campaign not optimizing to submitted apps).
+Remember: quote 73 Search submitted apps, never the platform's 76.
 
 ## Rulings made this cycle (all in docs/DOCTRINE.md + auto-memory — READ THEM)
 
