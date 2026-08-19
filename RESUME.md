@@ -33,7 +33,7 @@ Open follow-ups from Laura's comments (all on the Slides file, unresolved):
    approved, verified by read-back). Laura's resolution/response is the
    next signal to watch. Approved drafts + backup facts:
    `reports/forex/ggmi/2026-07/output/laura-comment-replies-2026-08-19.md`.
-   Renzo reviews and posts. Key facts inside: the 25+ refinement was
+   Key facts inside: the 25+ refinement was
    never applied — Meta's "Financial Products and Services" special ad
    category (mandatory 2025-01-21) locks age at 18-65+, verified by web
    research 2026-08-19; June-vs-July blended CPM ($1.31 → $1.89) is an
