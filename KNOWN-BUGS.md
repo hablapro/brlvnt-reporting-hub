@@ -46,3 +46,13 @@ yield numeric cells needs a ruling before touching the gate script.
 ## PowerPoint clobbers rebuilt output files it has open (found 2026-08-17)
 **Symptom:** a deck rebuilt by `build_deck.py` reverts to older content with a fresh mtime. If the output `.pptx` is open in PowerPoint while the build script overwrites it, PowerPoint's auto-save/save writes its stale in-memory copy back over the new file.
 **Workaround:** never keep the output file open during a build cycle; review from a copy or a PDF render. After any handoff, verify the binary's actual text (python-pptx) rather than trusting mtime. The build script is the source of truth; a clobber is fixed by re-running it.
+
+## Quantcast MCP: key must be in the launching shell (2026-08-19)
+
+The quantcast server in `.mcp.json` sends `X-API-Key: ${QUANTCAST_MCP_API_KEY}`,
+expanded from the environment at session start. There is no `.env` auto-load
+(`.env.example` documents the name only, value intentionally absent). If the
+variable is not set in the shell that launched Claude Code, the server fails
+DCR with HTTP 405 and every Quantcast pull is blocked for the session.
+Fix: set the variable before launch (part of the pending MCP secret handover),
+then restart the session. Do not paste the key into chat or commit it.
