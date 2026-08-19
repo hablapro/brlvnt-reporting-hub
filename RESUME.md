@@ -29,7 +29,9 @@ Open follow-ups from Laura's comments (all on the Slides file, unresolved):
    conversions), best creatives, June CPM comparator, 25+ targeting
    before/after on reach and CPM. She said "once again" — standing rule.
 2. Azerion (and every channel) slide must state the target audience.
-3. Replies to all five comments are DRAFTED and gate-clean:
+3. Replies POSTED to all five comment threads 2026-08-19 (as Renzo,
+   approved, verified by read-back). Laura's resolution/response is the
+   next signal to watch. Approved drafts + backup facts:
    `reports/forex/ggmi/2026-07/output/laura-comment-replies-2026-08-19.md`.
    Renzo reviews and posts. Key facts inside: the 25+ refinement was
    never applied — Meta's "Financial Products and Services" special ad
