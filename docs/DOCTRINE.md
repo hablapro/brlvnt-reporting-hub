@@ -286,3 +286,11 @@ built structure. Build to the delivered shape from August on. Full diff:
 - **Quantify targeting changes.** When targeting shifts mid-flight
   (e.g. the Meta 25+ update), show the before/after effect on reach and
   CPM, not just the fact of the change.
+- **CPM on Meta is an indicator, never a KPI (Renzo ruling 2026-08-19).**
+  Meta is auction-bought; CPM is an output, not a price we pay or a
+  measure of success. Show it as delivery context with its comparator
+  and an interpretation (audience size, competition, creative
+  relevance), and keep the judgment on the campaign objective. Same
+  class as viewability: data point, never headline or decision basis.
+  On channels where CPM IS the buy (DOOH, programmatic direct), it
+  stays a real cost metric.
