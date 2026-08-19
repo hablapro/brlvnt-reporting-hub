@@ -33,9 +33,10 @@ despite being paused now — reconcile the rest.
 | Google Ads (Search) | ✅ 2026-08-19 | ✅ tracker exact | provisional | 73 submitted (Step 5); metrics.conversions=76 incl. 3 GCLID — never quote 76 |
 | Google Ads (PMax/YT) | ✅ 2026-08-19 | ✅ tracker exact | provisional | 49 submitted in all_conv only; goal-config fix → recommendations |
 | Meta | ✅ 2026-08-19 | ✅ tracker exact | provisional | CONV objective DELIVERED (June commitment); Q2 CTR paused after July |
-| Quantcast | 🔴 BLOCKED | — | — | QUANTCAST_MCP_API_KEY missing at session launch (KNOWN-BUGS 2026-08-19); blocks display line, Native reconciliation, disallow refresh |
+| Quantcast (display) | ✅ 2026-08-19 | ✅ tracker exact (0.01%) | provisional | $29,854.75; viewability 49.26% (June 46.9%, improving, still below 70% floor) |
+| Quantcast (Native) | ✅ 2026-08-19 | ✅ see Native row | provisional | $10,002.73, new campaign (created 2026-07-02), first delivery month; viewability 57.98%, below floor |
 | Azerion (display) | ✅ vendor file | ✅ June-pattern adj | provisional | 80 apps, $393.46 tracker CPA; viewability 64.95% computed BELOW floor (vendor claims 71.28% — discrepancy flagged) |
-| Azerion Native | ✅ vendor file | ⏳ Native line HOLD | — | raw $9,362; tracker Native $20,298 — remainder presumed QC Native, unverified |
+| Native (Azerion + Quantcast) | ✅ vendor file + MCP | ✅ resolved (1.1% delta) | provisional | Azerion raw $9,362 + fee $10,064 (internal) + QC $10,003 = $20,067 vs tracker $20,298 — HOLD cleared |
 | GA4 / client funnel | ✅ GA4; funnel pending Renzo | ✅ capture 67.2% | provisional | ES sessions 66,398 (-17.2%); funnel rows when client dashboard arrives |
 
 Bing/SA360: not a GCG channel (GGMI only). Geo check: GCG is US — check
@@ -48,8 +49,11 @@ delivery, not just settings, on every channel.
 2. Search ad-rank program (bids, QS, RSA refresh) on TrackB before budget —
    check July impression share / lost-to-rank for movement.
 3. Quantcast: 18-site blocklist delivered covering 32% of June spend +
-   viewability-floor recommendation — verify applied; July viewability vs
-   46.9% June.
+   viewability-floor recommendation — **verified NOT applied**: all 18
+   domains still delivered in July ($11,087 combined). July display
+   viewability 49.26% vs 46.9% June (+2.4pts, still below the 70% floor).
+   Refreshed 35-domain list issued for July
+   (`recommendations/forex/gcg/GCG-Quantcast-disallow-July-2026.md`).
 4. Azerion: concentrate on Trusted Broker + Broker 1, format shift
    728x90 → 300x600, viewability above standard; Native pilot detail —
    Native vendor file now on hand.

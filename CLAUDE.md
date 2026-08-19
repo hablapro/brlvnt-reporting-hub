@@ -44,7 +44,7 @@ Start a month with `./scripts/new_month.sh <ggmi|gcg> <YYYY-MM>`.
 
 ## Data sources
 
-MCP first, always. Eight servers in `.mcp.json`.
+MCP first, always. Seven servers in `.mcp.json`; quantcast lives in the user-level config (`~/.claude.json`).
 
 | Channel | Entity | Source | Account |
 |---|---|---|---|

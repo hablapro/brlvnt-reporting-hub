@@ -64,8 +64,8 @@ DELIVERED; Azerion display 80 apps at $393.46 tracker CPA, viewability
 **Next action: pull Quantcast** (config 9969644, endDate EXCLUSIVE →
 2026-08-01): display line ($29,857 tracker), Native reconciliation
 (tracker $20,298 vs Azerion-only ~$10.1K), site list + disallow refresh,
-viewability vs 46.9% June. The session must launch with
-QUANTCAST_MCP_API_KEY set (KNOWN-BUGS 2026-08-19). Then: model +
+viewability vs 46.9% June. Quantcast MCP UNBLOCKED 2026-08-19 (server
+moved to user-level config, KNOWN-BUGS updated). Then: model +
 figures.json, narrative (Renzo gate), build to the 13-slide GGMI template
 (DOCTRINE §11), gates, deliver.
 

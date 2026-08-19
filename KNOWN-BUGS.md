@@ -56,3 +56,37 @@ variable is not set in the shell that launched Claude Code, the server fails
 DCR with HTTP 405 and every Quantcast pull is blocked for the session.
 Fix: set the variable before launch (part of the pending MCP secret handover),
 then restart the session. Do not paste the key into chat or commit it.
+
+**RESOLVED 2026-08-19 (same day).** The quantcast server now lives in the
+user-level Claude config (`~/.claude.json`, key stored there, never in the
+repo) and was removed from the project `.mcp.json` (backup
+`.mcp.json.bak-20260819-143515`). Verified: `quantcast_accounts` and a
+July 2026 `quantcast_metrics_report` on account 9969644 both returned data,
+GGMI display matched the July model exactly. No shell variable needed at
+launch any more. Metric names are the display names from
+`quantcast_available_metrics` ("Impressions", "Clicks (Advanced IVT)",
+"Budget Delivered", "Viewability"); lowercase "clicks" returns
+INVALID_ARGUMENT.
+
+## Quantcast MCP: `quantcast_metrics_report` `filters` parameter returns empty results (found 2026-08-19)
+
+**Seen:** GCG July Quantcast pull, account 9969644. Every call using the
+`filters` array (e.g. `[{"breakdown": "Campaign Name", "values": [...]}]`),
+including a single exact-match value on a breakdown present in the unfiltered
+data, returned `{"accountMetricsReport": []}` — no error, just empty. Tried
+with one and two breakdowns, one and two filter values; all empty. This is a
+different symptom from the already-documented `quantcast_campaigns` /
+`quantcast_accounts` object-shaped-filter rejection (that one throws a
+validation error; this one silently returns nothing).
+**Workaround:** do not use `filters` on `quantcast_metrics_report`. Pull the
+account unfiltered (scoped only by breakdowns/metrics/date range) and filter
+client-side on the "Campaign Name" (or other) breakdown value. Every pull
+this session reconciled to the cent doing it this way.
+**Related:** a `Campaign Name` × `Domain/App` breakdown on the whole account
+exceeded the sync call's token limit (auto-saved to a file, fine) and on the
+identical retry the MCP session itself returned `"MCP server \"quantcast\"
+session expired"` twice in a row, while an unrelated small call
+(`quantcast_accounts`) succeeded in between. Do not burn retries on the same
+oversized sync call a third time — switch to `quantcast_async_report`
+(`action: "request"` → poll → `action: "download"`, ~20s), which completed
+cleanly and returned a gzipped CSV.
