@@ -29,8 +29,16 @@ Open follow-ups from Laura's comments (all on the Slides file, unresolved):
    conversions), best creatives, June CPM comparator, 25+ targeting
    before/after on reach and CPM. She said "once again" — standing rule.
 2. Azerion (and every channel) slide must state the target audience.
-3. Comments 4 and 5 (June CPM, 25+ effect) are answerable from data on
-   hand — draft replies for Renzo before or with the August deck.
+3. Replies to all five comments are DRAFTED and gate-clean:
+   `reports/forex/ggmi/2026-07/output/laura-comment-replies-2026-08-19.md`.
+   Renzo reviews and posts. Key facts inside: the 25+ refinement was
+   never applied — Meta's "Financial Products and Services" special ad
+   category (mandatory 2025-01-21) locks age at 18-65+, verified by web
+   research 2026-08-19; June-vs-July blended CPM ($1.31 → $1.89) is an
+   objective-mix artifact, like-for-like traffic CPM improved
+   ($1.27 → $0.94); reach fell because budget fell ($24.0K → $3.3K).
+   CPM doctrine refined in §11: role depends on objective, never a
+   blanket "not a KPI".
 
 Cycle-close bookkeeping (REPORT-INDEX, REPORTING-LOG, tracker note,
 archive BUILD-STATUS) still pending.
