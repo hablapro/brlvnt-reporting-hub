@@ -5,22 +5,21 @@ Numbers: Meta workbook (`data/GGMI-Meta-July-2026-data.xlsx`) and a fresh
 June campaign-level pull from the Meta API (2026-08-19). GGMI campaigns
 only.
 
-**Before posting, one decision is yours (reply 5):** the 25+ age
-refinement she asked about was never applied. Meta's policy for
-financial-services advertisers blocks age-restricted targeting, so the
-change could not be made at the platform level. If she was told at some
-point that it was done, the reply below owns the communication gap and
-moves straight to the fix. Read it before anything else.
+**Read reply 5 first.** The 25+ refinement she asked about was never
+applied and cannot be: Meta's Financial Products and Services category
+fixes age at 18-65+ for every financial advertiser. The reply leads
+with the platform fact and the plan, per Renzo's direction (2026-08-19):
+transparent, strategic, no ownership theater. If Laura was told earlier
+that the change was made, decide separately how to handle that history.
 
 ---
 
 ## Reply 1: Slide 5 (Azerion): "please include the target we are using"
 
-> Agreed, and we will add this to every channel slide from the August
-> report on. For July: Azerion ran five audience groups (instrument-
-> focused, experience, TV, brand, trust), all Mexico. Meta ran Mexico,
-> broad age range, with prospecting and retargeting ad sets. We will
-> state each channel's audience definition on its slide going forward.
+> Agreed. From the August report, each channel slide will state the
+> audience it targets. For July, Azerion ran five audience groups, all
+> Mexico: instrument-focused, experience, TV, brand and trust. The
+> audience ranking slide shows how each of them performed.
 
 ## Reply 2: Slide 10 (Meta): "how was the CPM in June? higher or lower?"
 
@@ -35,16 +34,15 @@ moves straight to the fix. Read it before anything else.
 
 ## Reply 3: Slide 10 (Meta): best creatives + split by campaign type
 
-> You are right, and the August report will carry this split: engagement
-> and traffic campaigns on reach, impressions and CPM; conversion
-> campaigns on CTR, sessions and conversions, each versus prior month.
-> Best creatives in July: on the traffic side, edu_trust_q2 led with
-> 63,452 link clicks at a 2.30% CTR and $0.95 CPM. On the conversion
-> side, TradingView_exe_q2_reel led with 28 pixel conversions at roughly
-> $36 per result, followed by the DOOH retargeting creative
-> (Retarg_DOOH_account) at 18 conversions and roughly $26 per result.
-> Conversion counts are Meta pixel events, used to rank creatives inside
-> Meta only.
+> Best creatives in July: on the traffic campaign, edu_trust_q2 led
+> with 63,452 link clicks at a 2.30% CTR. On the conversion campaigns,
+> TradingView_exe_q2_reel led with 28 pixel conversions at roughly $36
+> per result. Conversion counts are Meta pixel events, used to rank
+> creatives within Meta only.
+>
+> Agreed on the split: engagement and traffic campaigns reported on
+> reach, impressions and CPM; conversion campaigns on CTR, sessions and
+> conversions. Meta will be reported that way from here on.
 
 ## Reply 4: Slide 10 (Meta): "10.2% — is this good? this is data but not an insight"
 
@@ -59,26 +57,21 @@ moves straight to the fix. Read it before anything else.
 
 ## Reply 5: Slide 10 (Meta): "did the update to 25+ on the target make any difference on reach or cpm?"
 
-> Straight answer: the 25+ refinement is not live, so it had no effect
-> on July delivery. Meta closed that option for us. Since January 21,
-> 2025, financial-services campaigns on this account fall under Meta's
-> "Financial Products and Services" special ad category, which locks
-> the age range at 18-65+ and removes the ability to narrow it. The
-> same policy removes gender targeting, lookalike audiences and most
-> detailed targeting. This deserved a proactive
-> update from us when we hit the restriction; you have the full picture
-> now. July's reach change
-> has a different cause: the traffic campaign's budget went from $24.0K
-> in June to $3.3K in July, and reach followed spend.
+> A 25+ audience is not something any financial-services advertiser
+> can set on Meta today. Since January 2025, Meta places financial
+> advertisers under its "Financial Products and Services" category,
+> which fixes the age range at 18-65+ and removes demographic
+> targeting platform-wide. So July ran on the same audience definition
+> as June, and the reach movement has a different driver: the traffic
+> campaign's budget went from $24.0K in June to $3.3K in July, and
+> reach followed spend.
 >
-> What we are doing about the underlying goal, since the platform will
-> not let us set an age floor: steering delivery through format and
-> placement (Reels, Stories and Instagram skew materially younger, and
-> Instagram already showed the account's best July cost per result), and
-> building creative for the audience we want rather than the one the
-> default delivery finds. Both are in the August plan, with the age mix
-> of delivery reported back to you next month so you can see whether it
-> moves.
+> The lever Meta does leave open is delivery steering: formats and
+> placements that skew younger (Reels, Stories and Instagram, which
+> also produced the account's best July cost per result) and creative
+> built for the audience we want. That is the plan for when paid
+> activity resumes, with the delivery age mix reported back so you can
+> see whether it moves.
 
 ---
 

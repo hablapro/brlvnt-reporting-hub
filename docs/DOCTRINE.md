@@ -286,6 +286,21 @@ built structure. Build to the delivered shape from August on. Full diff:
 - **Quantify targeting changes.** When targeting shifts mid-flight
   (e.g. the Meta 25+ update), show the before/after effect on reach and
   CPM, not just the fact of the change.
+
+**Comment-reply rules (Renzo rulings 2026-08-19):**
+
+- **Stay on the slide.** A comment on a channel slide gets a reply
+  about that channel only. Never pull another channel into the answer,
+  including creatives whose names reference other channels.
+- **Less is more.** Answer the question asked, one strong fact per
+  point. No second-best examples, no forward promises beyond what the
+  operating status supports (a paused channel gets no "next month"
+  commitments).
+- **Transparent but strategic.** When a client premise is wrong because
+  of a platform constraint, lead with the platform fact stated as an
+  industry-wide condition, then the driver of what they actually saw,
+  then the lever that remains. No confession language; accountability
+  is shown by having the answer and the plan.
 - **CPM's role depends on the objective (ruled 2026-08-19, refined same
   day).** Meta is auction-bought: billing is per impression at a floating
   auction CPM, never a fixed negotiated price, and no campaign optimizes
