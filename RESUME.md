@@ -51,28 +51,36 @@ archive BUILD-STATUS) still pending.
 (DOCTRINE §11) before the August cycle. Do not rebuild from the 16-slide
 July script shape.
 
-### GCG July cycle — PHASES 0-2 DONE, RESUME AT QUANTCAST PULL
+### GCG July cycle — DECK FINAL, AWAITING RENZO GATE (Phase 6)
 
-State of record: `reports/forex/gcg/2026-07/BUILD-STATUS.md` and
-`qa/qa-and-model.md` — read both before touching anything. Four channels
-pulled, workbook'd, tracker-reconciled (Google Search $29,478 + NEW PMax
-$18,175 with 73 + 49 submitted apps; Meta $6,940, conversion objective
-DELIVERED; Azerion display 80 apps at $393.46 tracker CPA, viewability
-64.95% below floor; Azerion Native first full month; GA4 ES sessions
-66,398).
+Phases 0-5 complete as of 2026-08-24. State of record:
+`reports/forex/gcg/2026-07/BUILD-STATUS.md` and `qa/qa-and-model.md`.
 
-**Next action: pull Quantcast** (config 9969644, endDate EXCLUSIVE →
-2026-08-01): display line ($29,857 tracker), Native reconciliation
-(tracker $20,298 vs Azerion-only ~$10.1K), site list + disallow refresh,
-viewability vs 46.9% June. Quantcast MCP UNBLOCKED 2026-08-19 (server
-moved to user-level config, KNOWN-BUGS updated). Then: model +
-figures.json, narrative (Renzo gate), build to the 13-slide GGMI template
-(DOCTRINE §11), gates, deliver.
+- All six channels pulled, workbook'd, tracker-reconciled ($136,224).
+  Quantcast MCP unblocked 2026-08-19 (user-level config; KNOWN-BUGS).
+- Model + figures.json final (tracker basis; 73 Search / 49 PMax apps,
+  never 76). Client funnel received 2026-08-21 (US-Spanish scope verified;
+  the whole-site export was rejected) and built in as slide 12.
+- Deck: `output/GCG_US_July_2026_Performance_Review.pptx`, 13 slides to
+  the delivered-GGMI §11 template, through nine review rounds: Laura's
+  five rules applied, Meta paused/flagged status (StoneX owns resolution,
+  no forward Meta commitments), client-proofing, humanizer, viewability
+  demotion, §8 internal-content sweep (June-disallow-list status is
+  INTERNAL, Renzo handles with Jean Paul), plain-language rewrite for
+  non-specialist readers (Dina/Raman). Gates clean: protection_scan
+  0 BLOCK; verify_numbers 5 accepted MISSING (documented in
+  BUILD-STATUS) / 0 UNSOURCED; render QA on every slide.
+- Internal evidence for the Jean Paul conversation:
+  `recommendations/forex/gcg/GCG-Quantcast-disallow-list-July-2026.md`
+  (marked Internal; 35-domain July list + June-list status).
 
-Still needed from Renzo: July client funnel rows; comms since June report.
-Ops item for recommendations file: PMax goal config excludes Step 5 from
-primary conversions (campaign not optimizing to submitted apps).
-Remember: quote 73 Search submitted apps, never the platform's 76.
+Open: (1) Renzo delivery gate on the deck; (2) commit approval — NOTHING
+since commit 9b95f14 (2026-08-19) is committed; (3) comms-since-June
+answer (narrative assumes none); (4) Renzo may add PowerPoint comments
+for corrections — read them from the pptx XML, save-and-close first
+(KNOWN-BUGS clobber rule). Rulings made this cycle are codified in
+docs/DOCTRINE.md §3 (plain language), §8 (viewability vanity metric;
+internal accountability) — read DOCTRINE before touching the deck.
 
 ## Rulings made this cycle (all in docs/DOCTRINE.md + auto-memory — READ THEM)
 

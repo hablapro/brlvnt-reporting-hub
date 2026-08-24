@@ -1,5 +1,7 @@
 # GCG Quantcast Disallow List — July 2026
 
+Internal. June-list application status is being handled by Renzo directly; not client-facing (ruling 2026-08-24).
+
 Both delivering campaigns (`Forex_GCG_spanish_conversion_Q+campaign_us` display and `Forex_GCG_spanish_conversion_Q+campaign_NativeOnly_US_ES` native), July 2026. Criteria: spend >= $100 and viewability < 40% — same criteria used for GCG's June list (June campaign viewability 46.9%; July display 49.26%, native 57.98%).
 
 35 domains, $13,456 = 34% of July GCG spend ($39,855). Send the .txt to Quantcast; recommend a campaign-level viewability floor alongside — this is the second cycle this floor has been proposed.

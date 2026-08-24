@@ -75,6 +75,10 @@ only valid source.
 - **Programmatic every month:** site list, refreshed disallow list, viewability
   against the 70% floor.
 - **Data lives in workbooks,** not markdown. Markdown is for narrative and QA.
+- **Deck copy rulings (Aug 2026, full text in `docs/DOCTRINE.md` §3/§8):**
+  viewability never headlines a slide or gets a KPI tile; commentary reads
+  plain-English for non-specialist executives; internal accountability
+  (unapplied vendor lists, who dropped what) never reaches a client artifact.
 - **Disclose every tool failure** on the first line of the handoff. Two
   retries maximum, then stop and record it in `KNOWN-BUGS.md`.
 - **Commit locally. Never push without approval.**

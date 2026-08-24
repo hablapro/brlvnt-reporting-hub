@@ -68,6 +68,27 @@ launch any more. Metric names are the display names from
 "Budget Delivered", "Viewability"); lowercase "clicks" returns
 INVALID_ARGUMENT.
 
+## verify_numbers.py: negative approved figures can never match deck prose (found 2026-08-20)
+
+`_NUM` in `scripts/verify_numbers.py` does not capture a leading minus sign,
+so every number it extracts from a deliverable is unsigned. A figure declared
+in `figures.json` as a negative MoM percentage (e.g. `-77.4`) can therefore
+never register as found, even when the deck states the fact in the
+doctrine-mandated natural phrasing ("down 77.4%", "fell 22.8%") — `close(-77.4,
+77.4)` is `False` by construction, regardless of how the copy is worded.
+Confirmed on the GCG July 2026 build: `mom.meta_spend_pct` (-77.40),
+`mom.quantcast_spend_pct` (-2.30) and `mom.azerion_cpa_pct` (-22.80) all sat
+MISSING against a deck that stated all three figures in prose. Positive MoM
+figures with the same content (e.g. `mom.google_search_spend_pct` at 30.9)
+matched fine once written as plain digits.
+**Workaround:** treat MISSING findings on figures.json entries with a negative
+value as expected/non-blocking once you have manually confirmed the fact
+appears in the deck in natural (unsigned, "fell/declined/down") phrasing per
+`docs/DOCTRINE.md` §3 — do not force a literal minus sign into client copy to
+satisfy the gate. Record the confirmation in the build's QA note. Fixing the
+regex needs a ruling before touching the gate script, same class of change as
+the xlsx numeric-cell bug below.
+
 ## Quantcast MCP: `quantcast_metrics_report` `filters` parameter returns empty results (found 2026-08-19)
 
 **Seen:** GCG July Quantcast pull, account 9969644. Every call using the

@@ -52,20 +52,47 @@ funnel rows and comms-since-last-report, both with Renzo.
    campaign is NOT optimizing to submitted applications. Goal-config fix →
    `recommendations/forex/gcg/` (account mechanics, never the deck).
 
-## July model — PROVISIONAL (tracker spend; blocked lines dashed)
+## July model — FINAL (Phase 3 closed 2026-08-19)
 
-| Channel | Spend | Impr | Clicks | Submitted apps / results | CPA (tracker basis) | Viewability |
+Tracker spend basis. Source: channel workbooks in `data/`, all
+tracker-reconciled above; model workbook
+`model/GCG-July-2026-cross-channel-model.xlsx`; declared figures
+`figures.json`.
+
+| Channel | Spend | Impr | Clicks | Submitted apps / results | Cost per app | Viewability |
 |---|---|---|---|---|---|---|
-| Google Search | 29,478 | 918,059* | 9,568 | 73 (Step 5) | $403.81 | — |
-| Google PMax (YT) | 18,175 | * | 14,009 | 49 (Step 5, all_conv) | $370.91 | — |
+| Google Search | 29,478 | 125,392 | 9,568 | 73 (Step 5) | $403.81 | — |
+| Google PMax (YT) | 18,175 | 792,667 | 14,009 | 49 (Step 5, all_conv) | $370.91 | — |
 | Meta | 6,940 | 493,027 | 11,767 (link) | 284 pixel events (rollup, non-scorecard) | — | — |
 | Quantcast (display) | 29,857 | 22,486,572 | 2,574 | 15 (platform, internal only) | — | 49.26% ⚠ below floor |
-| Azerion (display) | 31,477 | 4,769,231 | 8,892 | 80 (vendor) | $393.46 | 64.95% ⚠ below floor |
-| Native (QC+Azerion) | 20,298 | 1,170,255 (Azerion) + 9,411,481 (QC) | 816 (Azerion) + 1,660 (QC) | 10 (QC, platform, internal only) | — | 72.68% (Azerion) / 57.98% (QC) ⚠ both below floor |
-| **Total** | **136,224** | — | — | **never summed** | — | — |
+| Azerion (display) | 31,477 | 4,769,231 | 8,892 | 80 (vendor) | $393.46 | 64.95% ⚠ below floor (vendor claims 71.28%, flagged) |
+| Native (QC+Azerion) | 20,298 | 10,581,736 (Azerion 1,170,255 + QC 9,411,481) | 2,476 (Azerion 816 + QC 1,660) | 10 (QC, platform, internal only) | — | Azerion 72.68% / QC 57.98% ⚠ QC below floor |
+| **Total** | **136,224** | **39,248,625** | **49,286** | **never summed** | **—** | **—** |
 
-\* Google impressions: 918,059 is Search+PMax combined (geo view); Search
-alone 125,392, PMax 792,667.
+Google Search+PMax combined impressions (the figure carrying the asterisk
+in the prior provisional table) = 918,059 — Search alone 125,392, PMax
+792,667; both platform Search Ads campaign totals, google-ads MCP. Total
+row: conversions and CPA are never summed across channels, each reports a
+different event from a different system; impressions and clicks are the
+same metric class across channels and are summed. Tracker's own stated
+total (136,224) is $1 off the sum of its six rounded line items (136,225)
+— a rounding artifact in the tracker's own category subtotals, not
+something reconciled away.
+
+### MoM vs June 2026 (tracker basis)
+
+| Channel | June spend | July spend | Spend MoM | June result | July result | Note |
+|---|---|---|---|---|---|---|
+| Google Search | 22,524 | 29,478 | +30.9% | 67 apps @ $336.18 | 73 apps @ $403.81 | Apps +9.0%, CPA +20.1%. June had no PMax line; Search is the like-for-like comparison. |
+| Google PMax (YT) | — | 18,175 | new line | — | 49 apps @ $370.91 | Launched wk of Jul 13. No June comparator. |
+| Meta | 30,711 | 6,940 | -77.4% | 136 pixel events (CTR) | 284 pixel events (conversion, 44% of spend) | June ran one CTR campaign; July split traffic and conversion objectives — compare within objective only. |
+| Quantcast (display) | 30,559 | 29,857 | -2.3% | 15 results | 15 results | Viewability 46.9% → 49.26% (+2.36pts), second straight improving month, still below the 70% floor. |
+| Azerion (display) | 29,586 | 31,477 | +6.4% | 58 apps @ $510.10 | 80 apps @ $393.46 | Apps +37.9%, CPA -22.8%. Viewability 58.8% → 64.95%, still below floor. |
+| Native (QC+Azerion) | 3,645 | 20,298 | new structure | — | — | June was an Azerion-only pilot; July adds Quantcast Native, a brand-new campaign (created Jul 2) — not a like-for-like comparison, stated once. |
+| **Total** | **117,024** | **136,224** | **+16.4%** | — | — | Conversions never summed; channel-level comparators above. |
+
+June comparators taken verbatim from the delivered GCG June 2026
+Performance Report Summary tab and June's qa-and-model.md.
 
 ## Validated findings so far (pre-Quantcast, pre-funnel)
 
@@ -133,9 +160,133 @@ Source: `quantcast_metrics_report` + `quantcast_async_report`, account 9969644,
    account total within $2.68 — expected two-decimal rounding across 10,586
    CSV rows, not a data issue.
 
-## Open before model close
+## Phase 3 (Model) — CLOSED 2026-08-19
 
-1. July client funnel rows (submitted/live/approved/funded/traded) — Renzo.
-2. Comms since the June report — Renzo.
-3. figures.json once 1-2 resolve. Quantcast, Azerion, Google, and Meta are
-   all tracker-reconciled and ready to feed the model.
+Model workbook and `figures.json` built via
+`tools/forex-gcg-july-2026-model/build_model.py`: 56 declared figures,
+spend basis stated, history (June, verbatim from the delivered June
+report) and MoM table above. `verify_numbers.py` run against the model
+xlsx returns 29 MISSING — expected and non-blocking: the script's xlsx
+reader (`protection_scan.text_from`) only scans string cells, and the
+model stores its figures as numeric cells, same as the GGMI July model
+(confirmed by running the same check against
+`reports/forex/ggmi/2026-07/model/GGMI-July-2026-cross-channel-model.xlsx`,
+which returns 38 MISSING for the identical reason). This gate is a Phase
+5 check on the built deck/report, not on the Phase 3 model; it reruns
+clean once the narrative and deck carry these figures as text.
+
+## Open before narrative (Phase 4) can start
+
+1. ~~July client funnel rows (submitted/live/approved/funded/traded) —
+   Renzo.~~ RESOLVED 2026-08-21, see the Client funnel section below.
+2. Comms since the June report — Renzo. Still open, unconfirmed.
+
+Neither blocks the model (all six channels are tracker-reconciled and in
+`figures.json`). Comms remains a genuine open item; the narrative was
+drafted without a confirmed answer and should be checked against it before
+delivery.
+
+## Phase 4-5 (Narrative + Build) — 2026-08-20
+
+Narrative drafted (`output/GCG-Jul-2026-narrative-draft.md`) without the two
+open items above; the funnel slide is cut per the delivered-deck doctrine
+(external data not on hand does not ship as a placeholder). Deck built to 12
+slides (`tools/forex-gcg-july-2026-deck/build_deck.py`). Two figures added
+to `figures.json` at build time for the currency-floor gate: the June
+disallow domains still delivering in July ($11,087) and the refreshed
+35-domain list total ($13,456), both already sourced in the Quantcast section
+above and in `recommendations/forex/gcg/GCG-Quantcast-disallow-list-July-2026.md`.
+
+`verify_numbers.py` on the deck: 4 MISSING (0 UNSOURCED), all accepted —
+three are negative-valued figures.json entries that ARE in the deck text in
+natural phrasing (a `verify_numbers.py` sign-matching limitation, recorded in
+`KNOWN-BUGS.md`); one (`azerion.viewability_vendor_claim`, 71.28%) was
+deliberately kept out of the client deck since it is the vendor's own figure
+conflicting with the computed 64.95% already used everywhere — flagged to
+Renzo rather than resolved unilaterally. `protection_scan.py`: PASS, 0
+BLOCK, 0 WARN. Render QA could not complete in this session (PowerPoint
+AppleScript automation unresponsive); slide count and shape-bounds verified
+programmatically only. Full detail in `../BUILD-STATUS.md`.
+
+Team-lead's render-QA round (2026-08-20) found 5 issues, all fixed: a
+table/card overlap clipping status columns on slides 9-10, an em dash in the
+cover title, a missing Jul 29-31 row in the Azerion weekly table (now
+reconciles to the month), a Meta conversion-campaign sessions gap (Laura
+checklist #3 — disclosed as unavailable this month rather than omitted, not
+fully MET), and a column-width wrap on slide 6. Full list in
+`../BUILD-STATUS.md`. Gates re-run clean after fixing.
+
+## Client funnel — added 2026-08-21
+
+**Source:** `data/sources/GCG-client-funnel-Jan-Jul-2026.xlsx`, sheet
+"Export". Scope filter verified in the file's own footer row: "Website es
+Forex.com US Spanish", months Jan-Jul 2026 — the correctly-scoped segment,
+replacing the earlier whole-site export that was rejected as unusable for
+this deck. Pulled/filed 2026-08-21.
+
+**Maturation basis:** June's figures in this export (submitted 325, live
+309, approved 153, funded 52, traded 41) differ from the June deck's
+published snapshot (322/306/145/41/30) because approvals and funding
+continue to land after month close; this is the client's own dashboard
+maturing, not a discrepancy to explain. Per instruction, THIS export is the
+comparison basis for both July and June — the published June-deck snapshot
+is not used in any MoM calculation and is not referenced on the deck (no
+restatement commentary; the client's data, described neutrally).
+
+**GA4-divergence note:** the client's own July session count (39,446) and
+GA4's ES sessions (66,398) diverge by scope and are not reconciled — same
+ruling as June. The funnel slide uses only the client's own session figure;
+the GA4 slide is untouched and the two numbers never appear together on one
+slide.
+
+**July / Q1 / Q2 figures used (verified against the source file):**
+
+| Metric | Q1 (Jan-Mar) | Q2 (Apr-Jun) | June (comparator) | July |
+|---|---|---|---|---|
+| Unique Sessions | 41,047 | 162,874 | 67,545 | 39,446 |
+| App Starts | 6,997 | 7,977 | 2,592 | 2,970 |
+| App Start Rate | 17.0% | 4.9% | 3.8% | 7.5% |
+| Submitted | 1,204 | 1,036 | 325 | 404 |
+| Live | 1,166 | 996 | 309 | 389 |
+| Approved | 525 | 475 | 153 | 162 |
+| Approved Rate | 43.6% | 45.8% | 47.1% | 40.1% |
+| Funded | 153 | 164 | 52 | 32 |
+| Funded Rate | 29.1% | 34.5% | 34.0% | 19.8% |
+| Traded | 124 | 132 | 41 | 24 |
+
+Added to the deck as slide 12 (`CLIENT FUNNEL · JULY VIEW`), positioned
+after GA4 site traffic and before the cross-channel closer, now slide 13.
+`figures.json` extended with the 30 figures above (as `funnel.*` keys) plus
+the 10 June comparator values in `history`. Gates re-run: `verify_numbers.py`
+same 4 previously-accepted MISSING (0 UNSOURCED, all new funnel figures
+matched clean); `protection_scan.py` PASS 0/0; shape-bounds 13/13 clean.
+
+## Viewability demoted (2026-08-24)
+
+DOCTRINE §11 standing ruling (2026-08-17, GGMI cycle): viewability is a
+vanity metric — data-point mention only, no headline, no KPI tile, no 70%
+floor language in a client deck. Applied across slides 7/8/10/13; see
+`../BUILD-STATUS.md` for the full change list. `mom.quantcast_viewability_pts`
+moved to the accepted-MISSING set on `verify_numbers.py` (5 accepted total
+now) since its only deck occurrence, a "2.36 points" delta sentence, was
+removed along with the rest of the viewability emphasis. `protection_scan.py`
+PASS 0/0.
+
+## §8 sweep — June-list-not-applied ruled internal (2026-08-24)
+
+Renzo ruling: the June Quantcast disallow list's never-applied status
+($11,086.71 still delivered on 18 domains, yahoo.com $2,270→$2,359) is an
+internal accountability matter Renzo handles directly, not client-deck
+material. Removed from slide 7's site-list card and slide 13's HIGH
+blocker; both figures.json entries that existed solely to source that text
+(`quantcast.june_disallow_spend_still_delivered`,
+`quantcast.july_disallow_refresh_spend`) removed too. The evidence itself
+is untouched and stays the internal record: this section above, plus
+`recommendations/forex/gcg/GCG-Quantcast-disallow-list-July-2026.md`, which
+now opens with an explicit "Internal, not client-facing" marker per the
+ruling. Full 13-slide §8 sweep run fresh; only slides 7 and 13 held
+violations, the other 11 read clean on a fresh pass (target statements,
+performance framing, and the funnel slide's client-journey neutrality all
+held up). Gates re-run: `verify_numbers.py` unchanged at 5 accepted MISSING
+(the two figure removals matched the two text removals exactly);
+`protection_scan.py` PASS 0/0; shape-bounds 13/13 clean.

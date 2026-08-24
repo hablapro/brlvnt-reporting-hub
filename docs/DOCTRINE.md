@@ -102,6 +102,33 @@ closed at.
 - Be specific. Name the metric instead of calling the numbers strong.
 - **Never write "cheap."** Say low CPM, low CPC, or give the figure.
 
+**Commentary reads for the non-specialist (Renzo ruling 2026-08-24, GCG
+July).** Deck readers include executives outside marketing (Dina, Raman
+class), not only the hands-on marketing contact. Tables and tiles carry the
+technical depth; prose commentary is plain English a senior non-marketer
+follows on first read. Auction and tracking jargon (impression share, lost
+to rank, view-through, pixel rollup, CPM, frequency) is translated or
+defined in plain words at first use. Plain, not simplistic: every fact,
+comparator and required detail stays.
+
+**Deck-comment rulings (Renzo, 2026-08-24, GCG July pptx comments):**
+
+- **Never write "the client" in a deck.** Name them (FOREX.com) or rephrase.
+  Applies to titles, source lines, and prose alike.
+- **Never state the absence of a change.** "No targeting changes" invites the
+  question of why it's mentioned. Only mention a change when there is one.
+- **Display is measured on CPM, never cost per click.** No CPC tiles or
+  commentary on display lines.
+- **Every methodology statement must carry its attribution.** "This line
+  doesn't track applications" reads as a decree; "Azerion's reporting covers
+  delivery metrics only" carries its source. Unattributed method claims get
+  questioned.
+- **Ownership lines are unnecessary once the status is stated.** "Paused
+  entering August" is complete; "StoneX owns the resolution" adds nothing
+  client-facing.
+- **Platform-imposed settings (Meta demographic locks, etc.) stay out of the
+  target line.** State the audience, not the configuration or its constraints.
+
 Run `stop-slop` on every client-facing draft. It catches AI tells. It does not
 catch section 4, which needs its own pass.
 
@@ -215,6 +242,15 @@ proven converters and complete the measurement.
 
 Do not confess to gaps the client owns, and do not repeat what they already
 know.
+
+**Viewability is a vanity metric (Renzo ruling 2026-08-17, GGMI July;
+codified here 2026-08-24 after a repeat miss on the GCG July build).**
+Viewability never headlines a slide, never gets a KPI tile, and the 70% IAB
+floor never appears in a client deck. At most one passing data-point mention
+per programmatic slide. Creative and site tables rank on spend, clicks and
+CTR, not viewability. The floor, the viewability criteria, and the disallow
+mechanics live in the internal recommendations files, where the monthly
+site-list work already goes.
 
 ---
 
