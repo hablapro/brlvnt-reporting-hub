@@ -297,8 +297,14 @@ built structure. Build to the delivered shape from August on. Full diff:
   it does not replace it.
 - Creative previews earn slides: show the actual creatives with
   per-creative spend, clicks, CTR and a verdict.
-- No blended organic+paid summary slide. Open on the channel table,
-  dashes in the total row, methodology footnote once.
+- Deck opener is per entity (Renzo ruling 2026-08-24). GGMI: no blended
+  organic+paid summary slide; open on the channel table, dashes in the
+  total row, methodology footnote once (the delivered GGMI July shape).
+  GCG: open with the June GCG "Summary - Blended view (organic + paid)"
+  slide — monthly columns Jan→current + MoM across working media spend
+  and the FOREX.com funnel rows, narrative bullets left, then the channel
+  table slide. Funnel cells come from the current FOREX.com export for
+  all months (maturation ruling); spend from the budget tracker.
 - A block waiting on external data is cut, not shipped with dash
   placeholders.
 - Closer is a cross-channel priorities narrative, not a decisions table.

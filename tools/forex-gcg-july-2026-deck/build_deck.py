@@ -19,7 +19,7 @@ OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..',
                    'reports', 'forex', 'gcg', '2026-07', 'output',
                    'GCG_US_July_2026_Performance_Review.pptx')
 
-d = Deck(entity='GCG (US Hispanic)', month='July 2026', n_slides=13)
+d = Deck(entity='GCG (US Hispanic)', month='July 2026', n_slides=14)
 
 # ---------------------------------------------------------------- 1 cover ----
 d.cover(kicker='MONTHLY PERFORMANCE REVIEW',
@@ -28,7 +28,56 @@ d.cover(kicker='MONTHLY PERFORMANCE REVIEW',
         channel_line='Google Search  ·  Google PMax  ·  Meta  ·  Quantcast  ·  Azerion  ·  Native',
         footer='Reporting period: July 1-31, 2026   |   Currency: USD   |   Prepared by Berelvant')
 
-# ------------------------------------------------------- 2 exec summary ----
+# -------------------------------------------- 2 summary, blended view -----
+s = d.content('SUMMARY  ·  BLENDED VIEW (ORGANIC + PAID)',
+              'Submitted applications came in at 404, up 24.3%, with '
+              'working media at $136,224.')
+d.text(s, MARGIN, 1.85, 3.85, 4.3, [
+    'Submitted applications came in at 404, up 24.3% from June, and live '
+    'applications reached 389, up 25.9%, even as website sessions fell '
+    '41.6% to 39,446.',
+    'Working media spend came in at $136,224, up 16.4% from June, with '
+    'Google PMax added as a new line.',
+    'The application-start rate doubled to 7.5% of sessions, from '
+    'June’s 3.8%: the top of the funnel converted more efficiently on '
+    'far fewer sessions.',
+    'Approved applications rose 5.9% to 162, growing with the '
+    'application volume; the approval rate came in at 40.1% as the '
+    'application base grew faster. Funded accounts came in at 32, a '
+    '19.8% rate against Q2’s 34.5% average, a step that happens inside '
+    'FOREX.com’s application-review process after media’s handoff.',
+    'Google’s ad-position work and Azerion’s audience shift are the '
+    'levers behind July’s application growth; August extends both. '
+    'Meta is paused entering August.'], 10, False, INK, space=8)
+d.table(s, 4.6, 1.85, 8.23, 4.0, [
+    ['Metric', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'MoM'],
+    ['Working Media Spend', '—', '$2,237', '$49,106', '$58,324', '$76,274',
+     '$117,024', '$136,224', '+16.4%'],
+    ['Unique Sessions', '4,187', '5,075', '31,785', '43,192', '52,137',
+     '67,545', '39,446', '-41.6%'],
+    ['App Starts', '2,306', '1,871', '2,820', '2,767', '2,618', '2,592',
+     '2,970', '+14.6%'],
+    ['Live Apps Submitted', '431', '344', '391', '398', '289', '309',
+     '389', '+25.9%'],
+    ['Approved', '202', '150', '173', '187', '135', '153', '162', '+5.9%'],
+    ['Approval Rate', '45.5%', '42.6%', '42.4%', '45.5%', '45.0%', '47.1%',
+     '40.1%', '-7.0pts'],
+    ['New Funded', '58', '48', '47', '66', '46', '52', '32', '-38.5%'],
+    ['Fund Rate', '28.7%', '32.0%', '27.2%', '35.3%', '34.1%', '34.0%',
+     '19.8%', '-14.2pts'],
+    ['Cost per Funded', '—', '$47', '$1,045', '$884', '$1,658', '$2,250',
+     '$4,257', '+89.2%'],
+    ['New Traded', '47', '41', '36', '54', '37', '41', '24', '-41.5%'],
+    ['Cost per Traded', '—', '$55', '$1,364', '$1,080', '$2,061',
+     '$2,854', '$5,676', '+98.9%'],
+], col_widths=[1.75, 0.81, 0.81, 0.81, 0.81, 0.81, 0.81, 0.81, 0.81])
+d.note(s, MARGIN, 6.15, 12.3, 0.5,
+       'Funnel metrics are blended organic + paid from the FOREX.com '
+       'dashboard. Media spend comes from the FOREX.com budget tracker. '
+       'MoM = July vs June. January-February cost rows reflect a '
+       'near-zero media base; the paid-media baseline starts in March.')
+
+# ------------------------------------------------------- 3 exec summary ----
 s = d.content('EXECUTIVE SUMMARY',
               '$136,224 deployed in July across six lines, up 16.4% from June.')
 d.table(s, MARGIN, 1.9, 7.4, 3.05, [
@@ -64,7 +113,7 @@ d.card(s, 8.1, 4.45, 4.7, 2.35, 'New this month',
         'Quantcast Native launched alongside Azerion Native; first full '
         'month for both.'], CORAL)
 
-# --------------------------------------------- 3 google search performance --
+# --------------------------------------------- 4 google search performance --
 s = d.content('GOOGLE SEARCH  ·  PERFORMANCE',
               '73 submitted applications at $403.81; the ad-position work is paying off.')
 d.text(s, MARGIN, 1.55, 12.3, 0.3,
@@ -101,7 +150,7 @@ d.card(s, 8.1, 5.55, 4.7, 1.55, 'Where the work has not landed yet',
         'DECISION: extend the same ad-position work to Authority and '
         'Platform before adding further budget.'], CORAL)
 
-# ------------------------------------------------ 4 google pmax performance -
+# ------------------------------------------------ 5 google pmax performance -
 s = d.content('GOOGLE PMAX (YOUTUBE)  ·  PERFORMANCE',
               '49 submitted applications at $370.91 in its first partial month.')
 d.text(s, MARGIN, 1.55, 12.3, 0.3,
@@ -135,7 +184,7 @@ d.note(s, MARGIN, 6.75, 12.3, 0.3,
        'Google combined (Search + PMax): 918,059 impressions, 100% US '
        'delivery.')
 
-# --------------------------------------------------- 5 meta by objective ----
+# --------------------------------------------------- 6 meta by objective ----
 s = d.content('META  ·  CAMPAIGNS BY OBJECTIVE',
               'Meta spend came in at $6,940, down 77.4%, on the planned budget shift.')
 d.text(s, MARGIN, 1.55, 12.3, 0.3,
@@ -175,7 +224,7 @@ d.blocker(s, MARGIN, 6.25, 12.33, 0.8, 'August operating status',
            'August. July figures above reflect delivered activity for '
            'the month.'], DEEP)
 
-# ------------------------------------------------- 6 meta creative perf -----
+# ------------------------------------------------- 7 meta creative perf -----
 s = d.content('META  ·  CREATIVE PERFORMANCE',
               'The strongest ad creative for each campaign type, ranked for '
               'whenever delivery resumes.')
@@ -208,7 +257,7 @@ d.card(s, MARGIN, 4.7, 12.33, 1.9, 'The order to revisit',
         '3.7 times more per action than the stronger ads, on meaningful '
         'spend.'], GOLD)
 
-# ------------------------------------------ 7 quantcast display + native ----
+# ------------------------------------------ 8 quantcast display + native ----
 s = d.content('QUANTCAST  ·  DISPLAY AND NATIVE',
               'Display spend held near flat at $29,857; Native ran its first full month.')
 d.text(s, MARGIN, 1.55, 12.3, 0.3,
@@ -234,7 +283,7 @@ d.card(s, 6.7, 3.7, 5.63, 3.0, 'The site list',
         'DECISION: send the refreshed list to Quantcast ahead of '
         'August.'], CORAL)
 
-# -------------------------------------------- 8 azerion display performance -
+# -------------------------------------------- 9 azerion display performance -
 s = d.content('AZERION DISPLAY  ·  PERFORMANCE',
               '80 submitted applications at $393.46, the line’s best application month.')
 d.text(s, MARGIN, 1.55, 12.3, 0.3,
@@ -269,7 +318,7 @@ d.card(s, 7.2, 3.7, 5.6, 3.0, 'What the data shows',
         'DECISION: rebalance spend toward the strongest audiences, '
         'detailed on the next slide.'], GREEN)
 
-# --------------------------------------------- 9 azerion audience ranking ---
+# --------------------------------------------- 10 azerion audience ranking ---
 s = d.content('AZERION DISPLAY  ·  AUDIENCE RANKING',
               'Professional Tools and Trust lead on cost per application.')
 d.table(s, MARGIN, 2.0, 7.7, 3.0, [
@@ -288,7 +337,7 @@ d.card(s, 8.4, 2.0, 3.93, 3.0, 'What we recommend',
         'Professional Tools and Trust both improved sharply from '
         'June, when Trust was the line’s weakest performer.'], GOLD)
 
-# ------------------------------------------- 10 azerion native creatives ----
+# ------------------------------------------- 11 azerion native creatives ----
 s = d.content('AZERION NATIVE  ·  CREATIVE PERFORMANCE',
               'First full month for six ad creatives on Azerion’s share of '
               'the Native line.')
@@ -314,7 +363,7 @@ d.card(s, 8.4, 2.0, 3.93, 3.0, 'What we recommend',
         'for a second month before any removal, this is the line’s '
         'first full month.'], GOLD)
 
-# --------------------------------------------------- 11 ga4 site traffic ----
+# --------------------------------------------------- 12 ga4 site traffic ----
 s = d.content('SITE TRAFFIC  ·  GA4 (SPANISH AUDIENCE)',
               'Sessions fell 17.2% to 66,398 as Meta spend pulled back by design.')
 for i, (lbl, val, sub) in enumerate([
@@ -336,7 +385,7 @@ d.card(s, 6.7, 3.4, 5.63, 3.2, 'What to expect',
         'run lower without Meta’s contribution until delivery resumes.'],
        GOLD)
 
-# -------------------------------------------------- 12 client funnel view ---
+# -------------------------------------------------- 13 client funnel view ---
 s = d.content('APPLICATION FUNNEL  ·  JULY VIEW',
               'Submitted applications rose 24.3% to 404 while website '
               'sessions fell 41.6%.')
@@ -366,16 +415,16 @@ d.card(s, 8.7, 2.15, 3.63, 3.35, 'Top of funnel',
         'Live applications reached 389, up 25.9% from June’s 309, in step '
         'with submissions.'], GREEN)
 d.card(s, MARGIN, 5.7, 12.33, 1.2, 'After submission: review and activation',
-       ['Approvals were 162 at a 40.1% rate, down from June’s 47.1%. '
-        'Funding was 32 at a 19.8% rate against Q2’s 34.5% average, '
-        'and 24 accounts traded, against June’s 41. Approval, funding and '
-        'activation are FOREX.com’s application review and '
-        'account-activation process.',
+       ['Approvals rose 5.9% to 162, growing with the application '
+        'volume; the approval rate came in at 40.1% as the application '
+        'base grew faster. Funding is the step to watch: 32 accounts at '
+        'a 19.8% rate against Q2’s 34.5% average, and 24 traded against '
+        'June’s 41. Approval, funding and activation are FOREX.com’s '
+        'application review and account-activation process.',
         'TAKEAWAY: the top of the funnel is converting more efficiently on '
-        'fewer sessions; approved and funded rates are the steps to '
-        'monitor next cycle.'], DEEP)
+        'fewer sessions; the funding rate is the step to monitor next cycle.'], DEEP)
 
-# --------------------------------------- 13 cross-channel priorities close --
+# --------------------------------------- 14 cross-channel priorities close --
 s = d.content('CROSS-CHANNEL PRIORITIES',
               'Google’s two lines closed July at 122 submitted applications and '
               '$390.60 per application; Azerion added 80 more at $393.46.')
@@ -398,11 +447,11 @@ d.blocker(s, MARGIN + 6.3, 2.0, 2.95, 3.2, 'Opportunity',
            'Rebalance Azerion spend toward Professional Tools and Trust, '
            'the strongest audiences on cost per application.'], GREEN)
 d.blocker(s, MARGIN + 9.45, 2.0, 2.88, 3.2, 'Downstream to watch',
-          ['Approved (40.1%) and funded (19.8%) rates softened against '
-           'June and Q2 averages.',
-           'These steps happen inside FOREX.com’s application-review '
-           'process, after media’s handoff; detail on the funnel '
-           'slide.'], DEEP)
+          ['Approved applications grew with the application volume '
+           '(162, +5.9%).',
+           'Funding (19.8% vs Q2’s 34.5%) is the item to watch, inside '
+           'FOREX.com’s application-review process; detail on the '
+           'funnel slide.'], DEEP)
 d.strip(s, MARGIN, 5.5, W - 2 * MARGIN, 0.9,
         'Google’s two lines and Azerion produced the month’s application '
         'volume through what’s already working; August scales it '
