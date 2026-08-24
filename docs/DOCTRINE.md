@@ -111,6 +111,34 @@ to rank, view-through, pixel rollup, CPM, frequency) is translated or
 defined in plain words at first use. Plain, not simplistic: every fact,
 comparator and required detail stays.
 
+**Analytical-review rulings (Renzo, 2026-08-24, GCG July round 2):**
+
+- **One spend basis per slide, tracker throughout.** Detail tables (weekly,
+  audience) are scaled to the tracker figure the headline carries; vendor
+  originals live in qa docs. Mixed bases in one slide is the defect class.
+- **Blended spend-to-outcome ratios are labeled as such**, never as CPAs:
+  "Media Spend / Blended Funded (Traded)" plus the footnote "directional
+  spend-to-outcome ratios, not channel-attributed CPAs."
+- **No causal claims the data cannot carry.** "Tighter delivery converts
+  better" from one week's CPA is correlation; state the observation and the
+  confirmation still needed (conversion timing, lag).
+- **No winners from clustered results.** CTRs within ~0.005pts and tied
+  clicks get MAINTAIN / CONTINUE TEST, not SCALE/REMOVE.
+- **Rank language:** "lost impression share due to rank" (rank = bids,
+  quality, relevance, landing page), never "lose the auction to competitors".
+- **Same-month funnel counts carry the cohort caveat**: approval/funding can
+  land after the submission month; rates are an operating indicator until
+  the cohort matures.
+- **The opener headline states the business problem** when the downstream
+  declines are the story (supersedes the level-headline pattern for the GCG
+  opener); the defensive "inside FOREX.com's process after media's handoff"
+  construction is retired in favor of the analytical framing (downstream
+  stages; source-level cohort data needed to diagnose).
+- **Attribution claims match the measured share**: "202 directly measured
+  applications, half of blended submissions" — never "produced the month's
+  volume". The Google+Azerion 202 total is a named one-time exception to
+  the §1 no-cross-channel-summing rule, ruled by Renzo for the closer only.
+
 **Deck-comment rulings (Renzo, 2026-08-24, GCG July pptx comments):**
 
 - **Never write "the client" in a deck.** Name them (FOREX.com) or rephrase.

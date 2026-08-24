@@ -290,3 +290,65 @@ performance framing, and the funnel slide's client-journey neutrality all
 held up). Gates re-run: `verify_numbers.py` unchanged at 5 accepted MISSING
 (the two figure removals matched the two text removals exactly);
 `protection_scan.py` PASS 0/0; shape-bounds 13/13 clean.
+
+## Azerion spend-basis unification (2026-08-25)
+
+Slides 9-10's weekly and audience tables carried Azerion's vendor-delivery
+basis ($28,615.386 total) while the same slides' headline/tiles already used
+the tracker basis ($31,477) — two bases on one channel. Renzo ruled: tracker
+basis throughout, per DOCTRINE §1's standing "recalculate downstream
+silently" rule. Scale factor = 31,477 / 28,615.386 = 1.10000263..., matching
+the account's known ~1.10 fee-and-adjustment relationship to the cent.
+
+**Vendor-delivery basis (original, source of truth for QA and vendor
+conversations, kept here):**
+
+| Week | Spend (vendor) | Apps | CPA (vendor) |
+|---|---|---|---|
+| Jul 1-7 | $8,829.17 | 23 | $383.88 |
+| Jul 8-14 | $7,955.99 | 15 | $530.40 |
+| Jul 15-21 | $8,033.27 | 22 | $365.15 |
+| Jul 22-28 | $2,895.14 | 20 | $144.76 |
+| Jul 29-31 | $901.81 | 0 | — |
+| **Total** | **$28,615.39** | **80** | **$357.69** |
+
+| Audience | Spend (vendor) | Apps | Cost/app (vendor) |
+|---|---|---|---|
+| Professional Tools | $3,553.65 | 18 | $197.43 |
+| Trust | $3,478.55 | 13 | $267.58 |
+| Trusted Broker | $3,432.16 | 11 | $312.01 |
+| Broker 1 | $4,112.62 | 13 | $316.36 |
+| Language Broker | $6,727.63 | 16 | $420.48 |
+| Spanish Platform | $7,310.78 | 9 | $812.31 |
+| **Total** | **$28,615.39** | **80** | — |
+
+**Tracker basis (deck, as of 2026-08-25), scaled by 1.10000263, whole
+dollars, residual placed in the largest week/audience:**
+
+| Week | Spend (tracker) | Apps | CPA (tracker) |
+|---|---|---|---|
+| Jul 1-7 | $9,711 | 23 | $422.22 |
+| Jul 8-14 | $8,752 | 15 | $583.47 |
+| Jul 15-21 | $8,837 | 22 | $401.68 |
+| Jul 22-28 | $3,185 | 20 | $159.25 |
+| Jul 29-31 | $992 | 0 | — |
+| **Total** | **$31,477** | **80** | — |
+
+| Audience | Spend (tracker) | Apps | Cost/app (tracker) |
+|---|---|---|---|
+| Professional Tools | $3,909 | 18 | $217.17 |
+| Trust | $3,826 | 13 | $294.31 |
+| Trusted Broker | $3,775 | 11 | $343.18 |
+| Broker 1 | $4,524 | 13 | $348.00 |
+| Language Broker | $7,400 | 16 | $462.50 |
+| Spanish Platform | $8,043 | 9 | $893.67 |
+| **Total** | **$31,477** | **80** | — |
+
+Both tables' scaled totals sum to $31,477 exactly. Ranking order is
+unchanged in both tables (pure scaling is order-preserving) — verified
+Professional Tools < Trust < Trusted Broker < Broker 1 < Language Broker <
+Spanish Platform on both bases, so PRIORITIZE/MAINTAIN/REDUCE-REMOVE and the
+"July 22-28 produced the strongest weekly reported CPA" read both still
+hold. `figures.json` extended with all twelve new tracker-basis figures.
+Gates re-run: `verify_numbers.py` and `protection_scan.py` results in
+`../BUILD-STATUS.md`.

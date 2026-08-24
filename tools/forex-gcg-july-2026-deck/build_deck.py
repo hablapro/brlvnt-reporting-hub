@@ -30,8 +30,8 @@ d.cover(kicker='MONTHLY PERFORMANCE REVIEW',
 
 # -------------------------------------------- 2 summary, blended view -----
 s = d.content('SUMMARY  ·  BLENDED VIEW (ORGANIC + PAID)',
-              'Submitted applications came in at 404, up 24.3%, with '
-              'working media at $136,224.')
+              'Submitted applications rose 24.3%, but funded accounts fell '
+              '38.5% and traded accounts fell 41.5%.')
 d.text(s, MARGIN, 1.85, 3.85, 4.3, [
     'Submitted applications came in at 404, up 24.3% from June, and live '
     'applications reached 389, up 25.9%, even as website sessions fell '
@@ -44,8 +44,10 @@ d.text(s, MARGIN, 1.85, 3.85, 4.3, [
     'Approved applications rose 5.9% to 162, growing with the '
     'application volume; the approval rate came in at 40.1% as the '
     'application base grew faster. Funded accounts came in at 32, a '
-    '19.8% rate against Q2’s 34.5% average, a step that happens inside '
-    'FOREX.com’s application-review process after media’s handoff.',
+    '19.8% rate against Q2’s 34.5% average. Approval and funding are '
+    'downstream stages in the blended funnel. Source-level cohort data '
+    'is needed to determine whether the decline reflects application '
+    'quality, processing time, conversion lag, or account activation.',
     'Google’s ad-position work and Azerion’s audience shift are the '
     'levers behind July’s application growth; August extends both. '
     'Meta is paused entering August.'], 10, False, INK, space=8)
@@ -65,17 +67,19 @@ d.table(s, 4.6, 1.85, 8.23, 4.0, [
     ['New Funded', '58', '48', '47', '66', '46', '52', '32', '-38.5%'],
     ['Fund Rate', '28.7%', '32.0%', '27.2%', '35.3%', '34.1%', '34.0%',
      '19.8%', '-14.2pts'],
-    ['Cost per Funded', '—', '$47', '$1,045', '$884', '$1,658', '$2,250',
-     '$4,257', '+89.2%'],
+    ['Media Spend / Blended Funded', '—', '$47', '$1,045', '$884',
+     '$1,658', '$2,250', '$4,257', '+89.2%'],
     ['New Traded', '47', '41', '36', '54', '37', '41', '24', '-41.5%'],
-    ['Cost per Traded', '—', '$55', '$1,364', '$1,080', '$2,061',
-     '$2,854', '$5,676', '+98.9%'],
+    ['Media Spend / Blended Traded', '—', '$55', '$1,364', '$1,080',
+     '$2,061', '$2,854', '$5,676', '+98.9%'],
 ], col_widths=[1.75, 0.81, 0.81, 0.81, 0.81, 0.81, 0.81, 0.81, 0.81])
-d.note(s, MARGIN, 6.15, 12.3, 0.5,
+d.note(s, MARGIN, 6.15, 12.3, 0.6,
        'Funnel metrics are blended organic + paid from the FOREX.com '
        'dashboard. Media spend comes from the FOREX.com budget tracker. '
        'MoM = July vs June. January-February cost rows reflect a '
-       'near-zero media base; the paid-media baseline starts in March.')
+       'near-zero media base; the paid-media baseline starts in March. '
+       'These are directional spend-to-outcome ratios, not '
+       'channel-attributed CPAs.')
 
 # ------------------------------------------------------- 3 exec summary ----
 s = d.content('EXECUTIVE SUMMARY',
@@ -95,7 +99,9 @@ d.note(s, MARGIN, 5.0, 7.4, 0.75,
        'methodology and should be interpreted independently. Cross-channel '
        'totals and blended acquisition costs are not used because '
        'attribution systems are not directly comparable. Meta clicks are '
-       'link clicks. Spend per the FOREX.com budget tracker.')
+       'link clicks. Spend per the FOREX.com budget tracker. Channel '
+       'lines are rounded to whole dollars; the total follows the '
+       'FOREX.com budget tracker.')
 d.card(s, 8.1, 1.9, 4.7, 2.35, 'The scorecard, by channel',
        ['Google: 122 submitted applications at $390.60 each across Search '
         'and PMax.',
@@ -115,7 +121,8 @@ d.card(s, 8.1, 4.45, 4.7, 2.35, 'New this month',
 
 # --------------------------------------------- 4 google search performance --
 s = d.content('GOOGLE SEARCH  ·  PERFORMANCE',
-              '73 submitted applications at $403.81; the ad-position work is paying off.')
+              'Search delivered 73 applications, but CPA rose 20%; Track A '
+              'Trust improved while the other tracks remain constrained.')
 d.text(s, MARGIN, 1.55, 12.3, 0.3,
        'Target: non-brand Spanish-language search across Trust, Authority '
        'and Platform, plus a brand track, US only.', 9.5, False, MUTED)
@@ -138,14 +145,14 @@ d.table(s, MARGIN, 3.7, 7.4, 3.2, [
 d.note(s, MARGIN, 6.98, 7.4, 0.25, 'Top 8 of 20 keywords tracked, by spend.')
 d.card(s, 8.1, 3.7, 4.7, 1.7, 'Track A Trust: what the ad-position work changed',
        ['Our ads now show for 32.6% of relevant searches, up from 27%.',
-        'How often our ads lose the auction to competitors fell to 58.7% '
-        '(the account’s best), down from the 64-76% range every group sat '
-        'in during June.',
+        'Impression share lost to rank fell to 58.7% (the account’s '
+        'best), down from the 64-76% range every group sat in during '
+        'June.',
         'Cost per application (CPA): $433 to $390.86, and Trust is now '
         'the top-performing group with 28 applications.'], GREEN)
 d.card(s, 8.1, 5.55, 4.7, 1.55, 'Where the work has not landed yet',
-       ['Authority and Platform still lose the auction to competitors '
-        '63.5% and 70.3% of the time, and Brand 79.0%, all worse than '
+       ['Authority and Platform still lose 63.5% and 70.3% of '
+        'impression share due to rank, and Brand 79.0%, all worse than '
         'Trust’s 58.7%.',
         'DECISION: extend the same ad-position work to Authority and '
         'Platform before adding further budget.'], CORAL)
@@ -297,22 +304,19 @@ for i, (lbl, val, sub) in enumerate(tiles):
     d.tile(s, MARGIN + i * 2.08, 2.0, lbl, val, sub=sub, w=1.95)
 d.table(s, MARGIN, 3.7, 5.9, 2.3, [
     ['Week', 'Spend', 'Apps', 'CPA'],
-    ['Jul 1-7', '$8,829', '23', '$383.88'],
-    ['Jul 8-14', '$7,956', '15', '$530.40'],
-    ['Jul 15-21', '$8,033', '22', '$365.15'],
-    ['Jul 22-28', '$2,895', '20', '$144.76'],
-    ['Jul 29-31', '$902', '0', '—'],
+    ['Jul 1-7', '$9,711', '23', '$422.22'],
+    ['Jul 8-14', '$8,752', '15', '$583.47'],
+    ['Jul 15-21', '$8,837', '22', '$401.68'],
+    ['Jul 22-28', '$3,185', '20', '$159.25'],
+    ['Jul 29-31', '$992', '0', '—'],
 ], col_widths=[1.6, 1.5, 1.2, 1.6])
-d.note(s, MARGIN, 6.05, 5.9, 0.3,
-       'Weekly figures are Azerion’s delivery figures; the month total '
-       'appears in the tiles above.')
 d.card(s, 7.2, 3.7, 5.6, 3.0, 'What the data shows',
        ['Spend rose 6.4% to fund the added volume: applications rose '
         '37.9% (58 to 80) while cost per application fell 22.8% ($510.10 '
         'to $393.46).',
-        'The week of July 22-28 was the efficiency peak: 20 applications '
-        'at $144.76 on reduced spend, evidence that tighter delivery '
-        'converts better. Viewability rose 6.15 points to 64.95%.',
+        'July 22-28 produced the strongest weekly reported CPA. Confirm '
+        'whether the result holds after reconciling conversion timing. '
+        'Viewability rose 6.15 points to 64.95%.',
         'Cost per thousand impressions (CPM), what display advertising '
         'is priced on, came in at $6.60, up from $6.55 in June.',
         'DECISION: rebalance spend toward the strongest audiences, '
@@ -323,12 +327,12 @@ s = d.content('AZERION DISPLAY  ·  AUDIENCE RANKING',
               'Professional Tools and Trust lead on cost per application.')
 d.table(s, MARGIN, 2.0, 7.7, 3.0, [
     ['Audience', 'Applications', 'Cost / app', 'August status'],
-    ['Professional Tools', '18', '$197.43', 'PRIORITIZE'],
-    ['Trust', '13', '$267.58', 'PRIORITIZE'],
-    ['Trusted Broker', '11', '$312.01', 'MAINTAIN'],
-    ['Broker 1', '13', '$316.36', 'MAINTAIN'],
-    ['Language Broker', '16', '$420.48', 'MAINTAIN'],
-    ['Spanish Platform', '9', '$812.31', 'REDUCE-REMOVE'],
+    ['Professional Tools', '18', '$217.17', 'PRIORITIZE'],
+    ['Trust', '13', '$294.31', 'PRIORITIZE'],
+    ['Trusted Broker', '11', '$343.18', 'MAINTAIN'],
+    ['Broker 1', '13', '$348.00', 'MAINTAIN'],
+    ['Language Broker', '16', '$462.50', 'MAINTAIN'],
+    ['Spanish Platform', '9', '$893.67', 'REDUCE-REMOVE'],
 ], col_widths=[2.7, 1.7, 1.55, 1.75])
 d.card(s, 8.4, 2.0, 3.93, 3.0, 'What we recommend',
        ['Spanish Platform carries the line’s largest spend and its '
@@ -343,12 +347,12 @@ s = d.content('AZERION NATIVE  ·  CREATIVE PERFORMANCE',
               'the Native line.')
 d.table(s, MARGIN, 2.0, 7.7, 3.0, [
     ['Creative', 'Spend', 'Clicks', 'CTR', 'August status'],
-    ['City_view_MHTN', '$1,517', '143', '0.075%', 'SCALE'],
-    ['Mobile_desktop_view', '$1,576', '143', '0.073%', 'SCALE'],
-    ['Phone_closeup', '$1,570', '139', '0.071%', 'RETAIN-TEST'],
-    ['Third_person_perspective_mobile', '$1,503', '134', '0.071%', 'RETAIN-TEST'],
-    ['Trader_laptop_thinking', '$1,598', '132', '0.066%', 'RETAIN-TEST'],
-    ['Multiple_screens_graph', '$1,598', '125', '0.063%', 'RETAIN-TEST'],
+    ['City_view_MHTN', '$1,517', '143', '0.075%', 'MAINTAIN'],
+    ['Mobile_desktop_view', '$1,576', '143', '0.073%', 'MAINTAIN'],
+    ['Phone_closeup', '$1,570', '139', '0.071%', 'CONTINUE TEST'],
+    ['Third_person_perspective_mobile', '$1,503', '134', '0.071%', 'CONTINUE TEST'],
+    ['Trader_laptop_thinking', '$1,598', '132', '0.066%', 'CONTINUE TEST'],
+    ['Multiple_screens_graph', '$1,598', '125', '0.063%', 'CONTINUE TEST'],
 ], col_widths=[2.9, 1.1, 0.9, 1.0, 1.8])
 d.note(s, MARGIN, 5.05, 7.7, 0.3,
        'Native total: 1,170,255 impressions, 816 clicks, 72.68% '
@@ -358,10 +362,9 @@ d.card(s, 8.4, 2.0, 3.93, 3.0, 'What we recommend',
         'this line is read on delivery quality. Click-through rate fell '
         'as delivery scaled, from 0.33% in week '
         'two to 0.05% in the final week.',
-        'DECISION: scale the two strongest creatives by click-through '
-        'rate, City_view_MHTN and Mobile_desktop_view; hold the rest '
-        'for a second month before any removal, this is the line’s '
-        'first full month.'], GOLD)
+        'DECISION: creative performance was tightly clustered. Maintain '
+        'the leading creatives at a modestly higher weight and continue '
+        'testing before removing the others.'], GOLD)
 
 # --------------------------------------------------- 12 ga4 site traffic ----
 s = d.content('SITE TRAFFIC  ·  GA4 (SPANISH AUDIENCE)',
@@ -376,8 +379,9 @@ d.card(s, MARGIN, 3.4, 6.0, 3.2, 'What the data shows',
        ['Site visits gave back June’s paid-driven lift as Meta spend '
         'fell 77%, landing just under the roughly 70,000 base the '
         'channel held from January through May.',
-        'This isn’t a decline in unpaid (organic) traffic; the softness '
-        'tracks the paid pullback.',
+        'The decline is consistent with the Meta spend reduction, but '
+        'the GA4 source and medium breakdown is needed to confirm how '
+        'much came from paid versus unpaid traffic.',
         'GA4 recorded two-thirds (67.2%) of Meta’s reported clicks as '
         'site visits, up from about 57% in June.'], GREEN)
 d.card(s, 6.7, 3.4, 5.63, 3.2, 'What to expect',
@@ -414,29 +418,29 @@ d.card(s, 8.7, 2.15, 3.63, 3.35, 'Top of funnel',
         'June’s 3.8%, on far fewer sessions.',
         'Live applications reached 389, up 25.9% from June’s 309, in step '
         'with submissions.'], GREEN)
-d.card(s, MARGIN, 5.7, 12.33, 1.2, 'After submission: review and activation',
-       ['Approvals rose 5.9% to 162, growing with the application '
-        'volume; the approval rate came in at 40.1% as the application '
-        'base grew faster. Funding is the step to watch: 32 accounts at '
-        'a 19.8% rate against Q2’s 34.5% average, and 24 traded against '
-        'June’s 41. Approval, funding and activation are FOREX.com’s '
-        'application review and account-activation process.',
-        'TAKEAWAY: the top of the funnel is converting more efficiently on '
-        'fewer sessions; the funding rate is the step to monitor next cycle.'], DEEP)
+d.card(s, MARGIN, 5.55, 12.33, 1.55, 'After submission: review and activation',
+       ['Approved applications rose 5.9% to 162. The approval rate fell '
+        'from 47.1% to 40.1%: approvals did not keep pace with '
+        'submission growth.',
+        'Funding came in at 32, a 19.8% rate against Q2’s 34.5% '
+        'average, and 24 accounts traded against June’s 41.',
+        'Approval and funding are downstream stages in the blended '
+        'funnel. Source-level cohort data is needed to determine '
+        'whether the decline reflects application quality, processing '
+        'time, conversion lag, or account activation.',
+        'Approval and funding can occur after the submission month; '
+        'July rates should be treated as an operating indicator until '
+        'the application cohort matures.'], DEEP)
 
 # --------------------------------------- 14 cross-channel priorities close --
 s = d.content('CROSS-CHANNEL PRIORITIES',
               'Google’s two lines closed July at 122 submitted applications and '
               '$390.60 per application; Azerion added 80 more at $393.46.')
 d.blocker(s, MARGIN, 2.0, 2.95, 3.2, 'Priority',
-          ['Extend the same ad-position work to Track B Authority and '
-           'Platform.',
-           'Track A Trust proves it works: our ads show up more often '
-           'in relevant searches, they lose the auction to competitors '
-           'less, cost per application is down, and it’s now the '
-           'top-performing group.',
-           'The other two groups still lose the auction to competitors '
-           '63 to 70% of the time.'], CORAL)
+          ['Track A Trust improved after the July changes. Extend the '
+           'same controlled test to Authority and Platform.',
+           'The other two groups still lose 63 to 70% of impression '
+           'share due to rank.'], CORAL)
 d.blocker(s, MARGIN + 3.15, 2.0, 2.95, 3.2, 'High',
           ['Send the refreshed 35-domain Quantcast list ahead of August '
            'spend.',
@@ -453,9 +457,10 @@ d.blocker(s, MARGIN + 9.45, 2.0, 2.88, 3.2, 'Downstream to watch',
            'FOREX.com’s application-review process; detail on the '
            'funnel slide.'], DEEP)
 d.strip(s, MARGIN, 5.5, W - 2 * MARGIN, 0.9,
-        'Google’s two lines and Azerion produced the month’s application '
-        'volume through what’s already working; August scales it '
-        'further.')
+        'Google and Azerion produced 202 directly measured applications, '
+        'representing half of July’s blended submissions. August should '
+        'extend the strongest tests while monitoring CPA and downstream '
+        'quality.')
 
 d.save(OUT)
 print(f'OK  {d.verify()} slides -> {OUT}')
