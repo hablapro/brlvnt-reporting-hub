@@ -51,7 +51,7 @@ archive BUILD-STATUS) still pending.
 (DOCTRINE §11) before the August cycle. Do not rebuild from the 16-slide
 July script shape.
 
-### GCG July cycle — DECK APPROVED (Renzo gate 2026-08-24) and COMMITTED (26493ec)
+### GCG July cycle — FINAL: 14-slide deck APPROVED (Renzo, 2026-08-24) and COMMITTED (26493ec + 3de9f3d)
 
 Phases 0-5 complete as of 2026-08-24. State of record:
 `reports/forex/gcg/2026-07/BUILD-STATUS.md` and `qa/qa-and-model.md`.
@@ -74,9 +74,12 @@ Phases 0-5 complete as of 2026-08-24. State of record:
   `recommendations/forex/gcg/GCG-Quantcast-disallow-list-July-2026.md`
   (marked Internal; 35-domain July list + June-list status).
 
-Renzo's 12 pptx comments applied 2026-08-24 (six new standing rules in
-DOCTRINE §3); deck approved and everything committed locally (26493ec,
-not pushed). Open: (1) client delivery is with Renzo (once he edits a
+Renzo's 12 pptx comments applied 2026-08-24 (six standing rules in
+DOCTRINE §3); blended June-format opener added as slide 2 (deck 14
+slides, §11 opener rule now per-entity) and downstream story reframed
+(approvals +5.9% grew with volume; funding 19.8% is the watch item,
+FOREX.com's process). Final deck approved by Renzo 2026-08-24 and
+committed locally (26493ec, 3de9f3d; not pushed). Open: (1) client delivery is with Renzo (once he edits a
 Google Slides version, THAT becomes canonical — never re-upload over
 it); (2) no report workbook was built this cycle (deck only, per Renzo's
 request) — build one only if asked; (3) comms-since-June never answered
