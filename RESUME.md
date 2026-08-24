@@ -51,7 +51,7 @@ archive BUILD-STATUS) still pending.
 (DOCTRINE §11) before the August cycle. Do not rebuild from the 16-slide
 July script shape.
 
-### GCG July cycle — FINAL: 14-slide deck APPROVED (Renzo, 2026-08-24) and COMMITTED (26493ec + 3de9f3d)
+### GCG July cycle — CLOSED: 14-slide deck APPROVED and COMMITTED (final 1a2ba39)
 
 Phases 0-5 complete as of 2026-08-24. State of record:
 `reports/forex/gcg/2026-07/BUILD-STATUS.md` and `qa/qa-and-model.md`.
