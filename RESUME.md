@@ -51,7 +51,7 @@ archive BUILD-STATUS) still pending.
 (DOCTRINE §11) before the August cycle. Do not rebuild from the 16-slide
 July script shape.
 
-### GCG July cycle — DECK FINAL, AWAITING RENZO GATE (Phase 6)
+### GCG July cycle — DECK APPROVED (Renzo gate 2026-08-24) and COMMITTED (26493ec)
 
 Phases 0-5 complete as of 2026-08-24. State of record:
 `reports/forex/gcg/2026-07/BUILD-STATUS.md` and `qa/qa-and-model.md`.
@@ -74,13 +74,15 @@ Phases 0-5 complete as of 2026-08-24. State of record:
   `recommendations/forex/gcg/GCG-Quantcast-disallow-list-July-2026.md`
   (marked Internal; 35-domain July list + June-list status).
 
-Open: (1) Renzo delivery gate on the deck; (2) commit approval — NOTHING
-since commit 9b95f14 (2026-08-19) is committed; (3) comms-since-June
-answer (narrative assumes none); (4) Renzo may add PowerPoint comments
-for corrections — read them from the pptx XML, save-and-close first
-(KNOWN-BUGS clobber rule). Rulings made this cycle are codified in
-docs/DOCTRINE.md §3 (plain language), §8 (viewability vanity metric;
-internal accountability) — read DOCTRINE before touching the deck.
+Renzo's 12 pptx comments applied 2026-08-24 (six new standing rules in
+DOCTRINE §3); deck approved and everything committed locally (26493ec,
+not pushed). Open: (1) client delivery is with Renzo (once he edits a
+Google Slides version, THAT becomes canonical — never re-upload over
+it); (2) no report workbook was built this cycle (deck only, per Renzo's
+request) — build one only if asked; (3) comms-since-June never answered
+(narrative assumed none); (4) cycle-close bookkeeping (REPORT-INDEX /
+REPORTING-LOG) pending for BOTH July cycles. Read DOCTRINE §3/§8/§11
+before touching any deck; the comment-round rulings are binding.
 
 ## Rulings made this cycle (all in docs/DOCTRINE.md + auto-memory — READ THEM)
 
