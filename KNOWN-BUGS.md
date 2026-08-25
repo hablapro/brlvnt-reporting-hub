@@ -43,6 +43,14 @@ Workaround: client-facing report workbooks write figures as formatted strings
 ("$10,625"), which is also the right presentation form. Fixing the extractor to
 yield numeric cells needs a ruling before touching the gate script.
 
+**RESOLVED 2026-08-25 (Renzo ruling).** `text_from` now yields numeric cells
+rendered the way the audience reads them: `$` prefix when the cell's number
+format is currency, percent cells scaled up (0.198 stored → "19.8%"), plain
+numbers as-is; booleans and dates still skipped. Verified against the GGMI
+July workbook (formerly all-MISSING, now 0 MISSING / 0 UNSOURCED) and the GCG
+July deck (unchanged: 5 accepted MISSING, 0 BLOCK / 0 WARN). The
+formatted-strings workaround is no longer required but remains fine.
+
 ## PowerPoint clobbers rebuilt output files it has open (found 2026-08-17)
 **Symptom:** a deck rebuilt by `build_deck.py` reverts to older content with a fresh mtime. If the output `.pptx` is open in PowerPoint while the build script overwrites it, PowerPoint's auto-save/save writes its stale in-memory copy back over the new file.
 **Workaround:** never keep the output file open during a build cycle; review from a copy or a PDF render. After any handoff, verify the binary's actual text (python-pptx) rather than trusting mtime. The build script is the source of truth; a clobber is fixed by re-running it.

@@ -122,8 +122,21 @@ def text_from(path: Path):
         for ws in wb.worksheets:
             for row in ws.iter_rows():
                 for cell in row:
-                    if isinstance(cell.value, str) and cell.value.strip():
-                        yield f'{ws.title}!{cell.coordinate}', cell.value
+                    v = cell.value
+                    if isinstance(v, str) and v.strip():
+                        yield f'{ws.title}!{cell.coordinate}', v
+                    elif isinstance(v, (int, float)) and not isinstance(v, bool):
+                        # Render numeric cells the way the audience reads
+                        # them: $ from a currency format, and percent cells
+                        # scaled up (0.198 displays as 19.8%). Ruled
+                        # 2026-08-25; before this, numeric cells were
+                        # invisible to both gates (KNOWN-BUGS.md).
+                        fmt = cell.number_format or ''
+                        if '%' in fmt:
+                            yield f'{ws.title}!{cell.coordinate}', f'{v * 100}%'
+                        else:
+                            prefix = '$' if '$' in fmt else ''
+                            yield f'{ws.title}!{cell.coordinate}', f'{prefix}{v}'
     elif ext in ('.md', '.txt'):
         for i, line in enumerate(
                 path.read_text(encoding='utf8', errors='replace').split('\n'),
