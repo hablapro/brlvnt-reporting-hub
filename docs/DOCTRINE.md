@@ -57,6 +57,15 @@ space, add it back or label the table "top N of M."
 **Never blend the entities.** GGMI and GCG stay separate in every sheet, deck
 and model.
 
+**Source labels state only what was verified.** A description of where a
+number comes from never gets upgraded beyond the evidence: Bing conversions
+are "SA360-reported", not "CRM-validated"; offline-imported is
+"offline-imported". A characterization written in an internal status doc
+becomes unquestioned input for later sessions, so any claim quoted from a
+status doc into client-facing copy must trace to a primary pull or a ruling,
+not to earlier prose. (Origin: "CRM-validated" reached a client deck three
+sessions after being invented in a build-status note, 2026-08-17.)
+
 ---
 
 ## 2. The agency scorecard
@@ -359,6 +368,12 @@ built structure. Build to the delivered shape from August on. Full diff:
 
 **Comment-reply rules (Renzo rulings 2026-08-19):**
 
+- **Premise-check first.** A client question is also a claim. Before
+  drafting any reply, verify each factual premise against the workpapers
+  (and, for platform-policy claims, current published policy). A question
+  built on a false premise ("did the 25+ targeting change move CPM?" when
+  the change was never applied) gets the corrected premise with evidence,
+  never an answer to the literal question.
 - **Stay on the slide.** A comment on a channel slide gets a reply
   about that channel only. Never pull another channel into the answer,
   including creatives whose names reference other channels.

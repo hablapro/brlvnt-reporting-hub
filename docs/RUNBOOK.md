@@ -19,10 +19,14 @@ Nothing gets pulled until these are answered. About a third of the June 2026
 cycle was rework, and the retrospective traced nearly all of it to building
 from the best data on hand instead of asking what the client already holds.
 
-Scaffold the month:
+Scaffold the month, and preflight the credentials that need a human to
+refresh (an expired gws token caught here costs nothing; caught mid-pull it
+stalls the cycle until Renzo is back — that is how the Azerion file sat
+blocked on 2026-08-14):
 
 ```bash
 ./scripts/new_month.sh ggmi 2026-08      # or: gcg
+gws auth status                          # expired? gws auth login now, while Renzo is present
 ```
 
 That creates `reports/forex/<entity>/<YYYY-MM>/` with `data/sources/`, `qa/`,

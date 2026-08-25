@@ -1,6 +1,6 @@
 # Resume Here
 
-Read this first when picking the repo back up. Last updated 2026-08-19.
+Read this first when picking the repo back up. Last updated 2026-08-24.
 Delete or rewrite when the state changes.
 
 ---
