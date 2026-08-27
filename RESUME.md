@@ -1,7 +1,64 @@
 # Resume Here
 
-Read this first when picking the repo back up. Last updated 2026-08-24.
+Read this first when picking the repo back up. Last updated 2026-08-27.
 Delete or rewrite when the state changes.
+
+---
+
+## NEXT JOB: the GCG August 2026 cycle. Not started.
+
+Before pulling any GCG data, read the three items below. The first two were found
+on 2026-08-27 and will silently corrupt a GCG build the same way they
+corrupted the GGMI one.
+
+### 1. SA360 `metrics.conversions` no longer equals submitted applications
+
+True through July 2026, false from August. On GGMI Bing three extra actions
+started counting into the primary metric: `GCLID - Approved`, `GCLID - Funded`
+and `App Form - Step 4`. August read 53 where only 41 were submitted
+applications. **Check whether the same happened on GCG before trusting any
+conversion figure.** Segment by `segments.conversion_action_name` and count
+only `- Live Confirmation`. Full detail in `KNOWN-BUGS.md`.
+
+### 2. Quantcast `endDate` is exclusive and it bit us again
+
+August figures were pulled with `endDate: 2026-08-26`, which returns Aug 1-25,
+were labelled "MTD Aug 1-26", then projected x31/26. Two compounding errors.
+For an inclusive range ending day N, set `endDate` to N+1 and project on the
+day count the pull actually covers.
+
+### 3. Client-facing documents are formatted, not just converted
+
+Build every .docx with `python3 scripts/format_doc.py <in.md> <out.docx>`,
+never bare `pandoc`. Then render to PDF and look at it. See CLAUDE.md Output.
+
+---
+
+## GGMI September budget proposal — DELIVERED 2026-08-27
+
+Google Doc `1NkIHJGRJAeBJJG3vI7r8MDrceWT3ibQ-wYcnQx_34eE` (update in place,
+never republish to a new URL). Source markdown and `figures.json` in
+`reports/forex/ggmi/2026-08/`.
+
+Two options against the approved September plan of $205,000: **Controlled
+$61,000** (recommended, -70% vs plan, -51% vs the four active August channels)
+and **Deep $33,500** (-84% / -73%). Meta, TikTok and Strategic Partnerships
+($80K) deferred, not cancelled. Review in the first half of October, ramp
+mid-to-late October ahead of the Nov 3 midterms and Nov 5 Banxico.
+
+Open items carried forward:
+
+1. **Funded-account quality by source.** The proposal states in the client
+   copy that we have NOT established Bing applications fund better than
+   Azerion's. That data is the check that confirms or overturns the whole
+   weighting. Priority ask for the October review.
+2. **Who changed the SA360 conversion actions to primary, and when.**
+   Question for the StoneX SA360 admin.
+3. **Can FOREX.com or CM360 produce deduplicated source-level application
+   counts?** If yes, channel counts become summable and the proposal gets a
+   stronger headline back. If no, keep showing them per channel.
+4. **Full-month August Azerion vendor report.** Current figures are projected
+   from the Aug 1-17 mid-month file.
 
 ---
 
@@ -79,9 +136,7 @@ DOCTRINE §3); blended June-format opener added as slide 2 (deck 14
 slides, §11 opener rule now per-entity) and downstream story reframed
 (approvals +5.9% grew with volume; funding 19.8% is the watch item,
 FOREX.com's process). Final deck approved by Renzo 2026-08-24 and
-committed locally (26493ec, 3de9f3d; not pushed). Open: (1) client delivery is with Renzo (once he edits a
-Google Slides version, THAT becomes canonical — never re-upload over
-it); (2) no report workbook was built this cycle (deck only, per Renzo's
+committed locally (26493ec, 3de9f3d; not pushed). Open item (1) CLOSED 2026-08-25: GCG July deck DELIVERED to client by Maria via ClickUp (client-shared space 90171157891) and email (Renzo confirmed 2026-08-25). If a Google Slides version appears with Renzo/Maria edits, THAT becomes canonical — never re-upload over it. Remaining open: (2) no report workbook was built this cycle (deck only, per Renzo's
 request) — build one only if asked; (3) comms-since-June never answered
 (narrative assumed none); (4) cycle-close bookkeeping (REPORT-INDEX /
 REPORTING-LOG) pending for BOTH July cycles. Read DOCTRINE §3/§8/§11

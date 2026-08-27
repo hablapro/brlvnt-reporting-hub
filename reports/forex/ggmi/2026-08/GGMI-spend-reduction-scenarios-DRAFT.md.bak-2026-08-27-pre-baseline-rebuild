@@ -1,0 +1,129 @@
+# GGMI Mexico: Temporary Media Pullback with a September Reassessment
+
+**Entity:** GGMI, GAIN Global Markets Inc. (Mexico, forex.com/es)
+**Prepared for:** FOREX.com
+**Prepared by:** brlvnt
+**Date:** August 27, 2026
+**Baseline:** Current August 2026 run rate by channel
+**Status:** DRAFT for FOREX.com review. Not for distribution.
+
+---
+
+## 1. Executive recommendation
+
+brlvnt recommends a **Controlled Pullback**: concentrate spend on Bing, the one efficient and scaling acquisition line, hold Azerion at its current low run rate, hold a reduced and monitored Quantcast line, and remove the reach spend that carries no near-term role. This holds monthly working media at about $34,892, a reduction of about 57% against the current active run rate of about $81,543.
+
+Part of this correction has already happened on its own. Azerion display spend is pacing about 82% below July, so the current run rate is already leaner than earlier in the summer, and the recommended reduction is measured against that lower base. The reduction is warranted now because funding reads soft and current market conditions appear relatively subdued, so lower-return spend can be paused without giving up the acquisition engine. It is a temporary reduction, and it is not gated on the stablecoin launch. The Controlled Pullback preserves the ability to scale back up quickly because it keeps a live, modeled audience rather than starting cold later.
+
+The program is reassessed in September against first-party business outcomes and market context. That reassessment, not the calendar, decides when spend is restored.
+
+---
+
+## 2. What the current data does and does not tell us
+
+**Funding reads soft, but that does not by itself identify media as the primary problem.** Weak funding can originate in acquisition quality or in downstream approval and funding behavior. The evidence to date establishes the outcome, not the cause, so the pullback is sized to reduce lower-return spend while a fuller diagnosis is completed.
+
+**July is a performance reference, not the financial baseline.** July figures are used here to read line-level efficiency; the scenarios are modeled against the current August run rate, not July spend.
+
+**Market context is subdued but not fixed.** Current market conditions appear relatively subdued, while volatility seasonality and forward-looking market indicators suggest conditions could become more active through September and Q4. These indicators are context, not forecasts, and not automatic budget triggers.
+
+**Funnel stages should be read together, not assigned in advance.** Funding performance reflects both acquisition quality and downstream approval and funding behavior, so media performance should be evaluated alongside the full application-to-funded-account funnel. The point is to separate the funnel analytically, not to assign the outcome to any one stage before the evidence supports it.
+
+On the stablecoin launch: the stablecoin launch may improve accessibility and broaden acquisition opportunities, but there is not yet evidence that it will materially change funded-account conversion. It should therefore be treated as one potential catalyst, not the sole condition for restoring media investment.
+
+---
+
+## 3. Current baseline
+
+The scenarios are modeled against the current August run rate by channel, not against July spend. Every active line is now built from August actuals: Bing and Quantcast from live platform reporting, and Azerion and Native from Azerion's August mid-month spend combined with live platform reporting for the Quantcast native campaign. There is no forward approved monthly budget in the source material, so the projected August month-end run rate is used as the baseline. This is the one data gap in the analysis: if FOREX.com holds a current approved monthly budget by channel, that figure should replace the August projection.
+
+Channel lines follow the July client-tracker structure so they reconcile to what FOREX.com already holds, but the dollar figures are August actuals, not the July tracker amounts. The Quantcast line covers the main Quantcast campaigns; the Quantcast native campaign is carried inside the Native line, so it is not counted twice.
+
+| Line | Status | August run rate | How the figure is derived |
+|---|---|---:|---|
+| Bing | Active | $18,533 | August projected month-end, live platform; scaling above July |
+| Azerion | Active | $5,980 | August projected month-end from Azerion mid-month spend (Standard Display, LATAM); pacing about 82% below July |
+| Quantcast | Active | $29,634 | August projected month-end, live platform; main Quantcast campaigns |
+| Native | Active | $27,396 | August projected month-end; composite of Azerion Native ($17,883) and the Quantcast native campaign ($9,513), both from August actuals |
+| **Active total** | | **$81,543** | |
+| Meta | Paused | n/a | Already paused entering August; not part of either scenario |
+| DOOH | Already cancelled | n/a | Cancelled; shown for context only, not a scenario saving |
+
+The Azerion line reflects a sharp August slowdown. Azerion's August month-to-date Standard Display spend for LATAM is running well below its July pace and projects to about $5,980 for the month, against roughly $37,509 in the July tracker. That reduction is already in effect, so neither scenario counts it as a new saving. The Native line is a composite of Azerion's native activity and the Quantcast native campaign; its total lands near July by coincidence, but it is now built from August delivery rather than a July figure.
+
+Two more lines sit outside the model. Meta is already paused, and DOOH is already cancelled, so neither is counted as a new saving generated by either scenario. Native, Azerion, and Quantcast run under insertion orders with a 24-hour cancellation window and no make-good obligation, so these commitments can be reduced or cancelled quickly.
+
+Within the Quantcast line, a superseded campaign is still spending about $8,876 a month and returned no results in August. It is the clearest single cut in the program and is retired first in either scenario.
+
+July delivery, for reference only:
+
+| Line | July spend | July reference |
+|---|---:|---|
+| Bing | $10,625 | 20 submitted applications; rebuilt line from July 22 at about $237 per submitted application, the lowest in the program |
+| Azerion | $37,509 | 41 submitted applications at about $915 per submitted application |
+| Quantcast | $39,240 | Qualified traffic and results; no submitted-application cost |
+| Native | $27,630 | Traffic and engagement; no attributed applications |
+| DOOH | $26,865 | Delivery reach; already cancelled |
+| Meta | $8,027 | Paused entering August |
+
+Each line is read on the strongest signal its own platform reports, and the counts are not combined across platforms because the methods are not directly comparable. Only Bing and Azerion report submitted applications with a cost per application.
+
+---
+
+## 4. Scenario comparison
+
+Both scenarios protect Bing, the one efficient acquisition line, and cut Native, which carries no attributed submitted applications. They differ on Azerion and Quantcast: the Controlled Pullback keeps Azerion at its current low run rate and holds a reduced Quantcast line; the Deep Pullback removes both and runs Bing alone.
+
+| Line | Current run rate | Controlled Pullback | Deep Pullback |
+|---|---:|---:|---:|
+| Bing | $18,533 | $18,533 | $18,533 |
+| Azerion | $5,980 | $5,980 | $0 |
+| Quantcast | $29,634 | $10,379 | $0 |
+| Native | $27,396 | $0 | $0 |
+| **New monthly spend** | **$81,543** | **$34,892** | **$18,533** |
+| **Monthly savings** | n/a | **$46,651** | **$63,010** |
+| **Reduction** | n/a | **57%** | **77%** |
+
+- **Held at full weight in both:** Bing, the line with the lowest and most stable cost per submitted application.
+- **Held low or reduced:** Azerion, now pacing at only about $5,980 a month, is held at that level under the Controlled Pullback and removed under the Deep Pullback. Quantcast is held at about a third of its run rate under the Controlled Pullback and removed under the Deep Pullback; in both, the reduction retires the superseded campaign first, so any retained Quantcast spend is the productive portion.
+- **Cancelled in both:** Native.
+
+Figures are monthly run rates. Because the pullback is temporary and its length depends on the September reassessment, no multi-month total is headlined. Both scenarios cut deeper in percentage terms than a mid-summer plan would have, because the base is already smaller: Azerion's August slowdown has taken roughly $31,000 of monthly run rate out of the program before either scenario acts. The difference between the two scenarios, about $16,000 a month, is Azerion's small remaining spend plus the reduced Quantcast line.
+
+---
+
+## 5. Scenario rationale
+
+**Controlled Pullback.** Protects Bing at current pace, the rebuilt account that delivered the lowest cost per submitted application in the program in July and is scaling in August. Holds Azerion at its current low run rate, keeping a second submitted-application source live at little cost. Retires the superseded Quantcast campaign and holds the remaining productive Quantcast line at about half its own run rate, so a modeled, retargetable audience stays live and can be scaled quickly when demand turns, rather than being rebuilt from zero. Removes Native, which reports no attributed submitted applications. The tradeoff is about $16,000 a month over the Deep Pullback to keep a second application source and a live, addressable audience.
+
+**Deep Pullback.** Runs Bing alone and removes Azerion, Quantcast, and Native. It preserves the most cash while retaining the strongest acquisition line, and it accepts the cost and time of restarting the other activity later from cold. It is the stronger choice if cash preservation becomes the sole priority or the reassessment horizon extends well out.
+
+**Azerion is no longer a line to protect at full weight.** Azerion earned full-weight protection in the earlier draft as a second application source running near $37,000 a month. That is no longer the case. Azerion's own August pacing has cut it to about $5,980, and its August cost per submitted application in LATAM is about $889, close to four times Bing's roughly $237. There is little weight left to protect, and what remains is the least efficient application spend in the program. The Controlled Pullback holds it only because the remaining cost is small and it keeps a second application source warm; the Deep Pullback cuts it. If Azerion's cost per application does not improve, it is a cut in either scenario at the September reassessment.
+
+The Quantcast line is where the two scenarios genuinely differ, so its economics deserve a plain read. The retained Quantcast line carries a retargetable, modeled audience, and its productive campaigns began returning result signals in August where the native segment had shown none in July. Against that, the current Quantcast results are recorded as view-through with click attribution not yet confirmed, and the retargeting segment is a thin and expensive share of delivery. The Controlled Pullback therefore holds Quantcast as a monitored, low-cost option rather than a proven performer. If the September read does not show the productive Quantcast line improving its cost per result and attribution quality, the correct move is the Deep Pullback and a full cut.
+
+---
+
+## 6. Recommendation
+
+**Take the Controlled Pullback as a temporary reduction with a September reassessment.** It answers the decision on the table: it reduces lower-return spend now, to about $34,892 a month, a reduction of about 57% against the current run rate, while protecting Bing, the efficient acquisition engine, and keeping the ability to scale back up quickly. A fully dark upper funnel would mean cold-starting the largest audience platform at the point demand is most likely to lift, and the modest cost of a reduced Quantcast line buys a live audience against that risk while its economics are watched. The margin over the Deep Pullback is now narrow, about $16,000 a month, because Azerion's own slowdown has already removed most of the difference. The Deep Pullback becomes the better call if cash preservation becomes the single priority, or if the September read does not improve the Quantcast line's cost per result and attribution quality.
+
+The reduction is temporary by design and is not gated on the stablecoin launch. It runs until the September reassessment reads real demand and complete conversion data. What this avoids is a deep, open-ended cut sized to a subdued summer that leaves the program underweight going into a potentially more active quarter.
+
+---
+
+## 7. September reassessment
+
+The program is reassessed in September against first-party business outcomes first, then market context, in that order:
+
+1. **FOREX.com applications, approvals, and funded accounts**, the primary decision criteria.
+2. **Cost per funded account where available**, read with care where denominators are small.
+3. **The productive Quantcast line's cost per result and attribution quality**, which decides whether the reduced Quantcast spend is retained or cut.
+4. **CME FX CVOL for the MXN contract and relevant FX volumes**, as market context only, not automatic budget triggers.
+5. **Stablecoin launch status**, as a secondary input, not the condition that releases spend.
+
+If those outcomes show demand turning, that is the signal to scale back up. First-party business outcomes outrank market context, which outranks stablecoin timing.
+
+---
+
+*GGMI, Mexico (forex.com/es). Draft prepared by brlvnt for FOREX.com review. The baseline is the current August 2026 run rate by channel. All four active lines are August actuals: Bing and Quantcast are projected month-end figures from live platform reporting; Azerion is projected month-end from Azerion's August month-to-date spend (Standard Display, LATAM, through August 16, scaled to the full month); Native is a composite of Azerion's native activity ($17,883) and the Quantcast native campaign ($9,513), both from August delivery. The Quantcast line covers the main Quantcast campaigns, with the Quantcast native campaign carried inside the Native line to avoid double counting. July figures are a performance reference only and are client-tracker totals, which are not a like-for-like basis with the August vendor and platform actuals: the July tracker Azerion line runs above the Azerion invoice, and the Native line in both months is a blend of Azerion native activity and the Quantcast native campaign rather than a single vendor's number, so the July and August Native totals are close by coincidence, not by a straight month-over-month move. Channel results reflect each platform or partner's reporting method and are interpreted independently; cross-channel totals and combined acquisition costs are not used because the methods are not directly comparable. Scenario figures are monthly run rates; any multi-month total depends on the September reassessment. brlvnt has no independent visibility into any StoneX regulatory, licensing, or product timeline; references to the stablecoin launch are used only to size and time these scenarios.*

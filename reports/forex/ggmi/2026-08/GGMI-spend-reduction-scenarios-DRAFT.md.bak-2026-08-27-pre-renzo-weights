@@ -1,0 +1,228 @@
+# GGMI Mexico: Reducing Media Weight Now, Ramping Ahead of November
+
+**Entity:** GGMI, GAIN Global Markets Inc. (Mexico, forex.com/es)
+**Prepared for:** FOREX.com
+**Prepared by:** brlvnt
+**Date:** August 27, 2026
+**Measured against:** Approved August 2026 monthly budget by channel (FOREX.com tracker, last updated 08/06/2026)
+**Status:** DRAFT for FOREX.com review. Not for distribution.
+
+---
+
+## 1. Executive recommendation
+
+FOREX.com is spending almost all of the August budget. The problem is which channels receive it.
+
+Bing produces a submitted application for $379 and is running at 62% of its approved budget. Azerion produces one for $978, has become more expensive every month since April, and is running at 123% of its approved budget. Native produces none and is running at 115%. The program funds its weakest channel above budget and its strongest below.
+
+brlvnt recommends the **Controlled Pullback: $62,446 a month, a 50% reduction against the approved $125,000.** A **Deep Pullback at $29,501** is the alternative if cash preservation outweighs everything else.
+
+Hold the reduced level through September and October. The decision to ramp back up should be taken in the first half of October, not in September, because the concentration of market-moving events runs from late October into mid-November and media needs lead time to be in position for it.
+
+---
+
+## 2. Where the money is actually going
+
+| Line | Approved August | August delivery | Variance | Pacing |
+|---|---:|---:|---:|---:|
+| Bing | $30,000 | $18,533 | -$11,467 | **62%** |
+| Quantcast | $35,000 | $31,387 | -$3,613 | 90% |
+| Azerion | $35,000 | $42,956 | +$7,956 | **123%** |
+| Native | $25,000 | $28,682 | +$3,682 | **115%** |
+| **Four live channels** | **$125,000** | **$121,558** | **-$3,442** | **97%** |
+| DOOH (already cancelled) | $7,000 | $0 | n/a | n/a |
+| **Approved working media** | **$132,000** | **$121,558** | | **92%** |
+
+**The money is going out.** Delivery lands within $3,442 of the approved figure across the four live channels. This is not a pacing problem, and we are not proposing the reduction below to fix one.
+
+**The allocation is inverted.** The channel with the lowest cost per submitted application is the only one materially under its budget. The two channels running over their budgets are the most expensive one and the one with no attributed applications at all.
+
+Every recommendation below follows from moving weight out of the second group and into the first.
+
+DOOH is already cancelled and Meta is already paused, so neither is counted as a saving from either option. Native, Azerion and Quantcast run under insertion orders with a 24-hour cancellation window and no make-good obligation, so these commitments can be reduced or cancelled quickly.
+
+---
+
+## 3. Channel performance
+
+The agency is measured on submitted applications and the cost per submitted application.
+
+| Line | August cost per submitted application | Detail |
+|---|---:|---|
+| **Bing** | **$379** | 41 applications on $15,543 through August 26 |
+| **Azerion** | **$978** | 25 applications through August 17; about 44 projected for the month |
+| Quantcast | Not reported | Reports results, not submitted applications |
+| Native | None attributed | Delivers traffic and engagement only |
+
+Each channel is read on the signal its own platform reports. The two application costs are not combined, and no cross-channel acquisition cost is shown, because the methods are not directly comparable.
+
+### Azerion has become more expensive every month since April
+
+| Month | Spend | Applications | Cost per application |
+|---|---:|---:|---:|
+| April | $11,236 | 19 | $591 |
+| May | $22,158 | 31 | $715 |
+| June | $28,002 | 32 | $875 |
+| July | $37,509 | 41 | $915 |
+| August | $42,956 | ~44 | **$978** |
+
+Spend nearly quadrupled across this period and the cost of each application rose at every step. More money bought more applications, but each one cost more than the last. A channel that has worked through its efficient audience behaves this way. Both options below reduce Azerion rather than protect it.
+
+Bing moved the other way. The rebuilt account ran at about $237 per application in its first ten days after the July 22 relaunch and settled at $379 in August as volume grew. It is more expensive than it was in that first window, and it still costs less than half of Azerion.
+
+---
+
+## 4. Two options
+
+Both remove Native and both reduce Azerion. They differ on whether FOREX.com puts money behind Bing now or holds it flat.
+
+| Line | August delivery | Controlled Pullback | Deep Pullback |
+|---|---:|---:|---:|
+| Bing | $18,533 | **$30,000** | **$18,533** |
+| Azerion | $42,956 | $21,478 | $0 |
+| Quantcast | $31,387 | $10,968 | $10,968 |
+| Native | $28,682 | $0 | $0 |
+| **New monthly spend** | **$121,558** | **$62,446** | **$29,501** |
+| **Reduction against approved $125,000** | n/a | **50%** | **76%** |
+| **Reduction against current delivery** | n/a | **49%** | **76%** |
+| **Saved over a three-month hold** | n/a | **$177,336** | **$276,171** |
+
+### Controlled Pullback, $62,446
+
+Funds Bing to the $30,000 already approved for it, the only increase in this document, on the ground that it is the one channel with a proven and competitive cost per application. Halves Azerion rather than removing it, because a channel producing applications at a known cost keeps a place in the mix even when that cost is high, and because the reduction reverses within 24 hours. Retires a superseded Quantcast campaign that is spending about $9,451 a month and returned no results in August, then holds the remaining productive Quantcast line at half its weight so a modelled, retargetable audience stays live. Removes Native.
+
+This is the recommendation. It corrects the allocation and keeps the program in a position to ramp in October without rebuilding anything from zero.
+
+### Deep Pullback, $29,501
+
+Holds Bing at its current pace rather than funding it, removes Azerion entirely, and keeps only the reduced Quantcast line. It preserves the most cash and adds spend nowhere.
+
+It gives up Azerion's roughly 44 applications a month and forgoes the Bing headroom. It keeps the Quantcast audience alive deliberately, because going fully dark on the upper funnel would make the November ramp described in section 8 slower and more expensive than the saving is worth.
+
+### Where the two differ
+
+The choice is whether to put $32,945 a month behind a channel that converts at $379 and a reduced Azerion line, or to hold that cash and run search at its current pace. Both keep the same upper-funnel position.
+
+---
+
+## 5. What the data does and does not tell us
+
+**Weak funding does not by itself identify media as the problem.** The channels are producing applications. If those applications are not funding, the constraint may sit below media acquisition entirely: market inactivity, reduced trading intent, onboarding friction, approval-to-funding friction, deposit methods, minimum funding expectations, or product competitiveness. The evidence establishes the outcome, not the cause.
+
+Three questions are easy to collapse into one and should be kept apart:
+
+1. Applications are not funding at the expected rate.
+2. Therefore media is not working.
+3. Therefore a product catalyst will fix conversion.
+
+None follows automatically from the one before it. The reduction above is justified by channel economics we can measure, not by a conclusion about question two.
+
+Funnel stages should be read together. Funding performance reflects both acquisition quality and downstream approval and funding behaviour, so we should read media performance alongside the full funnel from application through to funded account.
+
+---
+
+## 6. The calendar that should govern the ramp
+
+We are not arguing that any single month will be better. The point is narrower: current conditions are quiet, the next three months carry a dense run of scheduled market events, and an August that is quiet should not become the planning assumption for a period that is unlikely to be.
+
+| Date | Event |
+|---|---|
+| September 15 to 16 | FOMC, with updated economic projections |
+| September 24 | Banco de México rate decision |
+| October 27 to 28 | FOMC |
+| **November 3** | **US midterm elections** |
+| **November 5** | **Banco de México rate decision** |
+| November 26 | Banco de México quarterly report |
+| December 8 to 9 | FOMC, with updated economic projections |
+| December 17 | Banco de México rate decision |
+
+There is no FOMC meeting in November.
+
+**September is thin and front-loaded.** Both of its events fall in the first three weeks, and neither is likely to shift retail trading demand on its own. That is the practical reason not to make September the decision point.
+
+**Late October into mid-November is the dense window.** The midterms are the largest scheduled event of the period, and their effect is not confined to Mexico. A midterm result reprices expectations for US fiscal policy, trade and rates, which moves the dollar, Treasury yields, equity indices and commodities together. That is the entire product set these campaigns advertise: the account runs lines for foreign exchange, gold, silver, indices and the MT4, MT5 and TradingView platforms. Broad repricing lifts demand across all of them, not only in the peso.
+
+The Banco de México decision two days later adds a Mexico-specific layer on top of a global one, in the same week.
+
+**Seasonality points the same way.** Cboe's historical work shows volatility tending to rise from late July into October, with October historically carrying the highest average levels, before easing into year-end. The VIX currently sits in the mid-teens, a subdued level, and the futures curve is upward sloping through the end of the year, so the options market is pricing more volatility into the autumn than it sees today. This is market pricing rather than a forecast.
+
+One caution on using the VIX for this business. It measures expected S&P 500 volatility, not currency volatility, so it is only a proxy for the broad risk environment. For GGMI, CME's FX CVOL indices are the more defensible measure, and MXN CVOL is more relevant here than any equity volatility index. We propose reading four layers in order: the VIX for the broad risk environment, FX CVOL for expected currency volatility, CME FX volumes for actual market participation, and FOREX.com applications and funded accounts for the business response. The first three are context. The fourth decides the budget.
+
+None of these dates is an automatic budget trigger.
+
+---
+
+## 7. On the stablecoin launch
+
+Stablecoin adoption in Latin America is real and substantial. Regional crypto activity has grown sharply, stablecoins represent more than half of exchange purchases in several important markets, and research from the Bank for International Settlements describes a large share of conversion into stablecoins originating outside the US dollar. We would not tell FOREX.com that stablecoins do not matter here.
+
+The narrower and better-supported statement is this: **stablecoin adoption does not automatically translate into funded FOREX.com trading accounts.** The dominant regional use cases are dollar savings, inflation protection, remittances, payments and cross-border transfers. Someone buying a dollar-denominated stablecoin to protect savings is solving a different problem from someone opening and funding a leveraged trading account. In North America the case is weaker still, where stablecoins increasingly function as settlement infrastructure and payment rails rather than a retail acquisition pool.
+
+We have not found credible evidence that introducing stablecoins as a funding mechanism materially increases application volume, funded accounts or active traders. Treat the launch as one potential catalyst worth measuring, not as the condition that releases media investment.
+
+---
+
+## 8. When to ramp back up
+
+The reduced level should hold through September and October. The ramp decision is taken in the first half of October, and money starts moving in the second half.
+
+That timing is set by how long each channel takes to reach efficient delivery, not by the calendar alone.
+
+| Channel | Lead time to full weight | Start by |
+|---|---|---|
+| Quantcast and other programmatic | Three to four weeks to rebuild modelled audiences and clear the learning period | Early to mid October |
+| Azerion display | Insertion order plus a comparable ramp | Early to mid October |
+| Bing search | Days, since intent is captured at the moment of search | Late October |
+
+Search can be raised close to the event. Everything above it cannot. A programmatic audience started on November 1 is still learning while the November 3 window is happening, which is the specific outcome both options above are shaped to avoid.
+
+**Recommended sequence**
+
+1. **September.** Hold the reduced level. Read the September 15 to 16 FOMC and the September 24 Banco de México decision as information. Take no budget action.
+2. **First half of October.** Decide the ramp. The inputs are one full month of the reallocation, whether Bing held its cost per application at its new weight, whether the reduced Azerion line improved, and whether MXN CVOL and FX volumes have started to move.
+3. **Second half of October.** Begin rebuilding upper funnel if the decision is to ramp, so audiences are in efficient delivery before November 3.
+4. **Late October into November.** Scale Bing toward and beyond its approved weight, sized to the demand actually appearing rather than to the forecast.
+5. **Mid-November onward.** Read the post-election and post-Banco de México period, then set the level for December and the new fiscal year.
+
+**A note on the fiscal boundary.** The approved plan in the tracker runs to September, which closes FY26. October onward carries no approved figure. The ramp decision in early October and FY27 planning are therefore the same conversation, and we would rather bring a recommendation to it built on two months of evidence from the reallocation than on an August that everyone agrees was quiet.
+
+---
+
+## 9. September
+
+The approved September budget is $205,000, an increase of about 64% on August. Three of its lines are not currently running.
+
+| Line | Approved September | Status |
+|---|---:|---|
+| Bing | $30,000 | Active, the strongest performer |
+| Quantcast | $35,000 | Active |
+| Azerion | $35,000 | Active, at 123% of its August budget and $978 per application |
+| Native | $25,000 | Active, no attributed applications |
+| Meta | $30,000 | Paused |
+| TikTok | $10,000 | Never run for GGMI this fiscal year |
+| Strategic Partnerships | $40,000 | Not currently running |
+| **Total** | **$205,000** | |
+
+**We do not recommend the September plan as approved.** Eighty thousand dollars of it, or 39%, is allocated to three channels that are not live, two of which have no GGMI performance history to size against. Committing that while applications are not funding, while the strongest channel sits below its approved budget, and while the largest channel gets more expensive every month, is difficult to defend on current evidence.
+
+We recommend running September at the chosen option, $62,446 or $29,501, and holding the same level through October. The $80,000 across Meta, TikTok and Strategic Partnerships should be deferred rather than cancelled, so it stays available for the October ramp if the evidence supports launching those channels then.
+
+---
+
+## 10. What we will report against
+
+Through the hold period, in priority order:
+
+1. **FOREX.com applications, approvals and funded accounts.** The primary decision criteria.
+2. **Cost per funded account where available**, read with care where the denominators are small.
+3. **Bing cost per submitted application at its new weight**, which tests whether the reallocation worked.
+4. **Azerion cost per submitted application at half weight**, which decides whether that line is restored or removed.
+5. **The productive Quantcast line's cost per result and attribution quality**, which decides whether that spend is retained through the ramp.
+6. **MXN CVOL, G5 FX volatility and CME FX volumes**, as market context only.
+7. **Stablecoin launch status**, as a secondary input.
+
+First-party business outcomes outrank market context, which outranks product timing. What this avoids is a deep, open-ended cut sized to a quiet August that leaves the program underweight through the busiest scheduled window of the year.
+
+---
+
+*GGMI, Mexico (forex.com/es). Draft prepared by brlvnt for FOREX.com review. Figures are measured against the approved August 2026 monthly budget by channel from the FOREX.com tracker, last updated 08/06/2026. August delivery is projected month-end: Bing and Quantcast from live platform reporting through August 26, Azerion and Azerion Native from the vendor pacing file and mid-month report covering August 1 to 17. Azerion application counts and costs are from the vendor mid-month report. The Quantcast line covers the main Quantcast campaigns, with the Quantcast native campaign carried inside the Native line so it is not counted twice. GGMI figures cover LATAM lines only. Channel results reflect each platform or partner's reporting method and are read independently; cross-channel totals and combined acquisition costs are not used because the methods are not directly comparable. DOOH is already cancelled and Meta is already paused, so neither is counted as a saving from either option. FOMC dates are from the Federal Reserve's published 2026 calendar and Banco de México dates from its published 2026 calendar of monetary policy announcements. Volatility levels are market pricing at the date of writing and are not forecasts. brlvnt has no independent visibility into any StoneX regulatory, licensing or product timeline; references to the stablecoin launch are used only to size and time these options.*

@@ -119,3 +119,74 @@ session expired"` twice in a row, while an unrelated small call
 oversized sync call a third time — switch to `quantcast_async_report`
 (`action: "request"` → poll → `action: "download"`, ~20s), which completed
 cleanly and returned a gzipped CSV.
+
+## SA360 GGMI Bing: `metrics.conversions` stopped equalling submitted apps in August 2026 (found 2026-08-27)
+
+**Seen:** customer `5372690580` (FOREX.com LATAM Bing), login `9697709980`,
+Aug 1-26 2026. Summing `metrics.conversions` at campaign level returned 53.
+The SA360 UI Summary > Goals card for the same window showed 29 + 12 = 41.
+Segmenting by `segments.conversion_action_name` explains the gap: three
+additional conversion actions are now counting into the primary `conversions`
+metric.
+
+| Conversion action | Category | Aug 1-26 |
+|---|---|---|
+| G2 Raw Spread - Live Confirmation | SUBMIT_LEAD_FORM | 29 |
+| MT5 Raw Spread - Live Confirmation | SUBMIT_LEAD_FORM | 12 |
+| GCLID - Approved | IMPORTED_LEAD | 7 |
+| GCLID - Funded | IMPORTED_LEAD | 1 |
+| G2 / MT5 Raw Spread - App Form - Step 4 | PAGE_VIEW | 4 |
+
+Only the two Live Confirmation actions are submitted applications. Approved
+and Funded are downstream funnel stages (the client's journey, not the agency
+scorecard) and Step 4 is a page view. Taking `metrics.conversions` at face
+value inflates August submitted apps by 29% (53 vs 41) and understates cost
+per submitted app by $86 ($293 vs $379).
+
+May, June and July 2026 are clean: every non-zero `metrics.conversions` row in
+those months is a Live Confirmation action, which is why the standing rule
+("SA360 `metrics.conversions` already IS submitted apps", memory
+`reference_forex_submitted_app_goals`) held through the July cycle. The rule
+is now false for GGMI Bing from August 2026 onward.
+
+**Workaround:** never sum bare `metrics.conversions` for GGMI Bing. Segment by
+`segments.conversion_action_name` and count only the `- Live Confirmation`
+actions:
+
+```
+SELECT segments.month, segments.conversion_action_name, metrics.conversions
+FROM customer
+WHERE segments.date BETWEEN '<start>' AND '<end>' AND metrics.conversions > 0
+```
+
+Cross-check the total against the SA360 UI Summary > Goals card before it goes
+into `figures.json`. Note the UI column is labelled "All conv." but the Goals
+card lists actions individually, so read the per-action rows, not a total.
+Demo Confirmation is Secondary and is correctly excluded from
+`metrics.conversions`; do not add it back.
+
+**Still open:** who changed the Approved / Funded / Step 4 actions to primary,
+and when in August. Needs a question to StoneX/SA360 admin before the August
+cycle closes. Reporting-only repo, so do not change the goal config here.
+
+## Quantcast MCP: exclusive `endDate` silently shortened a month-to-date pull, then the projection compounded it (found 2026-08-27)
+
+**Seen:** GGMI August 2026 spend-reduction model, account 9969644. The
+Quantcast run rates in `reports/forex/ggmi/2026-08/figures.json` were pulled
+with `endDate: "2026-08-26"` and recorded as "MTD Aug 1-26". `endDate` is
+EXCLUSIVE, so that call returns Aug 1-25. The figures were then projected to a
+31-day month by multiplying x31/26, dividing 25 days of delivery by 26. Two
+compounding errors in one number.
+**Proof:** the recorded `quantcast.nativeonly_mtd` of 7979.18 reproduces to the
+cent on an `endDate: "2026-08-26"` pull, and returns 8342.75 on the correct
+`endDate: "2026-08-27"`. The gap is one day of that campaign's delivery.
+**Effect:** the GGMI main Quantcast line read 29,634 instead of 31,387, about
+5.6% low, and channel pacing against the approved budget read 85% instead of
+90%.
+**Workaround:** for an inclusive range ending on day N, set `endDate` to day
+N+1, and project using the same day count the pull actually covers. This is the
+already-documented exclusive-endDate behaviour (memory
+`reference_quantcast_mcp_enddate`); the rule existed and was not applied, so
+verify the day count independently rather than trusting the label on a stored
+figure. Cheapest check: pull the same campaign at `endDate` N and N+1 and
+confirm the difference is one plausible day of spend.

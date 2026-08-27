@@ -89,6 +89,15 @@ Google Sheets first. Deliverables are a formatted Sheet and a deck per entity,
 both generated from the model, never hand-keyed. Deck builders import
 `lib/housestyle.py`; never redefine a colour or a font in a build script.
 
+**Every client-facing document is formatted before it leaves.** Build the
+.docx with `python3 scripts/format_doc.py <input.md> <output.docx>`, never with
+bare `pandoc`. Bare pandoc is a format conversion, not formatting: Cambria
+headings, hairline tables, no house palette. The script is the document-side
+equivalent of `lib/housestyle.py` and reads the same tokens from
+`docs/DESIGN-SYSTEM.md`. Render the result to PDF and look at it before upload;
+two table-shading defects in the August 2026 GGMI draft were invisible in the
+XML and obvious on the page.
+
 **Once Renzo edits the Google Slides file, it is canonical.** Never re-upload a
 built PPTX over it. Edit via `gws slides batchUpdate` replaceAllText, longest
 strings first, verifying `occurrencesChanged`. Verify every upload by reading
