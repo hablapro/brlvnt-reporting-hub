@@ -91,3 +91,97 @@ Before any client deliverable leaves the shop, check every slide for:
 ## 12. Why it took longer than necessary — the honest one-paragraph answer
 
 Roughly a third of this session's work was rework: rebuilding numbers after the tracker arrived, restructuring a deck whose order I had already built the other way, re-editing geo framing twice, and adding protection and the agency KPI after the fact. Nearly all of it traces to one root cause: **I built from the best data I had instead of first asking what the client already holds and how the agency wants to be scored.** Those are two questions. They cost one message each. Everything else — the tooling detours, the substring bug, the empty-upload catch — was minor by comparison and is now either fixed or fenced with verification. Next cycle starts with the two questions.
+
+---
+
+# Addendum — August 2026, GGMI September budget proposal
+
+Read this alongside sections 9 and 11. The June lessons were about not knowing
+what the client held. These are about trusting figures that were already in
+our own files.
+
+## A1. Every stored figure needs an independent re-derivation before it is used
+
+Three numbers in `reports/forex/ggmi/2026-08/figures.json` were wrong at the
+same time, and each one carried confident prose describing where it came from:
+
+| Figure | What it said | What it was |
+|---|---|---|
+| Bing conversions | primary metric equals submitted apps | included Approved, Funded and a page view, 29% over |
+| Quantcast run rate | "MTD Aug 1-26" | Aug 1-25, then projected on 26 days |
+| Azerion spend | "$3,086.46 through Aug 16" | $20,989, a mis-picked cell, wrong by 6.8x |
+
+None was a fabrication. Each was a real pull, described plausibly, that nobody
+reproduced. The Azerion one inverted an entire finding: it manufactured
+"Azerion collapsed 84%" and a false 65% programme pacing, when Azerion was
+actually running at 123% of its approved budget.
+
+**The rule that would have caught all three:** a figure does not enter
+`figures.json` until someone reproduces it from source in a separate pull. A
+provenance sentence is a claim, not a verification. This is proposed as a
+doctrine edit, not yet ruled.
+
+Cheapest specific checks:
+- Conversion metrics: segment by conversion action and confirm which actions
+  are counting, do not trust a headline metric across a month boundary.
+- Any MTD or projected figure: confirm the day count the pull actually covers,
+  then project on that same count.
+- Any month-over-month move above about 50%: treat as a suspected data defect
+  first and a finding second. An 84% collapse is more often a partial file.
+
+## A2. Inventory the folder before declaring a data gap
+
+The draft declared "no forward approved monthly budget in the source material"
+as its single data gap. The client's approved budget tracker was sitting in
+the same directory, dated, with September and Q4 by channel. It changed the
+baseline, the headline percentages and the recommendation.
+
+## A3. Rebuild every derived artifact when the model changes
+
+`figures.json` was corrected at 14:37. The document had been written at 14:16
+and was never rebuilt against it, so a "defect fix" sat in the model while the
+deliverable still carried the defect. Anything generated from the model is
+stale the moment the model changes.
+
+## A4. Verify inherited research before it reaches a client artifact
+
+Market and third-party figures supplied to us were mostly accurate. One was
+not: a claim that stablecoins exceed half of exchange purchases in Colombia,
+where the cited source has 48%. Verify supplied research to the same standard
+as our own pulls, and check the source actually says what it is credited with.
+A seasonality claim attributed to Cboe was not supported by the cited page.
+
+## A5. A claim's scope is as checkable as its truth
+
+Every correction in Renzo's review was a statement that was true but one step
+wider than the evidence: summing application counts across two attribution
+systems, assuming deferred budget rolls across a fiscal boundary, extending
+one channel's cancellation terms to all channels, calling Bing's efficiency
+"the other way" when it also declined, more slowly. A stretched claim is the
+easiest thing for a client to disprove, and it discredits the correct numbers
+around it.
+
+## A6. Programmatic checks are not review
+
+Six revisions shipped as bare `pandoc` output while the render carried Cambria
+headings and hairline tables. Every check passed: the upload verified, the
+figures read back, the XML showed 30 header fills. None of them looked at the
+page. Two table-shading defects were invisible in the XML and obvious in the
+PDF. Build with `scripts/format_doc.py`, then render and look.
+
+## A7. Do not self-correct past the instruction
+
+Twice I changed something nobody asked me to change and made it worse. I
+called a scenario pairing "incoherent" and unilaterally fixed it, producing
+two options with an identical Bing line and no real choice in them. Told to
+shorten the stablecoin section, I expanded and better-sourced it, which turned
+a paragraph into an argument the client might have felt obliged to answer.
+When a rule or instruction already exists, follow it rather than improving it.
+
+## A8. The no-blending rule applies to counts, not only to costs
+
+The document summed Bing and Azerion application counts into one total four
+paragraphs after stating that the two are not comparable. The standing rule
+against blending across channels covers conversion counts as much as CPA. Bing
+counts are SA360 floodlight attribution and Azerion counts are vendor
+reported; without a deduplicated source-level figure they cannot be added.
