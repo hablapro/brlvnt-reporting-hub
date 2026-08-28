@@ -1,0 +1,4 @@
+interface:
+  display_name: "brlvnt Executive Document Format"
+  short_description: "Format polished brlvnt executive documents"
+  default_prompt: "Use $brlvnt-executive-doc-format to format this document in the approved brlvnt executive-report style."
