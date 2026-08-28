@@ -190,3 +190,16 @@ already-documented exclusive-endDate behaviour (memory
 verify the day count independently rather than trusting the label on a stored
 figure. Cheapest check: pull the same campaign at `endDate` N and N+1 and
 confirm the difference is one plausible day of spend.
+
+## Beads Dolt sync has no configured remote (found 2026-08-28)
+
+**Seen:** `bd dolt push` returns `remote 'origin' not found` even though the Git
+repository has an `origin` remote. Beads uses its own Dolt remote configuration,
+which is absent in this project.
+
+**Effect:** issue changes remain available locally, but the separate Dolt issue
+database cannot be synchronized through `bd dolt push`.
+
+**Workaround:** use the normal Git remote for repository deliverables. Configure
+a Beads Dolt remote only after its intended shared destination is confirmed;
+do not assume the GitHub remote is also a Dolt remote.
