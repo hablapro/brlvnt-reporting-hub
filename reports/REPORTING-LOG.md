@@ -4,6 +4,22 @@ Chronological log of reporting sessions. Newest first. One block per session.
 
 ---
 
+## 2026-08-28, FOREX.com September budget revisions complete
+
+**Goal:** Apply Mateus's evidence-first framework and revise the GCG and GGMI September Recommended Spend and Minimum Spend proposals.
+
+**Delivered:** `reports/forex/September_Budget_Evidence_Base.md`, `reports/forex/gcg/2026-08/GCG-September-budget-proposal-MATEUS-REVISION.md`, and `reports/forex/ggmi/2026-08/GGMI-September-budget-proposal-MATEUS-REVISION.md`.
+
+**Authority ruling:** the Aug 27 Renzo-final proposals in `reports/forex/_final-delivered/2026-09/` are the pre-feedback baselines. August draft and backup files are working history.
+
+**Final decision:** GCG retains an authorization ceiling of up to $110,000, commits $105,000 at launch, holds $5,000 behind established-line performance gates, and carries a $55,000 Minimum plan. GGMI carries a $90,000 Recommended plan and a $60,000 Minimum plan. No new or returning September initiatives receive spend.
+
+**Hard condition:** GGMI Azerion remains at $0 until written Mexico delivery controls and a minimum 95% Mexico delivery standard are confirmed by September 3. If the condition is not met, neither GGMI scenario remains authorized as designed and the allocation returns for a revised decision.
+
+**Decision structure:** every retained or tested line has a role, evidence and confidence statement, hypothesis, media action, KPI, numeric threshold, evaluation window, meet and miss rule, low-volume rule, and stated operating condition. Agency, shared, and client or system responsibilities are separated without assigning blame.
+
+**QA:** evidence-base structure passed; proposal arithmetic and scenario assertions passed; protection scan returned 0 blocking findings and 0 warnings; Markdown whitespace and client-language scans passed; independent reporting-strategist review passed correctness, traceability, decision usability, and client-risk checks. No live media or tracking changes were made. Bead `Reporting-Analytics-7u7` closed.
+
 ## 2026-08-04 → 08-08 — Repo restructured for Performance Lead handover — COMPLETE, 4 decisions pending
 
 **Goal:** Make the repo cloneable and runnable by an incoming Performance Lead with minimal guidance. Not a reporting cycle; a handover build.
