@@ -56,3 +56,18 @@ resolved statuses always carry their resolution date
 **Suggested improvement:** Add a claim-lineage gate that maps every material narrative claim to one runnable calculation and checks status, timestamp, and amount fields for contradictions. Fail the validation when the source script returns an empty subset, when a report uses a different calculation than its recorded output, or when missingness is interpreted as a negative event without a corroborating status.
 
 **Principle:** Reproducible analysis requires the delivered claim, the runnable calculation, and the recorded output to agree; plausible arithmetic is not enough when field semantics or missingness can reverse the conclusion.
+
+### Observation 5: Keep downstream constraints in their proper portfolio role
+
+**Status:** OPEN
+**Date:** 2026-08-31
+**Session context:** Resetting a paid-media strategy after a downstream KYC finding had been turned into a blanket spend-release gate for the whole portfolio.
+**Skill:** paid-ads
+**Type:** open-source
+**Phase/Area:** Portfolio strategy and full-funnel planning
+
+**Issue:** A material downstream constraint dominated the initial recommendation even though the source data lacked channel lineage and could not identify which media created stronger funded customers. The resulting plan reduced brand, demand-creation, and learning investment without evidence that those channels caused the downstream loss.
+
+**Suggested improvement:** Require portfolio recommendations to assign distinct jobs and role-level KPIs to brand, demand creation, intent capture, audience quality, CRM, and learning. Treat downstream constraints as forecast, measurement, and client-dependency inputs unless source-linked evidence shows that they should gate a specific channel.
+
+**Principle:** A full-funnel portfolio should not collapse into one downstream bottleneck when the evidence cannot connect that bottleneck to channel performance.
