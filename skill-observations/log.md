@@ -39,3 +39,20 @@ resolved statuses always carry their resolution date
 **Suggested improvement:** Add a scenario pattern that distinguishes maximum authorization from committed launch spend. Hold the difference as a named reserve with eligible existing lines, numeric release gates, an approval rule, and an explicit statement that the reserve remains unspent when no line qualifies.
 
 **Principle:** A budget ceiling should preserve optionality without becoming a delivery obligation; conditional capacity belongs behind a measurable release gate.
+
+## 2026-08-31
+
+### Observation 4: Reconcile narrative claims to runnable analysis outputs
+
+**Status:** OPEN
+**Date:** 2026-08-31
+**Session context:** Reviewing a client findings report whose headline claims were derived from a reproducible workbook analysis package.
+**Skill:** data-analytics:validate-data
+**Type:** open-source
+**Phase/Area:** Report validation and calculation lineage
+
+**Issue:** Several narrative claims were numerically plausible but did not follow from the runnable checks as written. One script returned an empty analytical subset because a mislabeled numeric column was filtered as a currency code, while the report used manually derived figures without preserving that corrected calculation path. Other copy treated missing dates as proof that an event never occurred even though status fields contradicted that inference.
+
+**Suggested improvement:** Add a claim-lineage gate that maps every material narrative claim to one runnable calculation and checks status, timestamp, and amount fields for contradictions. Fail the validation when the source script returns an empty subset, when a report uses a different calculation than its recorded output, or when missingness is interpreted as a negative event without a corroborating status.
+
+**Principle:** Reproducible analysis requires the delivered claim, the runnable calculation, and the recorded output to agree; plausible arithmetic is not enough when field semantics or missingness can reverse the conclusion.
