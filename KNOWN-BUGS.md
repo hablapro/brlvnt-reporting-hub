@@ -203,3 +203,20 @@ database cannot be synchronized through `bd dolt push`.
 **Workaround:** use the normal Git remote for repository deliverables. Configure
 a Beads Dolt remote only after its intended shared destination is confirmed;
 do not assume the GitHub remote is also a Dolt remote.
+
+## Google Drive native document import rejects local DOCX file metadata (found 2026-09-01)
+
+**Seen:** `mcp__codex_apps__google_drive_import_document` rejected a verified
+local `.docx` twice before upload with `source_file.mime_type [required]:
+Missing required property`. The exposed action accepts `source_file` as an
+absolute local path, but the connector's file wrapper did not provide the MIME
+type required by the workspace schema. Moving the same file from `/tmp` into
+an allowed workspace root produced the identical validation failure. No Drive
+file was created.
+
+**Verified workaround:** stop after the single connector retry and confirm the
+authenticated GWS identity. Upload the DOCX as a temporary Word source with
+`gws drive +upload`, then call `drive.files.copy` with target MIME type
+`application/vnd.google-apps.document`. Direct multipart creation with the
+native MIME type also returned HTTP 400 in this run. The two-step copy produced
+a native Google Doc with connector readback and six-page PDF visual QA passing.
